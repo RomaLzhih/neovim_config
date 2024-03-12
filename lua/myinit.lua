@@ -16,6 +16,8 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]
 
+vim.opt.cursorline = true
+
 -- NOTE: limit completion items
 vim.opt.pumheight = 10
 
