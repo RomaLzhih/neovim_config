@@ -262,6 +262,9 @@ local plugins = {
 					lint.try_lint()
 				end,
 			})
+
+			local ns = require("lint").get_namespace("my_linter_name")
+			vim.diagnostic.config({ virtual_text = true }, ns)
 		end,
 	},
 

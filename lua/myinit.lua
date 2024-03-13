@@ -19,6 +19,7 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]
 -- NOTE: enable cursoreline
 vim.o.cursorlineopt = "number,line"
 
+-- NOTE: change diagnostic symbols
 local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
 for name, icon in pairs(symbols) do
 	local hl = "DiagnosticSign" .. name
