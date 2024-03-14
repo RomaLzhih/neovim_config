@@ -61,6 +61,7 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 
 -- NOTE: telescope
 map("n", "<leader>cs", "<cmd> Telescope colorscheme <CR>", { desc = "Telescope colorscheme" })
+map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 
 -- NOTE: center buffer
 map("n", "<leader>cm", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
