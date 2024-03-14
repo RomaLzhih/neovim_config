@@ -1,5 +1,7 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+local configs = require("nvchad.configs.lspconfig")
+local on_attach = configs.on_attach
+local on_init = configs.on_init
+local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
 
@@ -12,13 +14,14 @@ local servers = { "bashls", "pyright", "clangd", "r_language_server", "texlab", 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		on_attach = on_attach,
+		on_init = on_init,
 		capabilities = capabilities,
 	})
 end
 
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-require("lspconfig").r_language_server.setup({
+lspconfig.r_language_server.setup({
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			-- Disable virtual_text
@@ -29,7 +32,7 @@ require("lspconfig").r_language_server.setup({
 	},
 })
 
-require("lspconfig").clangd.setup({
+lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = cmp_nvim_lsp.default_capabilities(),
 	["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -42,7 +45,7 @@ require("lspconfig").clangd.setup({
 	},
 })
 
-require("lspconfig").ltex.setup({
+lspconfig.ltex.setup({
 	settings = {
 		ltex = {
 			checkFrequency = "save",

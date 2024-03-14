@@ -2,6 +2,16 @@ local overrides = require("configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+	-- NOTE: harpoon
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		config = function()
+			require("configs.harpoon")
+		end,
+	},
+
 	-- NOTE: before.nvim
 	{
 		"bloznelis/before.nvim",
@@ -49,7 +59,7 @@ local plugins = {
 			},
 		},
 		config = function()
-			require("nvchad.configs.lspconfig")
+			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
 		end, -- Override to setup mason-lspconfig
 	},

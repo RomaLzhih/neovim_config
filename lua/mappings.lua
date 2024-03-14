@@ -64,8 +64,37 @@ map("n", "<leader>cs", "<cmd> Telescope colorscheme <CR>", { desc = "Telescope c
 
 -- NOTE: center buffer
 map("n", "<leader>cm", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
--- map("n", "<leader>ci", "<cmd> NoNeckPainWidthUp <CR>", { desc = "Increase center margin" })
--- map("n", "<leader>cd", "<cmd> NoNeckPainWidthDown <CR>", { desc = "Decrease center margin" })
+
+-- NOTE: harpoon
+local harpoon = require("harpoon")
+
+map("n", "<leader>ha", function()
+	harpoon:list():append()
+end, { desc = "harpoon add" })
+
+map("n", "<leader>hm", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "harpoon menu" })
+
+map("n", "<leader>hq", function()
+	harpoon:list():select(1)
+end, { desc = "harpoon select 1" })
+
+map("n", "<leader>hw", function()
+	harpoon:list():select(2)
+end, { desc = "harpoon select 2" })
+
+map("n", "<leader>he", function()
+	harpoon:list():select(3)
+end, { desc = "harpoon select 3" })
+
+map("n", "<C-A-p>", function()
+	harpoon:list():prev()
+end, { desc = "harpoon previous" })
+
+map("n", "<C-A-p>", function()
+	harpoon:list():next()
+end, { desc = "harpoon next" })
 
 -- Disable mappings
 local nomap = vim.keymap.del
@@ -73,4 +102,12 @@ local nomap = vim.keymap.del
 nomap("n", "<C-n>")
 nomap("n", "<C-c>")
 nomap({ "n", "t" }, "<A-h>")
-nomap("n", "<leader>fm")
+-- nomap("n", "<leader>fm")
+-- nomap("n", "<leader>hp")
+-- nomap("n", "<leader>ha")
+-- nomap("n", "<leader>hm")
+-- nomap("n", "<leader>hq}")
+-- nomap("n", "<leader>hw")
+-- nomap("n", "<leader>he")
+-- nomap("n", "<C-A-p>")
+-- nomap("n", "<C-A-n>")
