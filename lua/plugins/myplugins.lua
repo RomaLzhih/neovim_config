@@ -5,14 +5,13 @@ local plugins = {
 	{
 		"AckslD/nvim-neoclip.lua",
 		requires = {
-			{ "kkharji/sqlite.lua", module = "sqlite" },
 			{ "nvim-telescope/telescope.nvim" },
 		},
 		config = function()
 			require("neoclip").setup({
 				history = 100,
-				enable_persistant_history = true,
 				content_spec_column = true,
+				default_register = { '"', "+", "*" },
 			})
 		end,
 	},
