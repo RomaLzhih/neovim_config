@@ -100,6 +100,8 @@ end, { desc = "harpoon next" })
 -- Disable mappings
 local nomap = vim.keymap.del
 
+nomap("n", "<C-n>")
+nomap("n", "<C-c>")
 nomap({ "n", "t" }, "<A-h>")
 -- nomap("n", "<leader>fm")
 -- nomap("n", "<leader>hp")
