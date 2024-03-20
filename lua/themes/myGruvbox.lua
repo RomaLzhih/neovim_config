@@ -53,8 +53,7 @@ M.base_16 = {
 	base0C = "#8ec07c",
 	base0D = "#b8bb26",
 	base0E = "#fb4943",
-	-- base0F = "#d65d0e",
-	base0F = "#ebdbb2",
+	base0F = "#d65d0e",
 }
 
 M.type = "dark"
@@ -62,13 +61,15 @@ M.type = "dark"
 M = require("base46").override_theme(M, "myGruvbox")
 
 M.polish_hl = {
-	["@module"] = { fg = M.base_30.white },
-	["@constant"] = { fg = M.base_30.dark_purple },
-	["@punctuation.delimiter"] = { fg = M.base_30.white },
-	["@punctuation.bracket"] = { fg = M.base_30.white },
-	["@variable.parameter"] = { fg = M.base_30.white },
-	["@operator"] = { fg = M.base_30.white },
-	["@variable"] = { fg = M.base_30.white },
+	treesitter = {
+		["@module"] = { fg = M.base_30.white },
+		["@constant"] = { fg = M.base_30.dark_purple },
+		["@punctuation.delimiter"] = { fg = M.base_30.white },
+		["@punctuation.bracket"] = { fg = M.base_30.white },
+		["@variable.parameter"] = { fg = M.base_30.white },
+		["@operator"] = { fg = M.base_30.white },
+		["@variable"] = { fg = M.base_30.white },
+	},
 }
 
 return M
