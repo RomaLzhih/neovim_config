@@ -279,10 +279,10 @@ local plugins = {
 				"-extra-arg=-std=c++20",
 			}
 
-			lint.linters.cppcheck.args = {
-				"--std=c++20",
-				"--check-level=exhaustive",
-			}
+			-- lint.linters.cppcheck.args = {
+			-- 	"--std=c++20",
+			-- 	"--check-level=exhaustive",
+			-- }
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
