@@ -201,11 +201,6 @@ local plugins = {
 		config = function()
 			require("ufo").setup()
 		end,
-		-- opts = {
-		-- 	provider_selector = function()
-		-- 		return { "treesitter", "indent" }
-		-- 	end,
-		-- },
 
 		init = function()
 			vim.keymap.set("n", "zR", function()
