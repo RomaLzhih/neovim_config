@@ -57,12 +57,12 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
-		["parameter"] = { fg = M.base_16.base08, bold = true },
+		["@parameter"] = { fg = M.base_30.white, bold = true },
+		["@variable.parameter"] = { fg = M.base_30.white, bold = true },
 		["@module"] = { fg = M.base_30.white },
 		["@constant"] = { fg = M.base_16.base09 },
 		["@punctuation.delimiter"] = { fg = M.base_16.base06 },
 		["@punctuation.bracket"] = { fg = M.base_16.base06 },
-		["@variable.parameter"] = { fg = M.base_30.white },
 		["@operator"] = { fg = M.base_30.white },
 		["@variable"] = { fg = M.base_30.white },
 	},
