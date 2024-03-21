@@ -81,7 +81,6 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
-		["@parameter"] = { bold = true, italic = true },
 		["@constant"] = { fg = M.base_30.yellow },
 		["@operator"] = { fg = M.base_30.nord_blue },
 		["@property"] = { fg = M.base_30.teal, italic = true },
