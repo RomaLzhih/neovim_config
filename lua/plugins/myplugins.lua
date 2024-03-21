@@ -14,6 +14,7 @@ local plugins = {
 				default_register = { '"', "+", "*" },
 			})
 		end,
+		lazy = false,
 	},
 
 	-- NOTE: harpoon

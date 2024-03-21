@@ -55,6 +55,20 @@ map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline"
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
 map("n", "<leader>wd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
 
+-- NOTE: LSP motion
+map("n", "gD", function()
+	vim.lsp.buf.declaration()
+end, { desc = "LSP declaration" })
+map("n", "gd", function()
+	vim.lsp.buf.definition()
+end, { desc = "LSP definition" })
+map("n", "gi", function()
+	vim.lsp.buf.implementation()
+end, { desc = "LSP implementation" })
+map("n", "<leader>td", function()
+	vim.lsp.buf.type_definition()
+end, { desc = "LSP definition type" })
+
 -- NOTE: neorg
 map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
 map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work" })
@@ -93,7 +107,7 @@ map("n", "<C-A-p>", function()
 	harpoon:list():prev()
 end, { desc = "harpoon previous" })
 
-map("n", "<C-A-p>", function()
+map("n", "<C-A-n>", function()
 	harpoon:list():next()
 end, { desc = "harpoon next" })
 
