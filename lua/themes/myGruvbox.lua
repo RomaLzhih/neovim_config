@@ -69,6 +69,7 @@ M.polish_hl = {
 		["@variable.parameter"] = { fg = M.base_30.white },
 		["@operator"] = { fg = M.base_30.white },
 		["@variable"] = { fg = M.base_30.white },
+		["@parameter"] = { bold = true, italic = true },
 	},
 }
 

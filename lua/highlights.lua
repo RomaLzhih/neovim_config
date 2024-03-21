@@ -23,7 +23,7 @@ M.override = {
 	-- ["@type.identifier"] = { italic = true },
 	["@repeat"] = { italic = true },
 	["@conditional"] = { italic = true },
-	-- ["@parameter"] = { italic = true },
+	["@parameter"] = { italic = true },
 	-- ["@property"] = { italic = true },
 	["@comment"] = { italic = true },
 	["@variable.builtin"] = { italic = true },
