@@ -55,34 +55,32 @@ M.base_16 = {
 	-- - base0D - Functions, Methods, Attribute IDs, Headings
 	-- - base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed
 	-- - base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
-	base08 = M.base_30.ogwhite,
+	base08 = M.base_30.white,
 	base09 = M.base_30.teal,
 	base0A = M.base_30.purple,
 	base0B = M.base_30.teal,
 	base0C = M.base_30.blue,
 	base0D = M.base_30.seablue,
-	base0E = M.base_30.nord_blue,
+	base0E = M.base_30.purple,
 	base0F = M.base_30.ogwhite,
 }
 
 M.polish_hl = {
 	treesitter = {
-		["@variable"] = { fg = M.base_30.ogwhite },
-		["@variable.builtin"] = { fg = M.base_30.dark_purple },
+		["@variable"] = { fg = M.base_30.white },
+		["@variable.builtin"] = { fg = M.base_30.teal },
+		["@type.builtin"] = { fg = M.base_30.nord_blue },
+		["@property"] = { fg = M.base_30.white },
+		["@parameter"] = { bold = true },
 		["@function.call"] = { fg = M.base_30.purple },
-		["@keyword.return"] = { fg = M.base_30.green },
 		["@operator"] = { fg = M.base_30.nord_blue },
-		["@keyword.operator"] = { fg = M.base_30.seablue },
-		["@constant.builtin"] = { fg = M.base_30.seablue },
-		["@constant"] = { fg = M.base_30.white },
+		["@constant.builtin"] = { fg = M.base_30.red },
+		["@constant"] = { fg = M.base_30.red },
 		["@constructor"] = { fg = M.base_30.grey_fg },
-		["@property"] = { fg = M.base_30.seablue },
 		["@punctuation.delimiter"] = { fg = M.base_30.seablue },
 		["@markup.list"] = { fg = M.base_30.purple },
 		["@punctuation.bracket"] = { fg = M.base_30.purple },
-		["@type.builtin"] = { link = "Boolean" },
 		["@tag.attribute"] = { fg = M.base_30.purple, italic = true, link = "" },
-		["Label"] = { fg = M.base_30.seablue },
 		["@constructor.tsx"] = { link = "Tag" },
 	},
 
@@ -115,6 +113,6 @@ end
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "poimandres")
+M = require("base46").override_theme(M, "mypoimandres")
 
 return M
