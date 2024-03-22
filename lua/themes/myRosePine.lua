@@ -70,6 +70,7 @@ M.polish_hl = {
 		["@function.method.call"] = { fg = M.base_30.cyan },
 		["@property"] = { fg = M.base_30.cyan },
 		["@constant"] = { fg = M.base_30.orange, italic = true },
+		["@macro"] = { fg = M.base_16.base0D, italic = true },
 	},
 }
 

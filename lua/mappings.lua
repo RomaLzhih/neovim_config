@@ -39,7 +39,7 @@ map("n", "<leader>ul", function()
 end, { desc = "Un-linting" })
 
 -- NOTE: toggle fold
-map("n", "<A-q>", "zA", { desc = "Toggle all folding under cursor" })
+map("n", "<A-q>", "za", { desc = "Toggle all folding under cursor" })
 
 -- NOTE: search
 map("n", "/", "<Plug>(easymotion-sn)", { desc = "easy motion n char search" })
@@ -102,6 +102,10 @@ end, { desc = "harpoon select 2" })
 map("n", "<leader>he", function()
 	harpoon:list():select(3)
 end, { desc = "harpoon select 3" })
+
+map("n", "<leader>hr", function()
+	harpoon:list():select(4)
+end, { desc = "harpoon select 4" })
 
 map("n", "<C-A-p>", function()
 	harpoon:list():prev()
