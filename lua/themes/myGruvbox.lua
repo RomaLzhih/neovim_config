@@ -62,6 +62,7 @@ M = require("base46").override_theme(M, "myGruvbox")
 
 M.polish_hl = {
 	treesitter = {
+		["@namespace"] = { fg = M.base_16.base0A },
 		["@parameter"] = { fg = M.base_30.white, bold = true },
 		["@variable.parameter"] = { fg = M.base_30.white, bold = true },
 		["@module"] = { fg = M.base_30.white },
