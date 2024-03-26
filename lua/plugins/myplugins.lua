@@ -470,14 +470,13 @@ local plugins = {
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
 		cmd = "Neorg",
-		version = "v7.0.0",
+		version = "v8.0.0",
 		-- dependencies = {
 		-- 	"luarocks.nvim",
 		-- },
 		config = function()
 			require("configs.neorg")
 		end,
-		lazy = false,
 	},
 
 	-- NOTE: Themes
