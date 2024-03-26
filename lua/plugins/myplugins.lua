@@ -468,9 +468,9 @@ local plugins = {
 	-- NOTE: neorg
 	{
 		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
+		-- build = ":Neorg sync-parsers",
 		cmd = "Neorg",
-		version = "v8.0.0",
+		version = "v7.0.0",
 		-- dependencies = {
 		-- 	"luarocks.nvim",
 		-- },
