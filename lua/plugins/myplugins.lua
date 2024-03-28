@@ -1,11 +1,27 @@
 local overrides = require("configs.overrides")
 
 local plugins = {
+	-- lazy.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		config = function()
+			require("configs.noice")
+		end,
+	},
+
 	-- NOTE: nvim-neoclip
 	{
 		"AckslD/nvim-neoclip.lua",
-		requires = {
-			{ "nvim-telescope/telescope.nvim" },
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
 		},
 		config = function()
 			require("neoclip").setup({
@@ -215,18 +231,6 @@ local plugins = {
 			vim.keymap.set("n", "zM", function()
 				require("ufo").closeAllFolds()
 			end)
-			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-			-- capabilities.textDocument.foldingRange = {
-			-- 	dynamicRegistration = false,
-			-- 	lineFoldingOnly = true,
-			-- }
-			-- local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-			-- for _, ls in ipairs(language_servers) do
-			-- 	require("lspconfig")[ls].setup({
-			-- 		capabilities = capabilities,
-			-- 		-- you can add other fields for setting up lsp server in this table
-			-- 	})
-			-- end
 		end,
 	},
 
@@ -261,33 +265,7 @@ local plugins = {
 		lazy = true,
 		event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 		config = function()
-			local lint = require("lint")
-
-			lint.linters_by_ft = {
-				python = { "pylint" },
-				cpp = { "clangtidy", "cpplint", "cppcheck" },
-				bash = { "shellcheck" },
-			}
-
-			lint.linters.clangtidy.args = {
-				"-extra-arg=-std=c++20",
-			}
-
-			-- lint.linters.cppcheck.args = {
-			-- 	"--std=c++20",
-			-- 	"--check-level=exhaustive",
-			-- }
-
-			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-				group = lint_augroup,
-				callback = function()
-					lint.try_lint()
-				end,
-			})
-
-			local ns = require("lint").get_namespace("my_linter_name")
-			vim.diagnostic.config({ virtual_text = true }, ns)
+			require("configs.nvim-lint")
 		end,
 	},
 
