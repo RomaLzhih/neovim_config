@@ -459,21 +459,21 @@ local plugins = {
 		},
 	},
 
-	-- {
-	-- 	"vhyrro/luarocks.nvim",
-	-- 	priority = 1000, -- We'd like this plugin to load first out of the rest
-	-- 	config = true, -- This automatically runs `require("luarocks-nvim").setup()`
-	-- },
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000, -- We'd like this plugin to load first out of the rest
+		config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+	},
 
 	-- NOTE: neorg
 	{
 		"nvim-neorg/neorg",
-		-- build = ":Neorg sync-parsers",
 		cmd = "Neorg",
-		version = "v7.0.0",
-		-- dependencies = {
-		-- 	"luarocks.nvim",
-		-- },
+		-- build = ":Neorg sync-parsers",
+		version = "*",
+		dependencies = {
+			"luarocks.nvim",
+		},
 		config = function()
 			require("configs.neorg")
 		end,
