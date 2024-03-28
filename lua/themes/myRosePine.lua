@@ -66,6 +66,7 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
+		["@type"] = { fg = M.base_16.base0A },
 		["@parameter"] = { fg = M.base_16.base08, bold = true, italic = false },
 		["@function.method.call"] = { fg = M.base_30.cyan },
 		["@property"] = { fg = M.base_30.cyan },

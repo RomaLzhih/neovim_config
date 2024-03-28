@@ -72,6 +72,7 @@ M.polish_hl = {
 		["@punctuation.bracket"] = { fg = M.base_16.base07 },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },
+		["@type"] = { fg = M.base_16.base0A },
 	},
 }
 M.type = "dark"

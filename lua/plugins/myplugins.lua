@@ -118,16 +118,16 @@ local plugins = {
 	},
 
 	-- NOTE: indent
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			scope = { show_start = false, show_end = false, show_exact_scope = false },
-			indent = { tab_char = "▎" },
-		},
-
-		lazy = false,
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	opts = {
+	-- 		scope = { show_start = false, show_end = false, show_exact_scope = false },
+	-- 		indent = { tab_char = "▎" },
+	-- 	},
+	--
+	-- 	lazy = false,
+	-- },
 
 	-- NOTE: neoscroll.nvim
 	{
@@ -486,6 +486,10 @@ local plugins = {
 			vim.g.gruvbox_contrast_dark = "medium"
 			-- vim.cmd.colorscheme "gruvbox"
 		end,
+	},
+
+	{
+		"rebelot/kanagawa.nvim",
 	},
 
 	{
