@@ -38,7 +38,7 @@ M.mason = {
 		"pyright",
 		"shfmt",
 		"ltex-ls",
-    "clang-format",
+		"clang-format",
 		-- "r-languageserver",
 		"shellcheck",
 	},

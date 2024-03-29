@@ -42,7 +42,7 @@ end, { desc = "Un-linting" })
 map("n", "<A-q>", "za", { desc = "Toggle all folding under cursor" })
 
 -- NOTE: search
-map("n", "/", "<Plug>(easymotion-sn)", { desc = "easy motion n char search" })
+-- map("n", "/", "<Plug>(easymotion-sn)", { desc = "easy motion n char search" })
 
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })

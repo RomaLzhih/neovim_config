@@ -1,7 +1,16 @@
 local overrides = require("configs.overrides")
+local flash_opt = require("configs.flash")
 
 local plugins = {
-	-- lazy.nvim
+	-- NOTE: flash
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = flash_opt.opts,
+		keys = flash_opt.keys,
+	},
+
+	-- NOTE: noice.nvim
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -134,16 +143,16 @@ local plugins = {
 	},
 
 	-- NOTE: indent
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	opts = {
-	-- 		scope = { show_start = false, show_end = false, show_exact_scope = false },
-	-- 		indent = { tab_char = "▎" },
-	-- 	},
-	--
-	-- 	lazy = false,
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			scope = { show_start = false, show_end = false, show_exact_scope = false },
+			indent = { tab_char = "▎" },
+		},
+
+		lazy = false,
+	},
 
 	-- NOTE: neoscroll.nvim
 	{
@@ -176,12 +185,6 @@ local plugins = {
 		config = function()
 			require("mini.cursorword").setup()
 		end,
-		lazy = false,
-	},
-
-	-- NOTE: vim-easymotion
-	{
-		"easymotion/vim-easymotion",
 		lazy = false,
 	},
 
@@ -273,33 +276,6 @@ local plugins = {
 	{
 		"kevinhwang91/nvim-bqf",
 		ft = "qf",
-	},
-
-	-- NOTE: hop
-	{
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
-		config = function()
-			require("hop").setup({})
-		end,
-		init = function()
-			-- place this in one of your configuration file(s)
-			local hop = require("hop")
-			local directions = require("hop.hint").HintDirection
-			vim.keymap.set("", "f", function()
-				hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-			end, { remap = true })
-			vim.keymap.set("", "F", function()
-				hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
-			end, { remap = true })
-			vim.keymap.set("", "t", function()
-				hop.hint_char1({ direction = directions.AFTER_CURSOR, hint_offset = -1, current_line_only = true })
-			end, { remap = true })
-			vim.keymap.set("", "T", function()
-				hop.hint_char1({ direction = directions.BEFORE_CURSOR, hint_offset = 1, current_line_only = true })
-			end, { remap = true })
-		end,
-		lazy = true,
 	},
 
 	-- NOTE: Nvim-R
