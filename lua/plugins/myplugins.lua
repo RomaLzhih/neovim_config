@@ -2,6 +2,11 @@ local overrides = require("configs.overrides")
 local flash_opt = require("configs.flash")
 
 local plugins = {
+	{
+		"famiu/bufdelete.nvim",
+		lazy = false,
+	},
+
 	-- NOTE: flash
 	{
 		"folke/flash.nvim",

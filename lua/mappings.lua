@@ -7,6 +7,7 @@ map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 map("n", "<leader>pl", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
+map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
 
 -- NOTE: terminal
 map({ "n", "t" }, "<A-w>", function()

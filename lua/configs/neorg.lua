@@ -26,6 +26,9 @@ neorg.setup({
 			-- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
 			config = {
 				default_keybinds = true,
+				hook = function(keybinds)
+					keybinds.map("norg", "n", "lg", ":Neorg keybind all core.looking-glass.magnify-code-block")
+				end,
 			},
 		},
 	},
