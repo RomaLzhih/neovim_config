@@ -166,8 +166,9 @@ local plugins = {
 			require("cinnamon").setup({
 				extra_keymaps = true,
 				override_keymaps = true,
+				extended_keymaps = false, -- Create extended keymaps.
 				max_length = 500,
-				-- scroll_limit = -1,
+				scroll_limit = 150,
 			})
 		end,
 		lazy = false,
@@ -178,7 +179,7 @@ local plugins = {
 		"goolord/alpha-nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("alpha").setup(require("alpha.themes.startify").config)
+			require("configs.alpha-nvim")
 		end,
 		lazy = false,
 	},
