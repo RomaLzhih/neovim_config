@@ -7,13 +7,41 @@ lint.linters_by_ft = {
 }
 
 lint.linters.clangtidy.args = {
+	function()
+		if vim.fn.isdirectory("build") == 1 then
+			return "-p build"
+		else
+			return ""
+		end
+	end,
+	"--quiet",
+	"--fix",
+	"--fix-notes",
+	"--format-style=file",
 	"-extra-arg=-std=c++20",
 }
 
--- lint.linters.cppcheck.args = {
--- 	"--std=c++20",
--- 	"--check-level=exhaustive",
--- }
+lint.linters.cppcheck.args = {
+	"--enable=warning,style,performance,information",
+	"--inline-suppr",
+	"--max-configs=1",
+	function()
+		if vim.fn.isdirectory("build") == 1 then
+			return "--cppcheck-build-dir=build"
+		else
+			return ""
+		end
+	end,
+	function()
+		if vim.bo.filetype == "cpp" then
+			return "--language=c++"
+		else
+			return "--language=c"
+		end
+	end,
+	"--quiet",
+	"--template={file}:{line}:{column}: [{id}] {severity}: {message}",
+}
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
@@ -23,5 +51,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 	end,
 })
 
-local ns = require("lint").get_namespace("my_linter_name")
-vim.diagnostic.config({ virtual_text = true }, ns)
+local pylint = require("lint").get_namespace("pylint")
+vim.diagnostic.config({
+	virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
+	signs = { severity = { min = vim.diagnostic.severity.HINT } },
+	underline = false,
+}, pylint)
+
+local cpplint = require("lint").get_namespace("cpplint")
+vim.diagnostic.config({
+	virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
+	signs = { severity = { min = vim.diagnostic.severity.HINT } },
+	underline = false,
+}, cpplint)

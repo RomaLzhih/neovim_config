@@ -1,5 +1,11 @@
 require("nvchad.mappings")
 
+-- Disable mappings
+local nomap = vim.keymap.del
+nomap("n", "<C-n>")
+nomap("n", "<C-c>")
+nomap({ "n", "t" }, "<A-h>")
+
 -- Enabled mappings
 local map = vim.keymap.set
 map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
@@ -8,6 +14,9 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 map("n", "<leader>pl", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
 map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
+map("n", "<A-h>", function()
+	require("tmux").resize_left()
+end, { desc = "tmux resoze_left()" })
 
 -- NOTE: terminal
 map({ "n", "t" }, "<A-w>", function()
@@ -116,12 +125,6 @@ map("n", "<C-A-n>", function()
 	harpoon:list():next()
 end, { desc = "harpoon next" })
 
--- Disable mappings
-local nomap = vim.keymap.del
-
-nomap("n", "<C-n>")
-nomap("n", "<C-c>")
-nomap({ "n", "t" }, "<A-h>")
 -- nomap("n", "<leader>fm")
 -- nomap("n", "<leader>hp")
 -- nomap("n", "<leader>ha")
