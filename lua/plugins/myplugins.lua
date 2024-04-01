@@ -297,10 +297,10 @@ local plugins = {
 	-- NOTE: Nvim-R
 	{
 		"jalvesaq/Nvim-R",
+		ft = { "rmd", "r" },
 		config = function()
 			R_assign = false
 		end,
-		lazy = false,
 	},
 
 	-- NOTE: vim latex
