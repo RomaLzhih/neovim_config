@@ -57,6 +57,7 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
+		["keyword"] = { fg = M.base_16.base08 },
 		["@number"] = { fg = M.base_16.base0F },
 		["@property"] = { fg = "#e6c384" },
 		["@type"] = { fg = "#7aa89f" },
@@ -64,14 +65,10 @@ M.polish_hl = {
 		["@punctuation.bracket"] = { fg = "#9cabca" },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 	},
-
-	-- syntax = {
-	-- 	Number = { fg = M.base_30.baby_pink },
-	-- },
 }
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "mykanagawa")
+M = require("base46").override_theme(M, "myKanagawa")
 
 return M
