@@ -51,9 +51,6 @@ end, { desc = "Un-linting" })
 -- NOTE: toggle fold
 map("n", "<A-q>", "za", { desc = "Toggle all folding under cursor" })
 
--- NOTE: search
--- map("n", "/", "<Plug>(easymotion-sn)", { desc = "easy motion n char search" })
-
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })
 map("n", "<leader>oc", "<cmd> Lspsaga outgoing_calls <CR>", { desc = "lsp saga outgoing calls" })
@@ -64,6 +61,7 @@ map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" }
 map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
 map("n", "<leader>wd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
+map("n", "<leader>sbd", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga rename" })
 
 -- NOTE: LSP motion
 map("n", "gD", function()
@@ -124,13 +122,3 @@ end, { desc = "harpoon previous" })
 map("n", "<C-A-n>", function()
 	harpoon:list():next()
 end, { desc = "harpoon next" })
-
--- nomap("n", "<leader>fm")
--- nomap("n", "<leader>hp")
--- nomap("n", "<leader>ha")
--- nomap("n", "<leader>hm")
--- nomap("n", "<leader>hq}")
--- nomap("n", "<leader>hw")
--- nomap("n", "<leader>he")
--- nomap("n", "<C-A-p>")
--- nomap("n", "<C-A-n>")
