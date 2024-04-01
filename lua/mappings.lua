@@ -2,9 +2,7 @@ require("nvchad.mappings")
 
 -- Disable mappings
 local nomap = vim.keymap.del
-nomap("n", "<C-n>")
 nomap("n", "<C-c>")
-nomap({ "n", "t" }, "<A-h>")
 
 -- Enabled mappings
 local map = vim.keymap.set
@@ -17,6 +15,7 @@ map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close 
 map("n", "<A-h>", function()
 	require("tmux").resize_left()
 end, { desc = "tmux resoze_left()" })
+map("n", "<C-n>", "<Plug>(vm-find-word)", { desc = "visual-multi-find-word" })
 
 -- NOTE: terminal
 map({ "n", "t" }, "<A-w>", function()
