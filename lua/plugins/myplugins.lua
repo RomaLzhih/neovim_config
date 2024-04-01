@@ -2,43 +2,6 @@ local overrides = require("configs.overrides")
 local flash_opt = require("configs.flash")
 
 local plugins = {
-	-- {
-	-- 	"folke/trouble.nvim",
-	-- 	branch = "dev", -- IMPORTANT!
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>xx",
-	-- 			"<cmd>Trouble diagnostics toggle<cr>",
-	-- 			desc = "Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xX",
-	-- 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-	-- 			desc = "Buffer Diagnostics (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cs",
-	-- 			"<cmd>Trouble symbols toggle focus=false<cr>",
-	-- 			desc = "Symbols (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>cl",
-	-- 			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-	-- 			desc = "LSP Definitions / references / ... (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xL",
-	-- 			"<cmd>Trouble loclist toggle<cr>",
-	-- 			desc = "Location List (Trouble)",
-	-- 		},
-	-- 		{
-	-- 			"<leader>xQ",
-	-- 			"<cmd>Trouble qflist toggle<cr>",
-	-- 			desc = "Quickfix List (Trouble)",
-	-- 		},
-	-- 	},
-	-- 	opts = {}, -- for default options, refer to the configuration section for custom setup.
-	-- },
 
 	-- NOTE: delete a buffer and close the window
 	{
@@ -343,45 +306,10 @@ local plugins = {
 	-- NOTE: vim latex
 	{
 		"lervag/vimtex",
+		ft = { "tex", "bib" },
 		init = function()
-			-- vim.g.vimtex_view_general_viewer = "sioyek"
-			-- vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
-			vim.g.vimtex_view_method = "sioyek"
-			vim.g.vimtex_quickfix_open_on_warning = 0
-			-- vim.cmd "let g:vimtex_compiler_latexmk = {'continuous':'0'}"
-			vim.g.tex_use_latexmk = 0
-			vim.api.nvim_exec(
-				[[
-        let s:pdflatex = 'pdflatex -file-line-error -interaction=nonstopmode ' .
-              \ '-halt-on-error -synctex=1 -output-directory=%:h %'
-        let s:latexmk = 'latexmk -pdf -output-directory=%:h %'
-        
-        function! s:TexToggleLatexmk() abort
-          if g:tex_use_latexmk  
-            let g:tex_use_latexmk = 0
-          else  
-            let g:tex_use_latexmk = 1
-          endif
-          call s:TexSetMakePrg()  
-        endfunction
-        
-        function! s:TexSetMakePrg() abort
-          if g:tex_use_latexmk
-            let &l:makeprg = expand(s:latexmk)
-          else
-            let &l:makeprg = expand(s:pdflatex)
-          endif
-        endfunction
-        
-        nmap <localleader>tl <Plug>TexToggleLatexmk
-        nnoremap <script> <Plug>TexToggleLatexmk <SID>TexToggleLatexmk
-        nnoremap <SID>TexToggleLatexmk :call <SID>TexToggleLatexmk()<CR>
-        ]],
-				false
-			)
-			-- vim.g.vimtex_compiler_method = "pdflatex"
+			require("configs.vimtex")
 		end,
-		lazy = false,
 	},
 
 	-- NOTE: surrounds
@@ -390,9 +318,7 @@ local plugins = {
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
+			require("nvim-surround").setup({})
 		end,
 	},
 
@@ -407,6 +333,7 @@ local plugins = {
 
 	-- NOTE: rainbow_csv
 	{
+		ft = { "csv" },
 		"mechatroner/rainbow_csv",
 	},
 

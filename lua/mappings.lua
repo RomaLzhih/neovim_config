@@ -59,7 +59,7 @@ map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp 
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
 map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
-map("n", "<leader>wd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
+map("n", "<leader>swd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
 map("n", "<leader>sbd", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga rename" })
 
 -- NOTE: LSP motion
