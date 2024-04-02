@@ -6,21 +6,35 @@ nomap("n", "<C-c>")
 
 -- Enabled mappings
 local map = vim.keymap.set
-map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
+
+-- NOTE: Motion
+map("n", "<C-e>", "$", { desc = "End of line" })
+map("n", "<C-q>", "0", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
-map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
-map("n", "<leader>pl", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
-map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
-map("n", "<A-h>", function()
-	require("tmux").resize_left()
-end, { desc = "tmux resoze_left()" })
-map("n", "<C-n>", "<Plug>(vm-find-word)", { desc = "visual-multi-find-word" })
 
--- NOTE: terminal
+-- NOTE: edit
+map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
+map("n", "<leader>pl", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
+map("n", "<C-n>", "<Plug>(vm-find-word)", { desc = "visual-multi-find-word" })
+map(
+	"n",
+	"<C-m>",
+	'yypk <BAR> <cmd>lua require("Comment.api").toggle.linewise.current() <CR> <BAR> j',
+	{ desc = "Copy and Comment line" }
+)
+
+-- NOTE: Nvim tree
+map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
+
+-- NOTE: terminal and buffer
 map({ "n", "t" }, "<A-w>", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
 end, { desc = "Toggle horizontal term" })
+map("n", "<A-h>", function()
+	require("tmux").resize_left()
+end, { desc = "tmux resoze_left()" })
+map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
 
 -- NOTE: format
 map("n", "<leader>fm", function()
@@ -32,7 +46,7 @@ map("n", "<C-f>", function()
 	require("before").jump_to_last_edit()
 end, { desc = "Jump to last edit" })
 
-map("n", "<C-b>", function()
+map("n", "<C-S-f>", function()
 	require("before").jump_to_next_edit()
 end, { desc = "Jump to last edit" })
 
