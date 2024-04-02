@@ -18,7 +18,11 @@ lint.linters.clangtidy.args = {
 	"--fix",
 	"--fix-notes",
 	"--format-style=file",
-	"-extra-arg=-std=c++20",
+	"--extra-arg=-std=c++20",
+}
+
+lint.linters.cpplint.args = {
+	"--line-length=120",
 }
 
 lint.linters.cppcheck.args = {
