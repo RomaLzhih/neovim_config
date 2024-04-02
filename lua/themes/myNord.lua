@@ -73,6 +73,7 @@ M.polish_hl = {
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },
 		["@type"] = { fg = M.base_16.base0A },
+		["@macro"] = { fg = M.base_16.base0D, italic = true },
 	},
 }
 M.type = "dark"
