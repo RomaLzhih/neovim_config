@@ -8,8 +8,8 @@ nomap("n", "<C-c>")
 local map = vim.keymap.set
 
 -- NOTE: Motion
-map("n", "<C-e>", "$", { desc = "End of line" })
-map("n", "<C-q>", "0", { desc = "Begining of line" })
+map({ "n", "i", "v" }, "<C-e>", "$", { desc = "End of line" })
+map({ "n", "i", "v" }, "<C-q>", "0", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
