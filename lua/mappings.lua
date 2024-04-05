@@ -11,8 +11,8 @@ local map = vim.keymap.set
 map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
 
 -- NOTE: Motion
-map({ "n", "i", "v" }, "<C-e>", "g_", { desc = "End of line" })
-map({ "n", "i", "v" }, "<C-q>", "^", { desc = "Begining of line" })
+map({ "n", "i", "v" }, "<C-e>", "<END>", { desc = "End of line" })
+map({ "n", "i", "v" }, "<C-q>", "<HOME>", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
