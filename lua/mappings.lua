@@ -7,6 +7,9 @@ nomap("n", "<C-c>")
 -- Enabled mappings
 local map = vim.keymap.set
 
+-- NOTE: Command
+map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
+
 -- NOTE: Motion
 map({ "n", "i", "v" }, "<C-e>", "g_", { desc = "End of line" })
 map({ "n", "i", "v" }, "<C-q>", "^", { desc = "Begining of line" })
