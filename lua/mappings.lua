@@ -78,6 +78,7 @@ map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline"
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
 map("n", "<leader>swd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
 map("n", "<leader>sbd", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga rename" })
+map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
 -- NOTE: LSP motion
 map("n", "gD", function()
