@@ -98,7 +98,7 @@ vim.api.nvim_set_keymap("i", "<C-d>", "<cmd>lua EscapePair()<CR>", { noremap = t
 if vim.g.neovide then
 	-- Put anything you want to happen only in Neovide here
 	vim.o.guifont = "JetBrainsMono NF:h11"
-	vim.g.neovide_transparency = 0.85
+	vim.g.neovide_transparency = 0.95
 	vim.g.neovide_cursor_animation_length = 0.1
 	vim.g.neovide_cursor_trail_size = 0.5
 	vim.g.neovide_cursor_vfx_mode = "Railgun"

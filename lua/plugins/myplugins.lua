@@ -1,5 +1,6 @@
 local overrides = require("configs.overrides")
 local flash_opt = require("configs.flash")
+local has_neovide = vim.g.neovide
 
 local plugins = {
 
@@ -181,7 +182,7 @@ local plugins = {
 				scroll_limit = 150,
 			})
 		end,
-		lazy = false,
+		lazy = has_neovide ~= nil,
 	},
 
 	-- NOTE: alpha-nvim
