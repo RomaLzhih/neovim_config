@@ -109,7 +109,7 @@ map("n", "<leader>cm", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
 local harpoon = require("harpoon")
 
 map("n", "<leader>ha", function()
-	harpoon:list():append()
+	harpoon:list():add()
 end, { desc = "harpoon add" })
 
 map("n", "<leader>hm", function()
