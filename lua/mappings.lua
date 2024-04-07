@@ -139,3 +139,39 @@ end, { desc = "harpoon previous" })
 map("n", "<C-A-n>", function()
 	harpoon:list():next()
 end, { desc = "harpoon next" })
+
+-- NOTE: debug
+map("n", "<leader>B", function()
+	require("dap").toggle_breakpoint()
+end, { desc = "debug: toggle breakpoint" })
+
+map("n", "<leader>go", function()
+	require("dap").continue()
+end, { desc = "debug: launch debugging sesstion" })
+
+map("n", "<F10>", function()
+	require("dap").step_over()
+end, { desc = "debug: step over" })
+
+map("n", "<F11>", function()
+	require("dap").step_into()
+end, { desc = "debug: step into" })
+
+map("n", "<leader>dl", function()
+	require("dap").run_last()
+end, { desc = "debug: run last" })
+
+map("n", "<leader>dh", function()
+	require("dap").hover()
+end, { desc = "debug: hover" })
+
+map("n", "<leader>dp", function()
+	require("dap").preview()
+end, { desc = "debug: preview" })
+
+map(
+	"n",
+	"<leader>dc",
+	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dap").close()',
+	{ desc = "debug: terminate and close" }
+)
