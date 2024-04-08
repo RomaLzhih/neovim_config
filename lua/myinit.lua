@@ -57,6 +57,14 @@ for name, icon in pairs(symbols) do
 	vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
 end
 
+-- NOTE: auto reload file change
+vim.cmd([[
+  set autoread
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+	autocmd FileChangedShellPost *
+        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+]])
+
 -- NOTE: limit completion items
 vim.opt.pumheight = 10
 
