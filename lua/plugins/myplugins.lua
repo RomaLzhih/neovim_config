@@ -493,6 +493,13 @@ local plugins = {
 		"rose-pine/neovim",
 		name = "rose-pine",
 	},
+
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 }
 
 return plugins

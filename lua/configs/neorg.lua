@@ -1,4 +1,5 @@
 local neorg = require("neorg")
+local indent_value = 2
 
 neorg.setup({
 	load = {
@@ -29,6 +30,23 @@ neorg.setup({
 				hook = function(keybinds)
 					keybinds.map("norg", "n", "lg", ":Neorg keybind all core.looking-glass.magnify-code-block")
 				end,
+			},
+		},
+		["core.esupports.indent"] = {
+			config = {
+				indents = {
+					_ = { indent = indent_value },
+					heading1 = { indent = 0 * indent_value },
+					heading2 = { indent = 1 * indent_value },
+					heading3 = { indent = 2 * indent_value },
+					heading4 = { indent = 3 * indent_value },
+					heading5 = { indent = 4 * indent_value },
+					heading6 = { indent = 5 * indent_value },
+					paragraph_segment = { indent = indent_value },
+					ranged_tag = { indent = indent_value },
+					ranged_tag_content = { indent = indent_value },
+					strong_paragraph_delimiter = { indent = indent_value },
+				},
 			},
 		},
 	},
