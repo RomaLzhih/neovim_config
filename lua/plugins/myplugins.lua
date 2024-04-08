@@ -4,6 +4,12 @@ local has_neovide = vim.g.neovide
 
 local plugins = {
 	{
+		"sindrets/diffview.nvim",
+		lazy = false,
+	},
+
+	-- NOTE: nvim-dap-ui
+	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
@@ -23,6 +29,7 @@ local plugins = {
 		end,
 	},
 
+	-- NOTE: mason-dap-ui
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		event = "VeryLazy",
@@ -33,8 +40,14 @@ local plugins = {
 		opts = {
 			handlers = {},
 		},
+		config = function()
+			require("mason-nvim-dap").setup({
+				ensure_installed = { "codelldb" },
+			})
+		end,
 	},
 
+	-- NOTE: dap
 	{
 		"mfussenegger/nvim-dap",
 		config = function()

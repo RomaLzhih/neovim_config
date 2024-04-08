@@ -11,6 +11,7 @@ M.treesitter = {
 		"bash",
 		"markdown",
 		"markdown_inline",
+		"norg",
 	},
 	indent = {
 		enable = true,
@@ -39,6 +40,7 @@ M.mason = {
 		"shfmt",
 		"ltex-ls",
 		"clang-format",
+		"black",
 		-- "r-languageserver",
 		"shellcheck",
 	},
