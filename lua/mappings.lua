@@ -20,7 +20,6 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 -- NOTE: edit
 map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>pl", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
-map("n", "<C-n>", "<Plug>(vm-find-word)", { desc = "visual-multi-find-word" })
 map(
 	"n",
 	"<C-m>",
@@ -35,7 +34,10 @@ map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 map({ "n", "t" }, "<A-w>", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
 end, { desc = "Toggle horizontal term" })
-map("t", "<C-n>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
+map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal" })
+map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
+map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Switch Window down in terminal" })
+map("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Switch Window up in terminal" })
 map("n", "<A-h>", function()
 	require("tmux").resize_left()
 end, { desc = "tmux resoze_left()" })
@@ -174,6 +176,6 @@ end, { desc = "debug: preview" })
 map(
 	"n",
 	"<leader>dc",
-	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dap").close()',
+	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dap").close() <CR>',
 	{ desc = "debug: terminate and close" }
 )

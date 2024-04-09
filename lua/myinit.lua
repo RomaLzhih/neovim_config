@@ -22,9 +22,6 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]
 
-vim.g.VM_maps["Find Under"] = "<C-n>"
-vim.g.VM_maps["Find Subword Under"] = "<C-n>"
-
 -- NOTE: enable cursoreline
 vim.o.cursorlineopt = "number,line"
 
@@ -77,6 +74,10 @@ vim.cmd("command! W write")
 -- NOTE: ignore the smartcase
 vim.cmd([[
 set ignorecase smartcase
+]])
+
+vim.cmd([[
+autocmd BufWinEnter,WinEnter term://* startinsert
 ]])
 
 -- NOTE: jump out of the bracket
