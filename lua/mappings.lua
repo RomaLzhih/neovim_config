@@ -12,8 +12,8 @@ map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
 
 -- NOTE: Motion
-map({ "n", "i", "v" }, "<C-e>", "<END>", { desc = "End of line" })
-map({ "n", "i", "v" }, "<C-q>", "<HOME>", { desc = "Begining of line" })
+map({ "n", "i", "v", "o" }, "<C-e>", "<END>", { desc = "End of line" })
+map({ "n", "i", "v", "o" }, "<C-q>", "<HOME>", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
@@ -35,6 +35,7 @@ map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 map({ "n", "t" }, "<A-w>", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
 end, { desc = "Toggle horizontal term" })
+map("t", "<C-n>", "<C-\\><C-N>", { desc = "Terminal Escape terminal mode" })
 map("n", "<A-h>", function()
 	require("tmux").resize_left()
 end, { desc = "tmux resoze_left()" })
