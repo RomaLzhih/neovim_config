@@ -79,22 +79,6 @@ M.polish_hl = {
 		["@variable"] = { fg = "#9eacad" },
 		["@macro"] = { fg = M.base_16.base0D, italic = true },
 	},
-
-	syntax = {
-		Include = { fg = "#849900" },
-		Tag = { fg = "#849900" },
-	},
-
-	defaults = {
-		IncSearch = { fg = "#c94c16", bg = "none", standout = true },
-	},
-
-	lsp = {
-		DiagnosticVirtualTextError = { bg = "#570f0e", fg = M.base_30.red },
-		DiagnosticVirtualTextWarn = { bg = "#332700", fg = M.base_30.yellow },
-		DiagnosticVirtualTextInfo = { bg = "#0f3856", fg = M.base_30.blue },
-		DiagnosticVirtualTextHint = { bg = "#103a3c", fg = M.base_30.purple },
-	},
 }
 
 M.type = "dark"
