@@ -3,6 +3,35 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- NOTE: hardtime
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {
+			disabled_keys = {
+				["<Up>"] = {},
+				["<Down>"] = {},
+				["<Left>"] = {},
+				["<Right>"] = {},
+			},
+			max_count = 7,
+			disable_mouse = false,
+		},
+		lazy = false,
+	},
+
+	-- NOTE: nvim-spider
+	{
+		"chrisgrieser/nvim-spider",
+		lazy = true,
+		init = function()
+			vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+			vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+			vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+		end,
+	},
+
+	-- NOTE: the diffview plugin
 	{
 		"sindrets/diffview.nvim",
 		lazy = false,

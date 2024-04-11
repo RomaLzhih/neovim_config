@@ -38,15 +38,16 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal"
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Switch Window down in terminal" })
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Switch Window up in terminal" })
-map("n", "<A-h>", function()
-	require("tmux").resize_left()
-end, { desc = "tmux resoze_left()" })
+map("n", "<A-h>", "<cmd>lua require('tmux').resize_left()<CR>", { desc = "tmux resoze_left()" })
 map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
 
 -- NOTE: format
-map("n", "<leader>fm", function()
-	require("conform").format({ async = true, lsp_fallback = true })
-end, { desc = "conform formatting" })
+map(
+	"n",
+	"<leader>fm",
+	"<cmd>lua require('conform').format({ async = true, lsp_fallback = true }) <CR>",
+	{ desc = "conform formatting" }
+)
 
 -- NOTE: jump to previous edit
 map("n", "<C-f>", function()
