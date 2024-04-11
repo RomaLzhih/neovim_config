@@ -14,7 +14,7 @@ local plugins = {
 				["<Left>"] = {},
 				["<Right>"] = {},
 			},
-			max_count = 7,
+			max_count = 999,
 			disable_mouse = false,
 		},
 		lazy = false,
