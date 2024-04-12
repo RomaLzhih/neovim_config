@@ -36,6 +36,7 @@ local plugins = {
 			},
 			max_count = 15,
 			disable_mouse = false,
+			allow_different_key = true,
 		},
 		lazy = false,
 	},
