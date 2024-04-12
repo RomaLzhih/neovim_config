@@ -10,6 +10,7 @@ local map = vim.keymap.set
 -- NOTE: Command
 map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
+map("n", "<leader>cl", "<cmd>cclose", { desc = "close quickfix" })
 
 -- NOTE: Motion
 map({ "n", "i", "v", "o" }, "<C-e>", "<END>", { desc = "End of line" })

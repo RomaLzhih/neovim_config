@@ -386,6 +386,7 @@ local plugins = {
 		init = function()
 			require("configs.vimtex")
 		end,
+		lazy = false,
 	},
 
 	-- NOTE: surrounds

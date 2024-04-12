@@ -38,9 +38,17 @@ lspconfig.r_language_server.setup({
 })
 
 lspconfig.ltex.setup({
+	handlers = {
+		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+			-- Disable virtual_text
+			virtual_text = { severity = { min = vim.diagnostic.severity.WARN } },
+			underline = { severity = { min = vim.diagnostic.severity.INFO } },
+		}),
+	},
 	settings = {
 		ltex = {
 			checkFrequency = "save",
+			statusBarItem = "trye",
 		},
 	},
 })
