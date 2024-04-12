@@ -15,6 +15,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	command = "set conceallevel=3",
 })
 
+vim.g.VM_maps = {
+	["I BS"] = "", -- disable backspace mapping
+}
+
 -- NOTE: UFO folding
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
@@ -106,7 +110,8 @@ vim.api.nvim_set_keymap("i", "<C-d>", "<cmd>lua EscapePair()<CR>", { noremap = t
 -- NOTE: neovide
 if vim.g.neovide then
 	-- Put anything you want to happen only in Neovide here
-	vim.o.guifont = "JetBrainsMono NF:h11"
+	vim.o.guifont = "SauceCodePro Nerd Font:h12"
+	-- vim.o.guifont = "JetBrainsMono NF:h12"
 	vim.g.neovide_transparency = 0.95
 	vim.g.neovide_cursor_animation_length = 0.1
 	vim.g.neovide_cursor_trail_size = 0.5

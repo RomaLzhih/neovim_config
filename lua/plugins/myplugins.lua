@@ -3,6 +3,26 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- -- NOTE: vim-visual-multi
+	{
+		"mg979/vim-visual-multi",
+		lazy = false,
+	},
+
+	-- NOTE: better escape
+	{
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup({
+				mapping = { "jk", "jj" }, -- a table with mappings to use
+				timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+				clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+				keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
+			})
+		end,
+		lazy = false,
+	},
+
 	-- NOTE: hardtime
 	{
 		"m4xshen/hardtime.nvim",
@@ -14,7 +34,7 @@ local plugins = {
 				["<Left>"] = {},
 				["<Right>"] = {},
 			},
-			max_count = 999,
+			max_count = 15,
 			disable_mouse = false,
 		},
 		lazy = false,
@@ -280,12 +300,6 @@ local plugins = {
 		lazy = false,
 	},
 
-	-- NOTE: vim-visual-multi
-	{
-		"mg979/vim-visual-multi",
-		lazy = false,
-	},
-
 	-- NOTE: todo-comments
 	{
 		"folke/todo-comments.nvim",
@@ -443,7 +457,12 @@ local plugins = {
 		config = function()
 			require("codeium").setup({})
 		end,
-		lazy = false,
+		enable = function()
+			return not vim.fn.has("win32")
+		end,
+		lazy = function()
+			return vim.fn.has("win32")
+		end,
 	},
 
 	-- NOTE: configure cmp with copilot
