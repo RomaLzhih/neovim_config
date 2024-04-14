@@ -28,7 +28,12 @@ neorg.setup({
 			config = {
 				default_keybinds = true,
 				hook = function(keybinds)
-					keybinds.map("norg", "n", "lg", ":Neorg keybind all core.looking-glass.magnify-code-block")
+					keybinds.map(
+						"norg",
+						"n",
+						"<leader>lg",
+						"<cmd>Neorg keybind all core.looking-glass.magnify-code-block <CR>"
+					)
 				end,
 			},
 		},
