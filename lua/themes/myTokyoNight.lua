@@ -66,6 +66,7 @@ M.base_16 = {
 M.polish_hl = {
 	treesitter = {
 		["@parameter"] = { fg = "#d9d4cd", bold = true },
+		["@variable.parameter"] = { fg = "#d9d4cd", bold = true },
 		["@namespace"] = { fg = "#0db9d7" },
 		["@type"] = { fg = "#c0caf5" },
 		["@property"] = { fg = "#7dcfff" },
