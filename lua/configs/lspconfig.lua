@@ -41,7 +41,7 @@ lspconfig.texlab.setup({
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			-- Disable virtual_text
-			virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
+			virtual_text = false,
 		}),
 	},
 })
@@ -50,7 +50,7 @@ lspconfig.ltex.setup({
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			-- Disable virtual_text
-			virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
+			virtual_text = false,
 			underline = { severity = { min = vim.diagnostic.severity.INFO } },
 		}),
 	},
