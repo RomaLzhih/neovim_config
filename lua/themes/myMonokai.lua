@@ -77,6 +77,7 @@ M.polish_hl = {
 		["@operator"] = { fg = M.base_16.base05 },
 		["@variable"] = { fg = M.base_16.base05 },
 		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@keyword.repeat"] = { fg = M.base_16.base0E },
 	},
 }
 

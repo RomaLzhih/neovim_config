@@ -74,6 +74,7 @@ M.polish_hl = {
 		["@parameter"] = { fg = M.base_16.base08, bold = true },
 		["@type"] = { fg = M.base_16.base0A },
 		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@keyword.repeat"] = { fg = M.base_16.base0E },
 	},
 }
 M.type = "dark"

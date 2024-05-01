@@ -85,6 +85,7 @@ M.polish_hl = {
 		["@punctuation.bracket"] = { fg = M.base_30.purple },
 		["@tag.attribute"] = { fg = M.base_30.purple, italic = true, link = "" },
 		["@constructor.tsx"] = { link = "Tag" },
+		["@keyword.repeat"] = { fg = M.base_16.base0E },
 	},
 
 	telescope = {

@@ -70,6 +70,7 @@ M.polish_hl = {
 		["@namespace"] = { fg = M.base_16.base0A },
 		["@parameter"] = { fg = "#D7DBE0", bold = true },
 		["@variable.parameter"] = { fg = "#D7DBE0", bold = true },
+		["@keyword.repeat"] = { fg = M.base_16.base0E },
 		["@module"] = { fg = M.base_16.base0C },
 		["@constant"] = { fg = M.base_30.dark_purple },
 		["@punctuation.delimiter"] = { fg = M.base_16.base0E },
