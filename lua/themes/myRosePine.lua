@@ -72,6 +72,7 @@ M.polish_hl = {
 		["@property"] = { fg = M.base_30.cyan },
 		["@constant"] = { fg = M.base_30.orange, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
+		["@punctuation.bracket"] = { fg = M.base_16.base04 },
 		["@macro"] = { fg = M.base_16.base0D, italic = true },
 		["@namespace"] = { fg = M.base_16.base0A },
 	},
