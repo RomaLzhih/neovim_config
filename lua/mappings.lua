@@ -22,12 +22,12 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
 map({ "n", "v" }, "<C-n>", "<Plug>(vm-find-word)", { desc = "vm find word" })
--- map(
--- 	"n",
--- 	"<C-m>",
--- 	'yypk <BAR> <cmd>lua require("Comment.api").toggle.linewise.current() <CR> <BAR> j',
--- 	{ desc = "Copy and Comment line" }
--- )
+map(
+	"n",
+	"<C-m>",
+	'yypk <BAR> <cmd>lua require("Comment.api").toggle.linewise.current() <CR> <BAR> j',
+	{ desc = "Copy and Comment line" }
+)
 
 -- NOTE: Nvim tree
 map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
@@ -62,7 +62,7 @@ end, { desc = "Jump to last edit" })
 
 -- NOTE: lint
 map("n", "<leader>tl", function()
-	require("lint").linters_by_ft.cpp = { "clang-tidy", "cpplint", "cppcheck" }
+	require("lint").linters_by_ft.cpp = { "clangtidy", "cpplint", "cppcheck" }
 	require("lint").try_lint()
 end, { desc = "Linting" })
 
