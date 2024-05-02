@@ -37,6 +37,7 @@ local links = {
 	["@lsp.type.class"] = "@type",
 	["@lsp.type.enum"] = "@type",
 	["@lsp.type.interface"] = "@type",
+	["@lsp.type.typeParameter.cpp"] = "@type",
 	["@lsp.type.struct"] = "@structure",
 	["@lsp.type.parameter"] = "@parameter",
 	["@lsp.type.variable"] = "@variable",
