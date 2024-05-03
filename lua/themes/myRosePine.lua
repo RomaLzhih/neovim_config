@@ -66,15 +66,19 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
-		["@type"] = { fg = M.base_16.base0A },
-		["@parameter"] = { fg = M.base_16.base08, bold = true, italic = false },
-		["@function.method.call"] = { fg = M.base_30.cyan },
-		["@property"] = { fg = M.base_30.cyan },
-		["@constant"] = { fg = M.base_30.orange, italic = true },
+		["@type"] = { fg = M.base_16.base0C },
+		["@type.buildin"] = { fg = M.base_16.base0E },
+		["@namespace"] = { fg = M.base_16.base0C },
+		["@parameter"] = { fg = M.base_16_base0A, bold = true },
+		["@variable.parameter"] = { fg = M.base_16_base0A, bold = true },
+		["@module"] = { fg = M.base_16.base0C },
+		["@constant"] = { fg = M.base_30.dark_purple },
+		["@punctuation.delimiter"] = { fg = M.base_16.base04 },
+		["@punctuation.bracket"] = { fg = M.base_16_base04 },
+		["@operator"] = { fg = M.base_16.base0E },
+		["@variable"] = { fg = M.base_16.base08 },
+		["@macro"] = { fg = M.base_16.base0E, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
-		["@punctuation.bracket"] = { fg = M.base_16.base04 },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
-		["@namespace"] = { fg = M.base_16.base0A },
 	},
 }
 
