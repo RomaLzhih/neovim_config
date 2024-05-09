@@ -23,24 +23,6 @@ local plugins = {
 		lazy = false,
 	},
 
-	-- NOTE: hardtime
-	{
-		"m4xshen/hardtime.nvim",
-		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-		opts = {
-			disabled_keys = {
-				["<Up>"] = {},
-				["<Down>"] = {},
-				["<Left>"] = {},
-				["<Right>"] = {},
-			},
-			max_count = 15,
-			disable_mouse = false,
-			allow_different_key = true,
-		},
-		lazy = false,
-	},
-
 	-- NOTE: the diffview plugin
 	{
 		"sindrets/diffview.nvim",
