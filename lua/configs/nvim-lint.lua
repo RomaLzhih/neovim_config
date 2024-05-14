@@ -11,7 +11,7 @@ lint.linters.clangtidy.args = {
 		if vim.fn.isdirectory("build") == 1 then
 			return "-p build"
 		else
-			return ""
+			return nil
 		end
 	end,
 	"--quiet",
@@ -33,7 +33,7 @@ lint.linters.cppcheck.args = {
 		if vim.fn.isdirectory("build") == 1 then
 			return "--cppcheck-build-dir=build"
 		else
-			return ""
+			return nil
 		end
 	end,
 	function()
