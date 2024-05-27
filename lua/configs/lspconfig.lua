@@ -26,6 +26,15 @@ lspconfig.clangd.setup({
 	},
 })
 
+-- lspconfig.ccls.setup({
+-- 	init_options = {
+-- 		compilationDatabaseDirectory = "build",
+-- 		cache = {
+-- 			directory = ".ccls-cache",
+-- 		},
+-- 	},
+-- })
+
 lspconfig.r_language_server.setup({
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
