@@ -24,7 +24,7 @@ map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check"
 map({ "n", "v" }, "<C-n>", "<Plug>(vm-find-word)", { desc = "vm find word" })
 map(
 	"n",
-	"<C-m>",
+	"<leader>cc",
 	'yypk <BAR> <cmd>lua require("Comment.api").toggle.linewise.current() <CR> <BAR> j',
 	{ desc = "Copy and Comment line" }
 )

@@ -3,7 +3,13 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
-	-- -- NOTE: vim-visual-multi
+	-- NOTE: comment
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+	},
+	--
+	-- NOTE: vim-visual-multi
 	{
 		"mg979/vim-visual-multi",
 		lazy = false,
