@@ -243,11 +243,27 @@ local plugins = {
 		"declancm/cinnamon.nvim",
 		config = function()
 			require("cinnamon").setup({
-				extra_keymaps = true,
-				override_keymaps = true,
-				extended_keymaps = false, -- Create extended keymaps.
-				max_length = 500,
-				scroll_limit = 150,
+				keymaps = {
+					-- Enable the provided 'basic' keymaps
+					basic = true,
+					-- Enable the provided 'extra' keymaps
+					extra = true,
+				},
+				---@class ScrollOptions
+				options = {
+					-- Post-movement callback
+					callback = nil, ---@type function?
+					-- Delay between each movement step (in ms)
+					delay = 7,
+					max_delta = {
+						-- Maximum distance for line movements. Set to `nil` to disable
+						line = 150, ---@type number?
+						-- Maximum distance for column movements. Set to `nil` to disable
+						column = 150, ---@type number?
+						-- Maximum duration for a movement (in ms). Automatically adjusts the line delay
+						time = 500, ---@type number
+					},
+				},
 			})
 		end,
 		lazy = has_neovide ~= nil,
