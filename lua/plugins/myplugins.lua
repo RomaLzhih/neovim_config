@@ -254,7 +254,7 @@ local plugins = {
 						-- Maximum distance for line movements. Set to `nil` to disable
 						line = 150, ---@type number?
 						-- Maximum distance for column movements. Set to `nil` to disable
-						column = 150, ---@type number?
+						column = 0, ---@type number?
 						-- Maximum duration for a movement (in ms). Automatically adjusts the line delay
 						time = 500, ---@type number
 					},
