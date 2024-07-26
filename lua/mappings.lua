@@ -78,8 +78,14 @@ map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp 
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
 map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
-map("n", "<leader>swd", "<cmd> Lspsaga show_workspace_diagnostics <CR>", { desc = "lsp saga rename" })
-map("n", "<leader>sbd", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga rename" })
+map(
+	"n",
+	"<leader>sw",
+	"<cmd> Lspsaga show_workspace_diagnostics <CR>",
+	{ desc = "lsp saga show workspace diagnostics" }
+)
+map("n", "<leader>sb", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga show buffer diagnostics" })
+map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp saga show line diagnostics" })
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
 -- NOTE: LSP motion

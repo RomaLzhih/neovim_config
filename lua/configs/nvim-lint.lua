@@ -21,10 +21,6 @@ lint.linters.clangtidy.args = {
 	"--extra-arg=-std=c++20",
 }
 
-lint.linters.cpplint.args = {
-	"--line-length=120",
-}
-
 lint.linters.cppcheck.args = {
 	"--enable=warning,style,performance,information",
 	"--inline-suppr",
