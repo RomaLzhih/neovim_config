@@ -3,6 +3,14 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+		config = function()
+			require("Comment").setup()
+		end,
+	},
+
 	-- NOTE: Search and replace
 	{
 		"windwp/nvim-spectre",
