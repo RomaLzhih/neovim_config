@@ -3,7 +3,15 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
-	--
+	-- NOTE: Search and replace
+	{
+		"windwp/nvim-spectre",
+		event = "BufRead",
+		config = function()
+			require("spectre").setup()
+		end,
+	},
+
 	-- NOTE: vim-visual-multi
 	{
 		"mg979/vim-visual-multi",
