@@ -56,6 +56,7 @@ lspconfig.texlab.setup({
 })
 
 lspconfig.ltex.setup({
+	filetypes = { "markdown", "tex", "bib" },
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			-- Disable virtual_text

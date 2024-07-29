@@ -11,6 +11,7 @@ local plugins = {
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
+		lazy = false,
 	},
 
 	-- NOTE: better comment than buildin
