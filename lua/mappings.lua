@@ -22,7 +22,7 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
 map({ "n", "v" }, "<C-n>", "<Plug>(vm-find-word)", { desc = "vm find word" })
-map("n", "<leader>cc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
+map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
 
 -- NOTE: Nvim tree
 map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
@@ -152,6 +152,10 @@ end, { desc = "harpoon select 3" })
 map("n", "<leader>hr", function()
 	harpoon:list():select(4)
 end, { desc = "harpoon select 4" })
+
+map("n", "<leader>ht", function()
+	harpoon:list():select(5)
+end, { desc = "harpoon select 5" })
 
 map("n", "<C-A-p>", function()
 	harpoon:list():prev()
