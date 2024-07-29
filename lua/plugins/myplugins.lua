@@ -4,6 +4,17 @@ local has_neovide = vim.g.neovide
 
 local plugins = {
 	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+		config = true,
+	},
+
+	-- NOTE: better comment than buildin
+	{
 		"numToStr/Comment.nvim",
 		lazy = false,
 		config = function()
