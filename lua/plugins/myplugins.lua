@@ -3,6 +3,15 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+
+	-- Add or verify the nvim-autopairs plugin entry
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	},
+
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
