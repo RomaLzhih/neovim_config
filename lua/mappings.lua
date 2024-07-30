@@ -21,7 +21,8 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 -- NOTE: edit
 map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
-map({ "n", "v" }, "<C-n>", "<Plug>(vm-find-word)", { desc = "vm find word" })
+-- map({ "n", "v" }, "<C-n>", "<Plug>(vm-find-word)", { desc = "vm find word" })
+map({ "n", "v" }, "<C-n>", "<cmd>MCstart<cr>", { desc = "vm find word" })
 map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
 
 -- NOTE: Nvim tree
@@ -46,6 +47,10 @@ map(
 	{ desc = "conform formatting" }
 )
 
+-- NOTE: Neogit
+map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
+map("n", "<leader>diff", "<cmd> Neogit diff <CR>", { desc = "Open diff view" })
+
 -- NOTE: jump to previous edit
 map("n", "<C-f>", function()
 	require("before").jump_to_last_edit()
@@ -66,6 +71,7 @@ map("n", "<leader>ul", function()
 	require("lint").try_lint()
 end, { desc = "Un-linting" })
 
+-- NOTE: search and replace
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
 	desc = "Toggle Spectre",
 })

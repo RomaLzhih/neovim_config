@@ -3,8 +3,19 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- NOTE: Multicursor:
+	{
+		"smoka7/multicursors.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvimtools/hydra.nvim",
+		},
+		opts = {},
+		cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+		lazy = false,
+	},
 
-	-- Add or verify the nvim-autopairs plugin entry
+	-- NOTE: Add or verify the nvim-autopairs plugin entry
 	{
 		"windwp/nvim-autopairs",
 		config = function()
@@ -12,6 +23,7 @@ local plugins = {
 		end,
 	},
 
+	-- NOTE: Neogit
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
@@ -41,24 +53,12 @@ local plugins = {
 		end,
 	},
 
-	-- NOTE: vim-visual-multi
-	{
-		"mg979/vim-visual-multi",
-		lazy = false,
-	},
-
 	-- NOTE: better escape
 	{
 		"max397574/better-escape.nvim",
 		config = function()
 			require("better_escape").setup()
 		end,
-		lazy = false,
-	},
-
-	-- NOTE: the diffview plugin
-	{
-		"sindrets/diffview.nvim",
 		lazy = false,
 	},
 
