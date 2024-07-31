@@ -5,7 +5,7 @@ local M = {}
 local highlights = require("highlights")
 
 M.ui = {
-	theme = "myGruvbox",
+	theme = "myowl",
 	theme_toggle = { "myRosePine", "myRosePine" },
 	hl_override = highlights.override,
 	hl_add = highlights.add,
