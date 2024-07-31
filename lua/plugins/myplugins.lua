@@ -4,6 +4,7 @@ local has_neovide = vim.g.neovide
 
 local plugins = {
 	-- NOTE: Multicursor:
+
 	{
 		"smoka7/multicursors.nvim",
 		event = "VeryLazy",
@@ -17,10 +18,26 @@ local plugins = {
 
 	-- NOTE: Add or verify the nvim-autopairs plugin entry
 	{
+		"echasnovski/mini.pairs",
+		config = function()
+			require("mini.pairs").setup({
+				mappings = {
+					["$"] = { action = "open", pair = "$$", neigh_pattern = "[^\\]." },
+					["<"] = { action = "open", pair = "<>", neigh_pattern = "[^\\]." },
+					[">"] = { action = "close", pair = "<>", neigh_pattern = "[^\\]." },
+				},
+			})
+		end,
+		version = false,
+		lazy = false,
+	},
+
+	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
+		enabled = false,
 	},
 
 	-- NOTE: Neogit
