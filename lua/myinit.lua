@@ -44,7 +44,7 @@ local links = {
 	["@lsp.type.property"] = "@property",
 	["@lsp.type.enumMember"] = "@constant",
 	["@lsp.type.function"] = "@function",
-	["@lsp.type.method"] = "@method",
+	["@lsp.type.method"] = "@function",
 	["@lsp.type.macro"] = "@macro",
 	["@lsp.type.decorator"] = "@function",
 }
