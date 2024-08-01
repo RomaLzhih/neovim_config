@@ -3,8 +3,16 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			triggers = {
+				{ "<leader>", mode = { "n", "v" } },
+			},
+		},
+	},
 	-- NOTE: Multicursor:
-
 	{
 		"smoka7/multicursors.nvim",
 		event = "VeryLazy",
