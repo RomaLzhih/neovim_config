@@ -77,8 +77,9 @@ M.polish_hl = {
 		["@punctuation.bracket"] = { fg = "#9eacad" },
 		["@operator"] = { fg = M.base_16.base0E },
 		["@variable"] = { fg = "#9eacad" },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
+		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
 	},
 }
 

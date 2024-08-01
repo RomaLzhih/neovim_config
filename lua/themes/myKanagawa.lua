@@ -75,9 +75,10 @@ M.polish_hl = {
 		["@constant"] = { fg = M.base_16.base09 },
 		["@operator"] = { fg = "#c0a36e" },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@punctuation.bracket"] = { fg = "#9cabca" },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
+		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
 	},
 }
 

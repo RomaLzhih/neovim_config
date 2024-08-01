@@ -70,9 +70,10 @@ M.polish_hl = {
 		["@namespace"] = { fg = "#0db9d7" },
 		["@type"] = { fg = "#c0caf5" },
 		["@property"] = { fg = "#7dcfff" },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@type.builtin"] = { fg = "#bb9af7" },
 		["@keyword.repeat"] = { fg = "#bb9af7" },
+		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
 	},
 }
 

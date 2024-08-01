@@ -73,7 +73,7 @@ M.polish_hl = {
 		["@variable.builtin"] = { fg = M.base_30.teal },
 		["@type.builtin"] = { fg = M.base_30.nord_blue },
 		["@property"] = { fg = M.base_30.white },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@parameter"] = { bold = true },
 		["@function.call"] = { fg = M.base_30.purple },
 		["@operator"] = { fg = M.base_30.nord_blue },
@@ -86,6 +86,7 @@ M.polish_hl = {
 		["@tag.attribute"] = { fg = M.base_30.purple, italic = true, link = "" },
 		["@constructor.tsx"] = { link = "Tag" },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
+		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
 	},
 
 	telescope = {

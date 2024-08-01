@@ -73,8 +73,9 @@ M.polish_hl = {
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },
 		["@type"] = { fg = M.base_16.base0A },
-		["@macro"] = { fg = M.base_16.base0D, italic = true },
+		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
+		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
 	},
 }
 M.type = "dark"
