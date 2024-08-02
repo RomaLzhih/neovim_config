@@ -12,6 +12,7 @@ local map = vim.keymap.set
 -- NOTE: Command
 map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
+map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
 
 -- NOTE: Motion
