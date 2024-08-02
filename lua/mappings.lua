@@ -110,25 +110,17 @@ map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
 -- NOTE: LSP motion
-map("n", "gD", function()
-	vim.lsp.buf.declaration()
-end, { desc = "LSP declaration" })
-map("n", "gd", function()
-	vim.lsp.buf.definition()
-end, { desc = "LSP definition" })
-map("n", "gi", function()
-	vim.lsp.buf.implementation()
-end, { desc = "LSP implementation" })
-map("n", "<leader>td", function()
-	vim.lsp.buf.type_definition()
-end, { desc = "LSP definition type" })
+map("n", "gD", "<cmd> Trouble lsp_declarations <CR>", { desc = "LSP declaration" })
+map("n", "gd", "<cmd> Trouble lsp_definitions <CR>", { desc = "LSP definitions" })
+map("n", "gr", "<cmd> Trouble lsp_references <CR>", { desc = "LSP references" })
+map("n", "td", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
+map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
 
 -- NOTE: neorg
 map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
 map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work" })
 
 -- NOTE: telescope
-map("n", "<leader>cs", "<cmd> Telescope colorscheme <CR>", { desc = "Telescope colorscheme" })
 map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 
 -- NOTE: center buffer
