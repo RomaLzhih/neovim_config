@@ -36,6 +36,7 @@ local links = {
 	["@lsp.type.type"] = "@type",
 	["@lsp.type.class"] = "@type",
 	["@lsp.type.enum"] = "@type",
+	["@lsp.type.concept"] = "@macro",
 	["@lsp.type.interface"] = "@type",
 	["@lsp.type.typeParameter.cpp"] = "@type",
 	["@lsp.type.struct"] = "@structure",
@@ -111,8 +112,8 @@ vim.api.nvim_set_keymap("i", "<C-d>", "<cmd>lua EscapePair()<CR>", { noremap = t
 -- NOTE: neovide
 if vim.g.neovide then
 	-- Put anything you want to happen only in Neovide here
-	vim.o.guifont = "SauceCodePro Nerd Font:h12"
-	-- vim.o.guifont = "JetBrainsMono NF:h12"
+	-- vim.o.guifont = "SauceCodePro Nerd Font:h12"
+	vim.o.guifont = "JetBrainsMono NF:h12"
 	vim.g.neovide_transparency = 0.95
 	vim.g.neovide_cursor_animation_length = 0.1
 	vim.g.neovide_cursor_trail_size = 0.5
