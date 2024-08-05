@@ -113,7 +113,7 @@ map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 map("n", "gD", "<cmd> Trouble lsp_declarations <CR>", { desc = "LSP declaration" })
 map("n", "gd", "<cmd> Trouble lsp_definitions <CR>", { desc = "LSP definitions" })
 map("n", "gr", "<cmd> Trouble lsp_references <CR>", { desc = "LSP references" })
-map("n", "td", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
+map("n", "gt", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
 map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
 
 -- NOTE: neorg
