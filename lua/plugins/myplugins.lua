@@ -3,6 +3,20 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+
+	-- NOTE: better f/t jump
+	{
+		"jinh0/eyeliner.nvim",
+		config = function()
+			require("eyeliner").setup({
+				highlight_on_key = true,
+				dim = true,
+			})
+		end,
+		lazy = false,
+	},
+
+	-- NOTE:trouble
 	{
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -41,17 +55,18 @@ local plugins = {
 			},
 		},
 	},
+
 	-- NOTE: which key
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>",      mode = { "n", "v" } },
+				{ "<leader>", mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
-		keys = { '<leader>', '<localleader>' }
+		keys = { "<leader>", "<localleader>" },
 	},
 	-- NOTE: Multicursor:
 	{
@@ -69,8 +84,8 @@ local plugins = {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim",      -- required
-			"sindrets/diffview.nvim",     -- optional - Diff integration
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -407,8 +422,8 @@ local plugins = {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
-							{ text = { "%s" },                  click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+							{ text = { "%s" }, click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -566,12 +581,12 @@ local plugins = {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip",  priority = 9 },
-				{ name = "buffer",   priority = 9 },
+				{ name = "luasnip", priority = 9 },
+				{ name = "buffer", priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path",     priority = 8 },
-				{ name = "codeium",  priority = 0 },
-				{ name = "copilot",  priority = 0 },
+				{ name = "path", priority = 8 },
+				{ name = "codeium", priority = 0 },
+				{ name = "copilot", priority = 0 },
 			},
 		},
 	},
