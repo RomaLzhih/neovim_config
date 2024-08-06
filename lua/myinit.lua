@@ -5,7 +5,6 @@
 --   command = "tabdo wincmd =",
 -- })
 --
-
 -- NOTE: terminal colors
 vim.o.termguicolors = true
 
@@ -21,7 +20,7 @@ vim.g.VM_maps = {
 
 -- NOTE: UFO folding
 vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]
@@ -107,6 +106,7 @@ function EscapePair()
 		vim.api.nvim_win_set_cursor(0, { row, col + 1 })
 	end
 end
+
 vim.api.nvim_set_keymap("i", "<C-d>", "<cmd>lua EscapePair()<CR>", { noremap = true, silent = true })
 
 -- NOTE: neovide
