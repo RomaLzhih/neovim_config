@@ -8,7 +8,9 @@ M.opts = {
 			highlight = { backdrop = false },
 		},
 	},
+	jump = { autojump = true },
 	label = { style = "overlay", rainbow = { enable = true } },
+	char = { jump = { autojump = true } },
 }
 
 M.keys = {

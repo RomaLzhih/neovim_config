@@ -105,7 +105,7 @@ map(
 	"<cmd> Lspsaga show_workspace_diagnostics <CR>",
 	{ desc = "lsp saga show workspace diagnostics" }
 )
-map("n", "<leader>sb", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga show buffer diagnostics" })
+-- map("n", "<leader>sb", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga show buffer diagnostics" })
 map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp saga show line diagnostics" })
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
@@ -115,6 +115,13 @@ map("n", "gd", "<cmd> Trouble lsp_definitions <CR>", { desc = "LSP definitions" 
 map("n", "gr", "<cmd> Trouble lsp_references <CR>", { desc = "LSP references" })
 map("n", "gt", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
 map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
+
+--NOTE: diagnostics
+map("n", "<leader>xx", "<cmd>Trouble diagnotics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>sb", "<cmd>Trouble diagnotics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
+map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
 
 -- NOTE: neorg
 map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
