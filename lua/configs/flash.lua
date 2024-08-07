@@ -6,11 +6,12 @@ M.opts = {
 			jump_labels = true,
 			multi_line = false,
 			highlight = { backdrop = false },
+			jump = { autojump = true },
 		},
+		search = { enabled = true },
 	},
 	jump = { autojump = true },
 	label = { style = "overlay", rainbow = { enable = true } },
-	char = { jump = { autojump = true } },
 }
 
 M.keys = {
