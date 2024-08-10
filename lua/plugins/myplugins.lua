@@ -3,13 +3,39 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		opts = {},
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+		config = true,
+		lazy = false,
+	},
+
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			-- see below for full list of optional dependencies 👇
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "ziyang-obsidian",
+					path = "~/Dropbox/work-flow/obsidian/ziyang-obsidian",
+				},
+			},
+		},
+	},
 
 	-- NOTE:trouble
 	{
 		"folke/trouble.nvim",
 		opts = {
 			auto_close = true,
-			focus = true
+			focus = true,
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		lazy = false,
@@ -21,7 +47,7 @@ local plugins = {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>",      mode = { "n", "v" } },
+				{ "<leader>", mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -43,8 +69,8 @@ local plugins = {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim",      -- required
-			"sindrets/diffview.nvim",     -- optional - Diff integration
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -381,8 +407,8 @@ local plugins = {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
-							{ text = { "%s" },                  click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+							{ text = { "%s" }, click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -540,12 +566,12 @@ local plugins = {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip",  priority = 9 },
-				{ name = "buffer",   priority = 9 },
+				{ name = "luasnip", priority = 9 },
+				{ name = "buffer", priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path",     priority = 8 },
-				{ name = "codeium",  priority = 0 },
-				{ name = "copilot",  priority = 0 },
+				{ name = "path", priority = 8 },
+				{ name = "codeium", priority = 0 },
+				{ name = "copilot", priority = 0 },
 			},
 		},
 	},
