@@ -201,9 +201,13 @@ map("n", "<leader>dp", function()
 	require("dap").preview()
 end, { desc = "debug: preview" })
 
+map("n", "<leader>dt", function()
+	require("dapui").close()
+end, { desc = "dap ui toggle" })
+
 map(
 	"n",
 	"<leader>dc",
-	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dap").close() <CR>',
+	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dapui").close() <CR>',
 	{ desc = "debug: terminate and close" }
 )
