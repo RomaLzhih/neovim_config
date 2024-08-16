@@ -53,15 +53,6 @@ map(
 map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
 map("n", "<leader>diff", "<cmd> Neogit diff <CR>", { desc = "Open diff view" })
 
--- NOTE: jump to previous edit
-map("n", "<C-f>", function()
-	require("before").jump_to_last_edit()
-end, { desc = "Jump to last edit" })
-
-map("n", "<C-S-f>", function()
-	require("before").jump_to_next_edit()
-end, { desc = "Jump to last edit" })
-
 -- NOTE: lint
 map("n", "<leader>tl", function()
 	require("lint").linters_by_ft.cpp = { "clangtidy", "cpplint", "cppcheck" }

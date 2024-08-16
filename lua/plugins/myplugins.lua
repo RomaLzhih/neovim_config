@@ -235,17 +235,6 @@ local plugins = {
 		end,
 	},
 
-	-- NOTE: before.nvim
-	{
-		"bloznelis/before.nvim",
-		cmd = "Before",
-		config = function()
-			local before = require("before")
-			before.setup()
-		end,
-		lazy = false,
-	},
-
 	-- NOTE: detect indent
 	{
 		"tpope/vim-sleuth",

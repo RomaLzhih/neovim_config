@@ -65,11 +65,11 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
-		["@type"] = { fg = M.base_16.base0A },
+		["@type"] = { fg = M.base_16.base0C },
 		["@type.buildin"] = { fg = M.base_16.base0F },
 		["@property"] = { fg = M.base_30.folder_bg, italic = true },
 		["@namespace"] = { fg = M.base_16.base0C },
-		["@parameter"] = { fg = "#63cdcf", bold = true },
+		["@parameter"] = { fg = M.base_16.base0A, bold = true },
 		["@variable.parameter"] = { fg = M.base_30.white, bold = true },
 		["@module"] = { fg = M.base_16.base0C },
 		["@constant"] = { fg = M.base_30.dark_purple },
