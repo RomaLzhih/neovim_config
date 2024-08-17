@@ -69,7 +69,7 @@ M.polish_hl = {
 		["@type"] = { fg = M.base_16.base08 },
 		["@type.buildin"] = { fg = M.base_16.base0A },
 		["@namespace"] = { fg = M.base_16.base0B },
-		["@parameter"] = { fg = M.base_16.base0C },
+		["@parameter"] = { fg = M.base_16.base07 },
 		["@variable.parameter"] = { fg = M.base_16.base0C },
 		["@module"] = { fg = M.base_16.base0E },
 		["@constant"] = { fg = M.base_30.dark_purple },
@@ -80,7 +80,7 @@ M.polish_hl = {
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@property"] = { fg = M.base_30.teal, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
-		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
+		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
 	},
 }
 

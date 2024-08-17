@@ -79,12 +79,12 @@ M.polish_hl = {
 		["@operator"] = { fg = M.base_16.base0A },
 		["@variable"] = { fg = M.base_16.base08 },
 		["@macro"] = { fg = "#7FDBCA", italic = true },
-		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
+		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
 	},
 }
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "nightowl")
+M = require("base46").override_theme(M, "myowl")
 
 return M

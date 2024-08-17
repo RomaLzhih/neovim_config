@@ -68,14 +68,14 @@ M.polish_hl = {
 		["@namespace"] = { fg = M.base_16.base0A },
 		["@constant"] = { fg = M.base_30.yellow },
 		["@operator"] = { fg = M.base_30.nord_blue },
-		["@property"] = { fg = M.base_30.teal, italic = true },
+		["@property"] = { fg = M.base_16.base06, italic = true },
 		["@punctuation.bracket"] = { fg = M.base_16.base07 },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },
 		["@type"] = { fg = M.base_16.base0A },
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
-		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
+		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
 	},
 }
 M.type = "dark"

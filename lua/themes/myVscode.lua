@@ -80,7 +80,7 @@ M.polish_hl = {
 		["@operator"] = { fg = "#B4B4B4" },
 		["@variable"] = { fg = M.base_16.base08 },
 		["@macro"] = { fg = "#BEB7FF", italic = true },
-		["@keyword.modifier"] = { fg = M.base_16.base0C, italic = true },
+		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
 	},
 }
 
