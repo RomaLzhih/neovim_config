@@ -25,8 +25,9 @@ dashboard.section.buttons.val = {
 	button("f", "󰮗  > Find file", "<cmd> Telescope find_files<CR>"),
 	button("r", "  > Recent", "<cmd> Telescope oldfiles<CR>"),
 	button("i", "󱓷  > Wiki", "<cmd> Neorg index<CR>"),
+	button("g", "󰊢  > Git", "<cmd> Neogit <CR>"),
 	button("u", "  > Update plugins", "<cmd> Lazy update<CR>"),
-	button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+	button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>"),
 	button("q", "󰩈  > Quit NVIM", "<cmd> qa<CR>"),
 }
 
