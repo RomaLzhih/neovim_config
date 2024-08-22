@@ -78,9 +78,6 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 	desc = "Search on current file",
 })
 
--- NOTE: toggle fold
-map("n", "<A-q>", "za", { desc = "Toggle all folding under cursor" })
-
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })
 map("n", "<leader>oc", "<cmd> Lspsaga outgoing_calls <CR>", { desc = "lsp saga outgoing calls" })
@@ -113,6 +110,9 @@ map("n", "<leader>sb", "<cmd>Trouble diagnotics toggle filter.buf=0<cr>", { desc
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
+
+-- NOTE: summarize all todos
+map("n", "<leader>todo", "<cmd> Trouble todo filter = {tag={TODO}}<cr>", { desc = "Show all TODOs" })
 
 -- NOTE: neorg
 map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
