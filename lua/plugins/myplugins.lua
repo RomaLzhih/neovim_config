@@ -48,7 +48,7 @@ local plugins = {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>",      mode = { "n", "v" } },
+				{ "<leader>", mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -70,8 +70,8 @@ local plugins = {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim",      -- required
-			"sindrets/diffview.nvim",     -- optional - Diff integration
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -378,10 +378,19 @@ local plugins = {
 	},
 
 	-- NOTE: todo-comments
+	-- PARA: Add custom keywords
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {},
+		opts = {
+			keywords = {
+				PARA = {
+					icon = "󰡱",
+					color = "info",
+				},
+				HACK = { icon = " ", color = "warning", alt = { "VITAL" } },
+			},
+		},
 		lazy = false,
 	},
 
@@ -397,8 +406,8 @@ local plugins = {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
-							{ text = { "%s" },                  click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+							{ text = { "%s" }, click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -556,12 +565,12 @@ local plugins = {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip",  priority = 9 },
-				{ name = "buffer",   priority = 9 },
+				{ name = "luasnip", priority = 9 },
+				{ name = "buffer", priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path",     priority = 8 },
-				{ name = "codeium",  priority = 0 },
-				{ name = "copilot",  priority = 0 },
+				{ name = "path", priority = 8 },
+				{ name = "codeium", priority = 0 },
+				{ name = "copilot", priority = 0 },
 			},
 		},
 	},
