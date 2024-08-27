@@ -40,6 +40,7 @@ lint.linters.cppcheck.args = {
 		end
 	end,
 	"--quiet",
+	"--check-level=exhaustive",
 	"--template={file}:{line}:{column}: [{id}] {severity}: {message}",
 }
 
