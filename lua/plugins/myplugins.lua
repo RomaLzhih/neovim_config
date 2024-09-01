@@ -573,25 +573,6 @@ local plugins = {
 		end,
 	},
 
-	-- NOTE: Codium
-	{
-		"Exafunction/codeium.nvim",
-		cmd = "Codeium",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
-		end,
-		enable = function()
-			return not vim.fn.has("win32")
-		end,
-		lazy = function()
-			return vim.fn.has("win32")
-		end,
-	},
-
 	-- NOTE: configure cmp with copilot
 	{
 		"hrsh7th/nvim-cmp",
@@ -610,7 +591,6 @@ local plugins = {
 				{ name = "buffer",   priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
 				{ name = "path",     priority = 8 },
-				{ name = "codeium",  priority = 0 },
 				{ name = "copilot",  priority = 0 },
 			},
 		},
@@ -636,41 +616,6 @@ local plugins = {
 		end,
 	},
 
-	-- NOTE: Themes
-	{
-		"morhetz/gruvbox",
-		config = function()
-			vim.g.gruvbox_contrast_dark = "medium"
-			-- vim.cmd.colorscheme "gruvbox"
-		end,
-	},
-
-	{
-		"rebelot/kanagawa.nvim",
-	},
-
-	{
-		"nordtheme/vim",
-		propritery = 1000,
-	},
-
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-		opts = {},
-	},
-
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-	},
-
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
 }
 
 return plugins
