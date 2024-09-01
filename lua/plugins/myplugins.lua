@@ -3,7 +3,34 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
-	---@type LazySpec
+	-- NOTE: copilot chat
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		branch = "canary",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+		},
+		build = "make tiktoken",     -- Only on MacOS or Linux
+		enable = function()
+			return not vim.fn.has("win32")
+		end,
+		opts = {
+			question_header = '󱜸 User ', -- Header to use for user questions
+			answer_header = ' Copilot ', -- Header to use for AI answers
+			error_header = ' Error ', -- Header to use for errors
+			window = {
+				layout = 'float',
+				relative = 'cursor',
+				width = 1,
+				height = 0.4,
+				row = 1
+			}
+		},
+		lazy = false
+	},
+
+	--NOTE: Yazi
 	{
 		"mikavilpas/yazi.nvim",
 		event = "VeryLazy",
