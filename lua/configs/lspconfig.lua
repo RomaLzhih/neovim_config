@@ -56,7 +56,7 @@ lspconfig.texlab.setup({
 })
 
 lspconfig.ltex.setup({
-	filetypes = { "markdown", "tex", "bib" },
+	filetypes = { "tex", "bib" },
 	autostart = false,
 	handlers = {
 		["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

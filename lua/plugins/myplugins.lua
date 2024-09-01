@@ -49,7 +49,7 @@ local plugins = {
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
 		config = true,
-		lazy = true,
+		ft = "markdown",
 	},
 
 	-- NOTE: nvim-obsidian
@@ -68,6 +68,7 @@ local plugins = {
 					path = "~/Dropbox/work-flow/obsidian/ziyang-obsidian",
 				},
 			},
+			ui = { enable = false },
 		},
 	},
 
