@@ -30,6 +30,11 @@ map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy
 -- NOTE: Nvim tree
 map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 
+-- NOTE: Yazi
+map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
+map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
+map("n", "<A-i>", "<cmd>Yazi toggle<CR>", { desc = "Resume Last yazi session" })
+
 -- NOTE: terminal and buffer
 map({ "n", "t" }, "<A-w>", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm", size = 0.3 })
