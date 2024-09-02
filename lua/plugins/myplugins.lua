@@ -16,15 +16,18 @@ local plugins = {
 			return not vim.fn.has("win32")
 		end,
 		opts = {
-			question_header = '󱜸 User ', -- Header to use for user questions
+			show_folds = false, -- Shows folds for sections in chat
+			show_help = false, -- Shows help message as virtual lines when waiting for user input
+			question_header = '󱜸 Question ', -- Header to use for user questions
 			answer_header = ' Copilot ', -- Header to use for AI answers
 			error_header = ' Error ', -- Header to use for errors
 			window = {
 				layout = 'float',
 				relative = 'cursor',
-				width = 1,
-				height = 0.4,
-				row = 1
+				boarder = 'rounded',
+				width = 0.618,
+				height = 0.382,
+				row = 1,
 			}
 		},
 		lazy = false
@@ -290,7 +293,7 @@ local plugins = {
 			require("no-neck-pain").setup()
 		end,
 		version = "*",
-		lazy = true,
+		lazy = false,
 	},
 
 	-- NOTE: nvim-lspconfig
