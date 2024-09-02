@@ -151,7 +151,7 @@ map("n", "<leader>cb", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
 map("n", "<leader>cn", function()
 	local number = vim.fn.input('Enter the buffer width: ')
 	if tonumber(number) then
-		vim.cmd('NoNeckPainResize ' .. number)
+		require("no-neck-pain").resize(number)
 	else
 		print("Invalid input. Please enter a valid number.")
 	end
