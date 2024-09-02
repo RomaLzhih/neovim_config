@@ -28,23 +28,20 @@ map({ "n", "v" }, "<C-n>", "<cmd>MCstart<cr>", { desc = "vm find word" })
 map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
 
 -- NOTE: Nvim tree
-map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
+-- map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
 
 -- NOTE: Yazi
 map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
 map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
-map("n", "<A-i>", "<cmd>Yazi toggle<CR>", { desc = "Resume Last yazi session" })
+map("n", "<A-q>", "<cmd>Yazi toggle<CR>", { desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
 map("n", "<leader>cc", function()
-		local input = vim.fn.input("Quick Chat: ")
-		if input ~= "" then
-			require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-		end
-	end,
-	{ desc = "CopilotChat - Quick chat" })
-map("n", "<leader>co", "<cmd>CopilotChatOpen<CR>", { desc = "CopilotChat - open" })
-map("n", "<leader>cx", "<cmd>CopilotChatClose<CR>", { desc = "CopilotChat - close" })
+	local input = vim.fn.input("Quick Chat: ")
+	if input ~= "" then
+		require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+	end
+end, { desc = "CopilotChat - Quick chat" })
 map("n", "<A-b>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
 map("n", "<leader>cs", "<cmd>CopilotChatStop<CR>", { desc = "CopilotChat - stop" })
 map("n", "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
@@ -54,6 +51,15 @@ map("n", "<leader>cdoc", "<cmd>CopilotChatdocs<CR>", { desc = "CopilotChat - doc
 map("n", "<leader>cfd", "<cmd>CopilotChatFixDiagnostic<CR>", { desc = "CopilotChat - fix diagnostic" })
 map("n", "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
 map("n", "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
+
+-- NOTE: Avante
+map({ "n", "v" }, "<A-e>", function()
+	require("avante.api").ask()
+end, { desc = "avante ask" })
+
+map({ "n", "v" }, "<A-r>", function()
+	require("avante.api").refresh()
+end, { desc = "avante refresh" })
 
 -- NOTE: terminal and buffer
 map({ "n", "t" }, "<A-w>", function()
@@ -77,17 +83,6 @@ map(
 -- NOTE: Neogit
 map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
 map("n", "<leader>diff", "<cmd> Neogit diff <CR>", { desc = "Open diff view" })
-
--- NOTE: lint
-map("n", "<leader>tl", function()
-	require("lint").linters_by_ft.cpp = { "clangtidy", "cpplint", "cppcheck" }
-	require("lint").try_lint()
-end, { desc = "Linting" })
-
-map("n", "<leader>ul", function()
-	require("lint").linters_by_ft.cpp = {}
-	require("lint").try_lint()
-end, { desc = "Un-linting" })
 
 -- NOTE: search and replace
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
@@ -149,7 +144,7 @@ map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 -- NOTE: center buffer
 map("n", "<leader>cb", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
 map("n", "<leader>cn", function()
-	local number = vim.fn.input('Enter the buffer width: ')
+	local number = vim.fn.input("Enter the buffer width: ")
 	if tonumber(number) then
 		require("no-neck-pain").resize(number)
 	else
