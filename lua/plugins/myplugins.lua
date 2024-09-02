@@ -31,7 +31,7 @@ local plugins = {
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
-				width = 38.2, -- default % based on available width
+				width = 25,    -- default % based on available width
 			},
 		},
 		build = ":AvanteBuild",
@@ -40,7 +40,7 @@ local plugins = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			"zbirenbaum/copilot.lua",   -- for providers='copilot'
 		},
 	},
 
@@ -52,7 +52,7 @@ local plugins = {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		build = "make tiktoken", -- Only on MacOS or Linux
+		build = "make tiktoken",     -- Only on MacOS or Linux
 		enable = function()
 			return not vim.fn.has("win32")
 		end,
@@ -135,7 +135,7 @@ local plugins = {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>", mode = { "n", "v" } },
+				{ "<leader>",      mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -157,8 +157,8 @@ local plugins = {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
+			"nvim-lua/plenary.nvim",      -- required
+			"sindrets/diffview.nvim",     -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -493,8 +493,8 @@ local plugins = {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-							{ text = { "%s" }, click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
+							{ text = { "%s" },                  click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -615,11 +615,11 @@ local plugins = {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip", priority = 9 },
-				{ name = "buffer", priority = 9 },
+				{ name = "luasnip",  priority = 9 },
+				{ name = "buffer",   priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path", priority = 8 },
-				{ name = "copilot", priority = 0 },
+				{ name = "path",     priority = 8 },
+				{ name = "copilot",  priority = 0 },
 			},
 		},
 	},
