@@ -66,7 +66,7 @@ local plugins = {
 				layout = "float",
 				relative = "cursor",
 				boarder = "rounded",
-				width = 0.618,
+				width = 1,
 				height = 0.382,
 				row = 1,
 			},
