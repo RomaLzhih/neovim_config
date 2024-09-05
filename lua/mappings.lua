@@ -33,7 +33,7 @@ map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy
 -- NOTE: Yazi
 map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
 map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
-map("n", "<A-q>", "<cmd>Yazi toggle<CR>", { desc = "Resume Last yazi session" })
+map("n", "<C-w>", "<cmd>Yazi toggle<CR>", { desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
 map("n", "<leader>cc", function()
