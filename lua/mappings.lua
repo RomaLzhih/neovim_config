@@ -106,7 +106,7 @@ map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code
 map("n", "<leader>pd", "<cmd> Lspsaga peek_definition <CR>", { desc = "lsp saga peak definition" })
 map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp saga peak type definition" })
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
-map("n", "<leader>ol", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
+map("n", "<A-q>", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
 map(
 	"n",

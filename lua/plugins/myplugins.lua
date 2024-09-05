@@ -30,7 +30,7 @@ local plugins = {
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
-				width = 25, -- default % based on available width
+				width = 23, -- default % based on available width
 			},
 		},
 		build = ":AvanteBuild",
@@ -346,7 +346,12 @@ local plugins = {
 				"nvimdev/lspsaga.nvim",
 				cmd = "Lspsaga",
 				config = function()
-					require("lspsaga").setup({})
+					require("lspsaga").setup({
+						outline = {
+							win_position = "left",
+							win_width = 35,
+						},
+					})
 				end,
 			},
 		},
