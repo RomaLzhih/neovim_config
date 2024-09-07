@@ -4,6 +4,10 @@ require("nvchad.mappings")
 local nomap = vim.keymap.del
 nomap("n", "<C-c>")
 nomap("n", "<C-s>")
+nomap("n", "<C-h>")
+nomap("n", "<C-j>")
+nomap("n", "<C-k>")
+nomap("n", "<C-l>")
 nomap("n", "<leader>h")
 nomap("n", "<leader>v")
 
@@ -70,6 +74,10 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal"
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Switch Window down in terminal" })
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Switch Window up in terminal" })
+map("n", "<C-h>", "<cmd>lua require('tmux').move_left()<cr>")
+map("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<cr>")
+map("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>")
+map("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>")
 map("n", "<A-h>", "<cmd>lua require('tmux').resize_left()<CR>", { desc = "tmux resoze_left()" })
 map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
 

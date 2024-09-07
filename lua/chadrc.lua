@@ -21,6 +21,22 @@ M.ui = {
 			end,
 		},
 	},
+	mason = {
+		cmd = true,
+		pkgs = {
+			"lua-language-server",
+			"stylua",
+			"beautysh",
+			"clangd",
+			"bash-language-server",
+			"pyright",
+			"pylint",
+			"shfmt",
+			"clang-format",
+			"black",
+			"shellcheck",
+		},
+	},
 }
 
 -- M.plugins = "plugins"

@@ -29,24 +29,6 @@ M.treesitter = {
 	},
 }
 
-M.mason = {
-	ensure_installed = {
-		"lua-language-server",
-		"stylua",
-		"beautysh",
-		"clangd",
-		"bash-language-server",
-		"pyright",
-		"pylint",
-		"shfmt",
-		-- "ltex-ls",
-		"clang-format",
-		"black",
-		-- "r-languageserver",
-		"shellcheck",
-	},
-}
-
 -- git support in nvimtree
 M.nvimtree = {
 	git = {
