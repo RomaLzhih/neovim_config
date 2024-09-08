@@ -77,7 +77,7 @@ M.polish_hl = {
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
 		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
-		["@property"] = { fg = M.base_30.teal, italic = true },
+		["@property"] = { fg = M.base_30.teal },
 	},
 }
 

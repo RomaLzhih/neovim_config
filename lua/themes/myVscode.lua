@@ -69,7 +69,7 @@ M.polish_hl = {
 		["@type"] = { fg = "#4EC9B0" },
 		["@type.buildin"] = { fg = "#569CD6" },
 		["@namespace"] = { fg = "#C8C8C8" },
-		["@property"] = { fg = M.base_30.teal, italic = true },
+		["@property"] = { fg = M.base_30.teal },
 		["@parameter"] = { fg = "#9A9A9A", bold = true },
 		["@variable.parameter"] = { fg = "#9A9A9A", bold = true },
 		["@module"] = { fg = M.base_16.base0C },

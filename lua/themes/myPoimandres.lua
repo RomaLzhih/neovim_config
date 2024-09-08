@@ -72,7 +72,7 @@ M.polish_hl = {
 		["@variable"] = { fg = M.base_30.white },
 		["@variable.builtin"] = { fg = M.base_30.teal },
 		["@type.builtin"] = { fg = M.base_30.nord_blue },
-		["@property"] = { fg = M.base_30.teal, italic = true },
+		["@property"] = { fg = M.base_30.teal },
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@parameter"] = { bold = true },
 		["@function.call"] = { fg = M.base_30.purple },

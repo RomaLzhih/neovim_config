@@ -59,7 +59,7 @@ M.polish_hl = {
 	treesitter = {
 		["@type"] = { fg = M.base_16.base0A },
 		["@type.buildin"] = { fg = M.base_16.base0F },
-		["@property"] = { fg = M.base_30.teal, italic = true },
+		["@property"] = { fg = M.base_30.teal },
 		["@namespace"] = { fg = M.base_16.base0C },
 		["@parameter"] = { fg = M.base_30.white, bold = true },
 		["@variable.parameter"] = { fg = M.base_30.white, bold = true },

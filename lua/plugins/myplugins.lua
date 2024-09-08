@@ -16,6 +16,12 @@ local plugins = {
 					norg = false,
 					csv = false,
 				},
+				mappings = {
+					reset = {
+						normal = "<C-A-l>",
+						insert = "<C-A-l>",
+					},
+				},
 			})
 		end,
 	},
