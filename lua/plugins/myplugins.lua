@@ -3,6 +3,27 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- NOTE: use mini pair to complete the pair
+	{
+		"echasnovski/mini.pairs",
+		version = "*",
+		config = function()
+			require("mini.pairs").setup()
+			local map_tex = function()
+				require("mini.pairs").map_buf(0, "i", "$", { action = "closeopen", pair = "$$" })
+			end
+			vim.api.nvim_create_autocmd("FileType", { pattern = { "markdown", "tex" }, callback = map_tex })
+		end,
+		lazy = false,
+	},
+
+	-- NOTE: disable auto pair
+	{
+		"windwp/nvim-autopairs",
+		enable = false,
+	},
+
+	-- NOTE: copilot
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -384,12 +405,7 @@ local plugins = {
 				},
 			})
 		end,
-		init = function()
-			-- vim.keymap.set("n", "<C-h>", [[<cmd>lua require("tmux").move_left()<cr>]])
-			-- vim.keymap.set("n", "<C-j>", [[<cmd>lua require("tmux").move_bottom()<cr>]])
-			-- vim.keymap.set("n", "<C-k>", [[<cmd>lua require("tmux").move_top()<cr>]])
-			-- vim.keymap.set("n", "<C-l>", [[<cmd>lua require("tmux").move_right()<cr>]])
-		end,
+		init = function() end,
 		lazy = false,
 	},
 
@@ -403,6 +419,7 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
+		enable = false,
 	},
 
 	-- NOTE: telescope
@@ -476,7 +493,6 @@ local plugins = {
 	},
 
 	-- NOTE: todo-comments
-	-- PARA: Add custom keywords
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -535,7 +551,6 @@ local plugins = {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
 					python = { "black" },
 					cpp = { "clang-format" },
 					bash = { "beautysh" },
