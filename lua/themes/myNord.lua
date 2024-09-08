@@ -68,7 +68,7 @@ M.polish_hl = {
 		["@namespace"] = { fg = M.base_16.base0A },
 		["@constant"] = { fg = M.base_30.yellow },
 		["@operator"] = { fg = M.base_30.nord_blue },
-		["@property"] = { fg = M.base_16.base06, italic = true },
+		["@property"] = { fg = M.base_16.base06 },
 		["@punctuation.bracket"] = { fg = M.base_16.base07 },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },

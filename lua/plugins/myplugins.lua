@@ -16,12 +16,6 @@ local plugins = {
 					norg = false,
 					csv = false,
 				},
-				mappings = {
-					reset = {
-						normal = "<C-A-l>",
-						insert = "<C-A-l>",
-					},
-				},
 			})
 		end,
 	},
@@ -70,10 +64,16 @@ local plugins = {
 			window = {
 				layout = "float",
 				relative = "cursor",
-				boarder = "rounded",
 				width = 1,
-				height = 0.382,
+				height = 0.5,
+				boarder = "rounded",
 				row = 1,
+			},
+			mappings = {
+				reset = {
+					normal = "<C-A-l>",
+					insert = "<C-A-l>",
+				},
 			},
 		},
 		lazy = false,
@@ -417,7 +417,8 @@ local plugins = {
 		main = "ibl",
 		opts = {
 			scope = { show_start = false, show_end = false, show_exact_scope = false },
-			indent = { tab_char = "▎" },
+			indent = { tab_char = "╏" },
+			-- indent = { tab_char = "▎" },
 		},
 
 		lazy = false,
