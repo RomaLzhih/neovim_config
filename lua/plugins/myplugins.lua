@@ -433,10 +433,14 @@ local plugins = {
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {
-			scope = { show_start = false, show_end = false, show_exact_scope = false },
-			indent = { tab_char = "╏" },
 			-- indent = { tab_char = "▎" },
 		},
+		config = function()
+			require("ibl").setup({
+				scope = { show_start = false, show_end = false, show_exact_scope = false },
+				indent = { char = "╏" },
+			})
+		end,
 
 		lazy = false,
 	},

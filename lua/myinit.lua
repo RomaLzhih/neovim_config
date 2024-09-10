@@ -14,6 +14,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	command = "set conceallevel=3",
 })
 
+-- NOTE: vim scroll off
+vim.o.scrolloff = 3
+
 vim.g.VM_maps = {
 	["I BS"] = "", -- disable backspace mapping
 }
