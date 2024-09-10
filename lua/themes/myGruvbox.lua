@@ -46,7 +46,7 @@ M.base_16 = {
 	base05 = "#d5c4a1",
 	base06 = "#ebdbb2",
 	base07 = "#fbf1c7",
-	base08 = "#83a598",
+	base08 = "#87afaf",
 	base09 = "#d3869b",
 	base0A = "#fabd2f",
 	base0B = "#b8bb26",
@@ -64,7 +64,7 @@ M.polish_hl = {
 	treesitter = {
 		["@type"] = { fg = M.base_16.base0A },
 		["@type.buildin"] = { fg = M.base_16.base0F },
-		["@property"] = { fg = M.base_30.teal },
+		["@property"] = { fg = "#87afaf" },
 		["@namespace"] = { fg = M.base_16.base0C },
 		["@parameter"] = { fg = M.base_30.white, bold = true },
 		["@variable.parameter"] = { fg = M.base_30.white, bold = true },
