@@ -3,6 +3,34 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- NOTE: Lua
+	{
+		"folke/zen-mode.nvim",
+		cmd = "ZenMode",
+		opts = {
+			window = {
+				width = 95,
+				options = {
+					relativenumber = true,
+					cursorline = true,
+					-- number = true,
+				},
+			},
+		},
+	},
+
+	-- NOTE: target
+	{
+		"wellle/targets.vim",
+		lazy = false,
+	},
+
+	-- NOTE: vim visual multi
+	{
+		"mg979/vim-visual-multi",
+		lazy = false,
+	},
+
 	-- NOTE: use mini pair to complete the pair
 	{
 		"echasnovski/mini.pairs",

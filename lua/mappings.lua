@@ -151,15 +151,15 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 
 -- NOTE: center buffer
-map("n", "<leader>cb", "<cmd> NoNeckPain <CR>", { desc = "center buffer" })
+map("n", "<leader>cb", "<cmd> ZenMode <CR>", { desc = "zen mode" })
 map("n", "<leader>cn", function()
 	local number = vim.fn.input("Enter the buffer width: ")
 	if tonumber(number) then
-		require("no-neck-pain").resize(number)
+		require("no-neck-pain").toggle({ window = { width = number } })
 	else
 		print("Invalid input. Please enter a valid number.")
 	end
-end, { desc = "center buffer" })
+end, { desc = "center buffer with size" })
 
 -- NOTE: harpoon
 local harpoon = require("harpoon")
