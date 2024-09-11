@@ -62,6 +62,8 @@ M = require("base46").override_theme(M, "myGruvbox")
 
 M.polish_hl = {
 	treesitter = {
+		["@constructor"] = { fg = M.base_16.base0D },
+		["@variable.member"] = { fg = M.base_30.white },
 		["@type"] = { fg = M.base_16.base0A },
 		["@type.buildin"] = { fg = M.base_16.base0F },
 		["@property"] = { fg = "#87afaf" },

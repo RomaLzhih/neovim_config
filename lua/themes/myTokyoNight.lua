@@ -65,6 +65,8 @@ M.base_16 = {
 
 M.polish_hl = {
 	treesitter = {
+		["@constructor"] = { fg = M.base_16.base0D },
+		["@variable.member"] = { fg = M.base_16.base08 },
 		["@parameter"] = { fg = "#d9d4cd", bold = true },
 		["@variable.parameter"] = { fg = "#d9d4cd", bold = true },
 		["@namespace"] = { fg = "#0db9d7" },

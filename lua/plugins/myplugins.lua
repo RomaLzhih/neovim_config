@@ -9,7 +9,7 @@ local plugins = {
 		cmd = "ZenMode",
 		opts = {
 			window = {
-				width = 95,
+				width = 90,
 				options = {
 					relativenumber = true,
 					cursorline = true,
@@ -678,6 +678,12 @@ local plugins = {
 				{ name = "nvim_lua", priority = 9 },
 				{ name = "path", priority = 8 },
 				{ name = "copilot", priority = 0 },
+			},
+			mapping = {
+				["<C-d>"] = require("cmp").mapping({
+					i = require("cmp").mapping.abort(), -- In insert mode
+					c = require("cmp").mapping.close(), -- In command mode
+				}),
 			},
 		},
 	},
