@@ -78,8 +78,8 @@ local plugins = {
 			provider = "copilot",
 			hints = { enabled = false },
 			windows = {
-				position = "left", -- the position of the sidebar
-				width = 23, -- default % based on available width
+				position = "bottom", -- the position of the sidebar
+				width = 100, -- default % based on available width
 			},
 		},
 		build = ":AvanteBuild",
@@ -405,6 +405,7 @@ local plugins = {
 						outline = {
 							win_position = "left",
 							win_width = 38,
+							auto_preview = false,
 						},
 					})
 				end,
