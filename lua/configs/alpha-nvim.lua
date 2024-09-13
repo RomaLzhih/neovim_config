@@ -34,6 +34,7 @@ dashboard.section.buttons.val = {
 			},
 		})
 	end),
+	button("p", "  > Last session", "<cmd> SessionRestore <CR>"),
 	button("u", "  > Update plugins", "<cmd> Lazy update<CR>"),
 	button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>"),
 	button("q", "󰩈  > Quit NVIM", "<cmd> qa<CR>"),

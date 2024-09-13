@@ -14,6 +14,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	command = "set conceallevel=3",
 })
 
+-- NOTE: manage the session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- NOTE: vim scroll off
 vim.o.scrolloff = 3
 

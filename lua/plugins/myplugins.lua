@@ -3,6 +3,23 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+		dependencies = {
+			"nvim-telescope/telescope.nvim", -- Only needed if you want to use session lens
+		},
+		opts = {
+			auto_restore = false,
+			auto_save = false,
+			auto_create = false,
+			bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante" }, -- or whatever dashboard you use
+			session_lens = {
+				load_on_setup = false,
+			},
+		},
+	},
+
 	-- NOTE: Lua
 	{
 		"folke/zen-mode.nvim",
