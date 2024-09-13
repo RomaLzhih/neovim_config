@@ -32,6 +32,9 @@ map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
 map({ "n", "v" }, "<C-n>", "<cmd>MCstart<cr>", { desc = "vm find word" })
 map("n", "<leader>hh", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
+map("n", "<leader>tp", function()
+	require("base46").toggle_transparency()
+end, { desc = "toggle transparency" })
 
 -- NOTE: Nvim tree
 -- map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
