@@ -75,11 +75,14 @@ local plugins = {
 		event = "VeryLazy",
 		lazy = true,
 		opts = {
-			provider = "copilot",
+			-- provider = "copilot",
+			provider = "gemini",
+			-- provider = "claude",
 			hints = { enabled = false },
 			windows = {
 				position = "bottom", -- the position of the sidebar
 				width = 100, -- default % based on available width
+				height = 50,
 			},
 		},
 		build = ":AvanteBuild",
@@ -111,8 +114,8 @@ local plugins = {
 			answer_header = " Copilot ", -- Header to use for AI answers
 			error_header = " Error ", -- Header to use for errors
 			window = {
-				layout = "float",
-				relative = "cursor",
+				layout = "bottom",
+				-- relative = "cursor",
 				width = 1,
 				height = 0.5,
 				boarder = "rounded",
