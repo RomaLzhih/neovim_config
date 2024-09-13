@@ -5,12 +5,12 @@ local fortune = require("alpha.fortune")
 
 -- Set header
 dashboard.section.header.val = {
-"████████╗██╗  ██╗███████╗    ███████╗██╗    ██╗ █████╗ ███╗   ██╗",
-"╚══██╔══╝██║  ██║██╔════╝    ██╔════╝██║    ██║██╔══██╗████╗  ██║",
-"   ██║   ███████║█████╗      ███████╗██║ █╗ ██║███████║██╔██╗ ██ ",
-"   ██║   ██╔══██║██╔══╝      ╚════██║██║███╗██║██╔══██║██║╚██╗██║",
-"   ██║   ██║  ██║███████╗    ███████║╚███╔███╔╝██║  ██║██║ ╚████║",
-"   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝",
+	"████████╗██╗  ██╗███████╗    ███████╗██╗    ██╗ █████╗ ███╗   ██╗",
+	"╚══██╔══╝██║  ██║██╔════╝    ██╔════╝██║    ██║██╔══██╗████╗  ██║",
+	"   ██║   ███████║█████╗      ███████╗██║ █╗ ██║███████║██╔██╗ ██ ",
+	"   ██║   ██╔══██║██╔══╝      ╚════██║██║███╗██║██╔══██║██║╚██╗██║",
+	"   ██║   ██║  ██║███████╗    ███████║╚███╔███╔╝██║  ██║██║ ╚████║",
+	"   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝",
 }
 
 local function button(sc, txt, keybind, keybind_opts)
@@ -26,6 +26,14 @@ dashboard.section.buttons.val = {
 	button("r", "  > Recent", "<cmd> Telescope oldfiles<CR>"),
 	button("i", "󱓷  > Wiki", "<cmd> Neorg index<CR>"),
 	button("g", "󰊢  > Git", "<cmd> Neogit <CR>"),
+	button("c", "  > Copilot", function()
+		require("CopilotChat").open({
+			window = {
+				layout = "replace",
+				title = "Copilot Chat",
+			},
+		})
+	end),
 	button("u", "  > Update plugins", "<cmd> Lazy update<CR>"),
 	button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>"),
 	button("q", "󰩈  > Quit NVIM", "<cmd> qa<CR>"),

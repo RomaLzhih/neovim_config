@@ -17,6 +17,7 @@ lint.linters.clangtidy.args = {
 	"--quiet",
 	"--fix",
 	"--fix-notes",
+	"--fix-errors",
 	"--format-style=file",
 	"--extra-arg=-std=c++20",
 }
@@ -27,7 +28,7 @@ lint.linters.cppcheck.args = {
 	"--max-configs=1",
 	function()
 		if vim.fn.isdirectory("build") == 1 then
-			return "--cppcheck-build-dir=build"
+			return "--cppcheck-build-dir=build --project=build/compile_commands.json"
 		else
 			return nil
 		end
@@ -40,6 +41,9 @@ lint.linters.cppcheck.args = {
 		end
 	end,
 	"--quiet",
+	"--inconclusive",
+	"--addon=threadsafety",
+	"--addon=namingng",
 	"--template={file}:{line}:{column}: [{id}] {severity}: {message}",
 }
 

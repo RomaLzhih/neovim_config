@@ -114,7 +114,7 @@ local plugins = {
 			answer_header = " Copilot ", -- Header to use for AI answers
 			error_header = " Error ", -- Header to use for errors
 			window = {
-				layout = "bottom",
+				layout = "horizontal", -- or 'vertical'
 				-- relative = "cursor",
 				width = 1,
 				height = 0.5,
@@ -492,15 +492,13 @@ local plugins = {
 				options = {
 					-- Post-movement callback
 					callback = nil, ---@type function?
-					-- Delay between each movement step (in ms)
-					delay = 7,
 					max_delta = {
 						-- Maximum distance for line movements. Set to `nil` to disable
-						line = 150, ---@type number?
+						-- line = 150, ---@type number?
 						-- Maximum distance for column movements. Set to `nil` to disable
 						column = 0, ---@type number?
 						-- Maximum duration for a movement (in ms). Automatically adjusts the line delay
-						time = 500, ---@type number
+						-- time = 500, ---@type number
 					},
 				},
 			})
@@ -682,12 +680,6 @@ local plugins = {
 				{ name = "nvim_lua", priority = 9 },
 				{ name = "path", priority = 8 },
 				{ name = "copilot", priority = 0 },
-			},
-			mapping = {
-				["<C-d>"] = require("cmp").mapping({
-					i = require("cmp").mapping.abort(), -- In insert mode
-					c = require("cmp").mapping.close(), -- In command mode
-				}),
 			},
 		},
 	},

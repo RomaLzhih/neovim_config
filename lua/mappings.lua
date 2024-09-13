@@ -153,6 +153,7 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 
 -- NOTE: telescope
 map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
+map("n", "<leader>bf", "<cmd> Telescope buffers <CR>", { desc = "telescope buffers" })
 
 -- NOTE: center buffer
 map("n", "<leader>cb", "<cmd> ZenMode <CR>", { desc = "zen mode" })
