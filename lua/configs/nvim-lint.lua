@@ -28,7 +28,7 @@ lint.linters.cppcheck.args = {
 	"--max-configs=1",
 	function()
 		if vim.fn.isdirectory("build") == 1 then
-			return "--cppcheck-build-dir=build --project=build/compile_commands.json"
+			return "--cppcheck-build-dir=build"
 		else
 			return nil
 		end
@@ -41,6 +41,7 @@ lint.linters.cppcheck.args = {
 		end
 	end,
 	"--quiet",
+	"--enable=all",
 	"--inconclusive",
 	"--addon=threadsafety",
 	"--addon=namingng",
