@@ -41,11 +41,9 @@ lint.linters.cppcheck.args = {
 		end
 	end,
 	"--quiet",
-	"--enable=all",
-	"--inconclusive",
 	"--addon=threadsafety",
-	"--addon=namingng",
-	"--template={file}:{line}:{column}: [{id}] {severity}: {message}",
+	"--inconclusive",
+	"--check-level=exhaustive",
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
