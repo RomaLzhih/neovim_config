@@ -12,7 +12,7 @@ local plugins = {
 		opts = {
 			auto_restore = false,
 			auto_save = true,
-			auto_create = false,
+			auto_create = true,
 			bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante" }, -- or whatever dashboard you use
 			session_lens = {
 				load_on_setup = false,
@@ -699,21 +699,9 @@ local plugins = {
 				{ name = "copilot", priority = 0 },
 			},
 			mapping = {
-				["<Tab>"] = require("cmp").mapping(function(fallback)
-					-- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
-					if require("cmp").visible() then
-						local entry = require("cmp").get_selected_entry()
-						if not entry then
-							require("cmp").select_next_item({ behavior = require("cmp").SelectBehavior.Select })
-						end
-						require("cmp").confirm()
-					else
-						fallback()
-					end
-				end, { "i", "s", "c" }),
 				["<CR>"] = require("cmp").mapping({
 					i = function(fallback)
-						if require("cmp").visible() and require("cmp").get_active_entry() then
+						if require("cmp").visible() then
 							require("cmp").confirm({ behavior = require("cmp").ConfirmBehavior.Replace, select = false })
 						else
 							fallback()
