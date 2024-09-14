@@ -154,6 +154,7 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 -- NOTE: telescope
 map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 map("n", "<leader>bf", "<cmd> Telescope buffers <CR>", { desc = "telescope buffers" })
+map("n", "<leader>fr", "<cmd> Telescope frecency workspace=${CWD} <CR>", { desc = "telescope buffers" })
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 

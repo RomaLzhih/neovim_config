@@ -3,6 +3,18 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	-- NOTE: fzf-like
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
+	-- NOTE: telescope frecency
+	{
+		"nvim-telescope/telescope-frecency.nvim",
+		config = function()
+			require("telescope").load_extension("frecency")
+		end,
+	},
+
+	-- NOTE: auto store sessions
 	{
 		"rmagatti/auto-session",
 		lazy = false,
@@ -475,6 +487,30 @@ local plugins = {
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
+		opts = {
+			defaults = {
+				sorting_strategy = "descending",
+				layout_config = {
+					horizontal = {
+						prompt_position = "bottom",
+						width = 0.7,
+						preview_width = 0.4,
+					},
+				},
+				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+				winblend = 5,
+			},
+			pickers = {
+				find_files = {
+					layout_config = {
+						horizontal = {
+							width = 0.5,
+							preview_width = 0,
+						},
+					},
+				},
+			},
+		},
 	},
 
 	-- NOTE: indent
