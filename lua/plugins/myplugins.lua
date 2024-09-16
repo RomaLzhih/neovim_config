@@ -510,6 +510,18 @@ local plugins = {
 					},
 				},
 			},
+			extensions = {
+				frecency = {
+					show_scores = true,
+					sort = true,
+					layout_config = {
+						horizontal = {
+							width = 0.5,
+							preview_width = 0,
+						},
+					},
+				},
+			},
 		},
 	},
 
