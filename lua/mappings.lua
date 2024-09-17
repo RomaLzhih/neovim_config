@@ -20,6 +20,9 @@ local map = vim.keymap.set
 -- map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
+-- map("n", "<leader>mk", function()
+-- 	require("overseer").run_template({ name = "make all" })
+-- end)
 
 -- NOTE: Motion
 map({ "n", "i", "v", "o" }, "<C-e>", "<END>", { desc = "End of line" })

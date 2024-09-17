@@ -123,7 +123,6 @@ local plugins = {
 				height = 50,
 			},
 		},
-		build = ":AvanteBuild",
 		dependencies = {
 			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
