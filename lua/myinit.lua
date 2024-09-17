@@ -20,6 +20,9 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 -- NOTE: vim scroll off
 vim.o.scrolloff = 3
 
+-- NOTE: make arg
+vim.o.makeprg = "make -C build -j4"
+
 vim.g.VM_maps = {
 	["I BS"] = "", -- disable backspace mapping
 }

@@ -3,6 +3,15 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 local plugins = {
+	{
+		"stevearc/overseer.nvim",
+		opts = {},
+		config = function()
+			require("configs.overseer")
+		end,
+		lazy = false,
+	},
+
 	-- NOTE: fzf-like
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
