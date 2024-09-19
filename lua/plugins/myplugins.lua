@@ -113,8 +113,9 @@ local plugins = {
 		event = "VeryLazy",
 		lazy = true,
 		opts = {
-			-- provider = "copilot",
-			provider = "gemini",
+			provider = "copilot",
+			auto_suggestions_provider = "copilot",
+			-- provider = "gemini",
 			-- provider = "claude",
 			hints = { enabled = false },
 			windows = {
