@@ -6,7 +6,6 @@ local capabilities = configs.capabilities
 local lspconfig = require("lspconfig")
 local servers = { "bashls", "pyright", "clangd", "r_language_server" }
 
-
 capabilities.textDocument.foldingRange = {
 	dynamicRegistration = false,
 	lineFoldingOnly = true,
@@ -14,7 +13,14 @@ capabilities.textDocument.foldingRange = {
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
-		on_attach = on_attach,
+		on_attach = function(client, bufnr)
+			if client.server_capabilities.inlayHintProvider then
+				vim.g.inlay_hints_visible = true
+				vim.lsp.buf.inlay_hint(bufnr, true)
+			else
+				print("Inlay")
+			end
+		end,
 		on_init = on_init,
 		capabilities = capabilities,
 	})
@@ -24,17 +30,10 @@ lspconfig.clangd.setup({
 	cmd = {
 		"clangd",
 		"--offset-encoding=utf-16",
+		"--inlay-hints",
+		"--clang-tidy",
 	},
 })
-
--- lspconfig.ccls.setup({
--- 	init_options = {
--- 		compilationDatabaseDirectory = "build",
--- 		cache = {
--- 			directory = ".ccls-cache",
--- 		},
--- 	},
--- })
 
 lspconfig.r_language_server.setup({
 	handlers = {
@@ -50,16 +49,16 @@ lspconfig.r_language_server.setup({
 -- Function to detect the operating system
 local function get_os()
 	local os_name
-	if vim.fn.has('win32') == 1 then
-		os_name = 'Windows'
-	elseif vim.fn.has('unix') == 1 then
-		local uname = vim.fn.system('uname -s')
-		if uname:match('Linux') then
-			local distro = vim.fn.system('cat /etc/os-release | grep ^ID= | cut -d= -f2')
-			if distro:match('ubuntu') then
-				os_name = 'Ubuntu'
-			elseif distro:match('arch') then
-				os_name = 'Arch'
+	if vim.fn.has("win32") == 1 then
+		os_name = "Windows"
+	elseif vim.fn.has("unix") == 1 then
+		local uname = vim.fn.system("uname -s")
+		if uname:match("Linux") then
+			local distro = vim.fn.system("cat /etc/os-release | grep ^ID= | cut -d= -f2")
+			if distro:match("ubuntu") then
+				os_name = "Ubuntu"
+			elseif distro:match("arch") then
+				os_name = "Arch"
 			end
 		end
 	end
@@ -70,7 +69,7 @@ end
 local current_os = get_os()
 
 -- Conditionally setup ltex based on the operating system
-if current_os == 'Ubuntu' or current_os == 'Arch' or current_os == 'Windows' then
+if current_os == "Ubuntu" or current_os == "Arch" or current_os == "Windows" then
 	lspconfig.texlab.setup({
 		on_attach = on_attach,
 		on_init = on_init,

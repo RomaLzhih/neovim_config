@@ -452,6 +452,23 @@ local plugins = {
 				end,
 			},
 		},
+		opts = {
+			inlay_hints = {
+				enable = true,
+			},
+			settings = {
+				clangd = {
+					hint = { enable = true },
+					InlayHints = {
+						Designators = true,
+						Enabled = true,
+						ParameterNames = true,
+						DeducedTypes = true,
+					},
+					fallbackFlags = { "-std=c++20" },
+				},
+			},
+		},
 		config = function()
 			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
