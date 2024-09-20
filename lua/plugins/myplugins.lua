@@ -111,7 +111,8 @@ local plugins = {
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
-		lazy = true,
+		lazy = false,
+		build = "make",
 		opts = {
 			provider = "copilot",
 			auto_suggestions_provider = "copilot",
