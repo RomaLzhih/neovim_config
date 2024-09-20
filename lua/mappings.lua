@@ -20,6 +20,12 @@ local map = vim.keymap.set
 -- map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
+map(
+	"n",
+	"<leader>il",
+	"<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) <CR>",
+	{ desc = "toggle inlay hints" }
+)
 -- map("n", "<leader>mk", function()
 -- 	require("overseer").run_template({ name = "make all" })
 -- end)
