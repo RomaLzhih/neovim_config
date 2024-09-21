@@ -54,7 +54,7 @@ map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
 map("n", "<C-s>", "<cmd>Yazi toggle<CR>", { noremap = true, silent = true, desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
-map("n", "<leader>cc", function()
+map("n", "<leader>qc", function()
 	local input = vim.fn.input("Quick Chat: ")
 	if input ~= "" then
 		require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
@@ -150,7 +150,7 @@ map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implement
 map("n", "<leader>xx", "<cmd>Trouble diagnotics toggle<cr>", { desc = "Diagnostics (Trouble)" })
 map("n", "<leader>sb", "<cmd>Trouble diagnotics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
-map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
+map("n", "<leader>cc", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
 map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
 
 -- NOTE: summarize all todos

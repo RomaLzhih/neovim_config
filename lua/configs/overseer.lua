@@ -18,9 +18,10 @@ vim.api.nvim_create_user_command("Make", function(params)
 	local task = require("overseer").new_task({
 		cmd = vim.fn.expandcmd(cmd),
 		components = {
-			{ "on_output_quickfix", open = false, open_height = 15, close = true, set_diagnostics = true },
+			{ "on_output_quickfix", open = true, open_height = 15, close = true, set_diagnostics = true },
 			{ "open_output", focus = true },
-			"on_result_diagnostics_trouble",
+			{ "on_result_diagnostics_quickfix", open = true, close = true },
+			-- { "on_result_diagnostics", args = { "auto_refresh = true" }, close = true },
 			"default",
 		},
 	})
