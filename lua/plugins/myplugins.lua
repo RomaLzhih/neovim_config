@@ -4,6 +4,11 @@ local has_neovide = vim.g.neovide
 
 local plugins = {
 	{
+		"folke/drop.nvim",
+	},
+
+	-- NOTE: overseer
+	{
 		"stevearc/overseer.nvim",
 		opts = {},
 		config = function()
@@ -112,11 +117,11 @@ local plugins = {
 		"yetone/avante.nvim",
 		event = "VeryLazy",
 		lazy = false,
-		build = "make",
+		build = "make BUILD_FROM_SOURCE=true",
 		opts = {
-			provider = "copilot",
+			-- provider = "copilot",
+			provider = "gemini",
 			auto_suggestions_provider = "copilot",
-			-- provider = "gemini",
 			-- provider = "claude",
 			hints = { enabled = false },
 			windows = {

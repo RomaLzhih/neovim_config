@@ -18,10 +18,10 @@ vim.api.nvim_create_user_command("Make", function(params)
 	local task = require("overseer").new_task({
 		cmd = vim.fn.expandcmd(cmd),
 		components = {
-			{ "on_output_quickfix", open = true, open_height = 15, close = true, set_diagnostics = true },
-			{ "open_output", focus = true },
-			{ "on_result_diagnostics_quickfix", open = true, close = true },
-			-- { "on_result_diagnostics", args = { "auto_refresh = true" }, close = true },
+			{ "on_output_quickfix", open = false, open_height = 15, close = true, set_diagnostics = true },
+			-- { "open_output", focus = true },
+			-- { "on_result_diagnostics_quickfix", open = true, close = true },
+			-- { "on_result_diagnostics_trouble", close = true },
 			"default",
 		},
 	})
@@ -49,6 +49,7 @@ function run_make_command()
 	else
 		vim.cmd("Make " .. make_command_arg)
 	end
+	-- vim.cmd([[Trouble qflist open focus=true win={size={height=0.4}}]])
 end
 
 -- Key mapping to call the function

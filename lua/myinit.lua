@@ -7,16 +7,23 @@
 --
 -- NOTE: terminal colors
 vim.o.termguicolors = true
+
+-- NOTE: use trouble to open the cmd
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 	callback = function()
 		vim.cmd([[Trouble qflist open]])
 	end,
 })
+
 -- NOTE: set the default conceallevel for neorg file
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.norg" },
 	command = "set conceallevel=3",
 })
+
+-- NOTE: set the avante
+require("avante_lib").load()
+vim.opt.laststatus = 3
 
 -- NOTE: manage the session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
