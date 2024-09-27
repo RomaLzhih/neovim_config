@@ -9,11 +9,11 @@
 vim.o.termguicolors = true
 
 -- NOTE: use trouble to open the cmd
-vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-	callback = function()
-		vim.cmd([[Trouble qflist open]])
-	end,
-})
+-- vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+-- 	callback = function()
+-- 		vim.cmd([[Trouble qflist open]])
+-- 	end,
+-- })
 
 -- NOTE: set the default conceallevel for neorg file
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
