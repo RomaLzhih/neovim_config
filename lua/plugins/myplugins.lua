@@ -119,10 +119,8 @@ local plugins = {
 		lazy = false,
 		build = "make BUILD_FROM_SOURCE=true",
 		opts = {
-			-- provider = "copilot",
 			provider = "gemini",
 			auto_suggestions_provider = "copilot",
-			-- provider = "claude",
 			hints = { enabled = false },
 			windows = {
 				position = "bottom", -- the position of the sidebar
@@ -528,6 +526,18 @@ local plugins = {
 						width = 0.7,
 						preview_width = 0.4,
 					},
+				},
+				file_ignore_patterns = {
+					".git/",
+					".cache",
+					"%.o",
+					"%.a",
+					"%.out",
+					"%.class",
+					"%.pdf",
+					"%.mkv",
+					"%.mp4",
+					"%.zip",
 				},
 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 				winblend = 5,

@@ -160,7 +160,12 @@ map(
 map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
 
 -- NOTE: summarize all todos
-map("n", "<leader>todo", "<cmd> Trouble todo filter = {tag={TODO}}<cr>", { desc = "Show all TODOs" })
+map(
+	"n",
+	"<leader>todo",
+	"<cmd> Trouble todo filter = { tag={TODO}, ['not'] = { dirname = '.git'} }<cr>",
+	{ desc = "Show all TODOs" }
+)
 
 -- NOTE: neorg
 map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
