@@ -109,7 +109,7 @@ return {
 			hints = { enabled = false },
 			windows = {
 				position = "bottom", -- the position of the sidebar
-				width = 100,     -- default % based on available width
+				width = 100, -- default % based on available width
 				height = 50,
 			},
 		},
@@ -118,7 +118,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua",   -- for providers='copilot'
+			"zbirenbaum/copilot.lua", -- for providers='copilot'
 		},
 	},
 
@@ -130,7 +130,7 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		build = "make tiktoken",     -- Only on MacOS or Linux
+		build = "make tiktoken", -- Only on MacOS or Linux
 		enable = function()
 			return not vim.fn.has("win32")
 		end,
@@ -219,7 +219,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>",      mode = { "n", "v" } },
+				{ "<leader>", mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -241,8 +241,8 @@ return {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim",      -- required
-			"sindrets/diffview.nvim",     -- optional - Diff integration
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -382,19 +382,43 @@ return {
 
 	-- NOTE: nvim-neoclip
 	{
-		"AckslD/nvim-neoclip.lua",
+		"gbprod/yanky.nvim",
 		dependencies = {
-			"nvim-telescope/telescope.nvim",
+			{ "kkharji/sqlite.lua" },
 		},
-		config = function()
-			require("neoclip").setup({
-				history = 100,
-				content_spec_column = true,
-				default_register = { '"', "+", "*" },
-			})
-		end,
-		lazy = false,
+		opts = {
+			ring = { storage = "sqlite" },
+		},
+		keys = {
+			{
+				"<leader>yk",
+				function()
+					require("telescope").extensions.yank_history.yank_history({})
+				end,
+				desc = "Open Yank History",
+			},
+			{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
+			{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+			{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+			{ "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
+			{ "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
+		},
 	},
+
+	-- {
+	-- 	"AckslD/nvim-neoclip.lua",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("neoclip").setup({
+	-- 			history = 100,
+	-- 			content_spec_column = true,
+	-- 			default_register = { '"', "+", "*" },
+	-- 		})
+	-- 	end,
+	-- 	lazy = false,
+	-- },
 
 	-- NOTE: harpoon
 	{
@@ -491,6 +515,9 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
+		config = function()
+			require("telescope").load_extension("yank_history")
+		end,
 		opts = {
 			defaults = {
 				sorting_strategy = "descending",
@@ -635,8 +662,8 @@ return {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
-							{ text = { "%s" },                  click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+							{ text = { "%s" }, click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -756,11 +783,13 @@ return {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip",  priority = 9 },
-				{ name = "buffer",   priority = 9 },
+				{ name = "nvim_lsp_signature_help", priority = 9 },
+				{ name = "luasnip", priority = 9 },
+				{ name = "buffer", priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path",     priority = 8 },
-				{ name = "copilot",  priority = 0 },
+				{ name = "path", priority = 8 },
+				{ name = "copilot", priority = 0 },
+				{ name = "nvim_lsp_document_symbol", priority = 0 },
 			},
 			-- 	mapping = {
 			-- 		["<CR>"] = require("cmp").mapping({
