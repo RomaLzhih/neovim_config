@@ -16,8 +16,6 @@ nomap("n", "<leader>v")
 local map = vim.keymap.set
 
 -- NOTE: Command
--- map({ "n", "v", "x", "i" }, "q:", "<nop>", { desc = "remove command history" })
--- map({ "n", "v", "x", "i" }, "w:", "<nop>", { desc = "remove command history" })
 map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
 map("n", "<leader>co", "<cmd> copen <CR>", { desc = "close quickfix" })
@@ -27,9 +25,6 @@ map(
 	"<cmd> lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) <CR>",
 	{ desc = "toggle inlay hints" }
 )
--- map("n", "<leader>mk", function()
--- 	require("overseer").run_template({ name = "make all" })
--- end)
 
 -- NOTE: Motion
 map({ "n", "i", "v", "o" }, "<C-e>", "<END>", { desc = "End of line" })
@@ -174,16 +169,9 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 -- NOTE: telescope
 map("n", "<leader>yk", "<cmd> Telescope neoclip <CR>", { desc = "neclip copy" })
 map("n", "<leader>bf", "<cmd> Telescope buffers <CR>", { desc = "telescope buffers" })
-map("n", "<Leader>bb", function()
-	require("telescope").extensions.frecency.frecency({
-		workspace = "CWD",
-		path_display = { "shorten" },
-	})
-end, { desc = "telescope frecency" })
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 
--- NmapOTE: center buffer
 map("n", "<leader>cb", "<cmd> ZenMode <CR>", { desc = "zen mode" })
 map("n", "<leader>cn", function()
 	local number = vim.fn.input("Enter the buffer width: ")

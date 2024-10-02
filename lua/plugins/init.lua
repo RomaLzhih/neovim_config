@@ -3,10 +3,6 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
-	{
-		"folke/drop.nvim",
-	},
-
 	-- NOTE: overseer
 	{
 		"stevearc/overseer.nvim",
@@ -15,17 +11,6 @@ return {
 			require("configs.overseer")
 		end,
 		lazy = false,
-	},
-
-	-- NOTE: fzf-like
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-
-	-- NOTE: telescope frecency
-	{
-		"nvim-telescope/telescope-frecency.nvim",
-		config = function()
-			require("telescope").load_extension("frecency")
-		end,
 	},
 
 	-- NOTE: auto store sessions
@@ -124,7 +109,7 @@ return {
 			hints = { enabled = false },
 			windows = {
 				position = "bottom", -- the position of the sidebar
-				width = 100, -- default % based on available width
+				width = 100,     -- default % based on available width
 				height = 50,
 			},
 		},
@@ -133,7 +118,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			"zbirenbaum/copilot.lua",   -- for providers='copilot'
 		},
 	},
 
@@ -145,7 +130,7 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		build = "make tiktoken", -- Only on MacOS or Linux
+		build = "make tiktoken",     -- Only on MacOS or Linux
 		enable = function()
 			return not vim.fn.has("win32")
 		end,
@@ -234,7 +219,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>", mode = { "n", "v" } },
+				{ "<leader>",      mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -256,8 +241,8 @@ return {
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
+			"nvim-lua/plenary.nvim",      -- required
+			"sindrets/diffview.nvim",     -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
@@ -424,17 +409,6 @@ return {
 	-- NOTE: detect indent
 	{
 		"tpope/vim-sleuth",
-		lazy = false,
-	},
-
-	-- NOTE: center buffer
-	{
-		"shortcuts/no-neck-pain.nvim",
-		cmd = "NoNeckPain",
-		config = function()
-			require("no-neck-pain").setup()
-		end,
-		version = "*",
 		lazy = false,
 	},
 
@@ -661,8 +635,8 @@ return {
 					require("statuscol").setup({
 						relculright = true,
 						segments = {
-							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-							{ text = { "%s" }, click = "v:lua.ScSa" },
+							{ text = { builtin.foldfunc },      click = "v:lua.ScFa" },
+							{ text = { "%s" },                  click = "v:lua.ScSa" },
 							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 						},
 					})
@@ -782,28 +756,28 @@ return {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
-				{ name = "luasnip", priority = 9 },
-				{ name = "buffer", priority = 9 },
+				{ name = "luasnip",  priority = 9 },
+				{ name = "buffer",   priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
-				{ name = "path", priority = 8 },
-				{ name = "copilot", priority = 0 },
+				{ name = "path",     priority = 8 },
+				{ name = "copilot",  priority = 0 },
 			},
-			mapping = {
-				["<CR>"] = require("cmp").mapping({
-					i = function(fallback)
-						if require("cmp").visible() then
-							require("cmp").confirm({ behavior = require("cmp").ConfirmBehavior.Replace, select = false })
-						else
-							fallback()
-						end
-					end,
-					s = require("cmp").mapping.confirm({ select = true }),
-					c = require("cmp").mapping.confirm({
-						behavior = require("cmp").ConfirmBehavior.Replace,
-						select = true,
-					}),
-				}),
-			},
+			-- 	mapping = {
+			-- 		["<CR>"] = require("cmp").mapping({
+			-- 			i = function(fallback)
+			-- 				if require("cmp").visible() then
+			-- 					require("cmp").confirm({ behavior = require("cmp").ConfirmBehavior.Replace, select = false })
+			-- 				else
+			-- 					fallback()
+			-- 				end
+			-- 			end,
+			-- 			s = require("cmp").mapping.confirm({ select = true }),
+			-- 			c = require("cmp").mapping.confirm({
+			-- 				behavior = require("cmp").ConfirmBehavior.Replace,
+			-- 				select = true,
+			-- 			}),
+			-- 		}),
+			-- 	},
 		},
 	},
 
@@ -827,4 +801,3 @@ return {
 		end,
 	},
 }
-
