@@ -1,14 +1,38 @@
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
+-- Please read that file to know all available options :(
+
 ---@type ChadrcConfig
 local M = {}
 
--- Path to overriding theme and highlights files
-local highlights = require("highlights")
+M.base46 = {
+	theme = "mygruv",
+
+	hl_override = {
+		CursorLine = {
+			bg = "one_bg",
+		},
+		["@function"] = { italic = true },
+		["@function.call"] = { italic = true },
+		["@keyword"] = { italic = true },
+		["@keyword.repeat"] = { italic = true },
+		["@keyword.conditional"] = { italic = true },
+		["@keyword.return"] = { italic = true },
+		["@string"] = { italic = true },
+		["@type.builtin"] = { italic = true },
+		["@repeat"] = { italic = true },
+		["@conditional"] = { italic = true },
+		["@parameter"] = { bold = true },
+		["@comment"] = { italic = true },
+		["@variable.builtin"] = { italic = true },
+		Repeat = { italic = true },
+		Type = { italic = true },
+		Conditional = { italic = true },
+		Statement = { italic = true }
+	},
+}
 
 M.ui = {
-	theme = "myGruvboxOldSchool",
-	theme_toggle = { "myGruvboxOldSchool", "myGruvboxOldSchool" },
-	hl_override = highlights.override,
-	hl_add = highlights.add,
 	statusline = {
 		order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "mylint", "cwd", "cursor" },
 		modules = {
@@ -21,27 +45,6 @@ M.ui = {
 			end,
 		},
 	},
-	mason = {
-		cmd = true,
-		pkgs = {
-			"lua-language-server",
-			"stylua",
-			"beautysh",
-			"clangd",
-			"bash-language-server",
-			"pyright",
-			"pylint",
-			"shfmt",
-			"clang-format",
-			"black",
-			"shellcheck",
-		},
-	},
 }
-
--- M.plugins = "plugins"
-
--- check core.mappings for table structure
--- M.mappings = require "mappings"
 
 return M

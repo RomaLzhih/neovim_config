@@ -66,7 +66,7 @@ M.base_16 = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "mySolarized")
+M = require("base46").override_theme(M, "mysolarized")
 
 M.polish_hl = {
 	treesitter = {

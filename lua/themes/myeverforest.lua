@@ -87,6 +87,6 @@ M.polish_hl = {
 	},
 }
 
-M = require("base46").override_theme(M, "myEverForest")
+M = require("base46").override_theme(M, "myeverforest")
 
 return M

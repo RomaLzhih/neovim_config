@@ -86,7 +86,7 @@ M.polish_hl = {
 	},
 }
 
-M = require("base46").override_theme(M, "myRosepine")
+M = require("base46").override_theme(M, "myrosepine")
 
 M.type = "dark"
 

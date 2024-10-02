@@ -86,6 +86,6 @@ M.polish_hl = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "myKanagawa")
+M = require("base46").override_theme(M, "mykanagawa")
 
 return M

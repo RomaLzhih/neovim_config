@@ -58,7 +58,6 @@ M.base_16 = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "myGruvboxOldSchool")
 
 M.polish_hl = {
 	treesitter = {
@@ -82,4 +81,5 @@ M.polish_hl = {
 	},
 }
 
+M = require("base46").override_theme(M, "mygruvboxoldschool")
 return M
