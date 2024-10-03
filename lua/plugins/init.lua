@@ -517,55 +517,55 @@ return {
 		lazy = true,
 		config = function()
 			require("telescope").load_extension("yank_history")
+			require("telescope").setup({
+				defaults = {
+					sorting_strategy = "descending",
+					layout_config = {
+						horizontal = {
+							prompt_position = "bottom",
+							width = 0.7,
+							preview_width = 0.4,
+						},
+					},
+					file_ignore_patterns = {
+						".git/",
+						".cache",
+						"%.o",
+						"%.a",
+						"%.out",
+						"%.class",
+						"%.pdf",
+						"%.mkv",
+						"%.mp4",
+						"%.zip",
+					},
+					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+					winblend = 5,
+				},
+				pickers = {
+					find_files = {
+						layout_config = {
+							horizontal = {
+								width = 0.5,
+								preview_width = 0,
+							},
+						},
+					},
+				},
+				extensions = {
+					frecency = {
+						show_scores = true,
+						sort = true,
+						layout_config = {
+							horizontal = {
+								width = 0.5,
+								preview_width = 0,
+							},
+						},
+					},
+				},
+			})
 		end,
-		opts = {
-			defaults = {
-				sorting_strategy = "descending",
-				layout_config = {
-					horizontal = {
-						prompt_position = "bottom",
-						width = 0.7,
-						preview_width = 0.4,
-					},
-				},
-				file_ignore_patterns = {
-					".git/",
-					".cache",
-					"%.o",
-					"%.a",
-					"%.out",
-					"%.class",
-					"%.pdf",
-					"%.mkv",
-					"%.mp4",
-					"%.zip",
-				},
-				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-				winblend = 5,
-			},
-			pickers = {
-				find_files = {
-					layout_config = {
-						horizontal = {
-							width = 0.5,
-							preview_width = 0,
-						},
-					},
-				},
-			},
-			extensions = {
-				frecency = {
-					show_scores = true,
-					sort = true,
-					layout_config = {
-						horizontal = {
-							width = 0.5,
-							preview_width = 0,
-						},
-					},
-				},
-			},
-		},
 	},
 
 	-- NOTE: indent
