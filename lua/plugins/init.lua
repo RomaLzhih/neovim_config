@@ -103,6 +103,9 @@ return {
 		event = "VeryLazy",
 		lazy = false,
 		build = "make BUILD_FROM_SOURCE=true",
+		enable = function()
+			return not vim.fn.has("win32")
+		end,
 		opts = {
 			provider = "gemini",
 			auto_suggestions_provider = "copilot",
@@ -403,6 +406,9 @@ return {
 			{ "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
 			{ "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
 		},
+        enable = function()
+            return not vim.fn.has("win32") 
+        end,
 	},
 
 	-- {
