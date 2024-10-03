@@ -521,7 +521,9 @@ return {
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
 		config = function()
-			require("telescope").load_extension("yank_history")
+			if vim.fn.has("win32") == 0 then
+				require("telescope").load_extension("yank_history")
+			end
 			require("telescope").setup({
 				defaults = {
 					sorting_strategy = "descending",
