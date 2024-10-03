@@ -102,9 +102,12 @@ return {
 		"yetone/avante.nvim",
 		event = "VeryLazy",
 		lazy = false,
-		build = "make BUILD_FROM_SOURCE=true",
-		enable = function()
-			return not vim.fn.has("win32")
+		build = function()
+			if vim.fn.has("win32") then
+				return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+			else
+				return "make BUILD_FROM_SOURCE=true"
+			end
 		end,
 		opts = {
 			provider = "gemini",
@@ -383,15 +386,8 @@ return {
 		end,
 	},
 
-	-- NOTE: nvim-neoclip
 	{
 		"gbprod/yanky.nvim",
-		dependencies = {
-			{ "kkharji/sqlite.lua" },
-		},
-		opts = {
-			ring = { storage = "sqlite" },
-		},
 		keys = {
 			{
 				"<leader>yk",
@@ -406,9 +402,6 @@ return {
 			{ "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
 			{ "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
 		},
-        enable = function()
-            return not vim.fn.has("win32") 
-        end,
 	},
 
 	-- {
