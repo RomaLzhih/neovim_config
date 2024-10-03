@@ -76,7 +76,7 @@ return {
 	-- NOTE: disable auto pair
 	{
 		"windwp/nvim-autopairs",
-		enable = false,
+		enabled = false,
 	},
 
 	-- NOTE: copilot
@@ -134,8 +134,8 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
-		enable = function()
-			return not vim.fn.has("win32")
+		enabled = function()
+			return vim.fn.has("win32") == 0
 		end,
 		opts = {
 			show_folds = false, -- Shows folds for sections in chat
@@ -513,7 +513,7 @@ return {
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = overrides.nvimtree,
-		enable = false,
+		enabled = false,
 	},
 
 	-- NOTE: telescope
