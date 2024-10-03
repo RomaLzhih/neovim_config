@@ -1,4 +1,4 @@
-require "nvchad.options"
+require("nvchad.options")
 
 -- add yours here!
 
@@ -26,10 +26,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.norg" },
 	command = "set conceallevel=3",
 })
-
--- NOTE: set the avante
-require("avante_lib").load()
-vim.opt.laststatus = 3
 
 -- NOTE: manage the session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
