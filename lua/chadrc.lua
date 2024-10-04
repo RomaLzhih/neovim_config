@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "mygruv",
+	theme = "mygruvold",
 
 	hl_override = {
 		CursorLine = {
@@ -28,7 +28,7 @@ M.base46 = {
 		Repeat = { italic = true },
 		Type = { italic = true },
 		Conditional = { italic = true },
-		Statement = { italic = true }
+		Statement = { fg = "orange", italic = true },
 	},
 }
 
