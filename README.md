@@ -5,4 +5,5 @@ An IDE-like neovim configuration that optimized for coding with:
 - Bash
 - Latex
 - Lua
+
 Enjoy!
