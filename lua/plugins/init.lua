@@ -455,6 +455,9 @@ return {
 							win_width = 38,
 							auto_preview = false,
 						},
+						lightbulb = {
+							enabled = false,
+						},
 					})
 				end,
 			},
