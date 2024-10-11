@@ -18,7 +18,7 @@ for _, lsp in ipairs(servers) do
 				vim.g.inlay_hints_visible = true
 				vim.lsp.buf.inlay_hint(bufnr, true)
 			else
-				print("Inlay")
+				print("Inlay hints not available for " .. lsp)
 			end
 		end,
 		on_init = on_init,
