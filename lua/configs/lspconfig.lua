@@ -82,6 +82,7 @@ if current_os == "Ubuntu" or current_os == "Arch" or current_os == "Windows" the
 		},
 	})
 
+	-- https://medium.com/@Erik_Krieg/free-and-open-source-grammar-correction-in-neovim-using-ltex-and-n-grams-dea9d10bc964
 	lspconfig.ltex.setup({
 		on_attach = on_attach,
 		on_init = on_init,
@@ -98,7 +99,7 @@ if current_os == "Ubuntu" or current_os == "Arch" or current_os == "Windows" the
 		settings = {
 			ltex = {
 				checkFrequency = "save",
-				statusBarItem = "trye",
+				statusBarItem = "true",
 			},
 		},
 	})
