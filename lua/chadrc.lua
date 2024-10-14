@@ -28,7 +28,7 @@ M.base46 = {
 		Repeat = { italic = true },
 		Type = { italic = true },
 		Conditional = { italic = true },
-		Statement = { fg = "orange", italic = true },
+		Statement = { fg = "base0D", italic = true },
 	},
 }
 
