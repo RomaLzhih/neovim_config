@@ -134,9 +134,9 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
-		enabled = function()
-			return vim.fn.has("win32") == 0
-		end,
+		-- enabled = function()
+		-- 	return vim.fn.has("win32") == 0
+		-- end,
 		opts = {
 			show_folds = false, -- Shows folds for sections in chat
 			show_help = false, -- Shows help message as virtual lines when waiting for user input
