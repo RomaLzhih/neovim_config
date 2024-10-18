@@ -47,7 +47,7 @@ lspconfig.r_language_server.setup({
 	settings = {
 		r = {
 			lsp = {
-				diagnostic = false,
+				diagnostics = false,
 			},
 		},
 	},
