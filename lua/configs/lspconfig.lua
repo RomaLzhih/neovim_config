@@ -44,6 +44,13 @@ lspconfig.r_language_server.setup({
 			underline = { severity = { min = vim.diagnostic.severity.ERROR } },
 		}),
 	},
+	settings = {
+		r = {
+			lsp = {
+				diagnostics = false,
+			},
+		},
+	},
 })
 
 -- Function to detect the operating system

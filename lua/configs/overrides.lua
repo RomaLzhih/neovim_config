@@ -8,6 +8,8 @@ M.treesitter = {
 		"cpp",
 		"python",
 		"r",
+		"rnoweb",
+		"yaml",
 		"bash",
 		"markdown",
 		"markdown_inline",

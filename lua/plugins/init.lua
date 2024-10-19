@@ -508,6 +508,7 @@ return {
 
 	-- NOTE: nvim-treesitter
 	{
+		run = ":TSUpdate",
 		"nvim-treesitter/nvim-treesitter",
 		opts = overrides.treesitter,
 	},
@@ -736,12 +737,16 @@ return {
 	},
 
 	-- NOTE: Nvim-R
+	--
 	{
-		"jalvesaq/Nvim-R",
+		"R-nvim/R.nvim",
+		-- Only required if you also set defaults.lazy = true
+		lazy = false,
 		ft = { "rmd", "r" },
-		config = function()
-			R_assign = false
-		end,
+		-- R.nvim is still young and we may make some breaking changes from time
+		-- to time. For now we recommend pinning to the latest minor version
+		-- like so:
+		version = "~0.1.0",
 	},
 
 	-- NOTE: vim latex
