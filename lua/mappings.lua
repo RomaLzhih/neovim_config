@@ -50,21 +50,20 @@ map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
 map("n", "<C-s>", "<cmd>Yazi toggle<CR>", { noremap = true, silent = true, desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
-map("n", "<leader>qc", function()
+map({ "n", "v" }, "<leader>qc", function()
 	local input = vim.fn.input("Quick Chat: ")
 	if input ~= "" then
 		require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
 	end
 end, { desc = "CopilotChat - Quick chat" })
 map("n", "<A-b>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
-map("n", "<leader>cs", "<cmd>CopilotChatStop<CR>", { desc = "CopilotChat - stop" })
 map({ "n", "v" }, "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
 map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "CopilotChat - review" })
 map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })
-map("n", "<leader>cdoc", "<cmd>CopilotChatdocs<CR>", { desc = "CopilotChat - docs" })
-map("n", "<leader>cfd", "<cmd>CopilotChatFixDiagnostic<CR>", { desc = "CopilotChat - fix diagnostic" })
-map("n", "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
-map("n", "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
+map({ "n", "v" }, "<leader>cdoc", "<cmd>CopilotChatdocs<CR>", { desc = "CopilotChat - docs" })
+map({ "n", "v" }, "<leader>cfd", "<cmd>CopilotChatFixDiagnostic<CR>", { desc = "CopilotChat - fix diagnostic" })
+map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
+map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
 
 -- NOTE: Avante
 map({ "n", "v" }, "<A-i>", function()
