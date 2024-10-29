@@ -54,9 +54,10 @@ end
 
 -- Key mapping to call the function
 vim.keymap.set("n", "<leader>mk", ":lua run_make_command()<CR>", { noremap = true, silent = true, desc = "run make" })
+-- vim.keymap.del("n", "<leader>ma")
 vim.keymap.set(
 	"n",
-	"<leader>ma",
+	"<leader>mt",
 	":lua set_make_command_arg()<CR>",
-	{ noremap = true, silent = true, desc = "run make" }
+	{ noremap = true, silent = true, desc = "get new make target" }
 )
