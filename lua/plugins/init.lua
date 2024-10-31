@@ -788,17 +788,15 @@ return {
 		"mechatroner/rainbow_csv",
 	},
 
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
 	-- NOTE: configure cmp with copilot
 	{
 		"hrsh7th/nvim-cmp",
-		dependencies = {
-			{
-				"zbirenbaum/copilot-cmp",
-				config = function()
-					require("copilot_cmp").setup()
-				end,
-			},
-		},
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 10 },
@@ -810,6 +808,9 @@ return {
 				{ name = "copilot", priority = 0 },
 				{ name = "nvim_lsp_document_symbol", priority = 0 },
 			},
+			mapping = require("cmp").mapping({
+				["<C-e>"] = require("cmp").mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			}),
 			-- 	mapping = {
 			-- 		["<CR>"] = require("cmp").mapping({
 			-- 			i = function(fallback)
