@@ -450,6 +450,10 @@ return {
 				cmd = "Lspsaga",
 				config = function()
 					require("lspsaga").setup({
+						definition = {
+							width = 0.95,
+							height = 0.5,
+						},
 						outline = {
 							win_position = "left",
 							win_width = 38,
