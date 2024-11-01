@@ -800,12 +800,12 @@ return {
 		opts = {
 			sources = {
 				{ name = "nvim_lsp", priority = 11 },
+				{ name = "copilot", priority = 10 },
 				-- { name = "nvim_lsp_signature_help", priority = 9 },
 				{ name = "luasnip", priority = 9 },
-				{ name = "buffer", priority = 9 },
-				{ name = "nvim_lua", priority = 9 },
-				{ name = "path", priority = 8 },
-				{ name = "copilot", priority = 0 },
+				{ name = "buffer", priority = 8 },
+				{ name = "nvim_lua", priority = 7 },
+				{ name = "path", priority = 6 },
 				{ name = "nvim_lsp_document_symbol", priority = 0 },
 			},
 			mapping = require("cmp").mapping({
