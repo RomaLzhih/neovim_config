@@ -788,19 +788,19 @@ return {
 		"mechatroner/rainbow_csv",
 	},
 
-	{
-		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	},
 	-- NOTE: configure cmp with copilot
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		},
 		opts = {
 			sources = {
-				{ name = "nvim_lsp", priority = 10 },
-				{ name = "nvim_lsp_signature_help", priority = 9 },
+				{ name = "nvim_lsp", priority = 11 },
+				-- { name = "nvim_lsp_signature_help", priority = 9 },
 				{ name = "luasnip", priority = 9 },
 				{ name = "buffer", priority = 9 },
 				{ name = "nvim_lua", priority = 9 },
@@ -811,22 +811,6 @@ return {
 			mapping = require("cmp").mapping({
 				["<C-e>"] = require("cmp").mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
-			-- 	mapping = {
-			-- 		["<CR>"] = require("cmp").mapping({
-			-- 			i = function(fallback)
-			-- 				if require("cmp").visible() then
-			-- 					require("cmp").confirm({ behavior = require("cmp").ConfirmBehavior.Replace, select = false })
-			-- 				else
-			-- 					fallback()
-			-- 				end
-			-- 			end,
-			-- 			s = require("cmp").mapping.confirm({ select = true }),
-			-- 			c = require("cmp").mapping.confirm({
-			-- 				behavior = require("cmp").ConfirmBehavior.Replace,
-			-- 				select = true,
-			-- 			}),
-			-- 		}),
-			-- 	},
 		},
 	},
 
