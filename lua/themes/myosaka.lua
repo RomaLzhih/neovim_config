@@ -69,7 +69,7 @@ M.polish_hl = {
 		["@constructor"] = { fg = M.base_16.base0D },
 		["@variable.member"] = { fg = "#9eacad" },
 		["@type"] = { fg = M.base_16.base08 },
-		["@type.buildin"] = { fg = M.base_16.base0A },
+		["@type.builtin"] = { fg = M.base_16.base0A },
 		["@namespace"] = { fg = M.base_16.base0B },
 		["@parameter"] = { fg = "#9eacad" },
 		["@variable.parameter"] = { fg = M.base_16.base0C },
