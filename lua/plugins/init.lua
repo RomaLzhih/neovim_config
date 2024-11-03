@@ -108,6 +108,10 @@ return {
 		end,
 		opts = {
 			provider = "gemini",
+			-- provider = "copilot",
+			-- copilot = {
+			-- 	model = "claude-3-5-sonnet-20241022",
+			-- },
 			auto_suggestions_provider = "copilot",
 			hints = { enabled = false },
 			windows = {
