@@ -76,7 +76,10 @@ end, { desc = "avante refresh" })
 
 -- NOTE: terminal and buffer
 map({ "n", "t" }, "<A-w>", function()
-	require("nvchad.term").toggle({ pos = "bo sp", id = "htoggleTerm", size = 0.4 })
+	require("nvchad.term").toggle({
+		pos = "float",
+		float_opts = { row = 0.15, col = 0.18, width = 0.618, height = 0.618 },
+	})
 end, { desc = "Toggle horizontal term" })
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal" })
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
