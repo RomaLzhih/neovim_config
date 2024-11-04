@@ -3,6 +3,9 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	-- NOTE: key-analyzer
+	{ "meznaric/key-analyzer.nvim", lazy = true, opts = {} },
+
 	-- NOTE: overseer
 	{
 		"stevearc/overseer.nvim",
@@ -107,8 +110,8 @@ return {
 			return vim.fn.has("win32") == 0
 		end,
 		opts = {
-			provider = "gemini",
-			-- provider = "copilot",
+			-- provider = "gemini",
+			provider = "copilot",
 			-- copilot = {
 			-- 	model = "claude-3-5-sonnet-20241022",
 			-- },
@@ -141,6 +144,7 @@ return {
 		-- enabled = function()
 		-- 	return vim.fn.has("win32") == 0
 		-- end,
+		model = "claude-3.5-sonnet",
 		opts = {
 			show_folds = false, -- Shows folds for sections in chat
 			show_help = false, -- Shows help message as virtual lines when waiting for user input
@@ -148,18 +152,15 @@ return {
 			answer_header = " Copilot ", -- Header to use for AI answers
 			error_header = " Error ", -- Header to use for errors
 			window = {
-				layout = "horizontal", -- or 'vertical'
+				layout = "float",
+				width = 0.618,
+				height = 0.618,
+				-- layout = "horizontal", -- or 'vertical'
 				-- relative = "cursor",
-				width = 1,
-				height = 0.5,
+				-- width = 1,
+				-- height = 0.5,
 				boarder = "rounded",
-				row = 1,
-			},
-			mappings = {
-				reset = {
-					normal = "<C-A-l>",
-					insert = "<C-A-l>",
-				},
+				-- row = 1,
 			},
 		},
 		lazy = false,
