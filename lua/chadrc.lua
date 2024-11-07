@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "mytundra",
+	theme = "myocean",
 
 	hl_override = {
 		CursorLine = {

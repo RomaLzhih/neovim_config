@@ -53,7 +53,7 @@ M.base_16 = {
 	base0C = "#5aaeae",
 	base0D = "#6699CC",
 	base0E = "#C594C5",
-	base0F = "#EC5F67",
+	base0F = "#d75f5f",
 }
 
 M.type = "dark"
@@ -64,7 +64,7 @@ M.polish_hl = {
 		["@variable.member"] = { fg = M.base_30.white },
 		["@type"] = { fg = M.base_16.base08 },
 		["@type.builtin"] = { fg = M.base_16.base08 },
-		["@property"] = { fg = M.base_16.base08 },
+		["@property"] = { fg = M.base_16.base0B },
 		["@namespace"] = { fg = M.base_16.base0C },
 		["@parameter"] = { fg = M.base_30.white, bold = true },
 		["@variable.parameter"] = { fg = M.base_30.white, bold = true },
