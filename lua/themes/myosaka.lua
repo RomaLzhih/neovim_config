@@ -68,7 +68,7 @@ M.polish_hl = {
 	treesitter = {
 		["@constructor"] = { fg = M.base_16.base0D },
 		["@variable.member"] = { fg = "#9eacad" },
-		["@type"] = { fg = M.base_16.base08 },
+		["@type"] = { fg = M.base_16.base09 },
 		["@type.builtin"] = { fg = M.base_16.base0A },
 		["@namespace"] = { fg = M.base_16.base0B },
 		["@parameter"] = { fg = "#9eacad" },
@@ -81,7 +81,7 @@ M.polish_hl = {
 		["@operator"] = { fg = M.base_16.base0E },
 		["@variable"] = { fg = "#9eacad" },
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
-		["@property"] = { fg = M.base_30.teal },
+		["@property"] = { fg = M.base_16.base0B },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
 		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
 	},
