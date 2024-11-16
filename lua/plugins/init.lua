@@ -3,6 +3,15 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	-- NOTE: unipaired
+	{
+		"tummetott/unimpaired.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add options here if you wish to override the default settings
+		},
+	},
+
 	-- NOTE: key-analyzer
 	{ "meznaric/key-analyzer.nvim", lazy = true, opts = {} },
 
