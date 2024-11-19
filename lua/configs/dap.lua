@@ -1,6 +1,7 @@
 local dap = require("dap")
 local bin_path = ""
 local args_string = ""
+local bin_name = ""
 dap.configurations.cpp = {
 	{
 		name = "Launch codelldb",
@@ -21,19 +22,19 @@ dap.configurations.cpp = {
 			return vim.split(args_string, " ")
 		end,
 		preLaunchTask = function()
-			local build_command = "make -C" .. bin_path -- Replace with your build command
-			local result = os.execute(build_command)
-			if result ~= 0 then
-				print("Build failed!")
-				return false
+			if bin_name == "" then
+				bin_name = vim.fn.input("Name of the executable: ")
+				bin_path = vim.fn.getcwd() .. "/build/" .. bin_name
 			end
-			return true
+			local build_command = "make -C build " .. bin_name
+			vim.fn.system(build_command)
 		end,
 	},
 }
 
 function set_debug_command_arg()
-	bin_path = vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+	bin_name = vim.fn.input("Name of the executable: ")
+	bin_path = vim.fn.getcwd() .. "/build/" .. bin_name
 	args_string = vim.fn.input("Arguments: ")
 	print("bin_path: " .. bin_path)
 	print("args_string: " .. args_string)
@@ -41,7 +42,7 @@ end
 
 vim.keymap.set(
 	"n",
-	"<leader>dt",
+	"<leader>da",
 	":lua set_debug_command_arg()<CR>",
 	{ noremap = true, silent = true, desc = "get new debug target" }
 )
