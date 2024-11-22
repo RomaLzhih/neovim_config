@@ -3,13 +3,51 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				textobjects = {
+					select = {
+						enable = true,
+						look = true,
+						include_surrounding_whitespace = true,
+						keymaps = {
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["al"] = "@loop.outer",
+							["il"] = "@loop.inner",
+							["ac"] = "@conditional.outer",
+							["ic"] = "@conditional.inner",
+						},
+					},
+					move = {
+						enable = true,
+						set_jumps = true, -- whether to set jumps in the jumplist
+						goto_next = {
+							["]f"] = "@function.outer",
+							["]l"] = "@loop.outer",
+							["]c"] = "@conditional.outer",
+						},
+						goto_previous = {
+							["[f"] = "@function.outer",
+							["[l"] = "@loop.outer",
+							["[c"] = "@conditional.outer",
+						},
+					},
+				},
+			})
+		end,
+		lazy = false,
+	},
+
 	-- NOTE: unipaired
 	{
 		"tummetott/unimpaired.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- add options here if you wish to override the default settings
-		},
+		opts = {},
 	},
 
 	-- NOTE: key-analyzer
