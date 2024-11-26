@@ -1,4 +1,6 @@
-require("overseer").setup({})
+require("overseer").setup({
+	dap = false,
+})
 
 local make_command_arg = ""
 
