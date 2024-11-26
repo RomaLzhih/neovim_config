@@ -22,10 +22,8 @@ dap.configurations.cpp = {
 			return vim.split(args_string, " ")
 		end,
 		preLaunchTask = function()
-			if bin_name == "" then
-				bin_name = vim.fn.input("Name of the executable: ")
-				bin_path = vim.fn.getcwd() .. "/build/" .. bin_name
-			end
+			bin_name = vim.fn.input("Name of the executable: ")
+			bin_path = vim.fn.getcwd() .. "/build/" .. bin_name
 			local build_command = "make -C build " .. bin_name
 			vim.fn.system(build_command)
 		end,
@@ -36,6 +34,7 @@ function set_debug_command_arg()
 	bin_name = vim.fn.input("Name of the executable: ")
 	bin_path = vim.fn.getcwd() .. "/build/" .. bin_name
 	args_string = vim.fn.input("Arguments: ")
+	print("bin_name: " .. bin_name)
 	print("bin_path: " .. bin_path)
 	print("args_string: " .. args_string)
 end
