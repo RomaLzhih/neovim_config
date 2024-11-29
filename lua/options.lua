@@ -80,6 +80,7 @@ local links = {
 	["@lsp.typemod.variable.readonly"] = "@constant",
 	["@markup.italic.markdown_inline"] = "@function",
 	["@markup.strong.markdown_inline"] = "@parameter",
+	["@keyword.exception.cpp"] = "@keyword",
 }
 for newgroup, oldgroup in pairs(links) do
 	vim.api.nvim_set_hl(0, newgroup, { link = oldgroup, default = true })

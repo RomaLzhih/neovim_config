@@ -78,6 +78,7 @@ M.polish_hl = {
 		["@macro"] = { fg = M.base_16.base0F, italic = true },
 		["@keyword.repeat"] = { fg = M.base_16.base0E },
 		["@keyword.modifier"] = { fg = M.base_16.base0E, italic = true },
+		["@keyword.exception"] = { fg = M.base_16.base0E, italic = true },
 	},
 }
 
