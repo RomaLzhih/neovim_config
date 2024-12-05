@@ -640,19 +640,23 @@ return {
 					find_files = {
 						layout_config = {
 							horizontal = {
-								width = 0.5,
+								width = 0.382,
 								preview_width = 0,
 							},
 						},
 					},
-				},
-				extensions = {
-					frecency = {
-						show_scores = true,
-						sort = true,
+					recent_files = {
 						layout_config = {
 							horizontal = {
-								width = 0.5,
+								width = 0.382,
+								preview_width = 0,
+							},
+						},
+					},
+					buffers = {
+						layout_config = {
+							horizontal = {
+								width = 0.382,
 								preview_width = 0,
 							},
 						},
