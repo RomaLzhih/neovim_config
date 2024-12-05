@@ -2,7 +2,7 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
 	python = { "pylint" },
-	cpp = { "clangtidy", "cpplint", "cppcheck" },
+	cpp = { "clangtidy", "cppcheck" },
 	bash = { "shellcheck" },
 }
 
@@ -58,9 +58,9 @@ vim.diagnostic.config({
 	underline = false,
 }, pylint)
 
-local cpplint = require("lint").get_namespace("cpplint")
-vim.diagnostic.config({
-	virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
-	signs = { severity = { min = vim.diagnostic.severity.ERROR } },
-	underline = false,
-}, cpplint)
+-- local cpplint = require("lint").get_namespace("cpplint")
+-- vim.diagnostic.config({
+-- 	virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
+-- 	signs = { severity = { min = vim.diagnostic.severity.ERROR } },
+-- 	underline = false,
+-- }, cpplint)

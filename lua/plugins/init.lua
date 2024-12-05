@@ -503,6 +503,19 @@ return {
 		lazy = false,
 	},
 
+	-- NOTE: tiny inline diagnostic
+	-- {
+	-- 	"rachartier/tiny-inline-diagnostic.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("tiny-inline-diagnostic").setup({
+	-- 			options = {
+	-- 				multilines = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+
 	-- NOTE: nvim-lspconfig
 	{
 		"neovim/nvim-lspconfig",
@@ -548,6 +561,7 @@ return {
 		config = function()
 			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
+			-- vim.diagnostic.config({ virtual_text = false })
 		end, -- Override to setup mason-lspconfig
 	},
 
