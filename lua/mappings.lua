@@ -27,13 +27,12 @@ map(
 )
 
 -- NOTE: Motion
-map({ "n", "i", "v", "o" }, "<C-e>", "<END>", { desc = "End of line" })
-map({ "n", "i", "v", "o" }, "<C-q>", "<HOME>", { desc = "Begining of line" })
+map({ "n", "i", "v", "o" }, "<C-e>", "$", { desc = "End of line" })
+map({ "n", "i", "v", "o" }, "<C-q>", "^", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
 -- NOTE: edit
-map("n", "<C-a>", "ggVG <CR>", { desc = "Select all" })
 map("n", "<leader>spell", "<cmd> set spell! <CR>", { desc = "Toggle spell check" })
 map({ "n", "v" }, "<C-n>", "<cmd>MCstart<cr>", { desc = "vm find word" })
 map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
