@@ -1,3 +1,5 @@
+local overseer = require("overseer")
+
 require("overseer").setup({
 	dap = false,
 })
@@ -55,11 +57,98 @@ function run_make_command()
 end
 
 -- Key mapping to call the function
-vim.keymap.set("n", "<leader>mk", ":lua run_make_command()<CR>", { noremap = true, silent = true, desc = "run make" })
+vim.keymap.set(
+	"n",
+	"<leader>mk",
+	":lua run_make_command()<CR>",
+	{ noremap = true, silent = true, desc = "overseer run make" }
+)
 -- vim.keymap.del("n", "<leader>ma")
 vim.keymap.set(
 	"n",
 	"<leader>mt",
 	":lua set_make_command_arg()<CR>",
-	{ noremap = true, silent = true, desc = "get new make target" }
+	{ noremap = true, silent = true, desc = "overseer get new make target" }
+)
+
+-- NOTE: run the last task
+vim.api.nvim_create_user_command("OverseerRestartLast", function()
+	local overseer = require("overseer")
+	local tasks = overseer.list_tasks({ recent_first = true })
+	if vim.tbl_isempty(tasks) then
+		vim.notify("No tasks found", vim.log.levels.WARN)
+	else
+		overseer.run_action(tasks[1], "restart")
+	end
+end, {})
+
+vim.keymap.set(
+	"n",
+	"<leader>ol",
+	"<cmd> OverseerRestartLast<CR>",
+	{ noremap = true, silent = true, desc = "overseer restart last" }
+)
+
+vim.keymap.set("n", "<leader>ru", "<cmd> OverseerRun<CR>", { noremap = true, silent = true, desc = "overseer run" })
+
+vim.keymap.set("n", "<leader>op", "<cmd> OverseerOpen<CR>", { noremap = true, silent = true, desc = "overseer open" })
+
+-- NOTE: run customized tasks
+local args_string = ""
+local bin_name = ""
+
+function set_debug_command_arg()
+	bin_name = vim.fn.input("Name of the executable: ")
+	args_string = vim.fn.input("Arguments: ")
+	print("bin_name: " .. bin_name)
+	print("args_string: " .. args_string)
+end
+
+overseer.register_template(
+	-- Template definition (see below)
+	{
+		-- Required fields
+		name = "run target",
+		params = {
+			cmd = { type = "string", order = 1 },
+			args = { type = "list", subtype = { type = "string" }, delimiter = " ", optional = true, order = 2 },
+			env = {
+				type = "list",
+				subtype = { type = "string" },
+				delimiter = " ",
+				optional = true,
+				order = 3,
+			},
+			expand_cmd = {
+				desc = "Run expandcmd() on command before execution",
+				type = "boolean",
+				default = true,
+				optional = true,
+				order = 4,
+			},
+		},
+		builder = function(params)
+			-- This must return an overseer.TaskDefinition
+			local cmd = params.expand_cmd and vim.fn.expandcmd(params.cmd) or params.cmd
+			return {
+				cmd = cmd,
+				args = params.args,
+				env = params.env, -- the list of components or component aliases to add to the task
+				components = {
+					{ "open_output", direction = "dock", focus = true, on_result = "always", on_start = "always" },
+				},
+				metadata = {},
+			}
+		end,
+		-- desc = "Optional description of task",
+		tags = { overseer.TAG.BUILD },
+		priority = 50,
+		condition = {
+			filetype = { "c", "cpp" },
+			callback = function(search)
+				print(vim.inspect(search))
+				return true
+			end,
+		},
+	}
 )

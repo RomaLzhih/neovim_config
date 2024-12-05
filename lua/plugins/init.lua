@@ -564,6 +564,9 @@ return {
 		config = function()
 			require("tmux").setup({
 				navigation = {
+					cycle_navigation = false,
+					redirect_to_clipboard = true,
+					sync_clipboard = false,
 					enable_default_keybindings = false,
 				},
 			})
