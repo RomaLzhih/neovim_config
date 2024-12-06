@@ -756,16 +756,33 @@ return {
 		"kevinhwang91/nvim-ufo",
 		dependencies = {
 			"kevinhwang91/promise-async",
+			-- {
+			-- 	"luukvbaal/statuscol.nvim",
+			-- 	config = function()
+			-- 		local builtin = require("statuscol.builtin")
+			-- 		require("statuscol").setup({
+			-- 			relculright = true,
+			-- 			segments = {
+			-- 				{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+			-- 				{ text = { "%s" }, click = "v:lua.ScSa" },
+			-- 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+			-- 			},
+			-- 		})
+			-- 	end,
+			-- },
 			{
-				"luukvbaal/statuscol.nvim",
+				"yaocccc/nvim-foldsign",
+				event = "CursorHold",
+				lazy = false,
 				config = function()
-					local builtin = require("statuscol.builtin")
-					require("statuscol").setup({
-						relculright = true,
-						segments = {
-							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-							{ text = { "%s" }, click = "v:lua.ScSa" },
-							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+					require("nvim-foldsign").setup({
+						offset = -2,
+						foldsigns = {
+							open = "󰤻", -- mark the beginning of a fold
+							close = "󰡌", -- show a closed fold
+							-- open = "",
+							-- close = "",
+							seps = { "" }, -- open fold middle marker
 						},
 					})
 				end,
