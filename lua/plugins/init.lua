@@ -3,6 +3,9 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	-- NOTE: enable nvim copy to system clipboard
+	{ "ojroques/nvim-osc52", lazy = false },
+
 	-- NOTE: enable treesitter for text object select
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",

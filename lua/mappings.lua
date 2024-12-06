@@ -26,6 +26,11 @@ map(
 	{ desc = "toggle inlay hints" }
 )
 
+-- NOTE: system copy
+map("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+map("n", "<leader>cc", "<leader>c_", { remap = true })
+map("v", "<leader>c", require("osc52").copy_visual)
+
 -- NOTE: Motion
 map({ "n", "i", "v", "o" }, "<C-e>", "$", { desc = "End of line" })
 map({ "n", "i", "v", "o" }, "<C-q>", "^", { desc = "Begining of line" })
