@@ -57,6 +57,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- NOTE: enable cursoreline
 vim.o.cursorlineopt = "number,line"
+vim.o.number = false
 
 -- NOTE: set semantic syntax
 -- see: https://www.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
@@ -115,6 +116,7 @@ vim.cmd([[
 set ignorecase smartcase
 ]])
 
+-- NOTE: auto enter insert mode when enter terminal
 vim.cmd([[
 autocmd BufWinEnter,WinEnter term://* startinsert
 ]])

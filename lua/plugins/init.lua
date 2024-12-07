@@ -85,7 +85,7 @@ return {
 		},
 	},
 
-	-- NOTE: Lua
+	-- NOTE: zen-mode
 	{
 		"folke/zen-mode.nvim",
 		cmd = "ZenMode",
@@ -110,7 +110,7 @@ return {
 	-- NOTE: vim visual multi
 	{
 		"mg979/vim-visual-multi",
-		lazy = false,
+		lazy = true,
 	},
 
 	-- NOTE: use mini pair to complete the pair
