@@ -47,7 +47,7 @@ map("n", "<leader>tp", function()
 end, { desc = "toggle transparency" })
 
 -- NOTE: Nvim tree
--- map("n", "<A-e>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
+map("n", "<A-e>", "<cmd> Oil --float . <CR>", { desc = "Toggle nvimtree" })
 
 -- NOTE: Yazi
 map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })

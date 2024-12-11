@@ -3,6 +3,32 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {
+			float = {
+				-- Padding around the floating window
+				padding = 2,
+				max_width = 82,
+				max_height = 30,
+				override = function(conf)
+					return conf
+				end,
+			},
+			keymaps = {
+				["l"] = "actions.select",
+				["q"] = { "actions.close", mode = "n" },
+				["h"] = { "actions.parent", mode = "n" },
+			},
+		},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+		lazy = false,
+	},
+
 	-- NOTE: enable nvim copy to system clipboard
 	{ "ojroques/nvim-osc52", lazy = false },
 
