@@ -9,6 +9,34 @@ return {
 	-- NOTE: last place
 	{ "farmergreg/vim-lastplace", lazy = false },
 
+	-- NOTE: neoscroll.nvim
+	{
+		"declancm/cinnamon.nvim",
+		config = function()
+			require("cinnamon").setup({
+				keymaps = {
+					-- Enable the provided 'basic' keymaps
+					basic = true,
+					-- Enable the provided 'extra' keymaps
+					extra = true,
+				},
+				---@class ScrollOptions
+				options = {
+					-- Post-movement callback
+					callback = nil, ---@type function?
+					max_delta = {
+						-- Maximum distance for line movements. Set to `nil` to disable
+						-- line = 150, ---@type number?
+						-- Maximum distance for column movements. Set to `nil` to disable
+						column = 0, ---@type number?
+						-- Maximum duration for a movement (in ms). Automatically adjusts the line delay
+						-- time = 500, ---@type number
+					},
+				},
+			})
+		end,
+		lazy = has_neovide ~= nil,
+	},
 	-- NOTE: snackes.nvim
 	{
 		"folke/snacks.nvim",
@@ -17,13 +45,14 @@ return {
 		opts = {
 			input = { enabled = true },
 			notifier = { enabled = true },
-			scroll = { enabled = true },
+			-- scroll = { enabled = true },
 			zen = {
 				enabled = true,
 				win = { style = { width = 90 } },
 				toggles = { dim = false, diagnostics = true, inlay_hints = true },
 			},
 			bufdelete = { enabled = true },
+			animate = { enabled = false },
 		},
 	},
 
