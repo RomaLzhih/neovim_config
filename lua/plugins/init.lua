@@ -3,13 +3,35 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	-- NOTE remove hl automatically
+	{ "romainl/vim-cool", lazy = false },
+
+	-- NOTE: last place
+	{ "farmergreg/vim-lastplace", lazy = false },
+
+	-- NOTE: snackes.nvim
+	{
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+		opts = {
+			input = { enabled = true },
+			notifier = { enabled = true },
+			scroll = { enabled = true },
+			zen = {
+				enabled = true,
+				win = { style = { width = 90 } },
+				toggles = { dim = false, diagnostics = true, inlay_hints = true },
+			},
+			bufdelete = { enabled = true },
+		},
+	},
+
+	-- NOTE: oil
 	{
 		"stevearc/oil.nvim",
-		---@module 'oil'
-		---@type oil.SetupOpts
 		opts = {
 			float = {
-				-- Padding around the floating window
 				padding = 2,
 				max_width = 82,
 				max_height = 30,
@@ -129,22 +151,6 @@ return {
 			bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante" }, -- or whatever dashboard you use
 			session_lens = {
 				load_on_setup = false,
-			},
-		},
-	},
-
-	-- NOTE: zen-mode
-	{
-		"folke/zen-mode.nvim",
-		cmd = "ZenMode",
-		opts = {
-			window = {
-				width = 90,
-				options = {
-					relativenumber = true,
-					cursorline = true,
-					-- number = true,
-				},
 			},
 		},
 	},
@@ -315,6 +321,7 @@ return {
 		opts = {
 			auto_close = true,
 			focus = true,
+			auto_jump = true,
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		lazy = false,
@@ -332,6 +339,7 @@ return {
 		},
 		keys = { "<leader>", "<localleader>" },
 	},
+
 	-- NOTE: Multicursor:
 	{
 		"smoka7/multicursors.nvim",
@@ -460,12 +468,6 @@ return {
 		end,
 	},
 
-	-- NOTE: delete a buffer and close the window
-	{
-		"famiu/bufdelete.nvim",
-		lazy = false,
-	},
-
 	-- NOTE: flash
 	{
 		"folke/flash.nvim",
@@ -481,15 +483,6 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("notify").setup({
-						render = "default",
-						stages = "static",
-					})
-				end,
-			},
 		},
 		config = function()
 			require("configs.noice")
@@ -523,21 +516,6 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"AckslD/nvim-neoclip.lua",
-	-- 	dependencies = {
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- 	config = function()
-	-- 		require("neoclip").setup({
-	-- 			history = 100,
-	-- 			content_spec_column = true,
-	-- 			default_register = { '"', "+", "*" },
-	-- 		})
-	-- 	end,
-	-- 	lazy = false,
-	-- },
-
 	-- NOTE: harpoon
 	{
 		"ThePrimeagen/harpoon",
@@ -553,19 +531,6 @@ return {
 		"tpope/vim-sleuth",
 		lazy = false,
 	},
-
-	-- NOTE: tiny inline diagnostic
-	-- {
-	-- 	"rachartier/tiny-inline-diagnostic.nvim",
-	-- 	event = "VeryLazy",
-	-- 	config = function()
-	-- 		require("tiny-inline-diagnostic").setup({
-	-- 			options = {
-	-- 				multilines = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 
 	-- NOTE: nvim-lspconfig
 	{
@@ -732,35 +697,6 @@ return {
 		end,
 
 		lazy = false,
-	},
-
-	-- NOTE: neoscroll.nvim
-	{
-		"declancm/cinnamon.nvim",
-		config = function()
-			require("cinnamon").setup({
-				keymaps = {
-					-- Enable the provided 'basic' keymaps
-					basic = true,
-					-- Enable the provided 'extra' keymaps
-					extra = true,
-				},
-				---@class ScrollOptions
-				options = {
-					-- Post-movement callback
-					callback = nil, ---@type function?
-					max_delta = {
-						-- Maximum distance for line movements. Set to `nil` to disable
-						-- line = 150, ---@type number?
-						-- Maximum distance for column movements. Set to `nil` to disable
-						column = 0, ---@type number?
-						-- Maximum duration for a movement (in ms). Automatically adjusts the line delay
-						-- time = 500, ---@type number
-					},
-				},
-			})
-		end,
-		lazy = has_neovide ~= nil,
 	},
 
 	-- NOTE: alpha-nvim

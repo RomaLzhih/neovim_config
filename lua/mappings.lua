@@ -47,12 +47,12 @@ map("n", "<leader>tp", function()
 end, { desc = "toggle transparency" })
 
 -- NOTE: Nvim tree
-map("n", "<A-e>", "<cmd> Oil --float . <CR>", { desc = "Toggle nvimtree" })
+map("n", "<C-s>", "<cmd> Oil --float . <CR>", { desc = "Toggle nvimtree" })
 
 -- NOTE: Yazi
 map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
 map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
-map("n", "<C-s>", "<cmd>Yazi toggle<CR>", { noremap = true, silent = true, desc = "Resume Last yazi session" })
+map("n", "<A-e>", "<cmd>Yazi toggle<CR>", { noremap = true, silent = true, desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
 map({ "n", "v" }, "<leader>qc", function()
@@ -95,7 +95,7 @@ map("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<cr>")
 map("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>")
 map("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>")
 map("n", "<A-h>", "<cmd>lua require('tmux').resize_left()<CR>", { desc = "tmux resoze_left()" })
-map("n", "<leader>bd", "<cmd> Bdelete <CR> <BAR> <cmd> q <CR>", { desc = "Close buffer and split window" })
+map("n", "<leader>bd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
 map(
@@ -180,15 +180,8 @@ map("n", "<leader>bf", "<cmd> Telescope buffers <CR>", { desc = "telescope buffe
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 
-map("n", "<leader>cb", "<cmd> ZenMode <CR>", { desc = "zen mode" })
-map("n", "<leader>cn", function()
-	local number = vim.fn.input("Enter the buffer width: ")
-	if tonumber(number) then
-		require("no-neck-pain").toggle({ window = { width = number } })
-	else
-		print("Invalid input. Please enter a valid number.")
-	end
-end, { desc = "center buffer with size" })
+-- NOTE: zen mode
+map("n", "<leader>cb", "<cmd>lua Snacks.zen.zen({width=90}) <CR>", { desc = "zen mode" })
 
 -- NOTE: harpoon
 local harpoon = require("harpoon")
