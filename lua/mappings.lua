@@ -46,8 +46,23 @@ map("n", "<leader>tp", function()
 	require("base46").toggle_transparency()
 end, { desc = "toggle transparency" })
 
--- NOTE: Nvim tree
-map("n", "<C-s>", "<cmd> Oil --float . <CR>", { desc = "Toggle nvimtree" })
+-- NOTE: oil
+local last = nil
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "oil://*",
+	callback = function(args)
+		last = require("oil").get_current_dir()
+	end,
+})
+
+map("n", "<C-s>", function()
+	if last then
+		require("oil").toggle_float(last)
+	else
+		require("oil").toggle_float()
+	end
+end, { desc = "Oil toggle last directory" })
+-- map("n", "<C-s>", "<cmd> Oil --float . <CR>", { desc = "Toggle nvimtree" })
 
 -- NOTE: Yazi
 map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
