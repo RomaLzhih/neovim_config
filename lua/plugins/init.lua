@@ -13,7 +13,6 @@ return {
 		lazy = false,
 		opts = {
 			input = { enabled = true },
-			notifier = { enabled = true },
 			scroll = {
 				enabled = true,
 				filter = function(buf)
@@ -489,6 +488,15 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("notify").setup({
+						render = "default",
+						stages = "static",
+					})
+				end,
+			},
 		},
 		config = function()
 			require("configs.noice")
