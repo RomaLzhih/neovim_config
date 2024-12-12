@@ -760,27 +760,27 @@ return {
 			-- 		})
 			-- 	end,
 			-- },
-			{
-				"yaocccc/nvim-foldsign",
-				event = "CursorHold",
-				lazy = false,
-				config = function()
-					require("nvim-foldsign").setup({
-						offset = -2,
-						foldsigns = {
-							open = "󰤻", -- mark the beginning of a fold
-							close = "󰡌", -- show a closed fold
-							-- open = "",
-							-- close = "",
-							seps = { "" }, -- open fold middle marker
-						},
-					})
-				end,
-			},
+			-- {
+			-- 	"yaocccc/nvim-foldsign",
+			-- 	event = "CursorHold",
+			-- 	lazy = false,
+			-- 	config = function()
+			-- 		require("nvim-foldsign").setup({
+			-- 			offset = -2,
+			-- 			foldsigns = {
+			-- 				open = "󰤻", -- mark the beginning of a fold
+			-- 				close = "󰡌", -- show a closed fold
+			-- 				-- open = "",
+			-- 				-- close = "",
+			-- 				seps = { "" }, -- open fold middle marker
+			-- 			},
+			-- 		})
+			-- 	end,
+			-- },
 		},
 		event = "BufReadPost",
 		config = function()
-			require("ufo").setup()
+			require("configs.ufo")
 		end,
 
 		init = function()
