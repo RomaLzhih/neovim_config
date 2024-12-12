@@ -110,7 +110,7 @@ map("n", "<C-j>", "<cmd>lua require('tmux').move_bottom()<cr>")
 map("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>")
 map("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>")
 map("n", "<A-h>", "<cmd>lua require('tmux').resize_left()<CR>", { desc = "tmux resoze_left()" })
-map("n", "<leader>bd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
+map("n", "<leader>dd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
 map(

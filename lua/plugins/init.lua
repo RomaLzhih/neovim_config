@@ -3,9 +3,6 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
-	-- NOTE remove hl automatically
-	{ "romainl/vim-cool", lazy = false },
-
 	-- NOTE: last place
 	{ "farmergreg/vim-lastplace", lazy = false },
 
@@ -20,10 +17,10 @@ return {
 			scroll = {
 				enabled = true,
 				filter = function(buf)
-					-- Exclude terminal buffers
 					return vim.g.snacks_scroll ~= false
 						and vim.b[buf].snacks_scroll ~= false
 						and vim.bo[buf].buftype ~= "terminal"
+						and vim.bo[buf].buftype ~= "prompt"
 				end,
 			},
 			zen = {
