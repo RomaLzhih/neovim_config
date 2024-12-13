@@ -28,7 +28,7 @@ return {
 				toggles = { dim = false, diagnostics = true, inlay_hints = true },
 			},
 			bufdelete = { enabled = true },
-			animate = { enabled = false },
+			animate = { enabled = true },
 		},
 	},
 
