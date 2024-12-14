@@ -11,6 +11,7 @@ nomap("n", "<C-l>")
 nomap("n", "<A-i>")
 nomap("n", "<leader>h")
 nomap("n", "<leader>v")
+nomap("n", "<leader>x")
 
 -- Enabled mappings
 local map = vim.keymap.set
@@ -111,6 +112,7 @@ map("n", "<C-k>", "<cmd>lua require('tmux').move_top()<cr>")
 map("n", "<C-l>", "<cmd>lua require('tmux').move_right()<cr>")
 map("n", "<A-h>", "<cmd>lua require('tmux').resize_left()<CR>", { desc = "tmux resoze_left()" })
 map("n", "<leader>dd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
+map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
 map(
