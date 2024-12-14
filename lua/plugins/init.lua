@@ -493,7 +493,9 @@ return {
 				config = function()
 					require("notify").setup({
 						render = "default",
-						stages = "static",
+						-- stages = "static",
+						minimum_width = 30,
+						timeout = 3000,
 					})
 				end,
 			},
