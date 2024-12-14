@@ -15,10 +15,6 @@ lint.linters.clangtidy.args = {
 		end
 	end,
 	"--quiet",
-	"--fix",
-	"--fix-notes",
-	"--fix-errors",
-	"--format-style=file",
 	"--extra-arg=-std=c++20",
 }
 

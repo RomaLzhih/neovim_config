@@ -670,7 +670,7 @@ return {
 					find_files = {
 						layout_config = {
 							horizontal = {
-								width = 0.382,
+								width = { 0.382, max = 80, min = 60 }, -- width = 0.382,
 								preview_width = 0,
 							},
 						},
@@ -678,7 +678,7 @@ return {
 					recent_files = {
 						layout_config = {
 							horizontal = {
-								width = 0.382,
+								width = { 0.382, max = 80, min = 60 }, -- width = 0.382,
 								preview_width = 0,
 							},
 						},
@@ -686,7 +686,7 @@ return {
 					buffers = {
 						layout_config = {
 							horizontal = {
-								width = 0.382,
+								width = { 0.382, max = 80, min = 60 }, -- width = 0.382,
 								preview_width = 0,
 							},
 						},
