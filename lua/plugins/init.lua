@@ -15,6 +15,7 @@ return {
 			input = { enabled = true },
 			scroll = {
 				enabled = true,
+				spamming = 100,
 				filter = function(buf)
 					return vim.g.snacks_scroll ~= false
 						and vim.b[buf].snacks_scroll ~= false
