@@ -2,6 +2,19 @@ local overseer = require("overseer")
 
 require("overseer").setup({
 	dap = false,
+	task_list = {
+		max_height = { 40, 0.382 },
+		bindings = {
+			["<C-k>"] = false,
+			["<C-j>"] = false,
+			["<C-h>"] = false,
+			["<C-l>"] = false,
+			["<C-u>"] = "ScrollOutputUp",
+			["<C-d>"] = "ScrollOutputDown",
+			["L"] = "IncreaseDetail",
+			["H"] = "DecreaseDetail",
+		},
+	},
 })
 
 local make_command_arg = ""
@@ -112,19 +125,20 @@ overseer.register_template(
 		params = {
 			cmd = { type = "string", order = 1 },
 			args = { type = "list", subtype = { type = "string" }, delimiter = " ", optional = true, order = 2 },
+			cwd = { type = "string", optional = true, order = 3 },
 			env = {
 				type = "list",
 				subtype = { type = "string" },
 				delimiter = " ",
 				optional = true,
-				order = 3,
+				order = 4,
 			},
 			expand_cmd = {
 				desc = "Run expandcmd() on command before execution",
 				type = "boolean",
 				default = true,
 				optional = true,
-				order = 4,
+				order = 5,
 			},
 		},
 		builder = function(params)
@@ -132,10 +146,12 @@ overseer.register_template(
 			local cmd = params.expand_cmd and vim.fn.expandcmd(params.cmd) or params.cmd
 			return {
 				cmd = cmd,
+				cwd = vim.fn.getcwd() .. "/" .. params.cwd .. "/",
 				args = params.args,
 				env = params.env, -- the list of components or component aliases to add to the task
 				components = {
 					{ "open_output", direction = "dock", focus = true, on_result = "always", on_start = "always" },
+					"default",
 				},
 				metadata = {},
 			}
