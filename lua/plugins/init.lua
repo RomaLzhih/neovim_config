@@ -12,7 +12,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
-			input = { enabled = true },
+			input = { enabled = true, relative = "cursor" },
 			scroll = {
 				enabled = true,
 				spamming = 100,
