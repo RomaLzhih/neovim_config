@@ -30,6 +30,7 @@ return {
 			},
 			bufdelete = { enabled = true },
 			animate = { enabled = true },
+			notifier = { enabled = true },
 		},
 	},
 
@@ -496,17 +497,17 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("notify").setup({
-						render = "default",
-						-- stages = "static",
-						minimum_width = 30,
-						timeout = 3000,
-					})
-				end,
-			},
+			-- {
+			-- 	"rcarriga/nvim-notify",
+			-- 	config = function()
+			-- 		require("notify").setup({
+			-- 			render = "default",
+			-- 			-- stages = "static",
+			-- 			minimum_width = 30,
+			-- 			timeout = 3000,
+			-- 		})
+			-- 	end,
+			-- },
 		},
 		config = function()
 			require("configs.noice")
