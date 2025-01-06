@@ -502,7 +502,7 @@ return {
 				config = function()
 					require("notify").setup({
 						render = "default",
-						background_colour = "#46cb18",
+						background_colour = "#000000",
 						-- stages = "static",
 						minimum_width = 30,
 						timeout = 3000,
