@@ -26,6 +26,7 @@ dashboard.section.buttons.val = {
 	button("r", "  > Recent", "<cmd> Telescope oldfiles<CR>"),
 	button("i", "󱓷  > Wiki", "<cmd> Neorg index<CR>"),
 	button("g", "󰊢  > Git", "<cmd> Neogit <CR>"),
+	button("l", "󰬓  > LeetCode", "<cmd> Leet <CR>"),
 	button("c", "  > Copilot", function()
 		require("CopilotChat").open({
 			window = {
