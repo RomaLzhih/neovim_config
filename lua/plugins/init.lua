@@ -503,8 +503,9 @@ return {
 					require("notify").setup({
 						render = "default",
 						background_colour = "#000000",
-						stages = "slide",
+						-- stages = "static",
 						minimum_width = 30,
+						fps = 60,
 						timeout = 3000,
 					})
 				end,
