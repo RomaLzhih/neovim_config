@@ -314,3 +314,7 @@ map(
 	'<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dapui").close() <CR>',
 	{ desc = "debug: terminate and close" }
 )
+
+-- NOTE: leet code
+map("n", "<leader>lr", "<cmd>Leet run<CR>", { desc = "Leet code run test cases" })
+map("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "Leet code submit" })
