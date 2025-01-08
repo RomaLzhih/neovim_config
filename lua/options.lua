@@ -47,7 +47,7 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "NeogitStatus", "NeogitDiffView", "sagaoutline" },
+	pattern = { "leetcode.nvim", "NeogitStatus", "NeogitDiffView", "sagaoutline" },
 	callback = function()
 		require("ufo").detach()
 		vim.opt_local.foldenable = false
