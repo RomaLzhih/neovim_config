@@ -48,7 +48,7 @@ return {
 			zen = {
 				enabled = true,
 				win = { style = { width = 90 } },
-				toggles = { dim = false, diagnostics = true, inlay_hints = true },
+				toggles = { dim = false, diagnostics = true, inlay_hints = false },
 			},
 			bufdelete = { enabled = true },
 			animate = { enabled = true },
