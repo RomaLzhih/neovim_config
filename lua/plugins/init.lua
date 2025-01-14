@@ -249,7 +249,7 @@ return {
 			-- copilot = {
 			-- 	model = "claude-3-5-sonnet-20241022",
 			-- },
-			auto_suggestions_provider = "copilot",
+			auto_suggestions_provider = "claude",
 			hints = { enabled = false },
 			windows = {
 				position = "bottom", -- the position of the sidebar

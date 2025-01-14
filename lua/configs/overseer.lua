@@ -15,6 +15,9 @@ require("overseer").setup({
 			["H"] = "DecreaseDetail",
 		},
 	},
+	template_timeout = 0,
+	template_cache_threshold = 0,
+	strategy = "jobstart",
 })
 
 local make_command_arg = ""
@@ -106,6 +109,13 @@ vim.keymap.set("n", "<leader>ru", "<cmd> OverseerRun<CR>", { noremap = true, sil
 
 vim.keymap.set("n", "<leader>op", "<cmd> OverseerOpen<CR>", { noremap = true, silent = true, desc = "overseer open" })
 
+vim.keymap.set(
+	"n",
+	"<leader>oa",
+	"<cmd> OverseerTaskAction<CR>",
+	{ noremap = true, silent = true, desc = "overseer open" }
+)
+
 -- NOTE: run customized tasks
 local args_string = ""
 local bin_name = ""
@@ -123,9 +133,16 @@ overseer.register_template(
 		-- Required fields
 		name = "run target",
 		params = {
-			cmd = { type = "string", order = 1 },
-			args = { type = "list", subtype = { type = "string" }, delimiter = " ", optional = true, order = 2 },
-			cwd = { type = "string", optional = true, order = 3 },
+			cmd = { type = "string", default = "./build/test", order = 1 },
+			args = {
+				type = "list",
+				subtype = { type = "string" },
+				delimiter = " ",
+				default = "-p /data/zmen002/kdtree/ss_varden_bigint/1000000000_3/2.in -t 0 -q 1 -s 0 -i 0 -r 2 -T 0 -l 3",
+				optional = true,
+				order = 2,
+			},
+			cwd = { type = "string", optional = true, default = vim.fn.getcwd(), order = 3 },
 			env = {
 				type = "list",
 				subtype = { type = "string" },
@@ -146,7 +163,7 @@ overseer.register_template(
 			local cmd = params.expand_cmd and vim.fn.expandcmd(params.cmd) or params.cmd
 			return {
 				cmd = cmd,
-				cwd = vim.fn.getcwd() .. "/" .. params.cwd .. "/",
+				-- cwd = params.cwd ~= "" and vim.fn.getcwd() .. "/" .. params.cwd .. "/" or nil,
 				args = params.args,
 				env = params.env, -- the list of components or component aliases to add to the task
 				components = {
