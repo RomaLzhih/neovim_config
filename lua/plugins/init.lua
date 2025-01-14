@@ -244,8 +244,8 @@ return {
 			return vim.fn.has("win32") == 0
 		end,
 		opts = {
-			-- provider = "gemini",
-			provider = "copilot",
+			provider = "gemini",
+			-- provider = "copilot",
 			-- copilot = {
 			-- 	model = "claude-3-5-sonnet-20241022",
 			-- },
