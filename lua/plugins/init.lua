@@ -23,6 +23,7 @@ return {
 				},
 			},
 		},
+		lazy = true,
 	},
 
 	-- NOTE: last place
@@ -300,19 +301,6 @@ return {
 		lazy = false,
 	},
 
-	--NOTE: Yazi
-	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- if you want to open yazi instead of netrw, see below for more info
-			open_for_directories = false,
-			keymaps = {
-				show_help = "<f1>",
-			},
-		},
-	},
-
 	-- NOTE: markdown render
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
@@ -393,7 +381,7 @@ return {
 		"NeogitOrg/neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
+			-- "sindrets/diffview.nvim", -- optional - Diff integration
 			"nvim-telescope/telescope.nvim", -- optional
 		},
 		config = true,
