@@ -62,7 +62,7 @@ M.base_16 = {
 	base0D = "#ebbcba",
 	-- base0E = "#31748f",
 	base0E = "#45819a",
-	base0F = "#524f67",
+	base0F = "#636076",
 }
 
 M.polish_hl = {
