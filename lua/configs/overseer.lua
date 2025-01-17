@@ -138,7 +138,7 @@ overseer.register_template(
 				type = "list",
 				subtype = { type = "string" },
 				delimiter = " ",
-				default = "-p /data/zmen002/kdtree/ss_varden_bigint/1000000000_3/2.in -t 0 -q 1 -s 0 -i 0 -r 2 -T 0 -l 3",
+				default = "-p /data/zmen002/kdtree/ss_varden_bigint/1000000000_3/2.in -d 3 -t 0 -q 1 -s 0 -i 0 -r 2 -T 0 -l 3",
 				optional = true,
 				order = 2,
 			},
