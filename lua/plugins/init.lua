@@ -87,6 +87,7 @@ return {
 	-- NOTE: treesitter based incremental selection
 	{
 		"RRethy/nvim-treesitter-textsubjects",
+		ft = { "cpp", "c", "python", "lua", "r", "rmd" },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				textsubjects = {
@@ -103,7 +104,7 @@ return {
 				},
 			})
 		end,
-		lazy = false,
+		lazy = true,
 	},
 
 	-- NOTE: enable treesitter for text object select
@@ -111,6 +112,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
 		requires = "nvim-treesitter/nvim-treesitter",
+		ft = { "cpp", "c", "python", "lua", "r", "rmd" },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
