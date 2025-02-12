@@ -25,7 +25,9 @@ dashboard.section.buttons.val = {
 	button("f", "󰮗  > Find file", "<cmd> Telescope find_files<CR>"),
 	button("r", "  > Recent", "<cmd> Telescope oldfiles<CR>"),
 	button("i", "󱓷  > Wiki", "<cmd> Neorg index<CR>"),
-	button("g", "󰊢  > Git", "<cmd> Neogit <CR>"),
+	button("g", "󰊢  > Git", function()
+		require("snacks").lazygit()
+	end),
 	button("l", "󰬓  > LeetCode", "<cmd> Leet <CR>"),
 	button("c", "  > Copilot", function()
 		require("CopilotChat").open({
