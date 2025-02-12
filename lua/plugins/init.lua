@@ -58,28 +58,16 @@ return {
 		},
 	},
 
-	-- NOTE: oil
+	--NOTE: Yazi
 	{
-		"stevearc/oil.nvim",
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
 		opts = {
-			float = {
-				padding = 2,
-				max_width = 82,
-				max_height = 30,
-				override = function(conf)
-					return conf
-				end,
-			},
+			open_for_directories = false,
 			keymaps = {
-				["l"] = "actions.select",
-				["q"] = { "actions.close", mode = "n" },
-				["h"] = { "actions.parent", mode = "n" },
+				show_help = "<f1>",
 			},
 		},
-		-- Optional dependencies
-		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-		lazy = false,
 	},
 
 	-- NOTE: enable nvim copy to system clipboard
@@ -249,16 +237,15 @@ return {
 		end,
 		opts = {
 			provider = "gemini",
-			-- provider = "copilot",
-			-- copilot = {
-			-- 	model = "claude-3-5-sonnet-20241022",
-			-- },
-			auto_suggestions_provider = "claude",
+			gemini = {
+				model = "gemini-2.0-flash-001",
+			},
+			auto_suggestions_provider = "gemini",
 			hints = { enabled = false },
 			windows = {
-				position = "bottom", -- the position of the sidebar
-				width = 100, -- default % based on available width
-				height = 50,
+				position = "left", -- the position of the sidebar
+				-- width = 40, -- default % based on available width
+				-- height = 50,
 			},
 		},
 		dependencies = {
@@ -279,10 +266,8 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
-		-- enabled = function()
-		-- 	return vim.fn.has("win32") == 0
-		-- end,
-		model = "claude-3.5-sonnet",
+		-- model = "claude-3.5-sonnet",
+		model = "DeepSeek-R1",
 		opts = {
 			show_folds = false, -- Shows folds for sections in chat
 			show_help = false, -- Shows help message as virtual lines when waiting for user input
@@ -293,12 +278,7 @@ return {
 				layout = "float",
 				width = 0.618,
 				height = 0.618,
-				-- layout = "horizontal", -- or 'vertical'
-				-- relative = "cursor",
-				-- width = 1,
-				-- height = 0.5,
 				boarder = "rounded",
-				-- row = 1,
 			},
 		},
 		lazy = false,
