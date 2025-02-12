@@ -53,7 +53,8 @@ return {
 			},
 			bufdelete = { enabled = true },
 			animate = { enabled = true },
-			-- notifier = { enabled = true },
+			lazygit = { enabled = true },
+			notifier = { enabled = true },
 		},
 	},
 
@@ -378,17 +379,17 @@ return {
 		end,
 	},
 
-	-- NOTE: Neogit
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-			"nvim-telescope/telescope.nvim", -- optional
-		},
-		config = true,
-		lazy = false,
-	},
+	-- -- NOTE: Neogit
+	-- {
+	-- 	"NeogitOrg/neogit",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim", -- required
+	-- 		"sindrets/diffview.nvim", -- optional - Diff integration
+	-- 		"nvim-telescope/telescope.nvim", -- optional
+	-- 	},
+	-- 	config = true,
+	-- 	lazy = false,
+	-- },
 
 	-- NOTE: better comment than buildin
 	{
@@ -509,19 +510,19 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("notify").setup({
-						render = "default",
-						background_colour = "#000000",
-						-- stages = "static",
-						minimum_width = 30,
-						fps = 60,
-						timeout = 3000,
-					})
-				end,
-			},
+			-- {
+			-- 	"rcarriga/nvim-notify",
+			-- 	config = function()
+			-- 		require("notify").setup({
+			-- 			render = "default",
+			-- 			background_colour = "#000000",
+			-- 			-- stages = "static",
+			-- 			minimum_width = 30,
+			-- 			fps = 60,
+			-- 			timeout = 3000,
+			-- 		})
+			-- 	end,
+			-- },
 		},
 		config = function()
 			require("configs.noice")

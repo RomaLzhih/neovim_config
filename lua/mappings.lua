@@ -159,8 +159,10 @@ map(
 )
 
 -- NOTE: Neogit
-map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
-map("n", "<leader>diff", "<cmd> Neogit diff <CR>", { desc = "Open diff view" })
+-- map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
+map("n", "<leader>git", function()
+	require("snacks").lazygit()
+end, { desc = "Open git window" })
 
 -- NOTE: search and replace
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
