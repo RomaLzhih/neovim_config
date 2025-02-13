@@ -244,7 +244,7 @@ return {
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
-				-- width = 40, -- default % based on available width
+				width = 38, -- default % based on available width
 				-- height = 50,
 			},
 		},
