@@ -180,15 +180,30 @@ map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
 -- NOTE: LSP motion
-map("n", "gD", "<cmd> Trouble lsp_declarations <CR>", { desc = "LSP declaration" })
-map("n", "gd", "<cmd> Trouble lsp_definitions <CR>", { desc = "LSP definitions" })
-map("n", "gr", "<cmd> Trouble lsp_references <CR>", { desc = "LSP references" })
-map("n", "gt", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
-map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
+map("n", "gD", "<cmd> Trouble lsp_declarations auto_jump=false auto_close=true <CR>", { desc = "LSP declaration" })
+map("n", "gd", "<cmd> Trouble lsp_definitions auto_jump=false auto_close=true <CR>", { desc = "LSP definitions" })
+map("n", "gr", "<cmd> Trouble lsp_references <auto_jump=false auto_close=true CR>", { desc = "LSP references" })
+map(
+	"n",
+	"gt",
+	"<cmd> Trouble lsp_type_definitions auto_jump=false auto_close=true <CR>",
+	{ desc = "LSP type definitions" }
+)
+map(
+	"n",
+	"gi",
+	"<cmd> Trouble lsp_implementations auto_jump=false auto_close=true <CR>",
+	{ desc = "LSP implementations" }
+)
 
 --NOTE: diagnostics
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
-map("n", "<leader>sb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map(
+	"n",
+	"<leader>sb",
+	"<cmd>Trouble diagnostics toggle filter.buf=0 auto_close=true<cr>",
+	{ desc = "Buffer Diagnostics (Trouble)" }
+)
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 map(
 	"n",

@@ -3,6 +3,23 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy", -- Or `LspAttach`
+		priority = 1000, -- needs to be loaded in first
+		config = function()
+			require("tiny-inline-diagnostic").setup({
+				preset = "amongus",
+				show_all_diags_on_cursorline = true,
+				severity = {
+					vim.diagnostic.severity.ERROR,
+					vim.diagnostic.severity.WARN,
+				},
+			})
+			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+		end,
+	},
+
 	-- NOTE: leetcode
 	{
 		"kawre/leetcode.nvim",
@@ -23,7 +40,6 @@ return {
 				},
 			},
 		},
-		lazy = true,
 	},
 
 	-- NOTE: last place
@@ -48,7 +64,7 @@ return {
 			},
 			zen = {
 				enabled = true,
-				win = { style = { width = 90 } },
+				win = { style = { width = 90 }, backdrop = { transparent = true, blend = 15 } },
 				toggles = { dim = false, diagnostics = true, inlay_hints = false },
 			},
 			bufdelete = { enabled = true },
@@ -93,7 +109,6 @@ return {
 				},
 			})
 		end,
-		lazy = true,
 	},
 
 	-- NOTE: enable treesitter for text object select
@@ -135,7 +150,6 @@ return {
 				},
 			})
 		end,
-		lazy = false,
 	},
 
 	-- NOTE: unipaired
@@ -182,11 +196,11 @@ return {
 		lazy = false,
 	},
 
-	-- NOTE: vim visual multi
-	{
-		"mg979/vim-visual-multi",
-		lazy = true,
-	},
+	-- -- NOTE: vim visual multi
+	-- {
+	-- 	"mg979/vim-visual-multi",
+	-- 	lazy = true,
+	-- },
 
 	-- NOTE: use mini pair to complete the pair
 	{
@@ -199,7 +213,7 @@ return {
 			end
 			vim.api.nvim_create_autocmd("FileType", { pattern = { "markdown", "tex" }, callback = map_tex })
 		end,
-		lazy = false,
+		-- lazy = false,
 	},
 
 	-- NOTE: disable auto pair
@@ -244,7 +258,7 @@ return {
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
-				width = 38, -- default % based on available width
+				width = 30, -- default % based on available width
 				-- height = 50,
 			},
 		},
@@ -281,7 +295,7 @@ return {
 				boarder = "rounded",
 			},
 		},
-		lazy = false,
+		-- lazy = false,
 	},
 
 	-- NOTE: markdown render
@@ -324,7 +338,7 @@ return {
 			auto_jump = false,
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
-		lazy = false,
+		-- lazy = false,
 	},
 
 	-- NOTE: which key
@@ -358,18 +372,6 @@ return {
 			hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
 		end,
 	},
-
-	-- -- NOTE: Neogit
-	-- {
-	-- 	"NeogitOrg/neogit",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim", -- required
-	-- 		"sindrets/diffview.nvim", -- optional - Diff integration
-	-- 		"nvim-telescope/telescope.nvim", -- optional
-	-- 	},
-	-- 	config = true,
-	-- 	lazy = false,
-	-- },
 
 	-- NOTE: better comment than buildin
 	{
@@ -490,19 +492,6 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			-- {
-			-- 	"rcarriga/nvim-notify",
-			-- 	config = function()
-			-- 		require("notify").setup({
-			-- 			render = "default",
-			-- 			background_colour = "#000000",
-			-- 			-- stages = "static",
-			-- 			minimum_width = 30,
-			-- 			fps = 60,
-			-- 			timeout = 3000,
-			-- 		})
-			-- 	end,
-			-- },
 		},
 		config = function()
 			require("configs.noice")
@@ -760,37 +749,6 @@ return {
 		"kevinhwang91/nvim-ufo",
 		dependencies = {
 			"kevinhwang91/promise-async",
-			-- {
-			-- 	"luukvbaal/statuscol.nvim",
-			-- 	config = function()
-			-- 		local builtin = require("statuscol.builtin")
-			-- 		require("statuscol").setup({
-			-- 			relculright = true,
-			-- 			segments = {
-			-- 				{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-			-- 				{ text = { "%s" }, click = "v:lua.ScSa" },
-			-- 				{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-			-- 			},
-			-- 		})
-			-- 	end,
-			-- },
-			-- {
-			-- 	"yaocccc/nvim-foldsign",
-			-- 	event = "CursorHold",
-			-- 	lazy = false,
-			-- 	config = function()
-			-- 		require("nvim-foldsign").setup({
-			-- 			offset = -2,
-			-- 			foldsigns = {
-			-- 				open = "󰤻", -- mark the beginning of a fold
-			-- 				close = "󰡌", -- show a closed fold
-			-- 				-- open = "",
-			-- 				-- close = "",
-			-- 				seps = { "" }, -- open fold middle marker
-			-- 			},
-			-- 		})
-			-- 	end,
-			-- },
 		},
 		event = "BufReadPost",
 		config = function()
