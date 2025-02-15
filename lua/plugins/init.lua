@@ -321,7 +321,7 @@ return {
 		opts = {
 			auto_close = true,
 			focus = true,
-			auto_jump = true,
+			auto_jump = false,
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		lazy = false,

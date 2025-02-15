@@ -163,8 +163,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })
 map("n", "<leader>oc", "<cmd> Lspsaga outgoing_calls <CR>", { desc = "lsp saga outgoing calls" })
--- map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code action" })
-map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action <CR>", { desc = "code action" })
+map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code action" })
+-- map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action <CR>", { desc = "code action" })
 map("n", "<leader>pd", "<cmd> Lspsaga peek_definition <CR>", { desc = "lsp saga peak definition" })
 map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp saga peak type definition" })
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
@@ -176,7 +176,6 @@ map(
 	"<cmd> Lspsaga show_workspace_diagnostics <CR>",
 	{ desc = "lsp saga show workspace diagnostics" }
 )
--- map("n", "<leader>sb", "<cmd> Lspsaga show_buf_diagnostics <CR>", { desc = "lsp saga show buffer diagnostics" })
 map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp saga show line diagnostics" })
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
@@ -188,8 +187,8 @@ map("n", "gt", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type def
 map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
 
 --NOTE: diagnostics
-map("n", "<leader>xx", "<cmd>Trouble diagnotics toggle<cr>", { desc = "Diagnostics (Trouble)" })
-map("n", "<leader>sb", "<cmd>Trouble diagnotics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+map("n", "<leader>sb", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
 map(
 	"n",
