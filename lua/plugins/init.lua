@@ -3,22 +3,6 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "VeryLazy", -- Or `LspAttach`
-		priority = 1000, -- needs to be loaded in first
-		config = function()
-			require("tiny-inline-diagnostic").setup({
-				preset = "amongus",
-				show_all_diags_on_cursorline = true,
-				severity = {
-					vim.diagnostic.severity.ERROR,
-					vim.diagnostic.severity.WARN,
-				},
-			})
-			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
-		end,
-	},
 
 	-- NOTE: leetcode
 	{
@@ -213,7 +197,7 @@ return {
 			end
 			vim.api.nvim_create_autocmd("FileType", { pattern = { "markdown", "tex" }, callback = map_tex })
 		end,
-		-- lazy = false,
+		lazy = false,
 	},
 
 	-- NOTE: disable auto pair
@@ -295,7 +279,7 @@ return {
 				boarder = "rounded",
 			},
 		},
-		-- lazy = false,
+		lazy = false,
 	},
 
 	-- NOTE: markdown render
@@ -338,7 +322,7 @@ return {
 			auto_jump = false,
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
-		-- lazy = false,
+		lazy = false,
 	},
 
 	-- NOTE: which key
@@ -588,6 +572,23 @@ return {
 			require("configs.lspconfig")
 			-- vim.diagnostic.config({ virtual_text = false })
 		end, -- Override to setup mason-lspconfig
+	},
+
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy", -- Or `LspAttach`
+		priority = 1000, -- needs to be loaded in first
+		config = function()
+			require("tiny-inline-diagnostic").setup({
+				preset = "amongus",
+				show_all_diags_on_cursorline = true,
+				severity = {
+					vim.diagnostic.severity.ERROR,
+					vim.diagnostic.severity.WARN,
+				},
+			})
+			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+		end,
 	},
 
 	-- NOTE: mason
