@@ -13,6 +13,7 @@ require("nvchad.options")
 --
 -- NOTE: terminal colors
 vim.o.termguicolors = true
+vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 
 -- NOTE: use trouble to open the cmd
 -- vim.api.nvim_create_autocmd("QuickFixCmdPost", {
