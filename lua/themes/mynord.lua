@@ -71,7 +71,7 @@ M.polish_hl = {
 		["@constant"] = { fg = M.base_16.base09 },
 		["@boolean"] = { fg = M.base_30.dark_purple, italic = true },
 		["@operator"] = { fg = M.base_30.nord_blue },
-		["@property"] = { fg = M.base_16.base06 },
+		["@property"] = { fg = "#a3bbd2" },
 		["@punctuation.bracket"] = { fg = M.base_16.base07 },
 		["@punctuation.delimiter"] = { fg = M.base_30.white },
 		["@parameter"] = { fg = M.base_16.base08, bold = true },

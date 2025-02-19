@@ -55,6 +55,7 @@ return {
 			animate = { enabled = true },
 			lazygit = { enabled = true },
 			notifier = { enabled = true },
+			image = { enabled = true },
 		},
 	},
 
