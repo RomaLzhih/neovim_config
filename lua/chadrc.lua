@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "mymonokaiold",
+	theme = "mymonokai",
 
 	hl_override = {
 		CursorLine = {
