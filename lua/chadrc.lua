@@ -46,6 +46,7 @@ M.ui = {
 			end,
 		},
 	},
+	cmp = { style = "atom_colored" },
 }
 
 return M

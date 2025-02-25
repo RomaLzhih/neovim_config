@@ -320,7 +320,10 @@ return {
 		opts = {
 			auto_close = true,
 			focus = true,
-			auto_jump = false,
+			auto_jump = true,
+			keys = {
+				["<cr>"] = "jump_close",
+			},
 		}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		lazy = false,
@@ -553,6 +556,9 @@ return {
 		},
 		opts = {
 			inlay_hints = {
+				enable = true,
+			},
+			signature_help = {
 				enable = true,
 			},
 			settings = {

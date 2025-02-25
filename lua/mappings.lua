@@ -119,7 +119,19 @@ map({ "n", "t" }, "<A-w>", function()
 		pos = "float",
 		float_opts = { row = 0.15, col = 0.18, width = 0.618, height = 0.618 },
 	})
+end, { desc = "Toggle float term" })
+map({ "n", "t" }, "<A-x>", function()
+	require("nvchad.term").toggle({
+		pos = "bo sp",
+		size = 0.35,
+	})
 end, { desc = "Toggle horizontal term" })
+map({ "n", "t" }, "<A-v>", function()
+	require("nvchad.term").toggle({
+		pos = "vsp",
+		size = 0.35,
+	})
+end, { desc = "Toggle vertical term" })
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal" })
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Switch Window down in terminal" })
@@ -163,8 +175,8 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })
 map("n", "<leader>oc", "<cmd> Lspsaga outgoing_calls <CR>", { desc = "lsp saga outgoing calls" })
-map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code action" })
--- map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action <CR>", { desc = "code action" })
+-- map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code action" })
+map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action <CR>", { desc = "code action" })
 map("n", "<leader>pd", "<cmd> Lspsaga peek_definition <CR>", { desc = "lsp saga peak definition" })
 map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp saga peak type definition" })
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
@@ -180,21 +192,11 @@ map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp
 map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
 
 -- NOTE: LSP motion
-map("n", "gD", "<cmd> Trouble lsp_declarations auto_jump=false auto_close=true <CR>", { desc = "LSP declaration" })
-map("n", "gd", "<cmd> Trouble lsp_definitions auto_jump=false auto_close=true <CR>", { desc = "LSP definitions" })
-map("n", "gr", "<cmd> Trouble lsp_references <auto_jump=false auto_close=true CR>", { desc = "LSP references" })
-map(
-	"n",
-	"gt",
-	"<cmd> Trouble lsp_type_definitions auto_jump=false auto_close=true <CR>",
-	{ desc = "LSP type definitions" }
-)
-map(
-	"n",
-	"gi",
-	"<cmd> Trouble lsp_implementations auto_jump=false auto_close=true <CR>",
-	{ desc = "LSP implementations" }
-)
+map("n", "gD", "<cmd> Trouble lsp_declarations <CR>", { desc = "LSP declaration" })
+map("n", "gd", "<cmd> Trouble lsp_definitions <CR>", { desc = "LSP definitions" })
+map("n", "gr", "<cmd> Trouble lsp_references <CR>", { desc = "LSP references" })
+map("n", "gt", "<cmd> Trouble lsp_type_definitions <CR>", { desc = "LSP type definitions" })
+map("n", "gi", "<cmd> Trouble lsp_implementations <CR>", { desc = "LSP implementations" })
 
 --NOTE: diagnostics
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
