@@ -577,7 +577,7 @@ return {
 		config = function()
 			require("nvchad.configs.lspconfig").defaults()
 			require("configs.lspconfig")
-			-- vim.diagnostic.config({ virtual_text = false })
+			vim.diagnostic.config({ virtual_text = false })
 		end, -- Override to setup mason-lspconfig
 	},
 
