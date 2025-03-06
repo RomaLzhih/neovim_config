@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "myseoul",
+	theme = "myeverforest",
 
 	hl_override = {
 		CursorLine = {
