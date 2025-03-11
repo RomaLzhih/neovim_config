@@ -154,7 +154,7 @@ map(
 
 -- NOTE: Neogit
 -- map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
-map("n", "<leader>git", function()
+map("n", "<leader>lg", function()
 	require("snacks").lazygit()
 end, { desc = "Open git window" })
 
