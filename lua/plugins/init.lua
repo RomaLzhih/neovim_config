@@ -230,7 +230,7 @@ return {
 		"yetone/avante.nvim",
 		event = "VeryLazy",
 		lazy = false,
-		build = "make BUILD_FROM_SOURCE=true",
+		build = "make",
 		enabled = function()
 			return vim.fn.has("win32") == 0
 		end,
@@ -266,7 +266,7 @@ return {
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 		-- model = "claude-3.5-sonnet",
-		model = "DeepSeek-R1",
+		model = "DeepSeek-V3",
 		opts = {
 			show_folds = false, -- Shows folds for sections in chat
 			show_help = false, -- Shows help message as virtual lines when waiting for user input
