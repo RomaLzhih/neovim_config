@@ -3,6 +3,27 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
+	{
+		"leath-dub/snipe.nvim",
+		opts = {
+			ui = {
+				position = "center",
+				open_win_override = {
+					border = "rounded",
+				},
+			},
+		},
+		keys = {
+			{
+				"<leader>ss",
+				function()
+					require("snipe").open_buffer_menu()
+				end,
+				desc = "Open Snipe buffer menu",
+			},
+		},
+		lazy = false,
+	},
 
 	-- NOTE: leetcode
 	{
