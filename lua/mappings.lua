@@ -95,7 +95,7 @@ map({ "n", "v" }, "<leader>qc", function()
 		require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
 	end
 end, { desc = "CopilotChat - Quick chat" })
-map("n", "<A-b>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
+map({ "n", "v" }, "<A-b>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
 map({ "n", "v" }, "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
 map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "CopilotChat - review" })
 map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })

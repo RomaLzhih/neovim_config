@@ -235,11 +235,11 @@ return {
 			return vim.fn.has("win32") == 0
 		end,
 		opts = {
-			provider = "gemini",
-			gemini = {
-				model = "gemini-2.0-flash-001",
+			provider = "copilot",
+			copilot = {
+				model = "claude-3.7-sonnet",
 			},
-			auto_suggestions_provider = "gemini",
+			auto_suggestions_provider = "copilot",
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
@@ -265,9 +265,8 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
-		-- model = "claude-3.5-sonnet",
-		model = "DeepSeek-V3",
 		opts = {
+			model = "DeepSeek-V3",
 			show_folds = false, -- Shows folds for sections in chat
 			show_help = false, -- Shows help message as virtual lines when waiting for user input
 			question_header = "󱜸 Question ", -- Header to use for user questions
