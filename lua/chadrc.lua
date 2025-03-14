@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "myvscode",
+	theme = "myrosepine",
 
 	hl_override = {
 		CursorLine = {

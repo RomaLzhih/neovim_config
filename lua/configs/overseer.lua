@@ -168,6 +168,7 @@ overseer.register_template(
 				env = params.env, -- the list of components or component aliases to add to the task
 				components = {
 					{ "open_output", direction = "dock", focus = true, on_result = "always", on_start = "always" },
+					{ "on_complete_dispose", timeout = 66666 },
 					"default",
 				},
 				metadata = {},
