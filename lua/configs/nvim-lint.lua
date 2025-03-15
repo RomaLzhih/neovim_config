@@ -56,7 +56,7 @@ vim.diagnostic.config({
 
 local cpplint = require("lint").get_namespace("cpplint")
 vim.diagnostic.config({
-	virtual_text = { severity = { min = vim.diagnostic.severity.ERROR } },
-	signs = { severity = { min = vim.diagnostic.severity.ERROR } },
+	virtual_text = { severity = { min = vim.diagnostic.severity.HINT } },
+	signs = { severity = { min = vim.diagnostic.severity.HINT } },
 	underline = false,
 }, cpplint)
