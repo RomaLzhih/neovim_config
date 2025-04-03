@@ -108,6 +108,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>ru", "<cmd> OverseerRun<CR>", { noremap = true, silent = true, desc = "overseer run" })
 
 vim.keymap.set("n", "<leader>op", "<cmd> OverseerOpen<CR>", { noremap = true, silent = true, desc = "overseer open" })
+vim.keymap.set("n", "<leader>pp", "<cmd> OverseerClose<CR>", { noremap = true, silent = true, desc = "overseer open" })
 
 vim.keymap.set(
 	"n",

@@ -2,7 +2,8 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
 	python = { "pylint" },
-	cpp = { "clangtidy", "cppcheck", "cpplint" },
+	-- cpp = { "clangtidy", "cppcheck", "cpplint" },
+	cpp = { "clangtidy", "cppcheck" },
 	bash = { "shellcheck" },
 }
 
