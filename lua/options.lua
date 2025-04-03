@@ -165,3 +165,52 @@ if vim.g.neovide then
 	vim.g.neovide_padding_left = 0
 	vim.g.neovide_remember_window_size = true
 end
+
+-- NOTE: macro indicator
+local recording_win = nil
+local recording_buf = nil
+
+function _G.show_recording_indicator()
+	-- Close existing window if open
+	if recording_win and vim.api.nvim_win_is_valid(recording_win) then
+		vim.api.nvim_win_close(recording_win, true)
+	end
+
+	local reg = vim.fn.reg_recording()
+	if reg == "" then
+		return
+	end
+
+	-- Create floating window
+	recording_buf = vim.api.nvim_create_buf(false, true)
+	recording_win = vim.api.nvim_open_win(recording_buf, false, {
+		relative = "editor",
+		width = 12,
+		height = 1,
+		col = vim.o.columns - 15,
+		row = 1,
+		style = "minimal",
+		border = "single",
+	})
+
+	-- Set window content
+	vim.api.nvim_buf_set_lines(recording_buf, 0, -1, true, { "REC @" .. reg })
+	vim.api.nvim_buf_set_option(recording_buf, "modifiable", false)
+	vim.api.nvim_win_set_option(recording_win, "winhl", "Normal:Error")
+
+	-- Automatically close when recording ends
+	vim.defer_fn(function()
+		if vim.fn.reg_recording() == "" and recording_win and vim.api.nvim_win_is_valid(recording_win) then
+			vim.api.nvim_win_close(recording_win, true)
+		end
+	end, 100)
+end
+
+-- Set up autocommands
+vim.cmd([[
+  augroup RecordingIndicator
+    autocmd!
+    autocmd RecordingEnter * lua show_recording_indicator()
+    autocmd RecordingLeave * lua show_recording_indicator()
+  augroup END
+]])
