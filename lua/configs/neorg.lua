@@ -10,7 +10,7 @@ neorg.setup({
 					code_block = { conceal = true },
 				},
 			},
-		}, -- Adds pretty icons to your documents
+		},                -- Adds pretty icons to your documents
 		["core.dirman"] = { -- Manages Neorg workspaces
 			config = {
 				workspaces = {
@@ -47,12 +47,19 @@ neorg.setup({
 					heading4 = { indent = 3 * indent_value },
 					heading5 = { indent = 4 * indent_value },
 					heading6 = { indent = 5 * indent_value },
-					paragraph_segment = { indent = indent_value },
-					ranged_tag = { indent = indent_value },
-					ranged_tag_content = { indent = indent_value },
-					strong_paragraph_delimiter = { indent = indent_value },
+					paragraph_segment = { indent = 2 * indent_value },
+					ranged_tag = { indent = 2 * indent_value },
+					ranged_tag_content = { indent = 2 * indent_value },
+					strong_paragraph_delimiter = { indent = 2 * indent_value },
 				},
 			},
+		},
+	},
+	["core.integrations.treesitter"] = {
+		configure_parsers = true,
+		indent = {
+			-- Set your preferred indent size (e.g., 4 spaces)
+			indent_length = 4,
 		},
 	},
 	["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },

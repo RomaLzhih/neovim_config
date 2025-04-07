@@ -62,9 +62,9 @@ return {
 				spamming = 100,
 				filter = function(buf)
 					return vim.g.snacks_scroll ~= false
-						and vim.b[buf].snacks_scroll ~= false
-						and vim.bo[buf].buftype ~= "terminal"
-						and vim.bo[buf].buftype ~= "prompt"
+							and vim.b[buf].snacks_scroll ~= false
+							and vim.bo[buf].buftype ~= "terminal"
+							and vim.bo[buf].buftype ~= "prompt"
 				end,
 			},
 			zen = {
@@ -93,7 +93,7 @@ return {
 	},
 
 	-- NOTE: enable nvim copy to system clipboard
-	{ "ojroques/nvim-osc52", lazy = false },
+	{ "ojroques/nvim-osc52",      lazy = false },
 
 	-- NOTE: treesitter based incremental selection
 	{
@@ -264,7 +264,7 @@ return {
 			hints = { enabled = false },
 			windows = {
 				position = "left", -- the position of the sidebar
-				width = 30, -- default % based on available width
+				width = 30,    -- default % based on available width
 				-- height = 50,
 			},
 		},
@@ -273,7 +273,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			"zbirenbaum/copilot.lua",   -- for providers='copilot'
 		},
 	},
 
@@ -285,7 +285,7 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		build = "make tiktoken", -- Only on MacOS or Linux
+		build = "make tiktoken",     -- Only on MacOS or Linux
 		opts = {
 			model = "DeepSeek-V3",
 			show_folds = false, -- Shows folds for sections in chat
@@ -355,7 +355,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			triggers = {
-				{ "<leader>", mode = { "n", "v" } },
+				{ "<leader>",      mode = { "n", "v" } },
 				{ "<localleader>", mode = { "n", "v" } },
 			},
 		},
@@ -522,10 +522,10 @@ return {
 				end,
 				desc = "Open Yank History",
 			},
-			{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
-			{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
-			{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
-			{ "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after selection" },
+			{ "y",  "<Plug>(YankyYank)",       mode = { "n", "x" }, desc = "Yank text" },
+			{ "p",  "<Plug>(YankyPutAfter)",   mode = { "n", "x" }, desc = "Put yanked text after cursor" },
+			{ "P",  "<Plug>(YankyPutBefore)",  mode = { "n", "x" }, desc = "Put yanked text before cursor" },
+			{ "gp", "<Plug>(YankyGPutAfter)",  mode = { "n", "x" }, desc = "Put yanked text after selection" },
 			{ "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before selection" },
 		},
 		enabled = function()
@@ -604,7 +604,7 @@ return {
 	{
 		"rachartier/tiny-inline-diagnostic.nvim",
 		event = "VeryLazy", -- Or `LspAttach`
-		priority = 1000, -- needs to be loaded in first
+		priority = 1000,  -- needs to be loaded in first
 		config = function()
 			require("tiny-inline-diagnostic").setup({
 				preset = "amongus",
@@ -892,13 +892,13 @@ return {
 		},
 		opts = {
 			sources = {
-				{ name = "nvim_lsp", priority = 11 },
-				{ name = "copilot", priority = 10 },
+				{ name = "nvim_lsp",                 priority = 11 },
+				{ name = "copilot",                  priority = 10 },
 				-- { name = "nvim_lsp_signature_help", priority = 9 },
-				{ name = "luasnip", priority = 9 },
-				{ name = "buffer", priority = 8 },
-				{ name = "nvim_lua", priority = 7 },
-				{ name = "path", priority = 6 },
+				{ name = "luasnip",                  priority = 9 },
+				{ name = "buffer",                   priority = 8 },
+				{ name = "nvim_lua",                 priority = 7 },
+				{ name = "path",                     priority = 6 },
 				{ name = "nvim_lsp_document_symbol", priority = 0 },
 			},
 			mapping = require("cmp").mapping({
