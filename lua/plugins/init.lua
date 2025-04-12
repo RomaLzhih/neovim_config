@@ -801,7 +801,7 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
+					python = { "black", "autopep8" },
 					cpp = { "clang-format" },
 					bash = { "beautysh" },
 					shell = { "shfmt" },
@@ -844,6 +844,7 @@ return {
 		-- to time. For now we recommend pinning to the latest minor version
 		-- like so:
 		version = "~0.1.0",
+		cond = vim.fn.has("mac") == 0,
 	},
 
 	-- NOTE: vim latex
