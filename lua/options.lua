@@ -16,11 +16,11 @@ vim.o.termguicolors = true
 vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 
 -- NOTE: use trouble to open the cmd
--- vim.api.nvim_create_autocmd("QuickFixCmdPost", {
--- 	callback = function()
--- 		vim.cmd([[Trouble qflist open]])
--- 	end,
--- })
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+	callback = function()
+		vim.cmd([[Trouble qflist open]])
+	end,
+})
 
 -- NOTE: set the default conceallevel for neorg file
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
@@ -43,7 +43,7 @@ vim.g.VM_maps = {
 
 -- NOTE: UFO folding
 vim.o.foldcolumn = "0" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰤻,foldsep: ,foldclose:󰡌]]

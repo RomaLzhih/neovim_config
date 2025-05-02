@@ -3,7 +3,7 @@ local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 
 return {
-		-- NOTE: oil
+	-- NOTE: oil
 	{
 		"stevearc/oil.nvim",
 		opts = {
@@ -15,10 +15,13 @@ return {
 					return conf
 				end,
 			},
+			skip_confirm_for_simple_edits = true,
 			keymaps = {
 				["l"] = "actions.select",
 				["q"] = { "actions.close", mode = "n" },
 				["h"] = { "actions.parent", mode = "n" },
+				["<C-v>"] = { "actions.select", opts = { vertical = true } },
+				["<C-x>"] = { "actions.select", opts = { horizontal = true } },
 			},
 		},
 		-- Optional dependencies
@@ -26,6 +29,8 @@ return {
 		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 		lazy = false,
 	},
+
+	-- NOTE: snipe
 	{
 		"leath-dub/snipe.nvim",
 		opts = {
