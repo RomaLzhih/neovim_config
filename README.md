@@ -1,9 +1,4 @@
-An IDE-like neovim configuration that optimized for coding with:
-- Cpp
-- Python
-- R
-- Bash
-- Latex
-- Lua
+# 💤 LazyVim
 
-Enjoy!
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
