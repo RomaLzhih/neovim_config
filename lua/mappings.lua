@@ -247,6 +247,7 @@ map("n", "<C-f>", "<cmd> Telescope find_files <CR>", { desc = "telescope files" 
 map("n", "<leader>ww", "<cmd> Telescope find_files <CR>", { desc = "telescope files alter" })
 map("n", "<leader>bf", "<cmd> Telescope buffers <CR>", { desc = "telescope buffers" })
 map("n", "<leader>his", "<cmd> Telescope notify <CR>", { desc = "telescope notify history" })
+map("n", "<leader>tth", "<cmd> Telescope colorscheme <CR>", { desc = "telescope notify history" })
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 
