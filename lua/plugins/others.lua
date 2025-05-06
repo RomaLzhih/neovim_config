@@ -12,6 +12,7 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  { "raddari/last-color.nvim" },
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -240,7 +241,7 @@ return {
     event = "InsertEnter",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = false },
+        suggestion = { enabled = false, auto_trigger = false, auto_accept = false },
         panel = { enabled = false },
         filetypes = {
           markdown = false,
