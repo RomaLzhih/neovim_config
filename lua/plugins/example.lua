@@ -113,8 +113,21 @@ return {
       animate = { enabled = true },
       lazygit = { enabled = true },
       notifier = { enabled = true },
-      indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = false } },
+      indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = true } },
       dashboard = {
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            section = "terminal",
+            cmd = "pokemon-colorscripts -r --no-title; sleep .1",
+            random = 10,
+            pane = 2,
+            indent = 4,
+            height = 30,
+          },
+        },
         preset = {
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -279,7 +292,7 @@ return {
       auto_restore = false,
       auto_save = true,
       auto_create = true,
-      bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante" }, -- or whatever dashboard you use
+      bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante", "snacks_dashboard" }, -- or whatever dashboard you use
       session_lens = {
         load_on_setup = false,
       },
