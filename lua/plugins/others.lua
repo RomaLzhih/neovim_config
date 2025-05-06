@@ -82,116 +82,11 @@ return {
         },
       },
     },
+    lazy = true,
   },
 
   -- NOTE: last place
   { "farmergreg/vim-lastplace", lazy = false },
-
-  -- NOTE: snackes.nvim
-  {
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-    opts = {
-      input = { enabled = true, relative = "cursor" },
-      scroll = {
-        enabled = true,
-        spamming = 100,
-        filter = function(buf)
-          return vim.g.snacks_scroll ~= false
-            and vim.b[buf].snacks_scroll ~= false
-            and vim.bo[buf].buftype ~= "terminal"
-            and vim.bo[buf].buftype ~= "prompt"
-        end,
-      },
-      zen = {
-        enabled = true,
-        win = { style = { width = 90 }, backdrop = { transparent = true, blend = 15 } },
-        toggles = { dim = false, diagnostics = true, inlay_hints = false },
-      },
-      bufdelete = { enabled = true },
-      animate = { enabled = true },
-      lazygit = { enabled = true },
-      notifier = { enabled = true },
-      indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = true } },
-      dashboard = {
-        sections = {
-          { section = "header" },
-          { section = "keys", gap = 1, padding = 1 },
-          { section = "startup" },
-          {
-            section = "terminal",
-            cmd = "pokemon-colorscripts -r --no-title; sleep .1",
-            random = 10,
-            pane = 2,
-            indent = 4,
-            height = 30,
-          },
-        },
-        preset = {
-          keys = {
-            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-            { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            {
-              icon = " ",
-              key = "c",
-              desc = "Config",
-              action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-            },
-            {
-              action = function()
-                vim.api.nvim_input("<cmd> Neorg index <cr>")
-              end,
-              desc = "Wiki",
-              icon = "󱓷  ",
-              key = "i",
-            },
-            {
-              action = function()
-                require("snacks").lazygit()
-              end,
-              desc = "Git",
-              icon = "󰊢  ",
-              key = "g",
-            },
-            {
-              action = function()
-                vim.api.nvim_input("<cmd>SessionRestore<cr>")
-              end,
-              desc = " Restore Session",
-              icon = " ",
-              key = "p",
-            },
-            {
-              action = function()
-                vim.api.nvim_input("<cmd>Lazy update<cr>")
-              end,
-              desc = "Update plugins",
-              icon = "  ",
-              key = "u",
-            },
-            {
-              action = function()
-                vim.api.nvim_input(":e $MYVIMRC | :cd %:p:h | wincmd k | pwd<CR>")
-              end,
-              desc = "Settings",
-              icon = "  ",
-              key = "s",
-            },
-            {
-              action = function()
-                vim.api.nvim_input("<cmd>qa<cr>")
-              end,
-              desc = " Quit",
-              icon = " ",
-              key = "q",
-            },
-          },
-        },
-      },
-      image = { enabled = true },
-    },
-  },
 
   --NOTE: Yazi
   {
@@ -652,56 +547,6 @@ return {
     lazy = false,
   },
 
-  -- NOTE: nvim-lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "nvimdev/lspsaga.nvim",
-        cmd = "Lspsaga",
-        config = function()
-          require("lspsaga").setup({
-            definition = {
-              width = 0.95,
-              height = 0.5,
-            },
-            outline = {
-              win_position = "left",
-              win_width = 38,
-              auto_preview = false,
-            },
-            lightbulb = {
-              enabled = false,
-            },
-          })
-        end,
-      },
-    },
-    opts = {
-      inlay_hints = {
-        enable = true,
-      },
-      signature_help = {
-        enable = true,
-      },
-      settings = {
-        clangd = {
-          hint = { enable = true },
-          InlayHints = {
-            Designators = true,
-            Enabled = true,
-            ParameterNames = true,
-            DeducedTypes = true,
-          },
-          fallbackFlags = { "-std=c++20" },
-        },
-      },
-    },
-    config = function()
-      vim.diagnostic.config({ virtual_text = false })
-    end, -- Override to setup mason-lspconfig
-  },
-
   {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy", -- Or `LspAttach`
@@ -721,10 +566,17 @@ return {
 
   -- NOTE: mason
   -- override plugin configs
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = overrides.mason,
-  -- },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "pyright",
+        "bash-language-server",
+        "shfmt",
+      },
+    },
+  },
 
   -- NOTE: tmux.nvim
   {
@@ -885,28 +737,7 @@ return {
   -- },
 
   -- NOTE: conform
-  -- {
-  --   "stevearc/conform.nvim",
-  --   opts = {},
-  --   config = function()
-  --     require("conform").setup({
-  --       formatters_by_ft = {
-  --         lua = { "stylua" },
-  --         python = { "black", "autopep8" },
-  --         cpp = { "clang-format" },
-  --         bash = { "beautysh" },
-  --         shell = { "shfmt" },
-  --         sh = { "shfmt" },
-  --       },
-  --       format_on_save = {
-  --         -- These options will be passed to conform.format()
-  --         timeout_ms = 500,
-  --         lsp_fallback = true,
-  --       },
-  --     })
-  --   end,
-  --   lazy = false,
-  -- },
+  {},
 
   -- -- NOTE: Nvim-lint
   -- {
@@ -1018,28 +849,4 @@ return {
   --     require("configs.neorg")
   --   end,
   -- },
-
-  -- NOTE: themes
-  { "EdenEast/nightfox.nvim", priority = 1000, lazy = false },
-  { "savq/melange-nvim", priority = 1000, lazy = false },
-  { "shaunsingh/nord.nvim", priority = 1000, lazy = false },
-  { "craftzdog/solarized-osaka.nvim", priority = 1000, lazy = false },
-  { "navarasu/onedark.nvim", priority = 1000, lazy = false },
-  { "folke/tokyonight.nvim", priority = 1000, lazy = false },
-  { "rebelot/kanagawa.nvim", priority = 1000, lazy = false },
-  { "catppuccin/nvim", priority = 1000, lazy = false },
-  {
-    "maxmx03/fluoromachine.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      local fm = require("fluoromachine")
-      fm.setup({
-        glow = true,
-        theme = "retrowave",
-        transparent = true,
-        brightness = 0.02,
-      })
-    end,
-  },
 }

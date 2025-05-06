@@ -28,10 +28,10 @@ return {
             default_workspace = "notes",
           },
         },
-        ["core.completion"] = {
-          config = { engine = "nvim-cmp", name = "[Norg]" },
-        },
-        ["core.integrations.nvim-cmp"] = {},
+        -- ["core.completion"] = {
+        --   config = { engine = "nvim-cmp", name = "[Norg]" },
+        -- },
+        -- ["core.integrations.nvim-cmp"] = {},
         ["core.keybinds"] = {
           -- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
           config = {
