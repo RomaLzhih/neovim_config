@@ -16,9 +16,12 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     vim.cmd([[Trouble qflist open]])
   end,
 })
+
 -- default theme as a backup, `recall()` can return `nil`.
 local theme = require("last-color").recall() or "default"
 vim.cmd.colorscheme(theme)
+
+vim.g.ai_cmp = true
 
 -- NOTE: set the default conceallevel for neorg file
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {

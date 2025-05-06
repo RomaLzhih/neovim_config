@@ -12,7 +12,19 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        diagnostics_indicator = false,
+      },
+    },
+  },
+
+  -- NOTE: remember color
   { "raddari/last-color.nvim" },
+
+  -- NOTE: terminal support
   {
     "akinsho/toggleterm.nvim",
     version = "*",
