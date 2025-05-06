@@ -13,6 +13,13 @@
 local has_neovide = vim.g.neovide
 return {
   {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {--[[ things you want to change go here]]
+    },
+  },
+
+  {
     -- NOTE: oil
     "stevearc/oil.nvim",
     opts = {

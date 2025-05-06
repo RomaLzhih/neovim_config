@@ -132,24 +132,9 @@ map({ "n", "v" }, "<A-r>", function()
 end, { desc = "avante refresh" })
 
 -- NOTE: terminal and buffer
-map({ "n", "t" }, "<A-w>", function()
-  require("nvchad.term").toggle({
-    pos = "float",
-    float_opts = { row = 0.15, col = 0.18, width = 0.618, height = 0.618 },
-  })
-end, { desc = "Toggle float term" })
-map({ "n", "t" }, "<A-x>", function()
-  require("nvchad.term").toggle({
-    pos = "bo sp",
-    size = 0.35,
-  })
-end, { desc = "Toggle horizontal term" })
-map({ "n", "t" }, "<A-v>", function()
-  require("nvchad.term").toggle({
-    pos = "vsp",
-    size = 0.35,
-  })
-end, { desc = "Toggle vertical term" })
+map({ "n", "t" }, "<A-w>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
+map({ "n", "t" }, "<A-x>", "<cmd>ToggleTerm direction=horizontal size=20 <CR>", { desc = "Toggle horizontal term" })
+map({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm direction=vertical size=40 <CR>", { desc = "Toggle vertical term" })
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal" })
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Switch Window right in terminal" })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Switch Window down in terminal" })
@@ -259,7 +244,7 @@ end, { desc = "files" })
 map("n", "<leader>his", function()
   Snacks.picker.notifications()
 end, { desc = "notify history" })
-map("n", "<leader>tth", function()
+map("n", "<leader>th", function()
   Snacks.picker.colorschemes()
 end, { desc = "telescope notify history" })
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
