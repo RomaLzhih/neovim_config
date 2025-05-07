@@ -18,11 +18,15 @@ return {
   { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = false },
   { "bluz71/vim-moonfly-colors", priority = 1000, lazy = false },
   {
-    "morhetz/gruvbox",
-    config = function()
-      vim.g.gruvbox_contrast_dark = "medium"
-      vim.g.gruvbox_contrast_light = "medium"
-    end,
+    "ellisonleao/gruvbox.nvim",
+    opts = {
+      overrides = {
+        ["@punctuation.bracket.lua"] = { fg = "#fbf1c7" },
+        ["@punctuation.bracket.cpp"] = { fg = "#fbf1c7" },
+        Operator = { fg = "#fbf1c7" },
+        Bracket = { fg = "#fbf1c7" },
+      },
+    },
     priority = 1000,
     lazy = false,
   },
@@ -34,11 +38,9 @@ return {
   { "mhartington/oceanic-next", priority = 1000, lazy = false },
   { "tomasr/molokai", priority = 1000, lazy = false },
   { "cocopon/iceberg.vim", priority = 1000, lazy = false },
-  { "nordtheme/vim", priority = 1000, lazy = false },
   { "nanotech/jellybeans.vim", priority = 1000, lazy = false },
   { "jnurmine/zenburn", priority = 1000, lazy = false },
-  { "pineapplegiant/spaceduck", priority = 1000, lazy = false },
-  { "embark-theme/vim", priority = 1000, lazy = false },
+  { "nordtheme/vim", name = "nord", priority = 1000, lazy = false },
   {
     "maxmx03/fluoromachine.nvim",
     lazy = false,
