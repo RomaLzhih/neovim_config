@@ -22,26 +22,6 @@ return {
       end,
     },
   },
-  opts = {
-    inlay_hints = {
-      enable = true,
-    },
-    signature_help = {
-      enable = true,
-    },
-    settings = {
-      clangd = {
-        hint = { enable = true },
-        InlayHints = {
-          Designators = true,
-          Enabled = true,
-          ParameterNames = true,
-          DeducedTypes = true,
-        },
-        fallbackFlags = { "-std=c++20" },
-      },
-    },
-  },
   config = function()
     -- local configs = require("nvchad.configs.lspconfig")
     -- local on_attach = configs.on_attach
@@ -57,16 +37,7 @@ return {
     -- }
 
     for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup({
-        on_attach = function(client, bufnr)
-          -- if client.server_capabilities.inlayHintProvider then
-          --   vim.g.inlay_hints_visible = true
-          --   vim.lsp.buf.inlay_hint(bufnr, true)
-          -- else
-          --   print("Inlay hints not available for " .. lsp)
-          -- end
-        end,
-      })
+      lspconfig[lsp].setup({})
     end
 
     lspconfig.clangd.setup({
