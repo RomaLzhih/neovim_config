@@ -2,7 +2,6 @@ return {
   -- NOTE: themes
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = false },
   { "savq/melange-nvim", priority = 1000, lazy = false },
-  { "shaunsingh/nord.nvim", priority = 1000, lazy = false },
   { "craftzdog/solarized-osaka.nvim", priority = 1000, lazy = false },
   { "navarasu/onedark.nvim", priority = 1000, lazy = false },
   { "folke/tokyonight.nvim", priority = 1000, lazy = false },
@@ -18,6 +17,28 @@ return {
   { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = false },
   { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = false },
   { "bluz71/vim-moonfly-colors", priority = 1000, lazy = false },
+  {
+    "morhetz/gruvbox",
+    config = function()
+      vim.g.gruvbox_contrast_dark = "medium"
+      vim.g.gruvbox_contrast_light = "medium"
+    end,
+    priority = 1000,
+    lazy = false,
+  },
+  { "vague2k/vague.nvim", priority = 1000, lazy = false },
+  { "everviolet/nvim", priority = 1000, lazy = false },
+  { "maxmx03/solarized.nvim", priority = 1000, lazy = false },
+  { "fenetikm/falcon", priority = 1000, lazy = false },
+  { "junegunn/seoul256.vim", priority = 1000, lazy = false },
+  { "mhartington/oceanic-next", priority = 1000, lazy = false },
+  { "tomasr/molokai", priority = 1000, lazy = false },
+  { "cocopon/iceberg.vim", priority = 1000, lazy = false },
+  { "nordtheme/vim", priority = 1000, lazy = false },
+  { "nanotech/jellybeans.vim", priority = 1000, lazy = false },
+  { "jnurmine/zenburn", priority = 1000, lazy = false },
+  { "pineapplegiant/spaceduck", priority = 1000, lazy = false },
+  { "embark-theme/vim", priority = 1000, lazy = false },
   {
     "maxmx03/fluoromachine.nvim",
     lazy = false,
