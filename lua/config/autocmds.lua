@@ -33,6 +33,8 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "set norelativenumber",
 })
 
+vim.cmd([[set nonumber]])
+
 vim.g.colorscheme = "gruvbox"
 --
 -- NOTE: manage the session

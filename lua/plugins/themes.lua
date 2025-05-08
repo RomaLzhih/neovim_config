@@ -51,7 +51,7 @@ return {
   },
   { "vague2k/vague.nvim", lazy = true },
   { "everviolet/nvim", lazy = true },
-  { "maxmx03/solarized.nvim", lazy = true },
+  { "shaunsingh/solarized.nvim", lazy = true },
   { "fenetikm/falcon", lazy = true },
   { "junegunn/seoul256.vim", lazy = true },
   { "mhartington/oceanic-next", lazy = true },
