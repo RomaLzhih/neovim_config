@@ -12,6 +12,8 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+
+  -- NOTE: bufferline
   {
     "akinsho/bufferline.nvim",
     opts = {
@@ -495,35 +497,6 @@ return {
     },
   },
 
-  -- -- NOTE: dap
-  -- {
-  --   "mfussenegger/nvim-dap",
-  --   config = function()
-  --     require("configs.dap")
-  --   end,
-  -- },
-
-  -- -- NOTE: flash
-  -- {
-  --   "folke/flash.nvim",
-  --   event = "VeryLazy",
-  --   opts = flash_opt.opts,
-  --   keys = flash_opt.keys,
-  -- },
-
-  -- -- NOTE: noice.nvim
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VeryLazy",
-  --   opts = {},
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   config = function()
-  --     require("configs.noice")
-  --   end,
-  -- },
-
   {
     "gbprod/yanky.nvim",
     dependencies = {
@@ -550,16 +523,6 @@ return {
       return vim.fn.has("win32") == 0
     end,
   },
-
-  -- -- NOTE: harpoon
-  -- {
-  --   "ThePrimeagen/harpoon",
-  --   branch = "harpoon2",
-  --   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-  --   config = function()
-  --     require("configs.harpoon")
-  --   end,
-  -- },
 
   -- NOTE: detect indent
   {
@@ -614,20 +577,6 @@ return {
     init = function() end,
     lazy = false,
   },
-
-  -- NOTE: nvim-treesitter
-  -- {
-  --   run = ":TSUpdate",
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = overrides.treesitter,
-  -- },
-
-  -- NOTE: nvim-tree
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   opts = overrides.nvimtree,
-  --   enabled = false,
-  -- },
 
   -- NOTE: telescope
   {
@@ -692,23 +641,6 @@ return {
     end,
   },
 
-  -- -- NOTE: indent
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   opts = {
-  --     -- indent = { tab_char = "▎" },
-  --   },
-  --   config = function()
-  --     require("ibl").setup({
-  --       scope = { show_start = false, show_end = false, show_exact_scope = false },
-  --       indent = { char = "╏" },
-  --     })
-  --   end,
-  --
-  --   lazy = false,
-  -- },
-
   -- NOTE: mini.cursorword
   {
     "echasnovski/mini.cursorword",
@@ -735,40 +667,6 @@ return {
     lazy = false,
   },
 
-  -- -- NOTE: nvim-ufo
-  -- {
-  --   "kevinhwang91/nvim-ufo",
-  --   dependencies = {
-  --     "kevinhwang91/promise-async",
-  --   },
-  --   event = "BufReadPost",
-  --   config = function()
-  --     require("configs.ufo")
-  --   end,
-  --
-  --   init = function()
-  --     vim.keymap.set("n", "zR", function()
-  --       require("ufo").openAllFolds()
-  --     end)
-  --     vim.keymap.set("n", "zM", function()
-  --       require("ufo").closeAllFolds()
-  --     end)
-  --   end,
-  -- },
-
-  -- NOTE: conform
-  {},
-
-  -- -- NOTE: Nvim-lint
-  -- {
-  --   "mfussenegger/nvim-lint",
-  --   lazy = true,
-  --   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
-  --   config = function()
-  --     require("configs.nvim-lint")
-  --   end,
-  -- },
-
   -- NOTE: nvim-bqf
   {
     "kevinhwang91/nvim-bqf",
@@ -788,16 +686,6 @@ return {
     version = "~0.1.0",
     cond = vim.fn.has("mac") == 0,
   },
-
-  -- -- NOTE: vim latex
-  -- {
-  --   "lervag/vimtex",
-  --   ft = { "tex", "bib" },
-  --   init = function()
-  --     require("configs.vimtex")
-  --   end,
-  --   lazy = false,
-  -- },
 
   -- NOTE: surrounds
   {
@@ -824,49 +712,14 @@ return {
     "mechatroner/rainbow_csv",
   },
 
-  -- -- NOTE: configure cmp with copilot
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     "zbirenbaum/copilot-cmp",
-  --     config = function()
-  --       require("copilot_cmp").setup()
-  --     end,
-  --   },
-  --   opts = {
-  --     sources = {
-  --       { name = "nvim_lsp", priority = 11 },
-  --       { name = "copilot", priority = 10 },
-  --       -- { name = "nvim_lsp_signature_help", priority = 9 },
-  --       { name = "luasnip", priority = 9 },
-  --       { name = "buffer", priority = 8 },
-  --       { name = "nvim_lua", priority = 7 },
-  --       { name = "path", priority = 6 },
-  --       { name = "nvim_lsp_document_symbol", priority = 0 },
-  --     },
-  --     mapping = require("cmp").mapping({
-  --       ["<C-e>"] = require("cmp").mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  --     }),
-  --   },
-  -- },
-
   {
     "vhyrro/luarocks.nvim",
     priority = 1000, -- We'd like this plugin to load first out of the rest
     config = true, -- This automatically runs `require("luarocks-nvim").setup()`
   },
 
-  -- -- NOTE: neorg
-  -- {
-  --   "nvim-neorg/neorg",
-  --   cmd = "Neorg",
-  --   -- build = ":Neorg sync-parsers",
-  --   version = "*",
-  --   dependencies = {
-  --     "luarocks.nvim",
-  --   },
-  --   config = function()
-  --     require("configs.neorg")
-  --   end,
-  -- },
+  -- NOTE: disabled plusings
+  { "MagicDuck/grug-far.nvim", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
 }

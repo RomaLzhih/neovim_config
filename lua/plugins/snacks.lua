@@ -3,7 +3,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    input = { enabled = true, relative = "cursor" },
+    input = { enabled = true },
     scroll = {
       enabled = true,
       spamming = 100,
@@ -41,9 +41,9 @@ return {
         {
           section = "terminal",
           cmd = "pokemon-colorscripts -r --no-title; sleep .1",
-          random = 100,
+          random = 999,
           pane = 1,
-          indent = 20,
+          indent = 15,
           height = 20,
         },
         { section = "keys", gap = 1, padding = 1 },
@@ -103,7 +103,7 @@ return {
               vim.api.nvim_input("<cmd>qa<cr>")
             end,
             desc = "Quit",
-            icon = " ",
+            icon = "󰩈 ",
             key = "q",
           },
         },
