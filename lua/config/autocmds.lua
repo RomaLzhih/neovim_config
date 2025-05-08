@@ -97,12 +97,12 @@ for newgroup, oldgroup in pairs(links) do
   vim.api.nvim_set_hl(0, newgroup, { link = oldgroup, default = true })
 end
 
--- NOTE: change diagnostic symbols
-local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
-for name, icon in pairs(symbols) do
-  local hl = "DiagnosticSign" .. name
-  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-end
+-- -- NOTE: change diagnostic symbols
+-- local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
+-- for name, icon in pairs(symbols) do
+--   local hl = "DiagnosticSign" .. name
+--   vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+-- end
 
 -- NOTE: auto reload file change
 vim.cmd([[
