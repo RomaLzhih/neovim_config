@@ -12,7 +12,6 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
-
   -- NOTE: bufferline
   {
     "akinsho/bufferline.nvim",
@@ -248,23 +247,23 @@ return {
     enabled = false,
   },
 
-  -- NOTE: copilot
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false, auto_trigger = false, auto_accept = false },
-        panel = { enabled = false },
-        filetypes = {
-          markdown = false,
-          norg = false,
-          csv = false,
-        },
-      })
-    end,
-  },
+  -- -- NOTE: copilot
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = { enabled = false, auto_trigger = false, auto_accept = false },
+  --       panel = { enabled = false },
+  --       filetypes = {
+  --         markdown = false,
+  --         norg = false,
+  --         csv = false,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- NOTE: avante
   {
