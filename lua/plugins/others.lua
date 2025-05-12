@@ -109,17 +109,17 @@ return {
   -- NOTE: last place
   { "farmergreg/vim-lastplace", lazy = false },
 
-  --NOTE: Yazi
-  {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    opts = {
-      open_for_directories = false,
-      keymaps = {
-        show_help = "<f1>",
-      },
-    },
-  },
+  -- --NOTE: Yazi
+  -- {
+  --   "mikavilpas/yazi.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     open_for_directories = false,
+  --     keymaps = {
+  --       show_help = "<f1>",
+  --     },
+  --   },
+  -- },
 
   -- NOTE: enable nvim copy to system clipboard
   { "ojroques/nvim-osc52", lazy = false },
