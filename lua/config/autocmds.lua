@@ -10,6 +10,10 @@
 vim.o.termguicolors = true
 vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 
+-- NOTE: restore the last-color
+local theme = require("last-color").recall() or "default"
+vim.cmd.colorscheme(theme)
+
 -- NOTE: use trouble to open the cmd
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
   callback = function()
