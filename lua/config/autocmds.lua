@@ -16,7 +16,9 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     vim.cmd([[Trouble qflist open]])
   end,
 })
+vim.cmd([[set signcolumn=number]])
 
+-- NOTE: hidden copilot suggestion
 vim.api.nvim_create_autocmd("User", {
   pattern = "BlinkCmpMenuOpen",
   callback = function()
@@ -49,6 +51,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.cmd([[set nonumber]])
+vim.cmd([[set statuscolumn=]])
 
 vim.g.colorscheme = "gruvbox"
 --

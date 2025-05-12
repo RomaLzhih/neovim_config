@@ -12,6 +12,11 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  {
+    "lewis6991/gitsigns.nvim",
+    enabled = false,
+  },
+
   -- NOTE: bufferline
   {
     "akinsho/bufferline.nvim",
