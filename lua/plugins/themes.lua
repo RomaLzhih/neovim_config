@@ -1,12 +1,38 @@
 return {
   -- NOTE: themes
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    config = function()
+      require("catppuccin").setup({
+        no_italic = true,
+      })
+    end,
+    lazy = false,
+  },
   { "EdenEast/nightfox.nvim", lazy = false },
   { "savq/melange-nvim", lazy = false },
-  { "craftzdog/solarized-osaka.nvim", opts = { transparent = false }, lazy = false },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    opts = {
+      styles = {
+        keywords = { italic = false },
+      },
+      on_highlights = function(hl, col)
+        hl["@punctuation.bracket"] = { fg = col.base00 }
+      end,
+      transparent = false,
+    },
+    lazy = false,
+  },
   { "navarasu/onedark.nvim", lazy = false },
   { "folke/tokyonight.nvim", lazy = false },
   { "rebelot/kanagawa.nvim", lazy = false },
-  { "rose-pine/neovim", lazy = false },
+  { "rose-pine/neovim", name = "rose-pine", opts = {
+    styles = {
+      italic = false,
+    },
+  }, lazy = false },
   { "sainnhe/gruvbox-material", lazy = false },
   { "projekt0n/github-nvim-theme", lazy = false },
   { "sainnhe/everforest", lazy = false },
@@ -16,7 +42,7 @@ return {
   { "oxfist/night-owl.nvim", lazy = false },
   { "HoNamDuong/hybrid.nvim", lazy = false },
   { "thesimonho/kanagawa-paper.nvim", lazy = false },
-  { "bluz71/vim-moonfly-colors", lazy = false },
+  -- { "bluz71/vim-moonfly-colors", lazy = false },
   {
     "ellisonleao/gruvbox.nvim",
     opts = {},
@@ -50,16 +76,46 @@ return {
     end,
     lazy = false,
   },
-  { "vague2k/vague.nvim", lazy = false },
-  { "everviolet/nvim", lazy = false },
-  { "shaunsingh/solarized.nvim", lazy = false },
-  { "fenetikm/falcon", lazy = false },
+  -- { "vague2k/vague.nvim", lazy = false },
+  {
+    "everviolet/nvim",
+    config = function()
+      require("evergarden").setup({
+        theme = {
+          variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+          accent = "green",
+        },
+        editor = {
+          transparent_background = false,
+          override_terminal = true,
+          sign = { color = "none" },
+          float = {
+            color = "mantle",
+            invert_border = false,
+          },
+          completion = {
+            color = "surface0",
+          },
+        },
+        style = {
+          tabline = { "reverse" },
+          search = { "italic", "reverse" },
+          incsearch = { "italic", "reverse" },
+          types = {},
+          keyword = {},
+          comment = {},
+        },
+      })
+    end,
+    lazy = false,
+  },
+  -- { "shaunsingh/solarized.nvim", lazy = false },
   { "junegunn/seoul256.vim", lazy = false },
   { "mhartington/oceanic-next", lazy = false },
   { "tomasr/molokai", lazy = false },
-  { "cocopon/iceberg.vim", lazy = false },
-  { "nanotech/jellybeans.vim", lazy = false },
-  { "jnurmine/zenburn", lazy = false },
+  -- { "cocopon/iceberg.vim", lazy = false },
+  -- { "nanotech/jellybeans.vim", lazy = false },
+  -- { "jnurmine/zenburn", lazy = false },
   { "nordtheme/vim", name = "nord", lazy = false },
   {
     "maxmx03/fluoromachine.nvim",
