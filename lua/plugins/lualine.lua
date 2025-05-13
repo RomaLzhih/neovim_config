@@ -33,6 +33,8 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           LazyVim.lualine.root_dir(),
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { LazyVim.lualine.pretty_path() },
           {
             "diagnostics",
             symbols = {
@@ -42,11 +44,9 @@ return {
               hint = icons.diagnostics.Hint,
             },
           },
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { LazyVim.lualine.pretty_path() },
         },
         lualine_x = {},
-        lualine_y = { "filetype", "buffertype", "progress" },
+        lualine_y = { { "filetype", separator = { right = "║" } }, "progress" },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
         },
