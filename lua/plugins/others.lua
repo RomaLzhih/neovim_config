@@ -12,6 +12,15 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  -- NOTE: show colors
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = { -- set to setup table
+    },
+    lazy = true,
+  },
+
   {
     "lewis6991/gitsigns.nvim",
     enabled = false,

@@ -1,6 +1,34 @@
 return {
   -- NOTE: themes
   {
+    "maxmx03/solarized.nvim",
+    config = function()
+      require("solarized").setup({
+        styles = {
+          enabled = true,
+          comments = { italic = false, bold = false },
+          functions = { italic = false },
+          variables = { italic = false },
+          parameters = { bold = true },
+        },
+        variant = "winter",
+        on_highlights = function(colors, color)
+          --https://github.com/maxmx03/solarized.nvim/blob/c0dfe1cbfabd93b546baf5f1408f5df7e02e2050/lua/solarized/palette/init.lua
+          local groups = {
+            Type = { fg = colors.yellow },
+            Keyword = { fg = colors.red },
+            Parameter = { fg = colors.base0 },
+            Identifier = { fg = colors.base1 },
+            Property = { fg = colors.base1 },
+          }
+
+          return groups
+        end,
+      })
+    end,
+    lazy = false,
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     config = function()
