@@ -168,7 +168,8 @@ return {
     config = function()
       local fm = require("fluoromachine")
       fm.setup({
-        glow = false,
+        glow = true,
+        brightness = 0.03,
         theme = "retrowave",
         transparent = false,
       })
