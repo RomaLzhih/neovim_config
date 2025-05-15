@@ -1,6 +1,53 @@
 return {
   -- NOTE: themes
   {
+    "Tsuzat/NeoSolarized.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("NeoSolarized").setup({
+        transparent = false,
+        enable_italics = false,
+        styles = {
+          -- Style to be applied to different syntax groups
+          comments = { italic = false },
+          keywords = { italic = false },
+          functions = { bold = true },
+          variables = {},
+          string = { italic = false },
+          TSNameSpace = { italic = false },
+          underline = true, -- true/false; for global underline
+          undercurl = true, -- true/false; for global undercurl
+        },
+      })
+    end,
+  },
+
+  {
+    "dgox16/oldworld.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "luisiacc/gruvbox-baby",
+    config = function()
+      vim.g.gruvbox_baby_keyword_style = "NONE"
+      vim.g.gruvbox_baby_highlights =
+        { ["@lsp.type.variable"] = { fg = "#e7d7ad" }, ["@lsp.type.parameter"] = { fg = "#7fa2ac" } }
+    end,
+    lazy = false,
+  },
+
+  {
+    "sainnhe/sonokai",
+    config = function()
+      vim.g.sonokai_enable_italic = false
+    end,
+    lazy = false,
+  },
+
+  {
     "maxmx03/solarized.nvim",
     config = function()
       require("solarized").setup({
@@ -16,7 +63,6 @@ return {
           --https://github.com/maxmx03/solarized.nvim/blob/c0dfe1cbfabd93b546baf5f1408f5df7e02e2050/lua/solarized/palette/init.lua
           local groups = {
             Type = { fg = colors.yellow },
-            -- Keyword = { fg = colors.red },
             Keyword = { fg = "#df4643" },
             Parameter = { fg = colors.base0 },
             Identifier = { fg = colors.base1 },
