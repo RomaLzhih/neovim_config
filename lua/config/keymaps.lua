@@ -41,45 +41,6 @@ map({ "n", "i", "v", "o" }, "<C-q>", "^", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
--- -- NOTE: multi-cursor
--- map({ "n", "v" }, "<C-n>", function()
---   require("multicursor-nvim").matchAddCursor(1)
--- end, { desc = "multicursor under world" })
---
--- map({ "n", "v" }, "<leader>N", function()
---   require("multicursor-nvim").matchSkipCursor(-1)
--- end, { desc = "multicursor undo" })
---
--- map({ "n", "v" }, "<C-up>", function()
---   require("multicursor-nvim").lineAddCursor(-1)
--- end, { desc = "multicursor add cursor up" })
---
--- map({ "n", "v" }, "<C-down>", function()
---   require("multicursor-nvim").lineAddCursor(1)
--- end, { desc = "multicursor add cursor down" })
---
--- map({ "n", "v" }, "<C-down>", function()
---   require("multicursor-nvim").lineAddCursor(1)
--- end, { desc = "multicursor add cursor down" })
---
--- map({ "n", "v" }, "<leader>A", function()
---   require("multicursor-nvim").matchAllAddCursors()
--- end, { desc = "multicursor add cursor down" })
---
--- map({ "n", "v" }, "<c-leftmouse>", function()
---   require("multicursor-nvim").handleMouse()
--- end, { desc = "multicursor click to add cursor" })
---
--- map({ "n", "v" }, "<leader>mc", function()
---   if not require("multicursor-nvim").cursorsEnabled() then
---     require("multicursor-nvim").enableCursors()
---   elseif require("multicursor-nvim").hasCursors() then
---     require("multicursor-nvim").clearCursors()
---   else
---     -- Default <esc> handler.
---   end
--- end, { desc = "multicursor clear all cursors" })
-
 -- NOTE: edit
 map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
 map("n", "<leader>tp", function()
@@ -150,6 +111,9 @@ map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 map("n", "<leader>dd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
+map("n", "<C-a>", function()
+  require("snipe").open_buffer_menu()
+end, { desc = "Close snipe buffer menu" })
 
 -- NOTE: format
 map(
@@ -159,8 +123,6 @@ map(
   { desc = "conform formatting" }
 )
 
--- NOTE: Neogit
--- map("n", "<leader>git", "<cmd> Neogit <CR>", { desc = "Open git window" })
 map("n", "<leader>lg", function()
   require("snacks").lazygit()
 end, { desc = "Open git window" })

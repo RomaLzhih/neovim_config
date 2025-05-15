@@ -84,14 +84,10 @@ return {
           border = "rounded",
         },
       },
-    },
-    keys = {
-      {
-        "<leader>ss",
-        function()
-          require("snipe").open_buffer_menu()
-        end,
-        desc = "Open Snipe buffer menu",
+      navigate = {
+        cancel_snipe = "q",
+        open_vsplit = "<C-v>",
+        open_split = "<C-x>",
       },
     },
     lazy = false,
