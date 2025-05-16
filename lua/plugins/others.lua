@@ -12,6 +12,12 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  -- NOTE: transparent
+  {
+    "xiyaowong/transparent.nvim",
+    lazy = false,
+  },
+
   -- NOTE: show colors
   {
     "catgoose/nvim-colorizer.lua",

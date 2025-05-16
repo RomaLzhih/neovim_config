@@ -43,9 +43,7 @@ map("n", "<A-Down>", "ddp", { desc = "Move line below" })
 
 -- NOTE: edit
 map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
-map("n", "<leader>tp", function()
-  require("base46").toggle_transparency()
-end, { desc = "toggle transparency" })
+map("n", "<leader>tp", "<cmd>TransparentToggle<cr>", { desc = "toggle transparency" })
 
 -- NOTE: oil
 local last = nil
