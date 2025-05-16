@@ -79,5 +79,6 @@ return {
       tabline = {},
       extensions = {},
     })
+    -- vim.cmd("colorscheme " .. vim.g.colors_name)
   end,
 }

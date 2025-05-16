@@ -5,7 +5,7 @@ return {
   opts = {
     input = { enabled = true },
     scroll = {
-      enabled = false,
+      enabled = true,
       spamming = 100,
       filter = function(buf)
         return vim.g.snacks_scroll ~= false
@@ -20,7 +20,7 @@ return {
       toggles = { dim = false, diagnostics = true, inlay_hints = false },
     },
     bufdelete = { enabled = true },
-    animate = { enabled = false },
+    animate = { enabled = true },
     lazygit = { enabled = true },
     notifier = { enabled = true },
     picker = {

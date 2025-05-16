@@ -57,8 +57,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.cmd([[set nonumber]])
 vim.cmd([[set statuscolumn=]])
 
-vim.g.colorscheme = "gruvbox"
---
 -- NOTE: manage the session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 

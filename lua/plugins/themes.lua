@@ -1,5 +1,7 @@
 return {
   -- NOTE: themes
+  { "arzg/vim-colors-xcode", lazy = false },
+  { "ray-x/aurora", lazy = false },
   {
     "Tsuzat/NeoSolarized.nvim",
     lazy = false,
