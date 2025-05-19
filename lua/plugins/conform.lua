@@ -15,6 +15,7 @@ return {
         bash = { "beautysh" },
         shell = { "shfmt" },
         sh = { "shfmt" },
+        tex = { "tex-fmt" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.

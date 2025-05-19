@@ -293,7 +293,7 @@ return {
     opts = {
       provider = "copilot",
       copilot = {
-        model = "claude-3.7-sonnet",
+        model = "gemini-2.5-pro",
       },
       auto_suggestions_provider = "copilot",
       hints = { enabled = false },
@@ -322,7 +322,8 @@ return {
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      model = "DeepSeek-V3",
+      -- model = "DeepSeek-V3",
+      -- model = "DeepSeek-V3",
       show_folds = false, -- Shows folds for sections in chat
       show_help = false, -- Shows help message as virtual lines when waiting for user input
       question_header = "󱜸 Question ", -- Header to use for user questions

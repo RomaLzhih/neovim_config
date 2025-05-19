@@ -1,10 +1,10 @@
 return {
   -- NOTE: themes
-  { "arzg/vim-colors-xcode", lazy = false },
-  { "ray-x/aurora", lazy = false },
+  { "arzg/vim-colors-xcode", lazy = true },
+  { "ray-x/aurora", lazy = true },
   {
     "Tsuzat/NeoSolarized.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("NeoSolarized").setup({
@@ -27,7 +27,7 @@ return {
 
   {
     "dgox16/oldworld.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
 
@@ -38,7 +38,7 @@ return {
       vim.g.gruvbox_baby_highlights =
         { ["@lsp.type.variable"] = { fg = "#e7d7ad" }, ["@lsp.type.parameter"] = { fg = "#7fa2ac" } }
     end,
-    lazy = false,
+    lazy = true,
   },
 
   {
@@ -46,7 +46,7 @@ return {
     config = function()
       vim.g.sonokai_enable_italic = false
     end,
-    lazy = false,
+    lazy = true,
   },
 
   {
@@ -76,7 +76,7 @@ return {
       })
     end,
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
   {
     "catppuccin/nvim",
@@ -87,13 +87,13 @@ return {
       })
     end,
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
-  { "EdenEast/nightfox.nvim", priority = 1000, lazy = false },
-  { "AhmedAbdulrahman/aylin.vim", priority = 1000, lazy = false },
-  { "yazeed1s/oh-lucy.nvim", priority = 1000, lazy = false },
-  { "nlknguyen/papercolor-theme", priority = 1000, lazy = false },
-  { "savq/melange-nvim", priority = 1000, lazy = false },
+  { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
+  { "AhmedAbdulrahman/aylin.vim", priority = 1000, lazy = true },
+  { "yazeed1s/oh-lucy.nvim", priority = 1000, lazy = true },
+  { "nlknguyen/papercolor-theme", priority = 1000, lazy = true },
+  { "savq/melange-nvim", priority = 1000, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
     opts = {
@@ -106,15 +106,15 @@ return {
       transparent = false,
     },
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
-  { "navarasu/onedark.nvim", priority = 1000, lazy = false },
-  { "folke/tokyonight.nvim", priority = 1000, lazy = false },
+  { "navarasu/onedark.nvim", priority = 1000, lazy = true },
+  { "folke/tokyonight.nvim", priority = 1000, lazy = true },
   {
     "rebelot/kanagawa.nvim",
     opts = { commentStyle = { italic = false }, functionStyle = {}, keywordStyle = { italic = false } },
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
   {
     "rose-pine/neovim",
@@ -125,17 +125,17 @@ return {
       },
     },
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
-  { "sainnhe/gruvbox-material", priority = 1000, lazy = false },
-  { "projekt0n/github-nvim-theme", priority = 1000, lazy = false },
-  { "sainnhe/everforest", priority = 1000, lazy = false },
-  { "Mofiqul/vscode.nvim", priority = 1000, lazy = false },
-  { "marko-cerovac/material.nvim", priority = 1000, lazy = false },
-  { "Mofiqul/dracula.nvim", priority = 1000, lazy = false },
-  { "oxfist/night-owl.nvim", opts = { italics = false }, priority = 1000, lazy = false },
-  { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = false },
-  { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = false },
+  { "sainnhe/gruvbox-material", priority = 1000, lazy = true },
+  { "projekt0n/github-nvim-theme", priority = 1000, lazy = true },
+  { "sainnhe/everforest", priority = 1000, lazy = true },
+  { "Mofiqul/vscode.nvim", priority = 1000, lazy = true },
+  { "marko-cerovac/material.nvim", priority = 1000, lazy = true },
+  { "Mofiqul/dracula.nvim", priority = 1000, lazy = true },
+  { "oxfist/night-owl.nvim", opts = { italics = false }, priority = 1000, lazy = true },
+  { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = true },
+  { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = true },
   -- { "bluz71/vim-moonfly-colors", priority=1000,lazy=false },
   {
     "ellisonleao/gruvbox.nvim",
@@ -166,7 +166,7 @@ return {
           Bracket = { fg = "#fbf1c7" },
         },
       })
-      -- vim.cmd("colorscheme gruvbox")
+      vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
     lazy = false,
@@ -203,15 +203,15 @@ return {
       })
     end,
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
-  { "junegunn/seoul256.vim", priority = 1000, lazy = false },
-  { "mhartington/oceanic-next", priority = 1000, lazy = false },
-  { "nordtheme/vim", name = "nord", priority = 1000, lazy = false },
+  { "junegunn/seoul256.vim", priority = 1000, lazy = true },
+  { "mhartington/oceanic-next", priority = 1000, lazy = true },
+  { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",
     priority = 1000,
-    lazy = false,
+    lazy = true,
 
     config = function()
       local fm = require("fluoromachine")

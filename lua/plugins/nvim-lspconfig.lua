@@ -29,7 +29,7 @@ return {
     -- local capabilities = configs.capabilities
 
     local lspconfig = require("lspconfig")
-    local servers = { "bashls", "pyright", "clangd", "r_language_server", "lua_ls" }
+    local servers = { "texlab", "bashls", "pyright", "clangd", "r_language_server", "lua_ls" }
 
     -- capabilities.textDocument.foldingRange = {
     --   dynamicRegistration = false,

@@ -11,8 +11,8 @@ vim.o.termguicolors = true
 vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 
 -- NOTE: restore the last-color
-local theme = require("last-color").recall() or "default"
-vim.cmd.colorscheme(theme)
+-- local theme = require("last-color").recall() or "default"
+-- vim.cmd.colorscheme(theme)
 
 -- NOTE: use trouble to open the cmd
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
@@ -56,6 +56,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.cmd([[set nonumber]])
 vim.cmd([[set statuscolumn=]])
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.wrap = true
+vim.opt.textwidth = 90
 
 -- NOTE: manage the session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
