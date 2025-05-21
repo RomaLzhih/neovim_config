@@ -41,13 +41,24 @@ return {
       sections = {
         {
           section = "terminal",
-          cmd = "pokemon-colorscripts -r --no-title; sleep .1",
-          random = 999,
-          pane = 1,
-          indent = 15,
-          height = 20,
+          cmd = [[chafa "$HOME/.config/wezterm/backdrops/$(ls $HOME/.config/wezterm/backdrops | shuf -n 1)" --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1]],
+          height = 17,
+          padding = 1,
         },
-        { section = "keys", gap = 1, padding = 1 },
+        {
+          pane = 2,
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+        },
+        -- {
+        --   section = "terminal",
+        --   cmd = "pokemon-colorscripts -r --no-title; sleep .1",
+        --   random = 999,
+        --   pane = 1,
+        --   indent = 15,
+        --   height = 20,
+        -- },
+        -- { section = "keys", gap = 1, padding = 1 },
       },
       preset = {
         keys = {

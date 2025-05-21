@@ -62,7 +62,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.wrap = true
-vim.opt.textwidth = 90
+-- vim.opt.textwidth = 90
 
 -- NOTE: manage the session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
