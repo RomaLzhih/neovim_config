@@ -80,6 +80,7 @@ map({ "n", "v" }, "<leader>cdoc", "<cmd>CopilotChatdocs<CR>", { desc = "CopilotC
 map({ "n", "v" }, "<leader>cfd", "<cmd>CopilotChatFixDiagnostic<CR>", { desc = "CopilotChat - fix diagnostic" })
 map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
 map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
+map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - commit" })
 
 -- NOTE: Avante
 map({ "n", "v" }, "<A-i>", function()

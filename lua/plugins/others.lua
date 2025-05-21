@@ -322,8 +322,7 @@ return {
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      -- model = "DeepSeek-V3",
-      -- model = "DeepSeek-V3",
+      model = "gpt-4o-mini",
       show_folds = false, -- Shows folds for sections in chat
       show_help = false, -- Shows help message as virtual lines when waiting for user input
       question_header = "󱜸 Question ", -- Header to use for user questions
