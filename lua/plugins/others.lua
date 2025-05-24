@@ -263,81 +263,6 @@ return {
     enabled = false,
   },
 
-  -- -- NOTE: copilot
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = { enabled = false, auto_trigger = false, auto_accept = false },
-  --       panel = { enabled = false },
-  --       filetypes = {
-  --         markdown = false,
-  --         norg = false,
-  --         csv = false,
-  --       },
-  --     })
-  --   end,
-  -- },
-
-  -- NOTE: avante
-  {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    build = "make",
-    enabled = function()
-      return vim.fn.has("win32") == 0
-    end,
-    opts = {
-      provider = "copilot",
-      copilot = {
-        model = "gemini-2.5-pro",
-      },
-      auto_suggestions_provider = "copilot",
-      hints = { enabled = false },
-      windows = {
-        position = "left", -- the position of the sidebar
-        width = 30, -- default % based on available width
-        -- height = 50,
-      },
-    },
-    dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
-    },
-  },
-
-  -- NOTE: copilot chat
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "main",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    build = "make tiktoken", -- Only on MacOS or Linux
-    opts = {
-      model = "gpt-4o-mini",
-      show_folds = false, -- Shows folds for sections in chat
-      show_help = false, -- Shows help message as virtual lines when waiting for user input
-      question_header = "󱜸 Question ", -- Header to use for user questions
-      answer_header = " Copilot ", -- Header to use for AI answers
-      error_header = " Error ", -- Header to use for errors
-      window = {
-        layout = "float",
-        width = 0.618,
-        height = 0.618,
-        boarder = "rounded",
-      },
-    },
-    lazy = false,
-  },
-
   -- NOTE: markdown render
   {
     "MeanderingProgrammer/render-markdown.nvim",
@@ -398,24 +323,6 @@ return {
   },
 
   { "mg979/vim-visual-multi", lazy = false },
-  -- NOTE: Multicursor:
-  -- {
-  --   "jake-stewart/multicursor.nvim",
-  --   branch = "1.0",
-  --   config = function()
-  --     local mc = require("multicursor-nvim")
-  --     mc.setup()
-  --
-  --     -- Customize how cursors look.
-  --     local hl = vim.api.nvim_set_hl
-  --     hl(0, "MultiCursorCursor", { link = "Cursor" })
-  --     hl(0, "MultiCursorVisual", { link = "Visual" })
-  --     hl(0, "MultiCursorSign", { link = "SignColumn" })
-  --     hl(0, "MultiCursorDisabledCursor", { link = "Visual" })
-  --     hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
-  --     hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
-  --   end,
-  -- },
 
   -- NOTE: better comment than buildin
   {
@@ -477,12 +384,6 @@ return {
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",
-      -- {
-      --   "folke/neodev.nvim",
-      --   opts = {
-      --     library = { plugins = { "nvim-dap-ui" }, types = true },
-      --   },
-      -- },
     },
     config = function()
       local dap = require("dap")
@@ -699,7 +600,7 @@ return {
     -- R.nvim is still young and we may make some breaking changes from time
     -- to time. For now we recommend pinning to the latest minor version
     -- like so:
-    version = "~0.1.0",
+    -- version = "~0.1.0",
     cond = vim.fn.has("mac") == 0,
   },
 
