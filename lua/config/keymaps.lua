@@ -60,10 +60,6 @@ map("n", "<A-e>", function()
     require("oil").toggle_float()
   end
 end, { desc = "Oil toggle last directory" })
--- NOTE: Yazi
-map("n", "<A-u>", "<cmd>Yazi cwd<CR>", { desc = "Open the file manager in nvim's working directory" })
-map("n", "<A-y>", "<cmd>Yazi<CR>", { desc = "Open Yazi at the current file" })
-map("n", "<C-s>", "<cmd>Yazi toggle<CR>", { noremap = true, silent = true, desc = "Resume Last yazi session" })
 
 -- NOTE: Copilot chat
 map({ "n", "v" }, "<leader>qc", function()

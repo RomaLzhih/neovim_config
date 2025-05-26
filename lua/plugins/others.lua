@@ -53,33 +53,6 @@ return {
     },
   },
 
-  {
-    -- NOTE: oil
-    "stevearc/oil.nvim",
-    opts = {
-      float = {
-        padding = 2,
-        max_width = 82,
-        max_height = 30,
-        override = function(conf)
-          return conf
-        end,
-      },
-      skip_confirm_for_simple_edits = true,
-      keymaps = {
-        ["l"] = "actions.select",
-        ["q"] = { "actions.close", mode = "n" },
-        ["h"] = { "actions.parent", mode = "n" },
-        ["<C-v>"] = { "actions.select", opts = { vertical = true } },
-        ["<C-x>"] = { "actions.select", opts = { horizontal = true } },
-      },
-    },
-    -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-    lazy = false,
-  },
-
   -- NOTE: snipe
   {
     "leath-dub/snipe.nvim",
@@ -135,6 +108,72 @@ return {
         show_help = "<f1>",
       },
     },
+    keys = {
+      {
+        "<A-y>",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        -- Open in the current working directory
+        "<A-u>",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        "<c-s>",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+    enabled = function()
+      -- Check if the system is NOT Rocky Linux
+      local handle = io.popen("grep -i 'rocky' /etc/os-release 2>/dev/null")
+      if handle then
+        local result = handle:read("*a")
+        handle:close()
+        return not (result and result ~= "")
+      end
+      return true
+    end,
+  },
+
+  {
+    -- NOTE: oil
+    "stevearc/oil.nvim",
+    keys = {
+      {
+        "<C-s>",
+        function()
+          require("oil").toggle_float()
+        end,
+        mode = "n",
+        desc = "Toggle oil float",
+      },
+    },
+    opts = {
+      float = {
+        padding = 2,
+        max_width = 82,
+        max_height = 30,
+        override = function(conf)
+          return conf
+        end,
+      },
+      skip_confirm_for_simple_edits = true,
+      keymaps = {
+        ["l"] = "actions.select",
+        ["q"] = { "actions.close", mode = "n" },
+        ["h"] = { "actions.parent", mode = "n" },
+        ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+        ["<C-x>"] = { "actions.select", opts = { horizontal = true } },
+      },
+    },
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    lazy = false,
   },
 
   -- NOTE: enable nvim copy to system clipboard
