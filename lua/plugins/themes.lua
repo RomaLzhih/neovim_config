@@ -1,6 +1,5 @@
 return {
   -- NOTE: themes
-  { "arzg/vim-colors-xcode", lazy = true },
   { "ray-x/aurora", lazy = true },
   {
     "Tsuzat/NeoSolarized.nvim",
@@ -90,8 +89,6 @@ return {
     lazy = true,
   },
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
-  { "AhmedAbdulrahman/aylin.vim", priority = 1000, lazy = true },
-  { "yazeed1s/oh-lucy.nvim", priority = 1000, lazy = true },
   { "nlknguyen/papercolor-theme", priority = 1000, lazy = true },
   { "savq/melange-nvim", priority = 1000, lazy = true },
   {
@@ -208,6 +205,7 @@ return {
   { "junegunn/seoul256.vim", priority = 1000, lazy = true },
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
   { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
+  { "deparr/tairiki.nvim", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",
     priority = 1000,
