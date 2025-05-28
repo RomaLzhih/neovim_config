@@ -37,7 +37,7 @@ return {
 
     require("lualine").setup({
       options = {
-        theme = "auto",
+        -- theme = "nord",
         component_separators = "",
         section_separators = { left = "", right = "" },
         globalstatus = vim.o.laststatus == 3,
