@@ -511,7 +511,13 @@ return {
     opts = {
       ensure_installed = {
         "clangd",
+        "clang-format",
+        "codelldb",
+        "lua-language-server",
+        "stylua",
         "pyright",
+        "pylint",
+        "black",
         "bash-language-server",
         "shfmt",
       },
