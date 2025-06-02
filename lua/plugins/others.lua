@@ -264,7 +264,15 @@ return {
       auto_restore = false,
       auto_save = true,
       auto_create = true,
-      bypass_save_filetypes = { "alpha", "dashboard", "copilot-chat", "Avante", "snacks_dashboard" }, -- or whatever dashboard you use
+      bypass_save_filetypes = {
+        "alpha",
+        "OverseerList",
+        "toggleterm",
+        "dashboard",
+        "copilot-chat",
+        "Avante",
+        "snacks_dashboard",
+      }, -- or whatever dashboard you use
       session_lens = {
         load_on_setup = false,
       },
