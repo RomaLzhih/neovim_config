@@ -9,9 +9,11 @@ return { -- NOTE: avante
     end,
     opts = {
       provider = "copilot",
-      copilot = {
-        -- model = "gemini-2.5-pro",
-        model = "claude-sonnet-4",
+      providers = {
+        copilot = {
+          -- model = "gemini-2.5-pro",
+          model = "claude-sonnet-4",
+        },
       },
       auto_suggestions_provider = "copilot",
       hints = { enabled = false },
