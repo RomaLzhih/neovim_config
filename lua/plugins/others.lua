@@ -127,17 +127,6 @@ return {
         desc = "Resume the last yazi session",
       },
     },
-    -- enabled = function()
-    --   -- Check if the system is NOT Rocky Linux
-    --   local handle = io.popen("grep -i 'rocky' /etc/os-release 2>/dev/null")
-    --   if handle then
-    --     local result = handle:read("*a")
-    --     handle:close()
-    --     return not (result and result ~= "")
-    --   end
-    --   return true
-    -- end,
-    enabled = false,
   },
 
   {
