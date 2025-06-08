@@ -12,6 +12,12 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  -- NOTE: extend %
+  {
+    "andymass/vim-matchup",
+    lazy=false,
+  },
+
   -- NOTE: transparent
   {
     "xiyaowong/transparent.nvim",
@@ -75,7 +81,7 @@ return {
   -- NOTE: leetcode
   {
     "kawre/leetcode.nvim",
-    build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
+    build = ":TSInstall html", -- if you have `nvim-treesitter` installed
     dependencies = {
       "nvim-telescope/telescope.nvim",
       -- "ibhagwan/fzf-lua",
