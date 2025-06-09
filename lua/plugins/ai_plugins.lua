@@ -19,7 +19,7 @@ return { -- NOTE: avante
       hints = { enabled = false },
       windows = {
         position = "left", -- the position of the sidebar
-        width = 30, -- default % based on available width
+        width = 25, -- default % based on available width
         -- height = 50,
       },
     },
