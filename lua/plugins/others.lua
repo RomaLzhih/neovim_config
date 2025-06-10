@@ -15,7 +15,7 @@ return {
   -- NOTE: extend %
   {
     "andymass/vim-matchup",
-    lazy=false,
+    lazy = false,
   },
 
   -- NOTE: transparent
@@ -57,25 +57,6 @@ return {
     version = "*",
     opts = {--[[ things you want to change go here]]
     },
-  },
-
-  -- NOTE: snipe
-  {
-    "leath-dub/snipe.nvim",
-    opts = {
-      ui = {
-        position = "center",
-        open_win_override = {
-          border = "rounded",
-        },
-      },
-      navigate = {
-        cancel_snipe = "q",
-        open_vsplit = "<C-v>",
-        open_split = "<C-x>",
-      },
-    },
-    lazy = false,
   },
 
   -- NOTE: leetcode

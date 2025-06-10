@@ -109,9 +109,6 @@ map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 map("n", "<leader>dd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
-map("n", "<C-a>", function()
-  require("snipe").open_buffer_menu()
-end, { desc = "Close snipe buffer menu" })
 
 -- NOTE: format
 map(
@@ -198,6 +195,9 @@ map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work
 map("n", "<leader>fw", function()
   Snacks.picker.grep()
 end, { desc = "grep" })
+map("n", "<leader>bb", function()
+  Snacks.picker.buffers()
+end, { desc = "buffers" })
 map("n", "<C-f>", function()
   Snacks.picker.files()
 end, { desc = "files" })
