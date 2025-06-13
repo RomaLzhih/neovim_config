@@ -9,7 +9,7 @@ local nomap = vim.keymap.del
 -- nomap("n", "<C-j>")
 -- nomap("n", "<C-k>")
 -- nomap("n", "<C-l>")
--- nomap("n", "<A-i>")
+-- nomap("n", "<C-Tab>")
 -- nomap("n", "<leader>h")
 -- nomap("n", "<leader>v")
 -- nomap("n", "<leader>x")

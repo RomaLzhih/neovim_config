@@ -12,10 +12,10 @@ return {
         lua = { "stylua" },
         python = { "black", "autopep8" },
         cpp = { "clang-format" },
-        bash = { "beautysh" },
+        bash = { "shfmt" },
         shell = { "shfmt" },
         sh = { "shfmt" },
-        tex = { "tex-fmt" },
+        -- tex = { "tex-fmt" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
