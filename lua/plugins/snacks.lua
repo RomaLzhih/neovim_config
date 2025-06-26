@@ -41,7 +41,7 @@ return {
       sections = {
         {
           section = "terminal",
-          cmd = [[chafa "$HOME/.config/wezterm/backdrops/$(ls $HOME/.config/wezterm/backdrops | shuf -n 1)" --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1]],
+          cmd = [[chafa "$HOME/.config/wezterm/backdrops/$(ls $HOME/.config/wezterm/backdrops | shuf -n 1)" --format symbols --symbols vhalf --size 60x17 --stretch --probe off; sleep .1]],
           height = 17,
           padding = 1,
         },
