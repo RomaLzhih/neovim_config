@@ -23,7 +23,8 @@ return {
         ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
-              notes = "~/Dropbox/work-flow/notes",
+              notes = vim.fn.has("mac") == 1 and "~/Library/CloudStorage/Dropbox/work-flow/notes"
+                or "~/Dropbox/work-flow/notes",
             },
             default_workspace = "notes",
           },
