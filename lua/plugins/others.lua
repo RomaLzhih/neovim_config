@@ -178,6 +178,10 @@ return {
     end,
   },
 
+
+  -- NOTE: tree sitter context
+  {"nvim-treesitter/nvim-treesitter-context", opts = {enable=true}, lazy = false},
+
   -- NOTE: enable treesitter for text object select
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
