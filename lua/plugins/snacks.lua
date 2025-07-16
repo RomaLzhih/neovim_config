@@ -36,7 +36,7 @@ return {
       },
     },
     words = { enabled = false },
-    indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = true } },
+    indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = false } },
     dashboard = {
       sections = {
         {

@@ -3,9 +3,14 @@ return { -- NOTE: avante
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
-    build = "make",
-    enabled = function()
-      return vim.fn.has("win32") == 0
+    -- build = "make",
+    build = function()
+      -- conditionally use the correct build system for the current OS
+      if vim.fn.has("win32") == 1 then
+        return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+      else
+        return "make"
+      end
     end,
     opts = {
       provider = "copilot",
@@ -28,6 +33,7 @@ return { -- NOTE: avante
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "folke/snacks.nvim", -- for input provider snacks
       "zbirenbaum/copilot.lua", -- for providers='copilot'
     },
   },
