@@ -62,7 +62,7 @@ return {
   -- NOTE: leetcode
   {
     "kawre/leetcode.nvim",
-    build = ":TSInstall html", -- if you have `nvim-treesitter` installed
+    -- build = ":TSInstall html", -- if you have `nvim-treesitter` installed
     dependencies = {
       "nvim-telescope/telescope.nvim",
       -- "ibhagwan/fzf-lua",
