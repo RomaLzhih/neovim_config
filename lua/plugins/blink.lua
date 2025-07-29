@@ -39,6 +39,7 @@ return {
         ["<Tab>"] = { "select_next", "fallback" },
         ["<S-Tab>"] = { "select_prev", "fallback" },
         ["<C-e>"] = { "select_and_accept" },
+        ["<C-x>"] = { "hide" },
       },
     },
   },
