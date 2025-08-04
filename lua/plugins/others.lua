@@ -12,9 +12,18 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
-  -- NOTE: extend %
   {
-    "andymass/vim-matchup",
+    "fei6409/log-highlight.nvim",
+    config = function()
+      require("log-highlight").setup({})
+    end,
+  },
+  -- NOTE: auto resize buffer
+  {
+    "kwkarlwang/bufresize.nvim",
+    config = function()
+      require("bufresize").setup()
+    end,
     lazy = false,
   },
 
@@ -178,9 +187,8 @@ return {
     end,
   },
 
-
   -- NOTE: tree sitter context
-  {"nvim-treesitter/nvim-treesitter-context", opts = {enable=true}, lazy = false},
+  { "nvim-treesitter/nvim-treesitter-context", opts = { enable = true }, lazy = false },
 
   -- NOTE: enable treesitter for text object select
   {
@@ -505,7 +513,7 @@ return {
         "stylua",
         "pyright",
         "pylint",
-        "black",
+        "autopep8",
         "bash-language-server",
         "shfmt",
       },

@@ -16,7 +16,7 @@ return {
     },
     zen = {
       enabled = true,
-      win = { style = { width = 90 }, backdrop = { transparent = true, blend = 15 } },
+      win = { style = { width = 95 }, backdrop = { transparent = false, blend = 0 } },
       toggles = { dim = false, diagnostics = true, inlay_hints = false },
     },
     bufdelete = { enabled = true },

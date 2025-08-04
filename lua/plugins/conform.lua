@@ -10,7 +10,7 @@ return {
       },
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black", "autopep8" },
+        python = { "autopep8", "black" },
         cpp = { "clang-format" },
         bash = { "shfmt" },
         shell = { "shfmt" },
