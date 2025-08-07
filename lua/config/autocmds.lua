@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("User", {
     vim.b.copilot_suggestion_hidden = true
   end,
 })
+vim.g.lazyvim_picker = "fzf"
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "BlinkCmpMenuClose",

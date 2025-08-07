@@ -24,6 +24,10 @@ return {
     lazygit = { enabled = true },
     notifier = { enabled = true },
     picker = {
+      matcher = {
+        frecency = true, -- frecency bonus
+        history_bonus = true, -- give more weight to chronological order
+      },
       win = {
         input = {
           keys = {

@@ -541,6 +541,11 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     lazy = true,
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      -- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+      build = "cmake -S. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+    },
     config = function()
       if vim.fn.has("win32") == 0 then
         require("telescope").load_extension("yank_history")
