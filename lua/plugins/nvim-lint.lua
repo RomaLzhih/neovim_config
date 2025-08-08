@@ -9,7 +9,7 @@ return {
     lint.linters_by_ft = {
       python = { "pylint" },
       -- cpp = { "clangtidy", "cppcheck", "cpplint" },
-      cpp = { "clangtidy", "cppcheck" },
+      cpp = { "clangtidy" },
       bash = { "shellcheck" },
     }
 
