@@ -50,7 +50,8 @@ return { -- NOTE: avante
     opts = {
       -- model = "gpt-4o-mini",
       show_folds = false, -- Shows folds for sections in chat
-      show_help = false, -- Shows help message as virtual lines when waiting for user input
+      show_help = true, -- Shows help message as virtual lines when waiting for user input
+      auto_insert_mode = true,
       question_header = "󱜸 Question ", -- Header to use for user questions
       answer_header = " Copilot ", -- Header to use for AI answers
       error_header = " Error ", -- Header to use for errors

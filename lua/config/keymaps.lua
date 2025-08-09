@@ -32,7 +32,7 @@ map(
 
 -- NOTE: system copy
 map("n", "<leader>c", require("osc52").copy_operator, { expr = true })
-map("n", "<leader>cc", "<leader>c_", { remap = true })
+-- map("n", "<leader>cc", "<leader>c_", { remap = true })
 map("v", "<leader>c", require("osc52").copy_visual)
 
 -- NOTE: Motion
@@ -68,7 +68,7 @@ map({ "n", "v" }, "<leader>qc", function()
     require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
   end
 end, { desc = "CopilotChat - Quick chat" })
-map({ "n", "v" }, "<A-b>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
+map({ "n", "v" }, "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
 map({ "n", "v" }, "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
 map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "CopilotChat - review" })
 map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })
@@ -171,13 +171,13 @@ map(
   { desc = "Buffer Diagnostics (Trouble)" }
 )
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
-map(
-  "n",
-  "<leader>cc",
-  "<cmd>Trouble qflist toggle focus=true win={size={height=0.5}}<cr>",
-  { desc = "Quickfix List (Trouble)" }
-)
-map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
+-- map(
+--   "n",
+--   "<leader>cc",
+--   "<cmd>Trouble qflist toggle focus=true win={size={height=0.5}}<cr>",
+--   { desc = "Quickfix List (Trouble)" }
+-- )
+-- map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
 
 -- NOTE: summarize all todos
 map(
