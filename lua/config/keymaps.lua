@@ -68,12 +68,10 @@ map({ "n", "v" }, "<leader>qc", function()
     require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
   end
 end, { desc = "CopilotChat - Quick chat" })
-map({ "n", "v" }, "<leader>cc", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
+map({ "n", "v" }, "<C-a>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
 map({ "n", "v" }, "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
 map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "CopilotChat - review" })
 map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })
-map({ "n", "v" }, "<leader>cdoc", "<cmd>CopilotChatdocs<CR>", { desc = "CopilotChat - docs" })
-map({ "n", "v" }, "<leader>cfd", "<cmd>CopilotChatFixDiagnostic<CR>", { desc = "CopilotChat - fix diagnostic" })
 map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
 map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
 map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - commit" })
@@ -171,12 +169,12 @@ map(
   { desc = "Buffer Diagnostics (Trouble)" }
 )
 map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
--- map(
---   "n",
---   "<leader>cc",
---   "<cmd>Trouble qflist toggle focus=true win={size={height=0.5}}<cr>",
---   { desc = "Quickfix List (Trouble)" }
--- )
+map(
+  "n",
+  "<leader>cc",
+  "<cmd>Trouble qflist toggle focus=true win={size={height=0.5}}<cr>",
+  { desc = "Quickfix List (Trouble)" }
+)
 -- map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
 
 -- NOTE: summarize all todos

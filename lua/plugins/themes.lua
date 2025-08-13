@@ -163,7 +163,7 @@ return {
           Bracket = { fg = "#fbf1c7" },
         },
       })
-      vim.cmd("colorscheme tokyonight")
+      vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
     lazy = false,
@@ -204,14 +204,14 @@ return {
   },
   { "junegunn/seoul256.vim", priority = 1000, lazy = true },
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
-  -- { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
-  {
-    "shaunsingh/nord.nvim",
-    config = function()
-      vim.g.nord_contrast = true
-      vim.g.nord_italic = false
-    end,
-  },
+  { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
+  -- {
+  --   "shaunsingh/nord.nvim",
+  --   config = function()
+  --     vim.g.nord_contrast = true
+  --     vim.g.nord_italic = false
+  --   end,
+  -- },
   { "deparr/tairiki.nvim", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",

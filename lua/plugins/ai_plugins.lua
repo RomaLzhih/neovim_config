@@ -48,19 +48,23 @@ return { -- NOTE: avante
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      -- model = "gpt-4o-mini",
+      -- model = "gpt-5",
       show_folds = false, -- Shows folds for sections in chat
       show_help = true, -- Shows help message as virtual lines when waiting for user input
-      auto_insert_mode = true,
+      auto_insert_mode = false,
       question_header = "󱜸 Question ", -- Header to use for user questions
       answer_header = " Copilot ", -- Header to use for AI answers
       error_header = " Error ", -- Header to use for errors
       window = {
         layout = "float",
         width = 0.618,
-        height = 0.618,
+        height = 0.80,
         boarder = "rounded",
       },
+      -- Use visual selection, fallback to current line
+      selection = function(source)
+        return require("CopilotChat.select").visual(source) or require("CopilotChat.select").line(source)
+      end,
     },
     lazy = false,
   },

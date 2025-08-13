@@ -323,7 +323,8 @@ return {
       workspaces = {
         {
           name = "ziyang-obsidian",
-          path = "~/Dropbox/work-flow/obsidian/ziyang-obsidian",
+          path = vim.fn.has("mac") == 1 and "~/Library/CloudStorage/Dropbox/work-flow/notes"
+            or "~/Dropbox/work-flow/notes",
         },
       },
       ui = { enable = false },
@@ -557,6 +558,7 @@ return {
             horizontal = {
               prompt_position = "bottom",
               width = 0.7,
+              height = 0.618,
               preview_width = 0.4,
             },
           },
