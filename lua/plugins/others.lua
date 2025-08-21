@@ -323,8 +323,8 @@ return {
       workspaces = {
         {
           name = "ziyang-obsidian",
-          path = vim.fn.has("mac") == 1 and "~/Library/CloudStorage/Dropbox/work-flow/notes"
-            or "~/Dropbox/work-flow/notes",
+          path = vim.fn.has("mac") == 1 and "~/Library/CloudStorage/Dropbox/work-flow/obsidian/ziyang-obsidian"
+            or "~/Dropbox/work-flow/obsidian/ziyang-obsidian",
         },
       },
       ui = { enable = false },
@@ -650,7 +650,7 @@ return {
     -- to time. For now we recommend pinning to the latest minor version
     -- like so:
     -- version = "~0.1.0",
-    cond = vim.fn.has("mac") == 0,
+    -- cond = vim.fn.has("mac") == 0,
   },
 
   -- NOTE: surrounds

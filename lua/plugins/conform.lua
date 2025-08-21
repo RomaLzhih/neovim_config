@@ -15,13 +15,14 @@ return {
         bash = { "shfmt" },
         shell = { "shfmt" },
         sh = { "shfmt" },
-        -- tex = { "tex-fmt" },
+        tex = { "my" },
       },
-      -- The options you set here will be merged with the builtin formatters.
-      -- You can also define any custom formatters here.
-      ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
+        my = {
+          command = "tex-fmt",
+          args = { "-s", "--nowrap" },
+        },
         -- # Example of using dprint only when a dprint.json file is present
         -- dprint = {
         --   condition = function(ctx)
@@ -30,9 +31,6 @@ return {
         -- },
         --
         -- # Example of using shfmt with extra args
-        -- shfmt = {
-        --   prepend_args = { "-i", "2", "-ci" },
-        -- },
       },
     }
     return opts

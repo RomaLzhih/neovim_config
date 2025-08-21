@@ -1,6 +1,5 @@
 return {
   -- NOTE: themes
-  { "ray-x/aurora", lazy = true },
   {
     "Tsuzat/NeoSolarized.nvim",
     lazy = true,
@@ -25,22 +24,6 @@ return {
   },
 
   {
-    "dgox16/oldworld.nvim",
-    lazy = true,
-    priority = 1000,
-  },
-
-  {
-    "luisiacc/gruvbox-baby",
-    config = function()
-      vim.g.gruvbox_baby_keyword_style = "NONE"
-      vim.g.gruvbox_baby_highlights =
-        { ["@lsp.type.variable"] = { fg = "#e7d7ad" }, ["@lsp.type.parameter"] = { fg = "#7fa2ac" } }
-    end,
-    lazy = true,
-  },
-
-  {
     "sainnhe/sonokai",
     config = function()
       vim.g.sonokai_enable_italic = false
@@ -58,13 +41,14 @@ return {
           functions = { italic = false },
           variables = { italic = false },
           parameters = { italic = false, bold = true },
+          keywords = { italic = false, bold = false },
         },
         variant = "winter",
         on_highlights = function(colors, color)
           --https://github.com/maxmx03/solarized.nvim/blob/c0dfe1cbfabd93b546baf5f1408f5df7e02e2050/lua/solarized/palette/init.lua
           local groups = {
             Type = { fg = colors.yellow },
-            Keyword = { fg = "#df4643" },
+            Keyword = { fg = "#859900" },
             Parameter = { fg = colors.base0 },
             Identifier = { fg = colors.base1 },
             Property = { fg = colors.base1 },
@@ -89,8 +73,6 @@ return {
     lazy = true,
   },
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
-  { "nlknguyen/papercolor-theme", priority = 1000, lazy = true },
-  { "savq/melange-nvim", priority = 1000, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
     opts = {
@@ -129,11 +111,8 @@ return {
   { "sainnhe/everforest", priority = 1000, lazy = true },
   { "Mofiqul/vscode.nvim", priority = 1000, lazy = true },
   { "marko-cerovac/material.nvim", priority = 1000, lazy = true },
-  { "Mofiqul/dracula.nvim", priority = 1000, lazy = true },
   { "oxfist/night-owl.nvim", opts = { italics = false }, priority = 1000, lazy = true },
-  { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = true },
   { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = true },
-  -- { "bluz71/vim-moonfly-colors", priority=1000,lazy=false },
   {
     "ellisonleao/gruvbox.nvim",
     opts = {},
@@ -168,51 +147,9 @@ return {
     priority = 1000,
     lazy = false,
   },
-  -- { "vague2k/vague.nvim", priority=1000,lazy=false },
-  {
-    "everviolet/nvim",
-    config = function()
-      require("evergarden").setup({
-        theme = {
-          variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
-          accent = "green",
-        },
-        editor = {
-          transparent_background = false,
-          override_terminal = true,
-          sign = { color = "none" },
-          float = {
-            color = "mantle",
-            invert_border = false,
-          },
-          completion = {
-            color = "surface0",
-          },
-        },
-        style = {
-          tabline = { "reverse" },
-          search = { "italic", "reverse" },
-          incsearch = { "italic", "reverse" },
-          types = {},
-          keyword = {},
-          comment = {},
-        },
-      })
-    end,
-    priority = 1000,
-    lazy = true,
-  },
   { "junegunn/seoul256.vim", priority = 1000, lazy = true },
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
   { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
-  -- {
-  --   "shaunsingh/nord.nvim",
-  --   config = function()
-  --     vim.g.nord_contrast = true
-  --     vim.g.nord_italic = false
-  --   end,
-  -- },
-  { "deparr/tairiki.nvim", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",
     priority = 1000,
