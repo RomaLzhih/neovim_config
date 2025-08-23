@@ -88,7 +88,17 @@ return {
     lazy = true,
   },
   { "navarasu/onedark.nvim", priority = 1000, lazy = true },
-  { "folke/tokyonight.nvim", priority = 1000, lazy = false },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+      },
+    },
+    priority = 1000,
+    lazy = false,
+  },
   {
     "rebelot/kanagawa.nvim",
     opts = { commentStyle = { italic = false }, functionStyle = {}, keywordStyle = { italic = false } },
@@ -142,7 +152,7 @@ return {
           Bracket = { fg = "#fbf1c7" },
         },
       })
-      vim.cmd("colorscheme gruvbox")
+      vim.cmd("colorscheme tokyonight")
     end,
     priority = 1000,
     lazy = false,

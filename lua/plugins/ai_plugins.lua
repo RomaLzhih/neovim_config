@@ -13,6 +13,8 @@ return { -- NOTE: avante
       end
     end,
     opts = {
+      mode = "legacy",
+      selection = { enabled = false },
       provider = "copilot",
       providers = {
         copilot = {
