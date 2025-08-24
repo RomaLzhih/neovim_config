@@ -361,16 +361,22 @@ return {
 
   { "mg979/vim-visual-multi", lazy = false },
 
-  -- NOTE: better comment than buildin
+  -- NOTE; better comment than buildin
   {
     "numToStr/Comment.nvim",
     lazy = false,
     config = function()
-      require("Comment").setup()
+      pre_hook = function(ctx)
+        if vim.bo.filetype == "rmd" then
+          return "#%s"
+        end
+      end
+      -- require("Comment").setup()
+      -- require("Comment.ft").set("rmd", { "#%s", "#%s" }) -- Both use #
     end,
   },
 
-  -- NOTE: Search and replace
+  -- NOTE; Search and replace
   {
     "windwp/nvim-spectre",
     event = "BufRead",
