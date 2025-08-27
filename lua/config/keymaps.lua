@@ -208,9 +208,11 @@ end, { desc = "colorschemes" })
 map("n", "?", function()
   require("telescope.builtin").current_buffer_fuzzy_find()
 end, { desc = "live grep current buffer" })
-map("n", "<leader>ts", function()
+map("n", "<leader>fu", function()
   require("telescope.builtin").treesitter()
 end, { desc = "live grep current buffer" })
+
+-- NOTE: session
 map("n", "<leader>wrs", "<cmd>SessionSearch<CR>", { desc = "Session search" })
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session" })
 

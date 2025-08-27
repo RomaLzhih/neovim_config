@@ -152,7 +152,7 @@ return {
           Bracket = { fg = "#fbf1c7" },
         },
       })
-      vim.cmd("colorscheme tokyonight")
+      vim.cmd("colorscheme rose-pine")
     end,
     priority = 1000,
     lazy = false,
