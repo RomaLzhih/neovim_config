@@ -15,7 +15,7 @@ return {
         bash = { "shfmt" },
         shell = { "shfmt" },
         sh = { "shfmt" },
-        tex = { "my" },
+        -- tex = { "my" },
       },
       formatters = {
         injected = { options = { ignore_errors = true } },

@@ -23,6 +23,7 @@ map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
 map("n", "<leader>co", "<cmd> copen <CR>", { desc = "close quickfix" })
 map("n", "<Tab>", "<cmd>bnext <CR>", { desc = "next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious <CR>", { desc = "next buffer" })
+map("n", "s", "/", { desc = "search" })
 map(
   "n",
   "<leader>il",
@@ -87,6 +88,7 @@ end, { desc = "avante refresh" })
 
 -- NOTE: terminal and buffer
 map({ "n", "t" }, "<A-w>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
+map({ "n", "t" }, "<C-g>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
 map({ "n", "t" }, "<A-x>", "<cmd>ToggleTerm direction=horizontal size=20 <CR>", { desc = "Toggle horizontal term" })
 map({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm direction=vertical size=40 <CR>", { desc = "Toggle vertical term" })
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Switch Window left in terminal" })
