@@ -23,7 +23,7 @@ map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
 map("n", "<leader>co", "<cmd> copen <CR>", { desc = "close quickfix" })
 map("n", "<Tab>", "<cmd>bnext <CR>", { desc = "next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious <CR>", { desc = "next buffer" })
-map("n", "s", "/", { desc = "search" })
+-- map("n", "s", "/", { desc = "search" })
 map(
   "n",
   "<leader>il",
