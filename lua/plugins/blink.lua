@@ -24,6 +24,10 @@ return {
       completion = {
         ghost_text = { enabled = false },
       },
+      cmdline = {
+  -- keymap = { preset = 'inherit' },
+  completion = { menu = { auto_show = false } },
+},
       sources = {
         default = { "copilot", "lsp", "snippets", "path", "buffer" },
         providers = {

@@ -92,7 +92,7 @@ return {
           },
           {
             action = function()
-              vim.api.nvim_input("<cmd>SessionRestore<cr>")
+              vim.api.nvim_input("<cmd>AutoSession restore<cr>")
             end,
             desc = "Restore Session",
             icon = " ",

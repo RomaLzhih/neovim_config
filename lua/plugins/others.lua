@@ -13,6 +13,10 @@
 local has_neovide = vim.g.neovide
 return {
   {
+    "folke/noice.nvim",
+    enabled = false,
+  },
+  {
     "fei6409/log-highlight.nvim",
     config = function()
       require("log-highlight").setup({})
@@ -165,71 +169,71 @@ return {
   -- NOTE: enable nvim copy to system clipboard
   { "ojroques/nvim-osc52", lazy = false },
 
-  -- NOTE: treesitter based incremental selection
-  {
-    "RRethy/nvim-treesitter-textsubjects",
-    ft = { "cpp", "c", "python", "lua", "r", "rmd" },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        textsubjects = {
-          enable = true,
-          prev_selection = ",", -- (Optional) keymap to select the previous selection
-          keymaps = {
-            ["."] = "textsubjects-smart",
-            [";"] = "textsubjects-container-outer",
-            ["i;"] = {
-              "textsubjects-container-inner",
-              desc = "Select inside containers (classes, functions, etc.)",
-            },
-          },
-        },
-      })
-    end,
-  },
-
-  -- NOTE: tree sitter context
+  -- -- NOTE: treesitter based incremental selection
+  -- {
+  --   "RRethy/nvim-treesitter-textsubjects",
+  --   ft = { "cpp", "c", "python", "lua", "r", "rmd" },
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup({
+  --       textsubjects = {
+  --         enable = true,
+  --         prev_selection = ",", -- (Optional) keymap to select the previous selection
+  --         keymaps = {
+  --           ["."] = "textsubjects-smart",
+  --           [";"] = "textsubjects-container-outer",
+  --           ["i;"] = {
+  --             "textsubjects-container-inner",
+  --             desc = "Select inside containers (classes, functions, etc.)",
+  --           },
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
+  --
+  -- -- NOTE: tree sitter context
   { "nvim-treesitter/nvim-treesitter-context", opts = { enable = true }, lazy = false },
-
-  -- NOTE: enable treesitter for text object select
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    after = "nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter",
-    ft = { "cpp", "c", "python", "lua", "r", "rmd" },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        textobjects = {
-          select = {
-            enable = true,
-            look = true,
-            include_surrounding_whitespace = true,
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["al"] = "@loop.outer",
-              ["il"] = "@loop.inner",
-              ["ac"] = "@conditional.outer",
-              ["ic"] = "@conditional.inner",
-            },
-          },
-          move = {
-            enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next = {
-              ["]f"] = "@function.outer",
-              ["]l"] = "@loop.outer",
-              ["]c"] = "@conditional.outer",
-            },
-            goto_previous = {
-              ["[f"] = "@function.outer",
-              ["[l"] = "@loop.outer",
-              ["[c"] = "@conditional.outer",
-            },
-          },
-        },
-      })
-    end,
-  },
+  --
+  -- -- NOTE: enable treesitter for text object select
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-textobjects",
+  --   after = "nvim-treesitter",
+  --   requires = "nvim-treesitter/nvim-treesitter",
+  --   ft = { "cpp", "c", "python", "lua", "r", "rmd" },
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup({
+  --       textobjects = {
+  --         select = {
+  --           enable = true,
+  --           look = true,
+  --           include_surrounding_whitespace = true,
+  --           keymaps = {
+  --             ["af"] = "@function.outer",
+  --             ["if"] = "@function.inner",
+  --             ["al"] = "@loop.outer",
+  --             ["il"] = "@loop.inner",
+  --             ["ac"] = "@conditional.outer",
+  --             ["ic"] = "@conditional.inner",
+  --           },
+  --         },
+  --         move = {
+  --           enable = true,
+  --           set_jumps = true, -- whether to set jumps in the jumplist
+  --           goto_next = {
+  --             ["]f"] = "@function.outer",
+  --             ["]l"] = "@loop.outer",
+  --             ["]c"] = "@conditional.outer",
+  --           },
+  --           goto_previous = {
+  --             ["[f"] = "@function.outer",
+  --             ["[l"] = "@loop.outer",
+  --             ["[c"] = "@conditional.outer",
+  --           },
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
 
   -- NOTE: unipaired
   {
@@ -517,7 +521,6 @@ return {
         "clang-format",
         "codelldb",
         "lua-language-server",
-        "stylua",
         "pyright",
         "pylint",
         "autopep8",
