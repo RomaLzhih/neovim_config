@@ -13,13 +13,13 @@ return { -- NOTE: avante
       end
     end,
     opts = {
-      mode = "legacy",
+      -- mode = "legacy",
       selection = { enabled = false },
       provider = "copilot",
       providers = {
         copilot = {
-          -- model = "gemini-2.5-pro",
-          model = "claude-sonnet-4",
+          model = "gemini-2.5-pro",
+          -- model = "claude-sonnet-4",
         },
       },
       auto_suggestions_provider = "copilot",

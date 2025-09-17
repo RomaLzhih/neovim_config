@@ -157,7 +157,7 @@ return {
       },
     },
     -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     lazy = false,
   },
@@ -281,7 +281,7 @@ return {
 
   -- NOTE: use mini pair to complete the pair
   {
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     version = "*",
     config = function()
       require("mini.pairs").setup()
@@ -378,7 +378,7 @@ return {
 
   -- NOTE; Search and replace
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     event = "BufRead",
     config = function()
       require("spectre").setup()
@@ -449,7 +449,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
     dependencies = {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       "mfussenegger/nvim-dap",
     },
     opts = {
@@ -510,7 +510,7 @@ return {
   -- NOTE: mason
   -- override plugin configs
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "clangd",
@@ -615,7 +615,7 @@ return {
 
   -- NOTE: mini.cursorword
   {
-    "echasnovski/mini.cursorword",
+    "nvim-mini/mini.cursorword",
     version = "*",
     config = function()
       require("mini.cursorword").setup()
