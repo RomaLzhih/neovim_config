@@ -21,6 +21,7 @@ return {
       "giuxtaposition/blink-cmp-copilot",
     },
     opts = {
+      signature = { enabled = true },
       completion = {
         ghost_text = { enabled = false },
         menu = {
@@ -53,7 +54,7 @@ return {
         completion = { menu = { auto_show = false } },
       },
       sources = {
-        default = { "copilot", "lsp", "snippets", "path", "buffer" },
+        default = { "copilot", "lsp", "snippets", "path", "buffer", "omni" },
         providers = {
           copilot = {
             name = "copilot",
