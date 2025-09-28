@@ -88,7 +88,7 @@ return {
           },
           {
             action = function()
-              vim.api.nvim_input("<cmd> Neorg index <cr>")
+              vim.api.nvim_input("<cmd> ObsidianSearch <cr>")
             end,
             desc = "Wiki",
             icon = "󱓷 ",
