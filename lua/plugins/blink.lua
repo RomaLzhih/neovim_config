@@ -11,6 +11,7 @@ return {
         csv = true,
         help = true,
       },
+      copilot_model = "claude-sonnet-4.5",
     },
   },
 

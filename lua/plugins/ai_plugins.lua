@@ -18,8 +18,7 @@ return { -- NOTE: avante
       provider = "copilot",
       providers = {
         copilot = {
-          model = "gemini-2.5-pro",
-          -- model = "claude-sonnet-4",
+          model = "grok-code-fast-1",
         },
       },
       auto_suggestions_provider = "copilot",
@@ -50,7 +49,7 @@ return { -- NOTE: avante
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      model = "claude-sonnet-4",
+      model = "claude-sonnet-4.5",
       show_folds = false, -- Shows folds for sections in chat
       show_help = true, -- Shows help message as virtual lines when waiting for user input
       auto_insert_mode = false,
