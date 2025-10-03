@@ -308,6 +308,25 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       file_types = { "markdown", "Avante", "copilot-chat" },
+      checkbox = {
+        checked = { scope_highlight = "@markup.strikethrough" },
+        custom = {
+          important = {
+            raw = "[!]",
+            rendered = "󰓎 ",
+            highlight = "DiagnosticWarn",
+          },
+          cancel = {
+            raw = "[c]",
+            rendered = "󰜺 ",
+            highlight = "grey",
+          },
+          cancel = {
+            raw = "[p]",
+            rendered = "󱫪 ",
+          },
+        },
+      },
     },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
     config = true,
