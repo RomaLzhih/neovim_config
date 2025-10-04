@@ -25,30 +25,6 @@ return {
       signature = { enabled = true },
       completion = {
         ghost_text = { enabled = false },
-        menu = {
-          draw = {
-            components = {
-              kind_icon = {
-                text = function(ctx)
-                  local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
-                  return kind_icon
-                end,
-                -- (optional) use highlights from mini.icons
-                highlight = function(ctx)
-                  local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-                  return hl
-                end,
-              },
-              kind = {
-                -- (optional) use highlights from mini.icons
-                highlight = function(ctx)
-                  local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
-                  return hl
-                end,
-              },
-            },
-          },
-        },
       },
       cmdline = {
         -- keymap = { preset = 'inherit' },
@@ -62,11 +38,20 @@ return {
             module = "blink-cmp-copilot",
             score_offset = 100,
             async = true,
+            kind_icon = "",
+            kind_hl = false,
           },
         },
       },
       keymap = {
-        ["<Tab>"] = { "select_next", "fallback" },
+        ["<Tab>"] = {
+          "select_next",
+          function() -- sidekick next edit suggestion
+            return require("sidekick").nes_jump_or_apply()
+          end,
+          "fallback",
+        },
+        -- ["<Tab>"] = { "select_next", "fallback" },
         ["<S-Tab>"] = { "select_prev", "fallback" },
         ["<C-e>"] = { "select_and_accept" },
         ["<C-x>"] = { "hide" },

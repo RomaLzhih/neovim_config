@@ -541,6 +541,7 @@ return {
         "lua-language-server",
         "pyright",
         "pylint",
+        "copilot-language-server",
         "autopep8",
         "bash-language-server",
         "shfmt",

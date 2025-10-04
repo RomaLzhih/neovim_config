@@ -43,12 +43,6 @@ vim.api.nvim_create_autocmd("User", {
 -- local theme = require("last-color").recall() or "default"
 -- vim.cmd.colorscheme(theme)
 
--- NOTE: set the default conceallevel for neorg file
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.norg" },
-  command = "set conceallevel=3",
-})
-
 -- NOTE: no relative number for snacks dashboard
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "snacks_dashboard",

@@ -187,9 +187,8 @@ map(
   { desc = "Show all TODOs" }
 )
 
--- NOTE: neorg
-map("n", "<leader>id", "<cmd> Neorg index <CR>", { desc = "Neorg open index" })
-map("n", "<leader>rt", "<cmd> Neorg return <CR>", { desc = "Neorg return to work" })
+-- NOTE: wiki search
+map("n", "<leader>id", "<cmd> ObsidianSearch <CR>", { desc = "Obsidian search" })
 
 -- NOTE: finder
 map("n", "<leader>fw", function()
