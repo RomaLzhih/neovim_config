@@ -309,7 +309,6 @@ return {
     opts = {
       file_types = { "markdown", "Avante", "copilot-chat" },
       checkbox = {
-        checked = { scope_highlight = "@markup.strikethrough" },
         custom = {
           important = {
             raw = "[!]",
@@ -319,9 +318,9 @@ return {
           cancel = {
             raw = "[c]",
             rendered = "󰜺 ",
-            highlight = "grey",
+            scope_highlight = "@markup.strikethrough",
           },
-          cancel = {
+          pending = {
             raw = "[p]",
             rendered = "󱫪 ",
           },
