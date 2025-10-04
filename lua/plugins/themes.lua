@@ -19,6 +19,7 @@ return {
   },
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
   { "ishan9299/nvim-solarized-lua", priority = 1000, lazy = true },
+  { "pappasam/papercolor-theme-slim", priority = 1000, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
     opts = {
@@ -124,7 +125,7 @@ return {
       local fm = require("fluoromachine")
       fm.setup({
         glow = true,
-        brightness = 0.03,
+        brightness = 0.02,
         theme = "retrowave",
         transparent = false,
       })
