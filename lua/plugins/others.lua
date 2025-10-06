@@ -307,6 +307,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
+      render_modes = true,
       file_types = { "markdown", "Avante", "copilot-chat" },
       checkbox = {
         custom = {
