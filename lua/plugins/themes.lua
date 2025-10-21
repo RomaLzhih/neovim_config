@@ -20,6 +20,9 @@ return {
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
   { "ishan9299/nvim-solarized-lua", priority = 1000, lazy = true },
   { "pappasam/papercolor-theme-slim", priority = 1000, lazy = true },
+  { "embark-theme/vim", name = "embark", priority = 1000, lazy = true },
+  { "atmosuwiryo/vim-winteriscoming", priority = 1000, lazy = true },
+  { "qaptoR-nvim/chocolatier.nvim", priority = 1000, config = true, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
     opts = {
@@ -104,17 +107,14 @@ return {
         },
       })
       -- vim.cmd("colorscheme catppuccin-macchiato")
-      vim.cmd("colorscheme gruvbox")
+      vim.cmd("colorscheme rose-pine")
     end,
     priority = 1000,
     lazy = false,
   },
-  { "junegunn/seoul256.vim", priority = 1000, lazy = true },
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
   -- { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
   { "gbprod/nord.nvim", name = "nord", priority = 1000, lazy = true },
-  { "Yazeed1s/oh-lucy.nvim", priority = 1000, lazy = true },
-  { "rmehri01/onenord.nvim", priority = 1000, lazy = true },
   { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",

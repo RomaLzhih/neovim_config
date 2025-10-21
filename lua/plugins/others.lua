@@ -555,6 +555,9 @@ return {
     "aserowy/tmux.nvim",
     config = function()
       require("tmux").setup({
+        copy_sync = {
+          enable = false,
+        },
         navigation = {
           cycle_navigation = false,
           redirect_to_clipboard = true,
