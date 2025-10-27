@@ -1,11 +1,11 @@
-return{
+return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
       "bash",
       "c",
-        "cpp",
-      "norg",
+      "cpp",
+      "latex",
       "r",
       "diff",
       "html",
@@ -19,5 +19,5 @@ return{
       "vim",
       "vimdoc",
     },
-},
+  },
 }
