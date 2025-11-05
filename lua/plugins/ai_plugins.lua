@@ -93,7 +93,7 @@ return {
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      model = "claude-sonnet-4.5",
+      model = "gpt-5-codex",
       show_folds = false, -- Shows folds for sections in chat
       show_help = true, -- Shows help message as virtual lines when waiting for user input
       auto_insert_mode = false,
