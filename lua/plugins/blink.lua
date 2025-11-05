@@ -21,6 +21,7 @@ return {
       -- "fang2hou/blink-copilot",
       "giuxtaposition/blink-cmp-copilot",
     },
+    build = "cargo build --release",
     opts = {
       signature = { enabled = true },
       completion = {
