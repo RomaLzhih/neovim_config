@@ -30,7 +30,7 @@ return {
           require("sidekick.cli").toggle()
         end,
         desc = "Sidekick Toggle",
-        mode = { "n", "t", "i", "x" },
+        mode = { "n"},
       },
       {
         "<leader>aa",
@@ -63,14 +63,6 @@ return {
         end,
         mode = { "n", "x" },
         desc = "Sidekick Select Prompt",
-      },
-      {
-        "<c-.>",
-        function()
-          require("sidekick.cli").focus()
-        end,
-        mode = { "n", "x", "i", "t" },
-        desc = "Sidekick Switch Focus",
       },
       -- Example of a keybinding to open cli directly
       {
