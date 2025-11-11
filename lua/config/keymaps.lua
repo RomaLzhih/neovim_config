@@ -77,6 +77,9 @@ map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "Copilo
 map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
 map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - commit" })
 
+-- NOTE: side kick
+map({ "n" }, "yok", "<cmd>Sidekick nes toggle<CR>", { desc = "SideKick toggle" })
+
 -- NOTE: Avante
 map({ "n", "v" }, "<A-i>", function()
   require("avante.api").ask()
