@@ -31,6 +31,11 @@ return {
         -- keymap = { preset = 'inherit' },
         completion = { menu = { auto_show = false } },
       },
+      appearance = {
+        kind_icons = {
+          Copilot = "",
+        },
+      },
       sources = {
         default = { "copilot", "lsp", "snippets", "path", "buffer", "omni" },
         providers = {
@@ -39,8 +44,17 @@ return {
             module = "blink-cmp-copilot",
             score_offset = 100,
             async = true,
-            kind_icon = "",
-            kind_hl = false,
+            transform_items = function(_, items)
+              local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+              local kind_idx = #CompletionItemKind + 1
+              CompletionItemKind[kind_idx] = "Copilot"
+              for _, item in ipairs(items) do
+                item.kind = kind_idx
+              end
+              return items
+            end,
+            -- kind_icon = "",
+            -- kind_hl = false,
           },
         },
       },
