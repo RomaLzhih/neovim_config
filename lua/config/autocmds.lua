@@ -10,6 +10,10 @@
 vim.o.termguicolors = true
 -- vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 
+-- NOTE: time out
+vim.opt.timeoutlen = 300
+vim.opt.ttimeoutlen = 10
+
 -- NOTE: restore the last-color
 -- local theme = require("last-color").recall() or "default"
 -- vim.cmd.colorscheme(theme)
