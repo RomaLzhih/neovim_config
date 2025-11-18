@@ -62,6 +62,14 @@ map("n", "<A-e>", function()
   end
 end, { desc = "Oil toggle last directory" })
 
+-- NOTE: async tasks
+map("n", "<leader>ru", "<cmd>AsyncTaskEdit<CR>", { desc = "AsyncTaskEdit" })
+map("n", "<leader>ol", "<cmd>AsyncTaskLast<CR>", { desc = "AsyncTaskLast" })
+map("n", "<leader>st", "<cmd>AsyncStop<CR>", { desc = "AsyncStop" })
+map("n", "<leader>ob", function()
+  require("telescope").extensions.asynctasks.all()
+end, { desc = "AsyncTasks" })
+
 -- NOTE: Copilot chat
 map({ "n", "v" }, "<leader>qc", function()
   local input = vim.fn.input("Quick Chat: ")

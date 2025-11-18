@@ -1,5 +1,6 @@
 return {
   "stevearc/overseer.nvim",
+  enabled = false,
   config = function()
     local overseer = require("overseer")
 
@@ -101,27 +102,27 @@ return {
       end
     end, {})
 
-    vim.keymap.set(
-      "n",
-      "<leader>ol",
-      "<cmd> OverseerRestartLast<CR>",
-      { noremap = true, silent = true, desc = "overseer restart last" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>ol",
+    --   "<cmd> OverseerRestartLast<CR>",
+    --   { noremap = true, silent = true, desc = "overseer restart last" }
+    -- )
+    --
+    -- vim.keymap.set("n", "<leader>ru", "<cmd> OverseerRun<CR>", { noremap = true, silent = true, desc = "overseer run" })
 
-    vim.keymap.set("n", "<leader>ru", "<cmd> OverseerRun<CR>", { noremap = true, silent = true, desc = "overseer run" })
-
-    vim.keymap.set(
-      "n",
-      "<leader>op",
-      "<cmd> OverseerOpen<CR>",
-      { noremap = true, silent = true, desc = "overseer open" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>pp",
-      "<cmd> OverseerClose<CR>",
-      { noremap = true, silent = true, desc = "overseer close" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>op",
+    --   "<cmd> OverseerOpen<CR>",
+    --   { noremap = true, silent = true, desc = "overseer open" }
+    -- )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>pp",
+    --   "<cmd> OverseerClose<CR>",
+    --   { noremap = true, silent = true, desc = "overseer close" }
+    -- )
     -- vim.keymap.set(
     --   "n",
     --   "<leader>ob",
@@ -129,12 +130,12 @@ return {
     --   { noremap = true, silent = true, desc = "overseer load bundle" }
     -- )
 
-    vim.keymap.set(
-      "n",
-      "<leader>oa",
-      "<cmd> OverseerTaskAction<CR>",
-      { noremap = true, silent = true, desc = "overseer open" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>oa",
+    --   "<cmd> OverseerTaskAction<CR>",
+    --   { noremap = true, silent = true, desc = "overseer open" }
+    -- )
 
     -- NOTE: run customized tasks
     local args_string = ""

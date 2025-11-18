@@ -12,6 +12,18 @@
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
 return {
+  {
+    "skywind3000/asynctasks.vim",
+    dependencies = { "skywind3000/asyncrun.vim" },
+    init = function()
+      vim.g.asyncrun_open = 15
+      vim.g.asynctasks_term_reuse = 1
+      vim.g.asynctasks_template = "~/.vim/task_template.ini"
+      vim.g.asynctasks_term_pos = "bottom"
+    end,
+    lazy = false,
+  },
+
   -- NOTE: extend %
   {
     "andymass/vim-matchup",
@@ -50,6 +62,7 @@ return {
       require("log-highlight").setup({})
     end,
   },
+
   -- NOTE: auto resize buffer
   {
     "kwkarlwang/bufresize.nvim",
@@ -622,6 +635,7 @@ return {
     lazy = true,
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
+      "GustavoKatel/telescope-asynctasks.nvim",
       -- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
       build = "cmake -S. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
     },
