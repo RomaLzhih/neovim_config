@@ -20,6 +20,7 @@ local map = vim.keymap.set
 -- NOTE: Command
 map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
+map("n", "<leader>pp", "<cmd> cclose <CR>", { desc = "close quickfix" })
 map("n", "<leader>co", "<cmd> copen <CR>", { desc = "close quickfix" })
 map("n", "<Tab>", "<cmd>bnext <CR>", { desc = "next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious <CR>", { desc = "next buffer" })
