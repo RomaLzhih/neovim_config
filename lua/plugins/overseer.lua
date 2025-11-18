@@ -1,6 +1,5 @@
 return {
   "stevearc/overseer.nvim",
-  tag = "v1.6.0",
   config = function()
     local overseer = require("overseer")
 
@@ -123,12 +122,12 @@ return {
       "<cmd> OverseerClose<CR>",
       { noremap = true, silent = true, desc = "overseer close" }
     )
-    vim.keymap.set(
-      "n",
-      "<leader>ob",
-      "<cmd> OverseerLoadBundle<CR>",
-      { noremap = true, silent = true, desc = "overseer load bundle" }
-    )
+    -- vim.keymap.set(
+    --   "n",
+    --   "<leader>ob",
+    --   "<cmd> OverseerLoadBundle<CR>",
+    --   { noremap = true, silent = true, desc = "overseer load bundle" }
+    -- )
 
     vim.keymap.set(
       "n",
