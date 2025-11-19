@@ -16,7 +16,7 @@ return {
     "skywind3000/asynctasks.vim",
     dependencies = { "skywind3000/asyncrun.vim" },
     init = function()
-      vim.g.asyncrun_open = 15
+      vim.g.asyncrun_open = 20
       vim.g.asynctasks_term_reuse = 1
       vim.g.asynctasks_template = "~/.vim/task_template.ini"
       vim.g.asynctasks_term_pos = "bottom"
