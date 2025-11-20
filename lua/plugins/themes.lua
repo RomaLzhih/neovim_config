@@ -21,8 +21,6 @@ return {
   { "ishan9299/nvim-solarized-lua", priority = 1000, lazy = true },
   { "pappasam/papercolor-theme-slim", priority = 1000, lazy = true },
   { "embark-theme/vim", name = "embark", priority = 1000, lazy = true },
-  { "atmosuwiryo/vim-winteriscoming", priority = 1000, lazy = true },
-  { "qaptoR-nvim/chocolatier.nvim", priority = 1000, config = true, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
     opts = {
@@ -107,7 +105,8 @@ return {
         },
       })
       -- vim.cmd("colorscheme catppuccin-macchiato")
-      vim.cmd("colorscheme rose-pine")
+      -- vim.cmd("colorscheme rose-pine")
+      vim.cmd("colorscheme duskfox")
     end,
     priority = 1000,
     lazy = false,

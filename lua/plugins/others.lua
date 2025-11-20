@@ -11,12 +11,42 @@
 -- local overrides = require("configs.overrides")
 -- local flash_opt = require("configs.flash")
 local has_neovide = vim.g.neovide
+
+local function check_distro(distro_id)
+  -- Only run the system check if we are on a Unix-like system
+  if vim.fn.has("unix") == 1 then
+    -- Read /etc/os-release and convert the output to lowercase
+    local os_info = vim.fn.system("cat /etc/os-release 2>/dev/null"):lower()
+
+    -- Check if the distribution ID is present in the file content
+    if os_info:find(distro_id) then
+      return true
+    end
+  end
+  return false
+end
+
+-- 1. Check for Ubuntu
+local function is_ubuntu()
+  return check_distro("ubuntu")
+end
+
+-- 2. Check for Arch Linux
+local function is_arch()
+  return check_distro("arch")
+end
+
+-- 3. Check for Rocky Linux
+local function is_rocky()
+  return check_distro("rocky")
+end
+
 return {
   {
     "skywind3000/asynctasks.vim",
     dependencies = { "skywind3000/asyncrun.vim" },
     init = function()
-      vim.g.asyncrun_open = 20
+      vim.g.asyncrun_open = 15
       vim.g.asynctasks_term_reuse = 1
       vim.g.asynctasks_template = "~/.vim/task_template.ini"
       vim.g.asynctasks_term_pos = "bottom"
@@ -379,6 +409,7 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = false,
+    enabled = vim.fn.has("mac") == 1 or vim.fn.has("win32") == 1 or is_ubuntu(),
     dependencies = {
       "nvim-lua/plenary.nvim",
       -- see below for full list of optional dependencies 👇
@@ -725,12 +756,6 @@ return {
     lazy = false,
   },
 
-  -- NOTE: nvim-bqf
-  {
-    "kevinhwang91/nvim-bqf",
-    ft = "qf",
-  },
-
   -- NOTE: Nvim-R
   --
   {
@@ -738,6 +763,7 @@ return {
     -- Only required if you also set defaults.lazy = true
     lazy = false,
     ft = { "rmd", "r" },
+    enabled = vim.fn.has("mac") == 1 or vim.fn.has("win32") == 1 or is_ubuntu(),
     -- R.nvim is still young and we may make some breaking changes from time
     -- to time. For now we recommend pinning to the latest minor version
     -- like so:
