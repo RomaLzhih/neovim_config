@@ -42,6 +42,12 @@ local function is_rocky()
 end
 
 return {
+  -- NOTE: nvim-bqf
+  {
+    "kevinhwang91/nvim-bqf",
+    ft = "qf",
+  },
+
   {
     "skywind3000/asynctasks.vim",
     dependencies = { "skywind3000/asyncrun.vim" },
@@ -676,6 +682,12 @@ return {
       end
       require("telescope").setup({
         defaults = {
+    mappings = {
+      i = {
+        ["<Tab>"] = "move_selection_previous",
+        ["<S-Tab>"] = "move_selection_next",
+      },
+    },
           sorting_strategy = "descending",
           layout_config = {
             horizontal = {

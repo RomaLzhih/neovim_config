@@ -19,6 +19,12 @@ vim.opt.ttimeoutlen = 10
 -- vim.cmd.colorscheme(theme)
 
 -- NOTE: use trouble to open the cmd
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.opt_local.wrap = true
+  end,
+})
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
   callback = function()
     vim.cmd([[Trouble qflist open]])
