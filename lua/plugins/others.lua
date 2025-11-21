@@ -746,6 +746,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       keywords = {
+        ERROR = { icon = "", color = "error", alt = { "ERR", "Error", "error" } },
+        WARN = { alt = { "WARNING", "warning" } },
         PARA = {
           icon = "󰡱",
           color = "info",
