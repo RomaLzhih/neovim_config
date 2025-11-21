@@ -84,7 +84,7 @@ map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "Copilo
 map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })
 map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
 map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
-map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - commit" })
+map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - models" })
 
 -- NOTE: side kick
 map({ "n" }, "yok", "<cmd>Sidekick nes toggle<CR>", { desc = "SideKick toggle" })
