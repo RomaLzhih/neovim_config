@@ -186,7 +186,7 @@ map("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location Lis
 map(
   "n",
   "<leader>cc",
-  "<cmd>Trouble qflist toggle focus=true win={size={height=0.5}}<cr>",
+  "<cmd>Trouble quickfix toggle focus=true group=false win={size={height=0.3}}<cr>",
   { desc = "Quickfix List (Trouble)" }
 )
 -- map("n", "<leader>xs", "<cmd>Trouble symbol toggle focus=true<cr>", { desc = "Trouble Symbols (Trouble)" })
