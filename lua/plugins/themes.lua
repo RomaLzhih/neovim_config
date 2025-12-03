@@ -26,9 +26,11 @@ return {
     opts = {
       styles = {
         keywords = { italic = false },
+        parameter = { bold = true },
       },
       on_highlights = function(hl, col)
         hl["@punctuation.bracket"] = { fg = col.base00 }
+        hl["@variable.parameter"] = { fg = col.base1 }
       end,
       transparent = false,
     },
