@@ -1,5 +1,11 @@
 return {
   {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup()
+    end,
+  },
+  {
     "sainnhe/sonokai",
     config = function()
       vim.g.sonokai_enable_italic = false
@@ -18,7 +24,6 @@ return {
     lazy = true,
   },
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
-  { "ishan9299/nvim-solarized-lua", priority = 1000, lazy = true },
   { "pappasam/papercolor-theme-slim", priority = 1000, lazy = true },
   { "embark-theme/vim", name = "embark", priority = 1000, lazy = true },
   {
@@ -36,11 +41,6 @@ return {
     },
     priority = 1000,
     lazy = true,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    lazy = true,
-    priority = 1000, -- Ensure it loads first
   },
   {
     "folke/tokyonight.nvim",
