@@ -1,7 +1,7 @@
 return {
 
   "mfussenegger/nvim-lint",
-  lazy = true,
+  lazy = false,
   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   config = function()
     local lint = require("lint")
@@ -28,6 +28,7 @@ return {
     lint.linters.cppcheck.args = {
       "--enable=warning,style,performance,information",
       "--inline-suppr",
+      "--std=c++20",
       "--max-configs=1",
       function()
         if vim.fn.isdirectory("build") == 1 then
@@ -46,9 +47,9 @@ return {
       "--quiet",
     }
 
-    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+    -- local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-      group = lint_augroup,
+      -- group = lint_augroup,
       callback = function()
         lint.try_lint()
       end,

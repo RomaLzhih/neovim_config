@@ -16,6 +16,16 @@ return {
     -- Author: lokesh-krishna
     -- MIT license, see LICENSE for more details.
 
+    -- In your lualine configuration
+local lint_progress = function()
+  local linters = require("lint").get_running()
+  if #linters == 0 then
+    return "󰦕"
+  end
+  return "󱉶 " .. table.concat(linters, ", ")
+end
+
+
     local clients_lsp = function()
       local bufnr = vim.api.nvim_get_current_buf()
 
@@ -53,6 +63,7 @@ return {
         },
         lualine_x = {
           { clients_lsp },
+          { lint_progress },
           {
             "diagnostics",
             symbols = {
