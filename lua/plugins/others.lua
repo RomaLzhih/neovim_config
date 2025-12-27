@@ -198,11 +198,11 @@ return {
         "<cmd>Yazi cwd<cr>",
         desc = "Open the file manager in nvim's working directory",
       },
-      {
-        "<c-s>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
+      -- {
+      --   "<c-s>",
+      --   "<cmd>Yazi toggle<cr>",
+      --   desc = "Resume the last yazi session",
+      -- },
     },
   },
 
@@ -224,6 +224,7 @@ return {
         padding = 2,
         max_width = 82,
         max_height = 30,
+        border = "rounded",
         override = function(conf)
           return conf
         end,
