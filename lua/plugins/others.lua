@@ -683,19 +683,19 @@ return {
       end
       require("telescope").setup({
         defaults = {
-    mappings = {
-      i = {
-        ["<Tab>"] = "move_selection_previous",
-        ["<S-Tab>"] = "move_selection_next",
-      },
-    },
+          mappings = {
+            i = {
+              ["<Tab>"] = "move_selection_previous",
+              ["<S-Tab>"] = "move_selection_next",
+            },
+          },
           sorting_strategy = "descending",
           layout_config = {
             horizontal = {
               prompt_position = "bottom",
-              width = 0.7,
+              width = 0.9,
               height = 0.618,
-              preview_width = 0.4,
+              preview_width = 0.5,
             },
           },
           file_ignore_patterns = {
