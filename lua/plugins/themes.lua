@@ -1,10 +1,18 @@
 return {
+  { "yorik1984/newpaper.nvim" },
   {
-    "loctvl842/monokai-pro.nvim",
-    config = function()
-      require("monokai-pro").setup()
-    end,
+    "datsfilipe/vesper.nvim",
+    opts = {
+      italics = {
+        -- comments = false, -- Boolean: Italicizes comments
+        -- keywords = false, -- Boolean: Italicizes keywords
+        -- functions = false, -- Boolean: Italicizes functions
+        strings = false, -- Boolean: Italicizes strings
+        variables = false, -- Boolean: Italicizes variables
+      },
+    },
   },
+
   {
     "sainnhe/sonokai",
     config = function()
