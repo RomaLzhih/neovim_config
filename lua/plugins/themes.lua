@@ -1,4 +1,16 @@
 return {
+  {
+    "loctvl842/monokai-pro.nvim",
+    opts = {
+      override = function()
+        return {
+          ["@punctuation.bracket"] = { fg = "#f9ebaf" },
+          ["@operator"] = { fg = "#f0ebaf" },
+          ["@operator.cpp"] = { fg = "#f0ebaf" },
+        }
+      end,
+    },
+  },
   { "yorik1984/newpaper.nvim" },
   {
     "datsfilipe/vesper.nvim",
@@ -32,7 +44,20 @@ return {
     lazy = true,
   },
   { "EdenEast/nightfox.nvim", priority = 1000, lazy = true },
-  { "pappasam/papercolor-theme-slim", priority = 1000, lazy = true },
+  {
+    "pappasam/papercolor-theme-slim",
+    init = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "PaperColorSlim",
+        callback = function()
+          vim.cmd("highlight Function guifg=#d7875f")
+          vim.cmd("highlight Delimiter guifg=NormalNC")
+        end,
+      })
+    end,
+    priority = 1000,
+    lazy = true,
+  },
   { "embark-theme/vim", name = "embark", priority = 1000, lazy = true },
   {
     "craftzdog/solarized-osaka.nvim",
