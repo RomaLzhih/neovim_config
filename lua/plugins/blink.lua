@@ -4,14 +4,14 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
+      -- suggestion = { enabled = false },
+      -- panel = { enabled = false },
       filetypes = {
         markdown = false,
         csv = true,
         help = true,
       },
-      copilot_model = "claude-sonnet-4.5",
+      copilot_model = "gemini-3-flash",
     },
   },
 
