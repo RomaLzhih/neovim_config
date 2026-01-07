@@ -42,6 +42,16 @@ local function is_rocky()
 end
 
 return {
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {
+      stiffness = 0.5,
+      trailing_stiffness = 0.5,
+      matrix_pixel_threshold = 0.5,
+      time_interval = 7, -- milliseconds
+    },
+    lazy = false,
+  },
   -- NOTE: nvim-bqf
   {
     "kevinhwang91/nvim-bqf",
