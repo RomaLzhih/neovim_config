@@ -48,7 +48,8 @@ return {
       stiffness = 0.5,
       trailing_stiffness = 0.5,
       matrix_pixel_threshold = 0.5,
-      time_interval = 7, -- milliseconds
+      -- time_interval = 7, -- milliseconds
+      legacy_computing_symbols_support = true,
     },
     lazy = false,
   },
