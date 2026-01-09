@@ -106,7 +106,16 @@ return {
   { "sainnhe/gruvbox-material", priority = 1000, lazy = true },
   { "projekt0n/github-nvim-theme", priority = 1000, lazy = true },
   { "sainnhe/everforest", priority = 1000, lazy = true },
-  { "Mofiqul/vscode.nvim", priority = 1000, lazy = true },
+  {
+    "Mofiqul/vscode.nvim",
+    opts = {
+      group_overrides = {
+        ["@variable.parameter"] = { fg = "#c8c8c8" },
+      },
+    },
+    priority = 1000,
+    lazy = true,
+  },
   { "marko-cerovac/material.nvim", priority = 1000, lazy = true },
   { "oxfist/night-owl.nvim", opts = { italics = false }, priority = 1000, lazy = true },
   { "thesimonho/kanagawa-paper.nvim", priority = 1000, lazy = true },
@@ -141,7 +150,8 @@ return {
       })
       -- vim.cmd("colorscheme catppuccin-macchiato")
       -- vim.cmd("colorscheme rose-pine")
-      vim.cmd("colorscheme duskfox")
+      -- vim.cmd("colorscheme duskfox")
+      vim.cmd("colorscheme github_dark")
     end,
     priority = 1000,
     lazy = false,
