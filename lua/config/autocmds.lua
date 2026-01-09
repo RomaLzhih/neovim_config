@@ -190,11 +190,12 @@ vim.api.nvim_set_keymap("i", "<C-d>", "<cmd>lua EscapePair()<CR>", { noremap = t
 -- NOTE: neovide
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.o.guifont = "SauceCodePro Nerd Font:h12"
-  -- vim.o.guifont = "JetBrainsMono NF:h12"
+  -- vim.o.guifont = "SauceCodePro Nerd Font:h12"
+  vim.o.guifont = "JetBrainsMono NF:h12"
+  -- vim.o.guifont = "MonoLisa Nerd Font:h12:#ss03"
   -- vim.o.guifont = "FantasqueSansM Nerd Font:h13"
   -- vim.o.guifont = "Consolas ligaturized v3:h13"
-  vim.g.neovide_transparency = 0.95
+  vim.g.neovide_opacity = 1.0
   vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_animate_command_line = false
   vim.g.neovide_hide_mouse_when_typing = true
