@@ -60,6 +60,7 @@ return {
             or [[chafa "$HOME/.config/wezterm/backdrops/$(ls $HOME/.config/wezterm/backdrops | shuf -n 1)" --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1]],
           height = 17,
           padding = 1,
+          interactive = false,
         },
         {
           pane = 2,
