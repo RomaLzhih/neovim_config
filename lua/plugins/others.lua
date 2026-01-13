@@ -243,7 +243,7 @@ return {
       },
       skip_confirm_for_simple_edits = true,
       keymaps = {
-        ["l"] = "actions.select",
+        ["l"] = { "actions.select", mode = "n" },
         ["q"] = { "actions.close", mode = "n" },
         ["h"] = { "actions.parent", mode = "n" },
         ["<C-v>"] = { "actions.select", opts = { vertical = true } },
