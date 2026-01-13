@@ -42,18 +42,7 @@ local function is_rocky()
 end
 
 return {
-  {
-    "sphamba/smear-cursor.nvim",
-    enabled = false,
-    opts = {
-      stiffness = 0.5,
-      trailing_stiffness = 0.5,
-      matrix_pixel_threshold = 0.5,
-      -- time_interval = 7, -- milliseconds
-      legacy_computing_symbols_support = true,
-    },
-    lazy = false,
-  },
+
   -- NOTE: nvim-bqf
   {
     "kevinhwang91/nvim-bqf",
@@ -234,8 +223,8 @@ return {
     opts = {
       float = {
         padding = 2,
-        max_width = 82,
-        max_height = 30,
+        max_width = 0.618,
+        max_height = 0.618,
         border = "rounded",
         override = function(conf)
           return conf
@@ -249,10 +238,13 @@ return {
         ["<C-v>"] = { "actions.select", opts = { vertical = true } },
         ["<C-x>"] = { "actions.select", opts = { horizontal = true } },
       },
+      view_options = {
+        show_hidden = true,
+      },
     },
     -- Optional dependencies
-    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     lazy = false,
   },
 
