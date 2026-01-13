@@ -11,7 +11,7 @@ return {
         csv = true,
         help = true,
       },
-      copilot_model = "gemini-3-flash",
+      -- copilot_model = "gpt-52-copilot",
     },
   },
 
