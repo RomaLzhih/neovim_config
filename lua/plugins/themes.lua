@@ -1,5 +1,16 @@
 return {
   {
+    "vague-theme/vague.nvim",
+    lazy = true, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other plugins
+    config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
+      require("vague").setup({
+        -- optional configuration here
+      })
+    end,
+  },
+  {
     "loctvl842/monokai-pro.nvim",
     opts = {
       override = function()
@@ -69,6 +80,8 @@ return {
       on_highlights = function(hl, col)
         hl["@punctuation.bracket"] = { fg = col.base00 }
         hl["@variable.parameter"] = { fg = col.base1 }
+        hl["@lsp.type.namespace.cpp"] = { fg = col.cyan }
+        hl["@lsp.type.macro.cpp"] = { fg = col.orange }
       end,
       transparent = false,
     },
