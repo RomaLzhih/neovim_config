@@ -3,12 +3,9 @@ return {
     "vague-theme/vague.nvim",
     lazy = true, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other plugins
-    config = function()
-      -- NOTE: you do not need to call setup if you don't want to.
-      require("vague").setup({
-        -- optional configuration here
-      })
-    end,
+    opts = {
+      italic = false,
+    },
   },
   {
     "loctvl842/monokai-pro.nvim",
@@ -124,6 +121,7 @@ return {
     opts = {
       group_overrides = {
         ["@variable.parameter"] = { fg = "#c8c8c8" },
+        ["@lsp.type.property.cpp"] = { fg = "#569cd6" },
       },
     },
     priority = 1000,
