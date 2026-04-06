@@ -61,6 +61,7 @@ return {
           height = 17,
           padding = 1,
           interactive = false,
+          ttl = 0,
         },
         {
           pane = 2,

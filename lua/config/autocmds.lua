@@ -56,7 +56,20 @@ vim.api.nvim_create_autocmd("User", {
 -- NOTE: no relative number for snacks dashboard
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "snacks_dashboard",
-  command = "set norelativenumber",
+  callback = function()
+    vim.cmd("set norelativenumber")
+    vim.cmd("stopinsert")
+  end,
+})
+
+-- NOTE: force normal mode when entering dashboard buffer
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "snacks_dashboard" then
+      vim.cmd("stopinsert")
+    end
+  end,
 })
 
 vim.cmd([[set nonumber]])
