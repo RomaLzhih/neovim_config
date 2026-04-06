@@ -130,11 +130,16 @@ for newgroup, oldgroup in pairs(links) do
 end
 
 -- NOTE: change diagnostic symbols
-local symbols = { Error = "󰅙", Info = "󰋼", Hint = "󰌵", Warn = "" }
-for name, icon in pairs(symbols) do
-  local hl = "DiagnosticSign" .. name
-  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
-end
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅙",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "󰋼",
+      [vim.diagnostic.severity.HINT] = "󰌵",
+    },
+  },
+})
 
 -- NOTE: auto reload file change
 vim.cmd([[
