@@ -1,5 +1,17 @@
 return {
   {
+    "smit4k/shale.nvim",
+    lazy = true,
+    priority = 1000,
+  },
+  {
+    "ankushbhagats/pastel.nvim",
+    lazy = true, -- disable lazy loading
+    priority = 1000, -- load immediately at startup
+    opts = {}, -- your configuration comes here
+    config = true, -- call setup function with provided opts
+  },
+  {
     "vague-theme/vague.nvim",
     lazy = true, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other plugins
