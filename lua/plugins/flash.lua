@@ -31,6 +31,19 @@ return {
       desc = "Flash Treesitter",
     },
     {
+      "g.",
+      mode = { "n", "x", "o" },
+      function()
+      require("flash").treesitter({
+          actions = {
+            ["."] = "next",
+            [","] = "prev"
+          }
+        })
+      end,
+      desc = "Flash",
+    },
+    {
       "r",
       mode = "o",
       function()
