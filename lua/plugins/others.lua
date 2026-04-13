@@ -584,6 +584,7 @@ return {
     lazy = true,
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
+      "nvim-telescope/telescope-frecency.nvim",
       "GustavoKatel/telescope-asynctasks.nvim",
       -- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
       build = "cmake -S. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
@@ -604,9 +605,9 @@ return {
           layout_config = {
             horizontal = {
               prompt_position = "bottom",
-              width = 0.9,
+              width = 0.8,
               height = 0.618,
-              preview_width = 0.5,
+              preview_width = 0.35,
             },
           },
           file_ignore_patterns = {

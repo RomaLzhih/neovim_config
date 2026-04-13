@@ -210,24 +210,38 @@ map("n", "<leader>id", "<cmd> ObsidianSearch <CR>", { desc = "Obsidian search" }
 map("n", "<leader>fw", function()
   Snacks.picker.grep()
 end, { desc = "grep" })
+
 map("n", "<leader>bb", function()
   Snacks.picker.buffers()
 end, { desc = "buffers" })
+
 map("n", "<C-f>", function()
   Snacks.picker.git_files()
 end, { desc = "files" })
+
+map(
+  "n",
+  "<C-p>",
+  '<cmd> Telescope frecency workspace=CWD matcher="fuzzy" path_display={"filename_first"} <cr>',
+  { desc = "files" }
+)
+
 map("n", "<leader>his", function()
   Snacks.picker.notifications()
 end, { desc = "notify history" })
+
 map("n", "<leader>th", function()
-  Snacks.picker.colorschemes()
+  Snacks.picker.colorschemes({ preview = "" })
 end, { desc = "colorschemes" })
+
 map("n", "?", function()
   require("telescope.builtin").current_buffer_fuzzy_find()
 end, { desc = "current buffer fuzzy" })
+
 map("n", "<leader>gw", function()
   require("telescope.builtin").grep_string()
 end, { desc = "Grep word under string" })
+
 map("n", "<leader>fu", function()
   require("telescope.builtin").treesitter()
 end, { desc = "live grep current buffer" })
