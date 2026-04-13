@@ -34,6 +34,12 @@ return {
     lazygit = { enabled = true },
     notifier = { enabled = true },
     picker = {
+      layout = {
+        preset = "telescope",
+        layout = {
+          height = 0.618,
+        },
+      },
       matcher = {
         frecency = true, -- frecency bonus
         history_bonus = true, -- give more weight to chronological order
