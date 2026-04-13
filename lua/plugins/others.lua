@@ -542,8 +542,13 @@ return {
   -- override plugin configs
   {
     "mason-org/mason.nvim",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      opts.ensure_installed = vim.tbl_filter(function(tool)
+        return tool ~= "stylua"
+      end, opts.ensure_installed)
+
+      vim.list_extend(opts.ensure_installed, {
         "clangd",
         "clang-format",
         "codelldb",
@@ -554,8 +559,8 @@ return {
         "autopep8",
         "bash-language-server",
         "shfmt",
-      },
-    },
+      })
+    end,
   },
 
   -- NOTE: tmux.nvim
