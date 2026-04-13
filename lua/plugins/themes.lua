@@ -184,7 +184,8 @@ return {
       -- vim.cmd("colorscheme catppuccin-macchiato")
       -- vim.cmd("colorscheme rose-pine")
       -- vim.cmd("colorscheme duskfox")
-      vim.cmd("colorscheme github_dark")
+      -- vim.cmd("colorscheme github_dark")
+      vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
     lazy = false,

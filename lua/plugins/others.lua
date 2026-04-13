@@ -42,11 +42,37 @@ local function is_rocky()
 end
 
 return {
+  { "Fildo7525/pretty_hover", event = "LspAttach", opts = {} },
+
+  {
+    "rachartier/tiny-code-action.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope.nvim" },
+    },
+    event = "LspAttach",
+    opts = {},
+  },
+
+  {
+    "hedyhli/outline.nvim",
+    config = function()
+      require("outline").setup({
+        outline_window = {
+          position = "left",
+          width = 20,
+        },
+        keymaps = {
+          goto_location = "e",
+        },
+      })
+    end,
+  },
 
   -- NOTE: nvim-bqf
   {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
+    lazy = false,
   },
 
   {
@@ -61,43 +87,10 @@ return {
     lazy = false,
   },
 
-  -- NOTE: extend %
-  {
-    "andymass/vim-matchup",
-    init = function()
-      -- modify your configuration vars here
-      vim.g.matchup_treesitter_stopline = 500
-
-      -- or call the setup function provided as a helper. It defines the
-      -- configuration vars for you
-      require("match-up").setup({
-        treesitter = {
-          stopline = 500,
-        },
-      })
-    end,
-    -- or use the `opts` mechanism built into `lazy.nvim`. It calls
-    -- `require('match-up').setup` under the hood
-    ---@type matchup.Config
-    opts = {
-      treesitter = {
-        stopline = 500,
-      },
-    },
-  },
-
   -- NOTE: disable noice
   {
     "folke/noice.nvim",
     enabled = false,
-  },
-
-  -- NOTE: highlight log files
-  {
-    "fei6409/log-highlight.nvim",
-    config = function()
-      require("log-highlight").setup({})
-    end,
   },
 
   -- NOTE: auto resize buffer
@@ -149,29 +142,6 @@ return {
     opts = {--[[ things you want to change go here]]
     },
   },
-
-  -- -- NOTE: leetcode
-  -- {
-  --   "kawre/leetcode.nvim",
-  --   -- build = ":TSInstall html", -- if you have `nvim-treesitter` installed
-  --   dependencies = {
-  --     "nvim-telescope/telescope.nvim",
-  --     -- "ibhagwan/fzf-lua",
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   cmd = "Leet",
-  --   opts = {
-  --     -- configuration goes here
-  --     injector = { ---@type table<lc.lang, lc.inject>
-  --       ["cpp"] = {
-  --         before = { "#include <bits/stdc++.h>", "using namespace std;" },
-  --         after = "int main() { return 0; }",
-  --       },
-  --     },
-  --   },
-  --   lazy = true,
-  -- },
 
   -- NOTE: last place
   { "farmergreg/vim-lastplace", lazy = false },

@@ -138,12 +138,6 @@ end, { desc = "Open git window" })
 map("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
   desc = "Toggle Spectre",
 })
--- map("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
---   desc = "Search current word",
--- })
--- map("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
---   desc = "Search current word",
--- })
 map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
   desc = "Search on current file",
 })
@@ -151,12 +145,11 @@ map("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_wor
 -- NOTE: lsp saga
 map("n", "<leader>ic", "<cmd> Lspsaga incoming_calls <CR>", { desc = "lsp saga incoming calls" })
 map("n", "<leader>oc", "<cmd> Lspsaga outgoing_calls <CR>", { desc = "lsp saga outgoing calls" })
-map("n", "<leader>ca", "<cmd> Lspsaga code_action <CR>", { desc = "lsp saga code action" })
 -- map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action <CR>", { desc = "code action" })
 map("n", "<leader>pd", "<cmd> Lspsaga peek_definition <CR>", { desc = "lsp saga peak definition" })
 map("n", "<leader>pt", "<cmd> Lspsaga peek_type_definition <CR>", { desc = "lsp saga peak type definition" })
 map("n", "<leader>fd", "<cmd> Lspsaga finder <CR>", { desc = "lsp saga finder" })
-map("n", "<A-q>", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
+-- map("n", "<A-q>", "<cmd> Lspsaga outline <CR>", { desc = "lsp saga outline" })
 map("n", "<leader>rn", "<cmd> Lspsaga rename <CR>", { desc = "lsp saga rename" })
 map(
   "n",
@@ -165,7 +158,18 @@ map(
   { desc = "lsp saga show workspace diagnostics" }
 )
 map("n", "<leader>sl", "<cmd> Lspsaga show_line_diagnostics <CR>", { desc = "lsp saga show line diagnostics" })
-map("n", "K", "<cmd> Lspsaga hover_doc <CR>", { desc = "lsp hover doc" })
+map("n", "K", function()
+  require("pretty_hover").hover()
+end, { desc = "lsp hover doc" })
+
+-- NOTE: code action
+map("n", "<leader>ca", function()
+  require("tiny-code-action").code_action()
+end, { desc = "lsp saga code action" })
+
+-- NOTE: outline
+map("n", "<A-q>", "<cmd> Outline <CR>", { desc = "lsp saga outline" })
+map("n", "<A-e>", "<cmd> OutlineFocus <CR>", { desc = "lsp saga outline" })
 
 -- NOTE: LSP motion
 map("n", "gD", "<cmd> Trouble lsp_declarations <CR>", { desc = "LSP declaration" })
