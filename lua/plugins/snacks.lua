@@ -36,6 +36,7 @@ return {
     picker = {
       layout = {
         preset = "telescope",
+        reverse = true,
         layout = {
           height = 0.618,
         },
@@ -47,8 +48,8 @@ return {
       win = {
         input = {
           keys = {
-            ["<S-Tab>"] = { "list_up", mode = { "i" } },
-            ["<Tab>"] = { "list_down", mode = { "i" } },
+            ["<S-Tab>"] = { "list_down", mode = { "i" } },
+            ["<Tab>"] = { "list_up", mode = { "i" } },
             -- ["<S-Tab>"] = { "select_and_prev", mode = { "n" } },
             -- ["<Tab>"] = { "select_and_next", mode = { "n" } },
           },
