@@ -114,7 +114,7 @@ return {
           ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
             -- Disable virtual_text
             virtual_text = false,
-            underline = { severity = { min = vim.diagnostic.severity.INFO } },
+            underline = { severity = { min = vim.diagnostic.severity.ERROR } },
           }),
         },
         settings = {
@@ -126,6 +126,9 @@ return {
       })
     end
 
-    vim.diagnostic.config({ virtual_text = false })
+    vim.diagnostic.config({
+      virtual_text = false,
+      underline = { severity = { min = vim.diagnostic.severity.ERROR } },
+    })
   end, -- Override to setup mason-lspconfig
 }
