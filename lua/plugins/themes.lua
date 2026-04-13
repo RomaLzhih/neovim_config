@@ -1,5 +1,10 @@
 return {
   {
+    "nyoom-engineering/oxocarbon.nvim",
+    lazy = true,
+    priority = 1000,
+  },
+  {
     "smit4k/shale.nvim",
     lazy = true,
     priority = 1000,
