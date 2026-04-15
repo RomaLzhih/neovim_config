@@ -15,7 +15,7 @@ return {
     keys = {
       {
         "<c-m>",
-        mode ={"i", "x", "n"},
+        mode = { "i", "x", "n" },
         function()
           -- if there is a next edit, jump to it, otherwise apply it if any
           if not require("sidekick").nes_jump_or_apply() then
@@ -120,7 +120,7 @@ return {
       provider = "copilot",
       providers = {
         copilot = {
-          model = "grok-code-fast-1",
+          model = "gpt-5.2",
         },
       },
       auto_suggestions_provider = "copilot",
@@ -135,7 +135,8 @@ return {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "nvim-mini/mini.icons",
       "folke/snacks.nvim", -- for input provider snacks
       "zbirenbaum/copilot.lua", -- for providers='copilot'
     },

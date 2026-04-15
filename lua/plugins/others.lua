@@ -42,6 +42,8 @@ local function is_rocky()
 end
 
 return {
+  { "nvim-mini/mini.icons", version = "*", lazy = false },
+
   { "Fildo7525/pretty_hover", event = "LspAttach", opts = {} },
 
   {
@@ -213,8 +215,8 @@ return {
       },
     },
     -- Optional dependencies
-    -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
     lazy = false,
   },
 
@@ -317,7 +319,11 @@ return {
         },
       },
     },
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      -- "nvim-tree/nvim-web-devicons"
+      "nvim-mini/mini.icons",
+    }, -- if you prefer nvim-web-devicons
     config = true,
     ft = { "markdown", "Avante", "copilot-chat" },
   },
