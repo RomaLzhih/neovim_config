@@ -5,7 +5,7 @@ return {
   opts = {
     input = { enabled = true },
     scroll = {
-      enabled = true,
+      enabled = false,
       -- spamming = 100,
       animate = {
         duration = { step = 15, total = 200 },
