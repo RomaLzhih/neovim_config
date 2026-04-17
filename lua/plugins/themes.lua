@@ -1,22 +1,19 @@
 return {
+  -- Using Lazy
   {
-    'deparr/tairiki.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-},
-  {
-    "smit4k/shale.nvim",
-    lazy = true,
-    priority = 1000,
+    "navarasu/onedark.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("onedark").setup({
+        style = "cool",
+        highlights = {
+          ["@lsp.type.parameter"] = { fg = "@variable" },
+        },
+      })
+      -- require("onedark").load()
+    end,
   },
-  {
-    "ankushbhagats/pastel.nvim",
-    lazy = true, -- disable lazy loading
-    priority = 1000, -- load immediately at startup
-    opts = {}, -- your configuration comes here
-    config = true, -- call setup function with provided opts
-  },
+
   {
     "vague-theme/vague.nvim",
     lazy = true, -- make sure we load this during startup if it is your main colorscheme
@@ -25,6 +22,7 @@ return {
       italic = false,
     },
   },
+
   {
     "loctvl842/monokai-pro.nvim",
     opts = {
