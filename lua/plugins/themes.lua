@@ -1,5 +1,8 @@
 return {
-  -- Using Lazy
+  {
+    "everviolet/nvim",
+  },
+
   {
     "navarasu/onedark.nvim",
     priority = 1000, -- make sure to load this before all the other start plugins
@@ -7,7 +10,10 @@ return {
       require("onedark").setup({
         style = "cool",
         highlights = {
-          ["@lsp.type.parameter"] = { fg = "@variable" },
+          ["@variable"] = { fg = "#c0c7d6" },
+          ["@constructor"] = { fmt = "none" },
+          ["@lsp.type.variable"] = { fg = "#c0c7d6" },
+          ["@lsp.type.parameter"] = { fg = "#c0c7d6" },
         },
       })
       -- require("onedark").load()
@@ -190,6 +196,7 @@ return {
       -- vim.cmd("colorscheme rose-pine")
       -- vim.cmd("colorscheme duskfox")
       -- vim.cmd("colorscheme github_dark")
+      -- vim.cmd("colorscheme gruvbox")
       vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
@@ -197,7 +204,7 @@ return {
   },
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
   -- { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
-  { "gbprod/nord.nvim", name = "nord", priority = 1000, lazy = true },
+  { "shaunsingh/nord.nvim", name = "nord", priority = 1000, lazy = true },
   { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = true },
   {
     "maxmx03/fluoromachine.nvim",
