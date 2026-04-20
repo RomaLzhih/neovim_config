@@ -17,6 +17,81 @@ local nomap = vim.keymap.del
 -- Enabled mappings
 local map = vim.keymap.set
 
+local function pos_leq(a, b)
+  if a[1] ~= b[1] then
+    return a[1] < b[1]
+  end
+  return a[2] <= b[2]
+end
+
+local function pos_lt(a, b)
+  if a[1] ~= b[1] then
+    return a[1] < b[1]
+  end
+  return a[2] < b[2]
+end
+
+local function find_closest_bracket_textobj()
+  local cur = vim.api.nvim_win_get_cursor(0)
+  local cursor_pos = { cur[1], cur[2] + 1 }
+  local pairs = {
+    { open = "\\V(", close = "\\V)", textobj = "(" },
+    { open = "\\V[", close = "\\V]", textobj = "[" },
+    { open = "\\V{", close = "\\V}", textobj = "{" },
+    { open = "\\V<", close = "\\V>", textobj = "<" },
+  }
+
+  local best = nil
+  local best_dist = nil
+
+  for _, pair in ipairs(pairs) do
+    vim.api.nvim_win_set_cursor(0, cur)
+    local open_pos = vim.fn.searchpairpos(pair.open, "", pair.close, "bnW")
+    if open_pos[1] > 0 then
+      vim.api.nvim_win_set_cursor(0, { open_pos[1], open_pos[2] - 1 })
+      local close_pos = vim.fn.searchpairpos(pair.open, "", pair.close, "nW")
+      local open_ok = pos_lt(open_pos, cursor_pos)
+      local close_ok = pos_leq(cursor_pos, close_pos)
+      if close_pos[1] > 0 and open_ok and close_ok then
+        local dist = (cursor_pos[1] - open_pos[1]) * 1000000 + (cursor_pos[2] - open_pos[2])
+        if not best_dist or dist < best_dist then
+          best = pair.textobj
+          best_dist = dist
+        end
+      end
+    end
+  end
+
+  vim.api.nvim_win_set_cursor(0, cur)
+  return best
+end
+
+local function select_closest_bracket(kind)
+  local best = find_closest_bracket_textobj()
+  if not best then
+    vim.notify("No surrounding bracket pair found", vim.log.levels.INFO)
+    return
+  end
+  vim.cmd.normal({ args = { "v" .. kind .. best }, bang = true })
+end
+
+local function select_inside_closest_bracket()
+  select_closest_bracket("i")
+end
+
+local function select_around_closest_bracket()
+  select_closest_bracket("a")
+end
+
+local function operate_inside_closest_bracket(op)
+  local best = find_closest_bracket_textobj()
+  if not best then
+    vim.notify("No surrounding bracket pair found", vim.log.levels.INFO)
+    return
+  end
+  vim.cmd.normal({ args = { op .. "i" .. best }, bang = true })
+end
+
 -- NOTE: Command
 map({ "n", "v", "x", "i" }, "<F1>", "<nop>", { desc = "remove help page" })
 map("n", "<leader>cl", "<cmd> cclose <CR>", { desc = "close quickfix" })
@@ -42,6 +117,17 @@ map({ "n", "i", "v", "o" }, "<C-e>", "$", { desc = "End of line" })
 map({ "n", "i", "v", "o" }, "<C-q>", "^", { desc = "Begining of line" })
 map("n", "<A-Up>", "ddkP", { desc = "Move line up" })
 map("n", "<A-Down>", "ddp", { desc = "Move line below" })
+map("n", "<leader>ib", select_inside_closest_bracket, { desc = "Select inside closest bracket" })
+map("n", "<leader>ab", select_around_closest_bracket, { desc = "Select around closest bracket" })
+map("n", "<leader>cb", function()
+  operate_inside_closest_bracket("c")
+end, { desc = "Change inside closest bracket" })
+map("n", "<leader>db", function()
+  operate_inside_closest_bracket("d")
+end, { desc = "Delete inside closest bracket" })
+map("n", "<leader>yb", function()
+  operate_inside_closest_bracket("y")
+end, { desc = "Yank inside closest bracket" })
 
 -- NOTE: edit
 map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
@@ -119,7 +205,8 @@ map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
-map("n", "<leader>dd", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
+map("i", "<C-n>", "<C-o>b", { noremap = true, silent = true })
+map("i", "<C-m>", "<C-o>w", { noremap = true, silent = true })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
