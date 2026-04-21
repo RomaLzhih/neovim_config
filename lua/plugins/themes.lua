@@ -8,7 +8,7 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       require("onedark").setup({
-        style = "cool",
+        style = "dark",
         highlights = {
           ["@variable"] = { fg = "#c0c7d6" },
           ["@constructor"] = { fmt = "none" },
@@ -90,7 +90,7 @@ return {
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "PaperColorSlim",
         callback = function()
-          vim.cmd("highlight Function guifg=#d7875f")
+          -- vim.cmd("highlight Function guifg=#d7875f")
           vim.cmd("highlight Delimiter guifg=NormalNC")
         end,
       })
