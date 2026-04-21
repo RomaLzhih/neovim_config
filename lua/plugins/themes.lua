@@ -1,6 +1,16 @@
 return {
   {
     "everviolet/nvim",
+    lazy = true,
+    config = function()
+      require("evergarden").setup({
+        style = {
+          types = {},
+          keyword = {},
+          comment = {},
+        },
+      })
+    end,
   },
 
   {
@@ -197,15 +207,28 @@ return {
       -- vim.cmd("colorscheme duskfox")
       -- vim.cmd("colorscheme github_dark")
       -- vim.cmd("colorscheme gruvbox")
-      vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
-    lazy = false,
+    lazy = true,
   },
+
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
   -- { "nordtheme/vim", name = "nord", priority = 1000, lazy = true },
-  { "shaunsingh/nord.nvim", name = "nord", priority = 1000, lazy = true },
+
+  {
+    "shaunsingh/nord.nvim",
+    name = "nord",
+    priority = 1000,
+    lazy = false,
+    config = function()
+      vim.g.nord_italic = false
+      vim.g.nord_bold = false
+      -- require("nord").set()
+    end,
+  },
+
   { "HoNamDuong/hybrid.nvim", priority = 1000, lazy = true },
+
   {
     "maxmx03/fluoromachine.nvim",
     priority = 1000,
