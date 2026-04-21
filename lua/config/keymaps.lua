@@ -205,8 +205,8 @@ map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
-map("i", "<C-n>", "<C-o>b", { noremap = true, silent = true })
-map("i", "<C-m>", "<C-o>w", { noremap = true, silent = true })
+map("i", "<C-u>", "<C-o>b", { noremap = true, silent = true })
+map("i", "<C-i>", "<C-o>w", { noremap = true, silent = true })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
