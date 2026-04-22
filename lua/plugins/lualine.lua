@@ -17,14 +17,13 @@ return {
     -- MIT license, see LICENSE for more details.
 
     -- In your lualine configuration
-local lint_progress = function()
-  local linters = require("lint").get_running()
-  if #linters == 0 then
-    return "󰦕"
-  end
-  return "󱉶 " .. table.concat(linters, ", ")
-end
-
+    local lint_progress = function()
+      local linters = require("lint").get_running()
+      if #linters == 0 then
+        return "󰦕"
+      end
+      return "󱉶 " .. table.concat(linters, ", ")
+    end
 
     local clients_lsp = function()
       local bufnr = vim.api.nvim_get_current_buf()
@@ -60,9 +59,35 @@ end
           LazyVim.lualine.root_dir(),
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
+          {
+            function()
+              return " "
+            end,
+            color = function()
+              local status = require("sidekick.status").get()
+              if status then
+                return status.kind == "Error" and "DiagnosticError" or status.busy and "DiagnosticWarn" or "Special"
+              end
+            end,
+            cond = function()
+              return require("sidekick.status").get() ~= nil
+            end,
+          },
         },
         lualine_x = {
           { clients_lsp },
+          {
+            function()
+              local status = require("sidekick.status").cli()
+              return " " .. (#status > 1 and #status or "")
+            end,
+            cond = function()
+              return #require("sidekick.status").cli() > 0
+            end,
+            color = function()
+              return "Special"
+            end,
+          },
           { lint_progress },
           {
             "diagnostics",
