@@ -151,6 +151,16 @@ return {
       styles = {
         italic = false,
       },
+      highlight_groups = {
+        -- Keyword = { fg = "#1f1d2e" },
+        Keyword = { fg = "#36809e" },
+        ["@keyword.import"] = { fg = "#36809e" },
+        ["@keyword.repeat"] = { fg = "#36809e" },
+        ["@keyword.return"] = { fg = "#36809e" },
+        ["@keyword.exception"] = { fg = "#36809e" },
+        ["@keyword.conditional"] = { fg = "#36809e" },
+        ["@keyword.conditional.ternary"] = { fg = "#36809e" },
+      },
     },
     priority = 1000,
     lazy = true,
@@ -203,10 +213,10 @@ return {
         },
       })
       -- vim.cmd("colorscheme catppuccin-macchiato")
-      -- vim.cmd("colorscheme rose-pine")
+      vim.cmd("colorscheme rose-pine")
       -- vim.cmd("colorscheme duskfox")
       -- vim.cmd("colorscheme github_dark")
-      vim.cmd("colorscheme gruvbox")
+      -- vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
     lazy = false,
