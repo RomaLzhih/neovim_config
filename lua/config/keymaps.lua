@@ -420,5 +420,5 @@ map(
 )
 
 -- NOTE: leet code
-map("n", "<leader>lr", "<cmd>Leet run<CR>", { desc = "Leet code run test cases" })
-map("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "Leet code submit" })
+-- map("n", "<leader>lr", "<cmd>Leet run<CR>", { desc = "Leet code run test cases" })
+-- map("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "Leet code submit" })

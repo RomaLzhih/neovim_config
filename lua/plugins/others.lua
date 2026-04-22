@@ -310,11 +310,13 @@ return {
           cancel = {
             raw = "[c]",
             rendered = "󰜺 ",
+            highlight = "DiagnosticHint",
             scope_highlight = "@markup.strikethrough",
           },
           pending = {
             raw = "[p]",
             rendered = "󱫪 ",
+            highlight = "DiagnosticInfo",
           },
         },
       },
