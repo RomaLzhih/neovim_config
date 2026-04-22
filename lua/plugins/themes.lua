@@ -209,7 +209,7 @@ return {
       vim.cmd("colorscheme gruvbox")
     end,
     priority = 1000,
-    lazy = true,
+    lazy = false,
   },
 
   { "mhartington/oceanic-next", priority = 1000, lazy = true },
