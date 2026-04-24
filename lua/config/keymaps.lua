@@ -100,6 +100,7 @@ map("n", "<leader>op", "<cmd> bo copen 15 <CR>", { desc = "open quickfix" })
 map("n", "<Tab>", "<cmd>bnext <CR>", { desc = "next buffer" })
 map("n", "<S-Tab>", "<cmd>bprevious <CR>", { desc = "next buffer" })
 -- map("n", "s", "/", { desc = "search" })
+map("n", "<C-p>", "g;", { desc = "jump to last edit" })
 map(
   "n",
   "<leader>il",
@@ -175,17 +176,8 @@ map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "Copilot
 -- NOTE: side kick
 map({ "n" }, "yok", "<cmd>Sidekick nes toggle<CR>", { desc = "SideKick toggle" })
 
--- NOTE: Avante
-map({ "n", "v" }, "<A-i>", function()
-  require("avante.api").ask()
-end, { desc = "avante ask" })
-
-map({ "n", "v" }, "<A-r>", function()
-  require("avante.api").refresh()
-end, { desc = "avante refresh" })
-
 -- NOTE: terminal and buffer
-map({ "n", "t" }, "<A-w>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
+-- map({ "n", "t" }, "<A-w>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
 map({ "n", "t" }, "<C-g>", "<cmd>ToggleTerm direction=float <CR>", { desc = "Toggle float term" })
 map({ "n", "t" }, "<A-x>", "<cmd>ToggleTerm direction=horizontal size=20 <CR>", { desc = "Toggle horizontal term" })
 map({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm direction=vertical size=40 <CR>", { desc = "Toggle vertical term" })
@@ -205,8 +197,8 @@ map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
-map("i", "<C-u>", "<C-o>b", { noremap = true, silent = true })
-map("i", "<C-i>", "<C-o>w", { noremap = true, silent = true })
+map("i", "<C-f>", "<C-o>b", { noremap = true, silent = true })
+map("i", "<C-d>", "<C-o>w", { noremap = true, silent = true })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
 -- NOTE: format
@@ -306,12 +298,7 @@ map("n", "<C-f>", function()
   Snacks.picker.git_files()
 end, { desc = "files" })
 
-map(
-  "n",
-  "<C-p>",
-  '<cmd> Telescope frecency workspace=CWD matcher="fuzzy" path_display={"filename_first"} <cr>',
-  { desc = "files" }
-)
+map("n", "<A-w>", "<cmd>Telescope frecency workspace=CWD<cr>", { desc = "files" })
 
 map("n", "<leader>his", function()
   Snacks.picker.notifications()
@@ -418,7 +405,3 @@ map(
   '<cmd>lua require("dap").terminate() <CR> <BAR> <cmd>lua require("dapui").close() <CR>',
   { desc = "debug: terminate and close" }
 )
-
--- NOTE: leet code
--- map("n", "<leader>lr", "<cmd>Leet run<CR>", { desc = "Leet code run test cases" })
--- map("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "Leet code submit" })

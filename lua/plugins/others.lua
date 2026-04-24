@@ -638,6 +638,12 @@ return {
           borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
           winblend = 5,
         },
+        extensions = {
+          frecency = {
+            matcher = "fuzzy",
+            path_display = { "filename_first" },
+          },
+        },
         pickers = {
           find_files = {
             layout_config = {
@@ -665,6 +671,7 @@ return {
           },
         },
       })
+      require("telescope").load_extension("frecency")
     end,
   },
 
