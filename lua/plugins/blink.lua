@@ -23,7 +23,6 @@ return {
       -- suggestion = { enabled = false },
       -- panel = { enabled = false },
       filetypes = {
-        markdown = false,
         csv = true,
         help = true,
       },
