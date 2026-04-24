@@ -12,6 +12,8 @@ local kind_icons = {
   Deepseek = "",
 }
 
+local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
+
 return {
   {
     "zbirenbaum/copilot.lua",
@@ -54,14 +56,14 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      -- "fang2hou/blink-copilot",
       "giuxtaposition/blink-cmp-copilot",
     },
     build = "cargo build --release",
     opts = {
       signature = { enabled = true },
       completion = {
-        ghost_text = { enabled = false },
+        ghost_text = { show_with_menu = false, enabled = false },
+        trigger = { prefetch_on_insert = false },
       },
       cmdline = {
         -- keymap = { preset = 'inherit' },
@@ -72,35 +74,32 @@ return {
         nerd_font_variant = "normal",
         kind_icons = kind_icons,
       },
-      completion = { trigger = { prefetch_on_insert = false } },
       sources = {
-        -- default = { "copilot", "lsp", "snippets", "path", "buffer", "omni" },
-        default = { "minuet", "lsp", "snippets", "path", "buffer", "omni" },
+        default = is_windows and { "copilot", "lsp", "snippets", "path", "buffer", "omni" }
+          or { "minuet", "lsp", "snippets", "path", "buffer", "omni" },
         providers = {
-          minuet = {
+          copilot = is_windows and {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            score_offset = 100,
+            async = true,
+            transform_items = function(_, items)
+              local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+              local kind_idx = #CompletionItemKind + 1
+              CompletionItemKind[kind_idx] = "Copilot"
+              for _, item in ipairs(items) do
+                item.kind = kind_idx
+              end
+              return items
+            end,
+          } or nil,
+          minuet = not is_windows and {
             name = "minuet",
             module = "minuet.blink",
             async = true,
-            -- Should match minuet.config.request_timeout * 1000,
-            -- since minuet.config.request_timeout is in seconds
             timeout_ms = 3000,
-            score_offset = 50, -- Gives minuet higher priority among suggestions
-          },
-          -- copilot = {
-          --   name = "copilot",
-          --   module = "blink-cmp-copilot",
-          --   score_offset = 100,
-          --   async = true,
-          --   transform_items = function(_, items)
-          --     local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-          --     local kind_idx = #CompletionItemKind + 1
-          --     CompletionItemKind[kind_idx] = "Copilot"
-          --     for _, item in ipairs(items) do
-          --       item.kind = kind_idx
-          --     end
-          --     return items
-          --   end,
-          -- },
+            score_offset = 50,
+          } or nil,
         },
       },
       keymap = {
