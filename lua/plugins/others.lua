@@ -152,30 +152,22 @@ return {
   {
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
     opts = {
       open_for_directories = false,
+      copy_relative_path_to_selected_files = nil,
       keymaps = {
         show_help = "<f1>",
       },
     },
     keys = {
-      {
-        "<A-y>",
-        mode = { "n", "v" },
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<A-u>",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      {
-        "<c-s>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "yazi toggle",
-      },
+      -- {
+      --   "<c-s>",
+      --   "<cmd>Yazi toggle<cr>",
+      --   desc = "yazi toggle",
+      -- },
     },
   },
 
@@ -183,14 +175,14 @@ return {
     -- NOTE: oil
     "stevearc/oil.nvim",
     keys = {
-      -- {
-      -- "<C-s>",
-      -- function()
-      --   require("oil").toggle_float()
-      -- end,
-      -- mode = "n",
-      -- desc = "Toggle oil float",
-      -- },
+      {
+        "<C-s>",
+        function()
+          require("oil").toggle_float()
+        end,
+        mode = "n",
+        desc = "Toggle oil float",
+      },
     },
     opts = {
       float = {
