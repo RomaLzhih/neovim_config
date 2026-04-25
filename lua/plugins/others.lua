@@ -172,10 +172,10 @@ return {
         desc = "Open the file manager in nvim's working directory",
       },
       -- {
-      --   "<c-s>",
-      --   "<cmd>Yazi toggle<cr>",
-      --   desc = "Resume the last yazi session",
-      -- },
+      "<c-s>",
+      "<cmd>Yazi toggle<cr>",
+      desc = "yazi toggle",
+       },
     },
   },
 
@@ -184,12 +184,12 @@ return {
     "stevearc/oil.nvim",
     keys = {
       {
-        "<C-s>",
-        function()
-          require("oil").toggle_float()
-        end,
-        mode = "n",
-        desc = "Toggle oil float",
+        -- "<C-s>",
+        -- function()
+        --   require("oil").toggle_float()
+        -- end,
+        -- mode = "n",
+        -- desc = "Toggle oil float",
       },
     },
     opts = {
