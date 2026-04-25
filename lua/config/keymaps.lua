@@ -135,20 +135,20 @@ map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy
 map("n", "<leader>tp", "<cmd>TransparentToggle<cr>", { desc = "toggle transparency" })
 
 -- NOTE: oil
-local last = nil
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "oil://*",
-  callback = function(args)
-    last = require("oil").get_current_dir()
-  end,
-})
-map("n", "<A-e>", function()
-  if last then
-    require("oil").toggle_float(last)
-  else
-    require("oil").toggle_float()
-  end
-end, { desc = "Oil toggle last directory" })
+-- local last = nil
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "oil://*",
+--   callback = function(args)
+--     last = require("oil").get_current_dir()
+--   end,
+-- })
+-- map("n", "<A-e>", function()
+--   if last then
+--     require("oil").toggle_float(last)
+--   else
+--     require("oil").toggle_float()
+--   end
+-- end, { desc = "Oil toggle last directory" })
 
 -- NOTE: async tasks
 map("n", "<leader>ru", "<cmd>AsyncTaskEdit<CR>", { desc = "AsyncTaskEdit" })
