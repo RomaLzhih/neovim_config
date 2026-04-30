@@ -16,7 +16,10 @@ return {
             auto_preview = false,
           },
           lightbulb = {
-            enabled = false,
+            enable = true,
+          },
+          ui = {
+            code_action = "",
           },
         })
       end,
