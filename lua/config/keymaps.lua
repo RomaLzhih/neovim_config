@@ -3,17 +3,7 @@
 -- Add any additional keymaps here
 -- Disable mappings
 local nomap = vim.keymap.del
--- nomap("n", "<C-c>")
--- nomap("n", "<C-s>")
--- nomap("n", "<C-h>")
--- nomap("n", "<C-j>")
--- nomap("n", "<C-k>")
--- nomap("n", "<C-l>")
--- nomap("n", "<C-Tab>")
--- nomap("n", "<leader>h")
--- nomap("n", "<leader>v")
--- nomap("n", "<leader>x")
---
+
 -- Enabled mappings
 local map = vim.keymap.set
 
@@ -133,22 +123,6 @@ end, { desc = "Yank inside closest bracket" })
 -- NOTE: edit
 map("n", "<leader>hc", "yypk <BAR> <cmd>normal gcc <CR> <BAR> j", { desc = "Copy and Comment line" })
 map("n", "<leader>tp", "<cmd>TransparentToggle<cr>", { desc = "toggle transparency" })
-
--- NOTE: oil
--- local last = nil
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = "oil://*",
---   callback = function(args)
---     last = require("oil").get_current_dir()
---   end,
--- })
--- map("n", "<A-e>", function()
---   if last then
---     require("oil").toggle_float(last)
---   else
---     require("oil").toggle_float()
---   end
--- end, { desc = "Oil toggle last directory" })
 
 -- NOTE: async tasks
 map("n", "<leader>ru", "<cmd>AsyncTaskEdit<CR>", { desc = "AsyncTaskEdit" })

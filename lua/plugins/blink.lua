@@ -30,27 +30,27 @@ return {
     },
   },
 
-  {
-    "milanglacier/minuet-ai.nvim",
-    config = function()
-      require("minuet").setup({
-        -- Your configuration options here
-        provider = "claude",
-        n_completions = 1,
-        provider_options = {
-          claude = {
-            max_tokens = 256,
-            -- model = "claude-haiku-4.5",
-            stream = true,
-            api_key = "ANTHROPIC_API_KEY",
-            end_point = "https://api.anthropic.com/v1/messages",
-            optional = {},
-            transform = {},
-          },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "milanglacier/minuet-ai.nvim",
+  --   config = function()
+  --     require("minuet").setup({
+  --       -- Your configuration options here
+  --       provider = "claude",
+  --       n_completions = 1,
+  --       provider_options = {
+  --         claude = {
+  --           max_tokens = 256,
+  --           -- model = "claude-haiku-4.5",
+  --           stream = true,
+  --           api_key = "ANTHROPIC_API_KEY",
+  --           end_point = "https://api.anthropic.com/v1/messages",
+  --           optional = {},
+  --           transform = {},
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
 
   {
     "saghen/blink.cmp",
@@ -74,10 +74,9 @@ return {
         kind_icons = kind_icons,
       },
       sources = {
-        default = is_windows and { "copilot", "lsp", "snippets", "path", "buffer", "omni" }
-          or { "minuet", "lsp", "snippets", "path", "buffer", "omni" },
+        default = { "copilot", "lsp", "snippets", "path", "buffer", "omni" },
         providers = {
-          copilot = is_windows and {
+          copilot = {
             name = "copilot",
             module = "blink-cmp-copilot",
             score_offset = 100,
@@ -91,14 +90,7 @@ return {
               end
               return items
             end,
-          } or nil,
-          minuet = not is_windows and {
-            name = "minuet",
-            module = "minuet.blink",
-            async = true,
-            timeout_ms = 3000,
-            score_offset = 50,
-          } or nil,
+          },
         },
       },
       keymap = {
