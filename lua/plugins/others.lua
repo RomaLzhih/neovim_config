@@ -531,6 +531,7 @@ return {
       require("tiny-inline-diagnostic").setup({
         preset = "ghost",
         options = { show_all_diags_on_cursorline = false, show_diags_only_under_cursor = false },
+        disabled_ft = { "tex", "latex" },
         severity = {
           vim.diagnostic.severity.ERROR,
           -- vim.diagnostic.severity.WARN,
