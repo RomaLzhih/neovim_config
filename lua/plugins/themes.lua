@@ -1,5 +1,13 @@
 return {
   {
+    "git@github.com:metalelf0/jellybeans-nvim.git",
+    dependencies = { "rktjmp/lush.nvim" },
+    lazy = false,
+    priority = 1000,
+    name = "jellybeans",
+  },
+
+  {
     "D0nw0r/dark2026.nvim",
     lazy = false,
     priority = 1000,
