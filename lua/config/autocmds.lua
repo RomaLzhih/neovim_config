@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   end,
 })
 
-vim.cmd([[set number]])
+vim.cmd([[set nonumber]])
 vim.cmd([[set statuscolumn=]])
 vim.opt.autoindent = true
 vim.opt.smartindent = true
