@@ -175,6 +175,15 @@ map("i", "<C-f>", "<C-o>b", { noremap = true, silent = true })
 map("i", "<C-d>", "<C-o>w", { noremap = true, silent = true })
 map("n", "<leader>x", "<cmd>lua Snacks.bufdelete() <CR>", { desc = "Close buffer" })
 
+-- NOTE: file manager
+map("n", "<C-s>", function()
+  if vim.fn.has("win32") == 1 then
+    require("oil").toggle_float()
+  else
+    vim.cmd("Yazi toggle")
+  end
+end, { desc = "file manager toggle" })
+
 -- NOTE: format
 map(
   "n",

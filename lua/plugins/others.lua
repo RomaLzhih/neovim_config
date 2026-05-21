@@ -162,28 +162,13 @@ return {
         show_help = "<f1>",
       },
     },
-    keys = {
-      -- {
-      --   "<c-s>",
-      --   "<cmd>Yazi toggle<cr>",
-      --   desc = "yazi toggle",
-      -- },
-    },
+    keys = {},
   },
 
   {
     -- NOTE: oil
     "stevearc/oil.nvim",
-    keys = {
-      {
-        "<C-s>",
-        function()
-          require("oil").toggle_float()
-        end,
-        mode = "n",
-        desc = "Toggle oil float",
-      },
-    },
+    keys = {},
     opts = {
       float = {
         padding = 2,

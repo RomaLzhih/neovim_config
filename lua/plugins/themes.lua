@@ -1,23 +1,32 @@
 return {
   {
+    "smit4k/shale.nvim",
+  },
+
+  {
+    "ember-theme/nvim",
+    name = "ember",
+    priority = 1000,
+    config = function()
+      require("ember").setup({
+        variant = "ember", -- "ember" | "ember-soft" | "ember-light"
+      })
+      -- vim.cmd("colorscheme ember")
+    end,
+  },
+
+  {
     "git@github.com:metalelf0/jellybeans-nvim.git",
     dependencies = { "rktjmp/lush.nvim" },
-    lazy = false,
+    lazy = true,
     priority = 1000,
     name = "jellybeans",
   },
 
   {
     "D0nw0r/dark2026.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
-  },
-
-  {
-    "jpwol/thorn.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
   },
 
   {
