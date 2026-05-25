@@ -1,5 +1,14 @@
 return {
   {
+    "nickkadutskyi/jb.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" },
+
+  {
     "smit4k/shale.nvim",
   },
 
