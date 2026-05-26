@@ -3,7 +3,13 @@ return {
     "nickkadutskyi/jb.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    opts = {
+
+    disable_hl_args = {
+        bold = true,
+        italic = true,
+    },
+    },
   },
 
   { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" },
