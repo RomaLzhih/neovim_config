@@ -4,3 +4,5 @@ vim.api.nvim_create_autocmd("BufRead", {
   pattern = "*.md",
   command = "silent! RenderMarkdown",
 })
+
+vim.cmd("set nospell")
