@@ -11,7 +11,34 @@ return {
     },
   },
 
-  { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" },
+  {
+    "briones-gabriel/darcula-solid.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+    config = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "darcula-solid",
+        callback = function()
+          for _, group in ipairs(vim.fn.getcompletion("", "highlight")) do
+            local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+            if hl.italic then
+              hl.italic = nil
+              vim.api.nvim_set_hl(0, group, hl)
+            end
+          end
+          -- primitive/builtin types → keyword color (orange)
+          vim.api.nvim_set_hl(0, "@type.builtin", { link = "Keyword" })
+          vim.api.nvim_set_hl(0, "@lsp.type.builtinType", { link = "Keyword" })
+          -- user-defined types → #FFC66D
+          vim.api.nvim_set_hl(0, "Type", { fg = "#FFC66D" })
+          vim.api.nvim_set_hl(0, "@lsp.type.class", { fg = "#FFC66D" })
+          vim.api.nvim_set_hl(0, "@lsp.type.struct", { fg = "#FFC66D" })
+          vim.api.nvim_set_hl(0, "@lsp.type.interface", { fg = "#FFC66D" })
+          vim.api.nvim_set_hl(0, "@lsp.type.enum", { fg = "#FFC66D" })
+          vim.api.nvim_set_hl(0, "@lsp.type.type", { fg = "#FFC66D" })
+        end,
+      })
+    end,
+  },
 
   {
     "smit4k/shale.nvim",
