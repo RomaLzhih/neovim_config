@@ -1,17 +1,13 @@
 return {
   {
-    'doums/darcula',
-  },
-  {
     "nickkadutskyi/jb.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-
-    disable_hl_args = {
+      disable_hl_args = {
         bold = true,
         italic = true,
-    },
+      },
     },
   },
 
