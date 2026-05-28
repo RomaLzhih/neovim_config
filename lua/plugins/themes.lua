@@ -1,17 +1,5 @@
 return {
   {
-    "nickkadutskyi/jb.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      disable_hl_args = {
-        bold = true,
-        italic = true,
-      },
-    },
-  },
-
-  {
     "briones-gabriel/darcula-solid.nvim",
     dependencies = { "rktjmp/lush.nvim" },
     config = function()
@@ -37,22 +25,6 @@ return {
           vim.api.nvim_set_hl(0, "@lsp.type.type", { fg = "#FFC66D" })
         end,
       })
-    end,
-  },
-
-  {
-    "smit4k/shale.nvim",
-  },
-
-  {
-    "ember-theme/nvim",
-    name = "ember",
-    priority = 1000,
-    config = function()
-      require("ember").setup({
-        variant = "ember", -- "ember" | "ember-soft" | "ember-light"
-      })
-      -- vim.cmd("colorscheme ember")
     end,
   },
 
