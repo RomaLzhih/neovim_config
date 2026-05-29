@@ -188,7 +188,7 @@ map("n", "<C-s>", function()
   if vim.fn.has("win32") == 1 then
     require("oil").toggle_float()
   else
-    vim.cmd("Yazi toggle")
+    vim.cmd("Yazi")
   end
 end, { desc = "file manager toggle" })
 
