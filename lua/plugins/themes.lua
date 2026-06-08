@@ -34,6 +34,20 @@ return {
     lazy = true,
     priority = 1000,
     name = "jellybeans",
+    config = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "jellybeans-nvim",
+        callback = function()
+          for _, group in ipairs(vim.fn.getcompletion("", "highlight")) do
+            local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+            if hl.italic then
+              hl.italic = nil
+              vim.api.nvim_set_hl(0, group, hl)
+            end
+          end
+        end,
+      })
+    end,
   },
 
   {
