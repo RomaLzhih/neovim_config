@@ -61,6 +61,9 @@ return {
     lazy = true,
     config = function()
       require("evergarden").setup({
+        theme = {
+          variant = "spring", -- 'winter'|'fall'|'spring'|'summer'
+        },
         style = {
           types = {},
           keyword = {},
