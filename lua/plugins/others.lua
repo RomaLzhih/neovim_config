@@ -201,7 +201,7 @@ return {
   { "ojroques/nvim-osc52", lazy = false },
 
   -- -- NOTE: tree sitter context
-  { "nvim-treesitter/nvim-treesitter-context", opts = { enable = true }, lazy = false },
+  { "nvim-treesitter/nvim-treesitter-context" },
 
   -- NOTE: unipaired
   {

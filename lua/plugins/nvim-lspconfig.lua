@@ -14,9 +14,13 @@ return {
             win_position = "left",
             win_width = 38,
             auto_preview = false,
+            enable = false,
           },
           lightbulb = {
-            enable = true,
+            enable = false,
+          },
+          symbol_in_winbar = {
+            enable = false,
           },
           ui = {
             code_action = "",
