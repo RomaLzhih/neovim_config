@@ -60,21 +60,8 @@ return {
     indent = { indent = { char = "╏" }, scope = { char = "╏" }, animate = { enabled = false } },
     dashboard = {
       sections = {
-        {
-          section = "terminal",
-          cmd = (vim.loop.os_uname().sysname == "Windows_NT")
-              and [[powershell -NoProfile -ExecutionPolicy Bypass -Command "$dir = Join-Path $env:USERPROFILE '.config\wezterm\backdrops'; $img = Get-ChildItem -File -Path $dir | Get-Random; & chafa.exe `"$($img.FullName)`" --format symbols --symbols vhalf --size 60x17 --stretch --probe off; Start-Sleep -Milliseconds 100"]]
-            or [[chafa "$HOME/.config/wezterm/backdrops/$(ls $HOME/.config/wezterm/backdrops | shuf -n 1)" --format symbols --symbols vhalf --size 60x17 --stretch; sleep .1]],
-          height = 17,
-          padding = 1,
-          interactive = false,
-          ttl = 0,
-        },
-        {
-          pane = 2,
-          { section = "keys", gap = 1, padding = 1 },
-          { section = "startup" },
-        },
+        { section = "keys", gap = 1, padding = 1 },
+        { section = "startup" },
         -- {
         --   section = "terminal",
         --   cmd = "pokemon-colorscripts -r --no-title; sleep .1",
@@ -146,6 +133,6 @@ return {
         },
       },
     },
-    image = { enabled = true },
+    image = { enabled = false },
   },
 }

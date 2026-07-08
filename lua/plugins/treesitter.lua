@@ -4,6 +4,10 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   opts = {
+    -- vimtex provides richer LaTeX highlighting (math conceal, delimiters);
+    -- keep the latex parser installed for markdown math injections, but let
+    -- vimtex own highlighting in tex buffers
+    highlight = { disable = { "latex" } },
     ensure_installed = {
       "bash",
       "c",
