@@ -75,6 +75,7 @@ return {
       },
       sources = {
         default = { "copilot", "lsp", "snippets", "path", "buffer", "omni" },
+        per_filetype = { taskini = { "path" } },
         providers = {
           copilot = {
             name = "copilot",
