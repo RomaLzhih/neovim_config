@@ -98,10 +98,12 @@ map(
   { desc = "toggle inlay hints" }
 )
 
--- NOTE: system copy
-map("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+-- NOTE: system copy (native OSC 52 via the "+" register; nvim-osc52 plugin
+-- is disabled — see config/options.lua). With clipboard=unnamedplus plain
+-- `y` also reaches the system clipboard; kept for muscle memory.
+map("n", "<leader>c", '"+y', { desc = "copy to system clipboard" })
 -- map("n", "<leader>cc", "<leader>c_", { remap = true })
-map("v", "<leader>c", require("osc52").copy_visual)
+map("v", "<leader>c", '"+y', { desc = "copy to system clipboard" })
 
 -- NOTE: Motion
 map({ "n", "i", "v", "o" }, "<C-e>", "$", { desc = "End of line" })

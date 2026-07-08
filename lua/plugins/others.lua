@@ -198,7 +198,8 @@ return {
   },
 
   -- NOTE: enable nvim copy to system clipboard
-  { "ojroques/nvim-osc52", lazy = false },
+  -- disabled: superseded by nvim >= 0.10 native OSC 52 (see config/options.lua)
+  { "ojroques/nvim-osc52", lazy = false, enabled = false },
 
   -- -- NOTE: tree sitter context
   { "nvim-treesitter/nvim-treesitter-context" },
