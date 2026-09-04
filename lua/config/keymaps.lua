@@ -134,21 +134,6 @@ map("n", "<leader>ob", function()
   require("telescope").extensions.asynctasks.all()
 end, { desc = "AsyncTasks" })
 
--- NOTE: Copilot chat
-map({ "n", "v" }, "<leader>qc", function()
-  local input = vim.fn.input("Quick Chat: ")
-  if input ~= "" then
-    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-  end
-end, { desc = "CopilotChat - Quick chat" })
-map({ "n", "v" }, "<C-a>", "<cmd>CopilotChatToggle<CR>", { desc = "CopilotChat - toggle" })
-map({ "n", "v" }, "<leader>cexp", "<cmd>CopilotChatExplain<CR>", { desc = "CopilotChat - explain" })
-map({ "n", "v" }, "<leader>crev", "<cmd>CopilotChatReview<CR>", { desc = "CopilotChat - review" })
-map({ "n", "v" }, "<leader>copt", "<cmd>CopilotChatOptimize<CR>", { desc = "CopilotChat - optimize" })
-map({ "n", "v" }, "<leader>ctest", "<cmd>CopilotChatTests<CR>", { desc = "CopilotChat - tests" })
-map({ "n", "v" }, "<leader>cmt", "<cmd>CopilotChatCommit<CR>", { desc = "CopilotChat - commit" })
-map({ "n", "v" }, "<leader>ccm", "<cmd>CopilotChatModels<CR>", { desc = "CopilotChat - models" })
-
 -- NOTE: side kick
 map({ "n" }, "yok", "<cmd>Sidekick nes toggle<CR>", { desc = "SideKick toggle" })
 

@@ -47,15 +47,6 @@ return {
   { "Fildo7525/pretty_hover", event = "LspAttach", opts = {} },
 
   {
-    "rachartier/tiny-code-action.nvim",
-    dependencies = {
-      { "nvim-telescope/telescope.nvim" },
-    },
-    event = "LspAttach",
-    opts = {},
-  },
-
-  {
     "hedyhli/outline.nvim",
     config = function()
       require("outline").setup({
@@ -104,12 +95,6 @@ return {
     lazy = false,
   },
 
-  -- NOTE: transparent
-  {
-    "xiyaowong/transparent.nvim",
-    lazy = false,
-  },
-
   -- NOTE: show colors
   {
     "catgoose/nvim-colorizer.lua",
@@ -133,9 +118,6 @@ return {
       },
     },
   },
-
-  -- NOTE: remember color
-  { "raddari/last-color.nvim" },
 
   -- NOTE: terminal support
   {
@@ -194,15 +176,12 @@ return {
     -- Optional dependencies
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-    lazy = false,
+    lazy = true,
   },
 
   -- NOTE: enable nvim copy to system clipboard
   -- disabled: superseded by nvim >= 0.10 native OSC 52 (see config/options.lua)
   { "ojroques/nvim-osc52", lazy = false, enabled = false },
-
-  -- -- NOTE: tree sitter context
-  { "nvim-treesitter/nvim-treesitter-context" },
 
   -- NOTE: unipaired
   {
@@ -210,9 +189,6 @@ return {
     event = "VeryLazy",
     opts = {},
   },
-
-  -- NOTE: key-analyzer
-  { "meznaric/key-analyzer.nvim", lazy = true, opts = {} },
 
   -- NOTE: auto store sessions
   {
@@ -278,7 +254,7 @@ return {
     opts = {
       render_modes = true,
       bullet = { right_pad = 1 },
-      file_types = { "markdown", "Avante", "copilot-chat" },
+      file_types = { "markdown" },
       checkbox = {
         custom = {
           important = {
@@ -306,14 +282,14 @@ return {
       "nvim-mini/mini.icons",
     }, -- if you prefer nvim-web-devicons
     config = true,
-    ft = { "markdown", "Avante", "copilot-chat" },
+    ft = { "markdown" },
   },
 
   -- NOTE: nvim-obsidian
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
-    lazy = false,
+    lazy = true,
     enabled = vim.fn.has("mac") == 1 or vim.fn.has("win32") == 1 or is_ubuntu(),
     dependencies = {
       "nvim-lua/plenary.nvim",
